@@ -1,0 +1,113 @@
+{
+  "brand": {
+    "name": "CLINICDIRECT"
+  },
+  "languageGate": {
+    "title": "اختر اللغة",
+    "subtitle": "اختر لغتك المفضلة للمتابعة",
+    "labelArabic": "العربية",
+    "labelEnglish": "الإنجليزية",
+    "labelKurdish": "الكردية",
+    "defaultSelection": "الاختيار الافتراضي",
+    "footerEncrypted": "دقة سريرية مشفّرة",
+    "footerLegal": "بالمتابعة، فإنك توافق على شروط الخدمة وبروتوكولات الخصوصية السريرية.",
+    "heroAlt": "استقبال عيادة طبية حديثة بإضاءة طبيعية ناعمة وبيئة احترافية مناسبة لبوابة رعاية صحية نظيفة"
+  },
+  "home": {
+    "searchPlaceholder": "ماذا تبحث",
+    "cityPlaceholder": "المدينة",
+    "myLocation": "موقعي",
+    "searchClinics": "البحث عن عيادات"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "search": "بحث",
+    "profile": "الملف"
+  },
+  "login": {
+    "portalSubtitle": "وصول آمن إلى بوابة المريض",
+    "signInTitle": "تسجيل الدخول",
+    "signInDescription": "إدارة سجلاتك الصحية ومواعيدك",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "name{'@'}example.com",
+    "passwordLabel": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "passwordPlaceholder": "••••••••",
+    "submit": "دخول",
+    "dividerNewPatient": "مريض جديد؟",
+    "createAccount": "إنشاء حساب",
+    "findTestResults": "البحث عن نتائج الفحوصات",
+    "forClinicsAndLabs": "للعيادات والمختبرات",
+    "footerCopyright": "© {year} ClinicDirect Healthcare. جميع الحقوق محفوظة.",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfService": "شروط الخدمة",
+    "contactSupport": "اتصل بالدعم",
+    "patientRights": "حقوق المريض"
+  },
+  "signup": {
+    "title": "إنشاء حساب",
+    "subtitle": "انضم إلى شبكتنا للتميز السريري.",
+    "nameLabel": "الاسم",
+    "namePlaceholder": "محمد",
+    "surnameLabel": "اسم العائلة",
+    "surnamePlaceholder": "علي",
+    "emailLabel": "البريد الإلكتروني",
+    "emailPlaceholder": "name{'@'}hospital.com",
+    "passwordLabel": "كلمة المرور",
+    "repeatPasswordLabel": "تأكيد كلمة المرور",
+    "passwordPlaceholder": "••••••••",
+    "cityLabel": "المدينة",
+    "cityPlaceholder": "أربيل",
+    "birthdayLabel": "تاريخ الميلاد",
+    "termsIntro": "أوافق على ",
+    "termsBetween": " و ",
+    "termsEnd": ".",
+    "submit": "إنشاء حساب",
+    "footerPrompt": "لديك حساب بالفعل؟ ",
+    "footerLogin": "تسجيل الدخول",
+    "badgeHipaa": "متوافق مع HIPAA",
+    "badgeEncrypted": "مشفّر من طرف إلى طرف",
+    "helpPrefix": "تحتاج مساعدة؟ "
+  },
+  "searchResults": {
+    "headerTitle": "عيادات قريبة منك",
+    "filter": "تصفية",
+    "chipAvailableToday": "متاح اليوم",
+    "chipPrimaryCare": "رعاية أولية",
+    "mapAlt": "خلفية الخريطة",
+    "availableAt": "متاح في {time}",
+    "quickAppointment": "موعد سريع متاح"
+  },
+  "clinicCard": {
+    "milesLine": "على بُعد {n} ميل • {area}",
+    "openNow": "مفتوح الآن",
+    "closedOpens": "مغلق • يفتح {time}"
+  },
+  "clinicPage": {
+    "description": "الوصف",
+    "services": "الخدمات",
+    "address": "العنوان",
+    "mobileNumber": "رقم الجوال",
+    "openingHours": "ساعات العمل",
+    "mapLocationAlt": "موقع على الخريطة",
+    "certifiedBadge": "عيادة معتمدة ISO"
+  },
+  "clinicDemo": {
+    "name": "أدفانسد دياجنوستيكس أربيل",
+    "description": "توفر أدفانسد دياجنوستيكس أربيل فحوصات سريرية متطورة بمعايير جودة دولية. منشأتنا مجهزة بتقنية حديثة لضمان الدقة في كل تشخيص.",
+    "address": "١٢٣ شارع جولان، أربيل",
+    "phone": "+964 750 000 0000",
+    "services": {
+      "bloodTests": "تحاليل الدم",
+      "dnaAnalysis": "تحليل الحمض النووي",
+      "pathology": "علم الأمراض",
+      "covid": "فحص كوفيد-19"
+    },
+    "hours": {
+      "weekdays": "الإثنين - السبت",
+      "weekdayTime": "٨:٠٠ ص - ٨:٠٠ م",
+      "sunday": "الأحد",
+      "closed": "مغلق"
+    }
+  }
+}

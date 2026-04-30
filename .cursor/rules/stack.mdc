@@ -1,0 +1,15 @@
+---
+description: project stack and architecture (Vue 3, nuxt)
+alwaysApply: true
+---
+
+# Project stack
+
+- **Frontend**: Vue 3 with **Composition API** and `<script setup>` in `.vue` files under `resources/`.
+- **Language**: **JavaScript** (not TypeScript) for app code.
+- **framework**: **Nuxt** nuxt.js 4
+- **icons**: For icons fontawesome is used, free
+- **Desing pattern**: For icons fontawesome is used, free
+Thematic Consistency: Uses the "Clinical Precision" design system with its signature typography and professional medical aesthetic.
+Mobile-First Design: Optimized for touch interactions with full-width button elements.
+Allways add translations strings and fill the i18n json accordingly

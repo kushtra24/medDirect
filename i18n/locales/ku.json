@@ -1,0 +1,113 @@
+{
+  "brand": {
+    "name": "CLINICDIRECT"
+  },
+  "languageGate": {
+    "title": "زمان هەڵبژێرە",
+    "subtitle": "زمانی دڵخوازت هەڵبژێرە بۆ بەردەوامبوون",
+    "labelArabic": "عەرەبی",
+    "labelEnglish": "ئینگلیزی",
+    "labelKurdish": "کوردی",
+    "defaultSelection": "هەڵبژاردەی بنەڕەت",
+    "footerEncrypted": "وردبینی نەخۆشییەکی شفرەکراو",
+    "footerLegal": "بە بەردەوامبوون، ڕازیت بە مەرجەکانی خزمەتگوزاری و پرۆتۆکۆلەکانی تایبەتمەندی نەخۆشی.",
+    "heroAlt": "پێشوازی کلینیکی پزیشکی نوێ لەگەڵ ڕووناکی سروشتی نەرم و ژینگەی پیشەیی بۆ هەستێکی پاکی تۆڕی تەندروستی"
+  },
+  "home": {
+    "searchPlaceholder": "چی دەگەڕێیت",
+    "cityPlaceholder": "شار",
+    "myLocation": "شوێنی من",
+    "searchClinics": "گەڕان بەدوای کلینیک"
+  },
+  "nav": {
+    "home": "سەرەتا",
+    "search": "گەڕان",
+    "profile": "پڕۆفایل"
+  },
+  "login": {
+    "portalSubtitle": "دەستپێگەیشتنی پارێزراو بۆ دەرگای نەخۆش",
+    "signInTitle": "چوونەژوورەوە",
+    "signInDescription": "بەڕێوەبردنی تۆمارەکانی تەندروستی و کاتەکان",
+    "emailLabel": "ناونیشانی ئیمەیڵ",
+    "emailPlaceholder": "name{'@'}example.com",
+    "passwordLabel": "تێپەڕەوشە",
+    "forgotPassword": "تێپەڕەوشەت لەبیرچووە؟",
+    "passwordPlaceholder": "••••••••",
+    "submit": "چوونەژوورەوە",
+    "dividerNewPatient": "نەخۆشی نوێ؟",
+    "createAccount": "دروستکردنی هەژمار",
+    "findTestResults": "دۆزینەوەی ئەنجامەکانی تاقیکردنەوە",
+    "forClinicsAndLabs": "بۆ کلینیک و تاقیگەکان",
+    "footerCopyright": "© {year} ClinicDirect Healthcare. هەموو مافەکان پارێزراون.",
+    "privacyPolicy": "سیاسەتی تایبەتمەندی",
+    "termsOfService": "مەرجەکانی خزمەتگوزاری",
+    "contactSupport": "پەیوەندی پشتگیری",
+    "patientRights": "مافەکانی نەخۆش"
+  },
+  "signup": {
+    "title": "دروستکردنی هەژمار",
+    "subtitle": "بەشداربە لە تۆڕمان بۆ جێگەی شایستەی نەخۆشی.",
+    "nameLabel": "ناو",
+    "namePlaceholder": "ئەحمەد",
+    "surnameLabel": "ناوی بن",
+    "surnamePlaceholder": "محەمەد",
+    "emailLabel": "ناونیشانی ئیمەیڵ",
+    "emailPlaceholder": "name{'@'}hospital.com",
+    "passwordLabel": "تێپەڕەوشە",
+    "repeatPasswordLabel": "دووبارەکردنەوەی تێپەڕەوشە",
+    "passwordPlaceholder": "••••••••",
+    "cityLabel": "شار",
+    "cityPlaceholder": "هەولێر",
+    "birthdayLabel": "ڕۆژی لەدایکبوون",
+    "termsIntro": "ڕازیم بە ",
+    "termsBetween": " و ",
+    "termsEnd": ".",
+    "submit": "دروستکردنی هەژمار",
+    "footerPrompt": "پێشتر هەژمارت هەیە؟ ",
+    "footerLogin": "چوونەژوورەوە",
+    "badgeHipaa": "هاوکاری HIPAA",
+    "badgeEncrypted": "شفرەکردنی تەواو",
+    "helpPrefix": "پێویستت بە یارمەتییە؟ "
+  },
+  "searchResults": {
+    "headerTitle": "کلینیکەکانی نزیک تۆ",
+    "filter": "پاڵاوتن",
+    "chipAvailableToday": "ئەمڕۆ بەردەستە",
+    "chipPrimaryCare": "چاودێری سەرەتایی",
+    "mapAlt": "پاشبنەمی نەخشە",
+    "availableAt": "بەردەستە لە {time}",
+    "quickAppointment": "کاتی خێرا بەردەستە"
+  },
+  "clinicCard": {
+    "milesLine": "{n} میل دوورە • {area}",
+    "openNow": "ئێستا کراوەیە",
+    "closedOpens": "داخراوە • دەكرێتەوە {time}"
+  },
+  "clinicPage": {
+    "description": "پێناسە",
+    "services": "خزمەتگوزارییەکان",
+    "address": "ناونیشان",
+    "mobileNumber": "ژمارەی مۆبایل",
+    "openingHours": "کاتەکانی کراوەیی",
+    "mapLocationAlt": "شوێن لەسەر نەخشە",
+    "certifiedBadge": "کلینیکی ISO پەسەندکراو"
+  },
+  "clinicDemo": {
+    "name": "Advanced Diagnostics هەولێر",
+    "description": "Advanced Diagnostics هەولێر تاقیکردنەوەی پزیشکی پێشکەوتوو پێشکەش دەکات بە ستانداردەکانی جیهانی. دامەزراکەمان بە تەکنەلۆژیای پێشکەوتوو ئامادەکراوە بۆ دڵنیابوون لە وردی لە هەر دۆزینەوەیەک.",
+    "address": "١٢٣ شەقامی گوڵان، هەولێر",
+    "phone": "+964 750 000 0000",
+    "services": {
+      "bloodTests": "تاقیکردنەوەی خوێن",
+      "dnaAnalysis": "شیکاری DNA",
+      "pathology": "پاتۆلۆژی",
+      "covid": "تاقیکردنەوەی کۆڤید-١٩"
+    },
+    "hours": {
+      "weekdays": "دووشەممە - هەینی",
+      "weekdayTime": "٨:٠٠ بەیانی - ٨:٠٠ ئێوارە",
+      "sunday": "شەممە",
+      "closed": "داخراوە"
+    }
+  }
+}

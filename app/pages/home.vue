@@ -14,7 +14,7 @@
               <FontAwesomeIcon icon="magnifying-glass" class="text-outline px-3 text-lg" />
               <input
                 class="flex-grow bg-transparent border-none focus:ring-0 text-body-md placeholder:text-outline py-3 outline-none"
-                placeholder="What are you searching"
+                :placeholder="t('home.searchPlaceholder')"
                 type="text"
               />
             </div>
@@ -25,7 +25,7 @@
                 <FontAwesomeIcon icon="location-dot" class="text-outline px-3 text-lg" />
                 <input
                   class="flex-grow bg-transparent border-none focus:ring-0 text-body-md placeholder:text-outline py-3 outline-none"
-                  placeholder="City"
+                  :placeholder="t('home.cityPlaceholder')"
                   type="text"
                 />
               </div>
@@ -33,14 +33,14 @@
               <button class="flex items-center gap-2 px-3 py-1 self-start group transition-colors hover:bg-tertiary/5 rounded-md">
                 <FontAwesomeIcon icon="location-crosshairs" class="text-tertiary text-base" />
                 <span class="text-[11px] font-semibold text-tertiary uppercase tracking-wider group-hover:underline">
-                  My Location
+                  {{ t('home.myLocation') }}
                 </span>
               </button>
             </div>
 
             <!-- Search Button -->
             <AppButton class="mt-2">
-              Search Clinics
+              {{ t('home.searchClinics') }}
             </AppButton>
           </div>
         </section>
@@ -54,3 +54,7 @@
     <div class="h-16 md:hidden" aria-hidden="true" />
   </div>
 </template>
+
+<script setup>
+const { t } = useI18n()
+</script>

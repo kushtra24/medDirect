@@ -7,6 +7,7 @@
       :key="item.label"
       :to="item.to"
       class="flex flex-col items-center justify-center gap-1 transition-transform duration-300 ease-in-out px-4 py-1"
+      :aria-current="item.active ? 'page' : undefined"
       :class="item.active
         ? 'text-blue-900 dark:text-blue-400 scale-110'
         : 'text-slate-400 dark:text-slate-500 active:bg-slate-50 dark:active:bg-slate-800'"
@@ -17,10 +18,16 @@
   </nav>
 </template>
 
-<script setup lang="ts">
-const navItems = [
-  { label: 'Home', icon: ['fas', 'house'], to: '/', active: true },
-  { label: 'Search', icon: ['fas', 'magnifying-glass'], to: '/search', active: false },
-  { label: 'Profile', icon: ['fas', 'circle-user'], to: '/profile', active: false },
-]
+<script setup>
+const { t } = useI18n()
+const route = useRoute()
+
+const navItems = computed(() => {
+  const path = route.path
+  return [
+    { label: t('nav.home'), icon: ['fas', 'house'], to: '/', active: path === '/' || path === '/home' },
+    { label: t('nav.search'), icon: ['fas', 'magnifying-glass'], to: '/search-results', active: path.startsWith('/search-results') },
+    { label: t('nav.profile'), icon: ['fas', 'circle-user'], to: '/auth/login', active: path.startsWith('/auth') },
+  ]
+})
 </script>

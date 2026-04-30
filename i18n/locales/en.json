@@ -1,0 +1,113 @@
+{
+  "brand": {
+    "name": "CLINICDIRECT"
+  },
+  "languageGate": {
+    "title": "Select Language",
+    "subtitle": "Choose your preferred language to continue",
+    "labelArabic": "Arabic",
+    "labelEnglish": "English",
+    "labelKurdish": "Kurdish",
+    "defaultSelection": "Default Selection",
+    "footerEncrypted": "Clinical Precision Encrypted",
+    "footerLegal": "By continuing, you agree to our terms of service and clinical privacy protocols.",
+    "heroAlt": "Modern medical clinic reception with soft natural lighting and professional sterile environment for a clean healthcare portal feel"
+  },
+  "home": {
+    "searchPlaceholder": "What are you searching",
+    "cityPlaceholder": "City",
+    "myLocation": "My Location",
+    "searchClinics": "Search Clinics"
+  },
+  "nav": {
+    "home": "Home",
+    "search": "Search",
+    "profile": "Profile"
+  },
+  "login": {
+    "portalSubtitle": "Secure Patient Portal Access",
+    "signInTitle": "Sign In",
+    "signInDescription": "Manage your health records and appointments",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "name{'@'}example.com",
+    "passwordLabel": "Password",
+    "forgotPassword": "Forgot password?",
+    "passwordPlaceholder": "••••••••",
+    "submit": "Login",
+    "dividerNewPatient": "NEW PATIENT?",
+    "createAccount": "Create an Account",
+    "findTestResults": "Find Test Results",
+    "forClinicsAndLabs": "For clinics and labs",
+    "footerCopyright": "© {year} ClinicDirect Healthcare. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contactSupport": "Contact Support",
+    "patientRights": "Patient Rights"
+  },
+  "signup": {
+    "title": "Create Account",
+    "subtitle": "Join our network for clinical excellence.",
+    "nameLabel": "Name",
+    "namePlaceholder": "John",
+    "surnameLabel": "Surname",
+    "surnamePlaceholder": "Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "name{'@'}hospital.com",
+    "passwordLabel": "Password",
+    "repeatPasswordLabel": "Repeat Password",
+    "passwordPlaceholder": "••••••••",
+    "cityLabel": "City",
+    "cityPlaceholder": "London",
+    "birthdayLabel": "Birthday",
+    "termsIntro": "I agree to the ",
+    "termsBetween": " and ",
+    "termsEnd": ".",
+    "submit": "Create Account",
+    "footerPrompt": "Already have an account? ",
+    "footerLogin": "Log In",
+    "badgeHipaa": "HIPAA Compliant",
+    "badgeEncrypted": "End-to-End Encrypted",
+    "helpPrefix": "Need help? "
+  },
+  "searchResults": {
+    "headerTitle": "Clinics near you",
+    "filter": "Filter",
+    "chipAvailableToday": "Available Today",
+    "chipPrimaryCare": "Primary Care",
+    "mapAlt": "Map background",
+    "availableAt": "Available at {time}",
+    "quickAppointment": "Quick appointment available"
+  },
+  "clinicCard": {
+    "milesLine": "{n} miles away • {area}",
+    "openNow": "Open Now",
+    "closedOpens": "Closed • Opens {time}"
+  },
+  "clinicPage": {
+    "description": "DESCRIPTION",
+    "services": "SERVICES",
+    "address": "Address",
+    "mobileNumber": "Mobile Number",
+    "openingHours": "OPENING HOURS",
+    "mapLocationAlt": "Map location",
+    "certifiedBadge": "ISO CERTIFIED CLINIC"
+  },
+  "clinicDemo": {
+    "name": "Advanced Diagnostics Erbil",
+    "description": "Advanced Diagnostics Erbil provides state-of-the-art clinical testing with international quality standards. Our facility is equipped with cutting-edge technology to ensure precision in every diagnosis.",
+    "address": "123 Gulan St, Erbil",
+    "phone": "+964 750 000 0000",
+    "services": {
+      "bloodTests": "Blood Tests",
+      "dnaAnalysis": "DNA Analysis",
+      "pathology": "Pathology",
+      "covid": "Covid-19 Testing"
+    },
+    "hours": {
+      "weekdays": "Monday - Saturday",
+      "weekdayTime": "8:00 AM - 8:00 PM",
+      "sunday": "Sunday",
+      "closed": "Closed"
+    }
+  }
+}
