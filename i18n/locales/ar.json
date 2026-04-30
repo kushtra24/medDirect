@@ -42,7 +42,8 @@
     "privacyPolicy": "سياسة الخصوصية",
     "termsOfService": "شروط الخدمة",
     "contactSupport": "اتصل بالدعم",
-    "patientRights": "حقوق المريض"
+    "patientRights": "حقوق المريض",
+    "devPartnerHint": "التطوير: استخدم business{'@'}email.com (كلمة المرور اختيارية) لفتح لوحة الشركاء."
   },
   "signup": {
     "title": "إنشاء حساب",
@@ -395,6 +396,102 @@
       "search": "بحث",
       "appointments": "المواعيد",
       "profile": "الملف"
+    }
+  },
+  "newPatientPage": {
+    "seoTitle": "إضافة معلومات",
+    "backAria": "العودة إلى لوحة التحكم",
+    "searchPlaceholder": "ابحث عن عيادات…",
+    "notificationsAria": "الإشعارات",
+    "helpAria": "المساعدة",
+    "profileAlt": "صورة الملف للعاملين في المجال الطبي",
+    "profileName": "د. سارة تشين",
+    "profileRole": "مديرة المختبر",
+    "title": "إضافة معلومات",
+    "subtitle": "عرّف معايير جديدة لشبكة المختبرات.",
+    "requestPublish": "طلب النشر",
+    "basicInfo": {
+      "sectionTitle": "معلومات أساسية",
+      "name": "الاسم",
+      "namePlaceholder": "مثال: مركز مترو هيلث للتشخيص",
+      "description": "الوصف",
+      "descriptionPlaceholder": "قدّم نظرة عامة مفصلة عن تخصصات العيادة وخبرتها..."
+    },
+    "editor": {
+      "bold": "غامق",
+      "italic": "مائل",
+      "underline": "تسطير",
+      "bulletList": "قائمة نقطية",
+      "numberedList": "قائمة مرقمة",
+      "link": "إدراج رابط",
+      "image": "إدراج صورة"
+    },
+    "branding": {
+      "sectionTitle": "العلامة والوسائط",
+      "clinicLogo": "شعار العيادة",
+      "featuredImage": "صورة بارزة",
+      "logoDrop": "اسحب وأفلت الشعار أو",
+      "browse": "تصفح",
+      "logoFormats": "PNG أو SVG حتى 5 ميجابايت",
+      "coverDrop": "ارفع صورة الغلاف أو",
+      "select": "اختر",
+      "coverFormats": "JPG أو JPEG عالية الدقة"
+    },
+    "operations": {
+      "sectionTitle": "العمليات",
+      "coreServices": "الخدمات الأساسية",
+      "selectPrimary": "اختر الخدمة الأساسية…",
+      "serviceMolecular": "التشخيص الجزيئي",
+      "serviceChemistry": "الكيمياء السريرية",
+      "serviceHematology": "أمراض الدم",
+      "serviceImmunology": "المناعة",
+      "certifications": "الاعتمادات",
+      "addCertPlaceholder": "إضافة…",
+      "certIso": "ISO 15189",
+      "certCap": "معتمد CAP",
+      "removeCertAria": "إزالة الاعتماد",
+      "openingHours": "ساعات العمل",
+      "days": {
+        "mon": "الإثنين",
+        "tue": "الثلاثاء",
+        "wed": "الأربعاء",
+        "thu": "الخميس",
+        "fri": "الجمعة",
+        "sat": "السبت",
+        "sun": "الأحد"
+      },
+      "closed": "مغلق"
+    },
+    "status": {
+      "sectionTitle": "حالة النشر",
+      "verifiedTitle": "عيادة موثّقة",
+      "verifiedBody": "هذه العيادة مسجلة برقم تجاري: {regNumber}. تم التحقق عبر السجل الصحي الوطني.",
+      "regNumber": "RE-9928-HBX",
+      "reviewNote": "المعلومات جاهزة للمراجعة. اضغط «طلب النشر» لإرسالها للتحقق."
+    },
+    "contact": {
+      "sectionTitle": "بيانات الاتصال",
+      "address": "العنوان",
+      "addressPlaceholder": "الشارع، المبنى، المدينة، الرمز البريدي…",
+      "mapAlt": "عرض الخريطة",
+      "setCoordinates": "تعيين الإحداثيات",
+      "mobile": "رقم الجوال",
+      "mobilePlaceholder": "+1 (555) 000-0000",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "contact{'@'}metroclinic.com"
+    },
+    "languages": {
+      "sectionTitle": "اللغات",
+      "spoken": "اللغات المحكية",
+      "addLanguagePlaceholder": "أضف لغة…",
+      "chipEnglish": "الإنجليزية",
+      "chipSpanish": "الإسبانية",
+      "chipMandarin": "الماندرين",
+      "removeLangAria": "إزالة اللغة",
+      "french": "الفرنسية",
+      "arabic": "العربية",
+      "german": "الألمانية",
+      "hindi": "الهندية"
     }
   }
 }

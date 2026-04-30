@@ -13,7 +13,7 @@
             class="text-xl font-extrabold tracking-tight text-blue-900 dark:text-blue-500 uppercase"
           >{{ t('brand.name') }}</span>
           <nav class="hidden md:flex items-center gap-6">
-            <a
+            <!-- <a
               class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-200 active:scale-[0.98] cursor-pointer"
               href="#"
             >{{ t('controlPanel.nav.findCare') }}</a>
@@ -24,7 +24,7 @@
             <a
               class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-200 active:scale-[0.98] cursor-pointer"
               href="#"
-            >{{ t('controlPanel.nav.insurance') }}</a>
+            >{{ t('controlPanel.nav.insurance') }}</a> -->
             <a
               class="text-blue-900 dark:text-blue-400 font-bold border-b-2 border-blue-900 dark:border-blue-400 pb-1 active:scale-[0.98] cursor-pointer"
               href="#"
@@ -153,12 +153,12 @@
             </p>
           </div>
           <div class="flex gap-3">
-            <button
-              type="button"
-              class="px-6 py-2.5 bg-tertiary text-on-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all"
+            <NuxtLink
+              to="/control-panel/new-patient"
+              class="px-6 py-2.5 bg-tertiary text-on-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center"
             >
               {{ t('controlPanel.newPatient') }}
-            </button>
+            </NuxtLink>
           </div>
         </header>
 

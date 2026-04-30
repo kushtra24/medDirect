@@ -42,7 +42,8 @@
     "privacyPolicy": "سیاسەتی تایبەتمەندی",
     "termsOfService": "مەرجەکانی خزمەتگوزاری",
     "contactSupport": "پەیوەندی پشتگیری",
-    "patientRights": "مافەکانی نەخۆش"
+    "patientRights": "مافەکانی نەخۆش",
+    "devPartnerHint": "گەشەپێدان: business{'@'}email.com بەکاربهێنە (وشەی نهێنی دڵخوازە) بۆ کردنەوەی داشبۆردی هاوبەش."
   },
   "signup": {
     "title": "دروستکردنی هەژمار",
@@ -395,6 +396,102 @@
       "search": "گەڕان",
       "appointments": "کاتەکان",
       "profile": "پڕۆفایل"
+    }
+  },
+  "newPatientPage": {
+    "seoTitle": "زیادکردنی زانیاری",
+    "backAria": "گەڕانەوە بۆ داشبۆرد",
+    "searchPlaceholder": "گەڕان بە کلینیک…",
+    "notificationsAria": "ئاگادارکردنەوەکان",
+    "helpAria": "یارمەتی",
+    "profileAlt": "وێنەی پڕۆفایلی پسپۆڕی پزیشکی",
+    "profileName": "د. سارا چێن",
+    "profileRole": "بەرپرسی تاقیگە",
+    "title": "زیادکردنی زانیاری",
+    "subtitle": "پارامێتەرە نوێکان بۆ تۆڕی تاقیگە دیاری بکە.",
+    "requestPublish": "داوای بڵاوکردنەوە",
+    "basicInfo": {
+      "sectionTitle": "زانیاری بنەڕەت",
+      "name": "ناو",
+      "namePlaceholder": "نموونە: ناوەندی تەندروستی میترۆ بۆ دۆزینەوە",
+      "description": "پێناسە",
+      "descriptionPlaceholder": "پێناسەیەکی ورد لە تایبەتمەندییەکان و میراتی کلینیکەکە بنووسە..."
+    },
+    "editor": {
+      "bold": "قەڵەو",
+      "italic": "لار",
+      "underline": "ژێر هێڵ",
+      "bulletList": "لیستی خاڵ",
+      "numberedList": "لیستی ژمارە",
+      "link": "لینک زیاد بکە",
+      "image": "وێنە زیاد بکە"
+    },
+    "branding": {
+      "sectionTitle": "براند و ڕێکلام",
+      "clinicLogo": "لۆگۆی کلینیک",
+      "featuredImage": "وێنەی سەرەکی",
+      "logoDrop": "لۆگۆ ڕاکێشە یان",
+      "browse": "بگەڕێ",
+      "logoFormats": "PNG، SVG تا ٥ مێگابایت",
+      "coverDrop": "وێنەی داپۆشین بار بکە یان",
+      "select": "هەڵبژێرە",
+      "coverFormats": "JPG، JPEG بە کوالیتی بەرز"
+    },
+    "operations": {
+      "sectionTitle": "کردارەکان",
+      "coreServices": "خزمەتگوزارییە سەرەکییەکان",
+      "selectPrimary": "خزمەتگوزاری سەرەکی هەڵبژێرە…",
+      "serviceMolecular": "دۆزینەوەی مۆلیکیولی",
+      "serviceChemistry": "کیمیایی کلینیکی",
+      "serviceHematology": "خوێنناسی",
+      "serviceImmunology": "بەرگری",
+      "certifications": "پەسەندنامەکان",
+      "addCertPlaceholder": "زیاد بکە…",
+      "certIso": "ISO 15189",
+      "certCap": "پەسەندکراوی CAP",
+      "removeCertAria": "لابردنی پەسەندنامە",
+      "openingHours": "کاتەکانی کراوەیی",
+      "days": {
+        "mon": "دووشەم",
+        "tue": "سێشەم",
+        "wed": "چوارشەم",
+        "thu": "پێنجشەم",
+        "fri": "هەینی",
+        "sat": "شەممە",
+        "sun": "یەکشەم"
+      },
+      "closed": "داخراوە"
+    },
+    "status": {
+      "sectionTitle": "دۆخی بڵاوکردنەوە",
+      "verifiedTitle": "کلینیکی پشتڕاستکراوە",
+      "verifiedBody": "ئەم کلینیکە بە ژمارەی تۆمارکردنی بازرگانی: {regNumber} هەیە. لە ڕێگەی تۆماری نیشتمانی تەندروستی پشتڕاستکراوە.",
+      "regNumber": "RE-9928-HBX",
+      "reviewNote": "زانیارییەکان ئامادەن بۆ پێداچوونەوە. «داوای بڵاوکردنەوە» دابگرە بۆ ناردن بۆ پشتڕاستکردنەوە."
+    },
+    "contact": {
+      "sectionTitle": "زانیاری پەیوەندی",
+      "address": "ناونیشان",
+      "addressPlaceholder": "شەقام، باڵەخانە، شار، کۆدی پۆست…",
+      "mapAlt": "نەخشە",
+      "setCoordinates": "کۆئۆردینەت دیاری بکە",
+      "mobile": "ژمارەی مۆبایل",
+      "mobilePlaceholder": "+1 (555) 000-0000",
+      "email": "ئیمەیڵ",
+      "emailPlaceholder": "contact{'@'}metroclinic.com"
+    },
+    "languages": {
+      "sectionTitle": "زمانەکان",
+      "spoken": "زمانە قسەکراوەکان",
+      "addLanguagePlaceholder": "زمان زیاد بکە…",
+      "chipEnglish": "ئینگلیزی",
+      "chipSpanish": "ئیسپانی",
+      "chipMandarin": "ماندارین",
+      "removeLangAria": "لابردنی زمان",
+      "french": "فەڕەنسی",
+      "arabic": "عەرەبی",
+      "german": "ئاڵمانی",
+      "hindi": "هیندی"
     }
   }
 }

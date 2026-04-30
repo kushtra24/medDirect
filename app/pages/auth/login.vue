@@ -31,6 +31,12 @@
             <p class="font-body-sm text-on-surface-variant">
               {{ t('login.signInDescription') }}
             </p>
+            <p
+              v-if="showDevPartnerHint"
+              class="mt-sm font-body-sm text-tertiary border border-tertiary/30 rounded-lg px-sm py-xs bg-tertiary/5 text-start"
+            >
+              {{ t('login.devPartnerHint') }}
+            </p>
           </div>
 
           <form class="space-y-md" @submit.prevent="onSubmit">
@@ -171,8 +177,13 @@
 <script setup>
 const { t } = useI18n()
 
+/** Dev-only: sign in with this email (password ignored) to open the partner control panel. Stripped in production builds. */
+const DEV_PARTNER_LOGIN_EMAIL = 'business@email.com'
+
 const email = ref('')
 const password = ref('')
+
+const showDevPartnerHint = import.meta.dev
 
 const copyrightYear = new Date().getFullYear()
 
@@ -181,6 +192,11 @@ useSeoMeta({
 })
 
 async function onSubmit() {
+  const normalized = email.value.trim().toLowerCase()
+  if (import.meta.dev && normalized === DEV_PARTNER_LOGIN_EMAIL.toLowerCase()) {
+    await navigateTo('/control-panel')
+    return
+  }
   await navigateTo('/profile')
 }
 </script>

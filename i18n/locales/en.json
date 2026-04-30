@@ -42,7 +42,8 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "contactSupport": "Contact Support",
-    "patientRights": "Patient Rights"
+    "patientRights": "Patient Rights",
+    "devPartnerHint": "Development: use business{'@'}email.com (password optional) to open the partner dashboard."
   },
   "signup": {
     "title": "Create Account",
@@ -395,6 +396,102 @@
       "search": "Search",
       "appointments": "Appointments",
       "profile": "Profile"
+    }
+  },
+  "newPatientPage": {
+    "seoTitle": "Add information",
+    "backAria": "Back to dashboard",
+    "searchPlaceholder": "Search clinics…",
+    "notificationsAria": "Notifications",
+    "helpAria": "Help",
+    "profileAlt": "Medical professional profile",
+    "profileName": "Dr. Sarah Chen",
+    "profileRole": "Lab Director",
+    "title": "Add Information",
+    "subtitle": "Define new parameters for the laboratory network.",
+    "requestPublish": "Request to Publish",
+    "basicInfo": {
+      "sectionTitle": "Basic Information",
+      "name": "Name",
+      "namePlaceholder": "e.g. Metro Health Diagnostics Center",
+      "description": "Description",
+      "descriptionPlaceholder": "Provide a detailed overview of the clinic's specialties and heritage..."
+    },
+    "editor": {
+      "bold": "Bold",
+      "italic": "Italic",
+      "underline": "Underline",
+      "bulletList": "Bullet list",
+      "numberedList": "Numbered list",
+      "link": "Insert link",
+      "image": "Insert image"
+    },
+    "branding": {
+      "sectionTitle": "Branding & Media",
+      "clinicLogo": "Clinic logo",
+      "featuredImage": "Featured image",
+      "logoDrop": "Drag and drop logo or",
+      "browse": "browse",
+      "logoFormats": "PNG, SVG up to 5MB",
+      "coverDrop": "Upload cover photo or",
+      "select": "select",
+      "coverFormats": "JPG, JPEG high resolution"
+    },
+    "operations": {
+      "sectionTitle": "Operations",
+      "coreServices": "Core services",
+      "selectPrimary": "Select primary service…",
+      "serviceMolecular": "Molecular diagnostics",
+      "serviceChemistry": "Clinical chemistry",
+      "serviceHematology": "Hematology",
+      "serviceImmunology": "Immunology",
+      "certifications": "Certifications",
+      "addCertPlaceholder": "Add…",
+      "certIso": "ISO 15189",
+      "certCap": "CAP Accredited",
+      "removeCertAria": "Remove certification",
+      "openingHours": "Opening hours",
+      "days": {
+        "mon": "Mon",
+        "tue": "Tue",
+        "wed": "Wed",
+        "thu": "Thu",
+        "fri": "Fri",
+        "sat": "Sat",
+        "sun": "Sun"
+      },
+      "closed": "Closed"
+    },
+    "status": {
+      "sectionTitle": "Publishing status",
+      "verifiedTitle": "Verified clinic",
+      "verifiedBody": "This clinic exists with registration business number: {regNumber}. Verified via National Health Registry.",
+      "regNumber": "RE-9928-HBX",
+      "reviewNote": "Information is ready for review. Click \"Request to Publish\" to submit for verification."
+    },
+    "contact": {
+      "sectionTitle": "Contact details",
+      "address": "Address",
+      "addressPlaceholder": "Street name, Building No, City, Zip Code…",
+      "mapAlt": "Map view",
+      "setCoordinates": "Set coordinates",
+      "mobile": "Mobile number",
+      "mobilePlaceholder": "+1 (555) 000-0000",
+      "email": "Email address",
+      "emailPlaceholder": "contact{'@'}metroclinic.com"
+    },
+    "languages": {
+      "sectionTitle": "Languages",
+      "spoken": "Languages spoken",
+      "addLanguagePlaceholder": "Add language…",
+      "chipEnglish": "English",
+      "chipSpanish": "Spanish",
+      "chipMandarin": "Mandarin",
+      "removeLangAria": "Remove language",
+      "french": "French",
+      "arabic": "Arabic",
+      "german": "German",
+      "hindi": "Hindi"
     }
   }
 }
