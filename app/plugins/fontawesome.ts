@@ -29,6 +29,8 @@ import {
   faUserCheck,
   faShieldHalved,
   faKey,
+  faUser,
+  faQuestion,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -60,6 +62,8 @@ library.add(
   faUserCheck,
   faShieldHalved,
   faKey,
+  faUser,
+  faQuestion,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

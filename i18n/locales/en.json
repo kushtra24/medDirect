@@ -69,6 +69,17 @@
     "badgeEncrypted": "End-to-End Encrypted",
     "helpPrefix": "Need help? "
   },
+  "testFindings": {
+    "title": "Search Your Test Results",
+    "subtitle": "Enter your details and access PIN provided by your clinic to view your reports.",
+    "fullNameLabel": "Name and Surname",
+    "fullNamePlaceholder": "e.g., John Doe",
+    "pinLabel": "Access PIN Number",
+    "pinPlaceholder": "6-digit PIN",
+    "submit": "Find Results",
+    "helpPin": "Need help finding your PIN?",
+    "trustLine": "Your medical data is encrypted and secure"
+  },
   "searchResults": {
     "headerTitle": "Clinics near you",
     "filter": "Filter",

@@ -69,6 +69,17 @@
     "badgeEncrypted": "مشفّر من طرف إلى طرف",
     "helpPrefix": "تحتاج مساعدة؟ "
   },
+  "testFindings": {
+    "title": "ابحث عن نتائج فحوصاتك",
+    "subtitle": "أدخل بياناتك ورقم PIN المقدم من عيادتك لعرض التقارير.",
+    "fullNameLabel": "الاسم واللقب",
+    "fullNamePlaceholder": "مثال: محمد علي",
+    "pinLabel": "رقم PIN للوصول",
+    "pinPlaceholder": "PIN مكوّن من 6 أرقام",
+    "submit": "البحث عن النتائج",
+    "helpPin": "تحتاج مساعدة في إيجاد رقم PIN؟",
+    "trustLine": "بياناتك الطبية مشفّرة وآمنة"
+  },
   "searchResults": {
     "headerTitle": "عيادات قريبة منك",
     "filter": "تصفية",
