@@ -116,6 +116,12 @@ useSeoMeta({
 })
 
 function onSubmit() {
-  /* Lookup integration placeholder */
+  navigateTo({
+    path: '/test-findings/results',
+    query: {
+      patient: fullName.value.trim(),
+      pin: accessPin.value.trim(),
+    },
+  })
 }
 </script>

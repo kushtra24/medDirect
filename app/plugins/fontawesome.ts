@@ -31,6 +31,9 @@ import {
   faKey,
   faUser,
   faQuestion,
+  faPrint,
+  faCalendarDays,
+  faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -64,6 +67,9 @@ library.add(
   faKey,
   faUser,
   faQuestion,
+  faPrint,
+  faCalendarDays,
+  faCircleInfo,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {
