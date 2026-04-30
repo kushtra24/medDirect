@@ -207,6 +207,80 @@
       }
     }
   },
+  "businessLanding": {
+    "seoTitle": "For clinics & laboratories",
+    "nav": {
+      "brand": "MedCare Business",
+      "services": "Services",
+      "benefits": "Benefits",
+      "caseStudies": "Case Studies",
+      "pricing": "Pricing",
+      "partnerLogin": "Partner Login",
+      "getStarted": "Get Started"
+    },
+    "hero": {
+      "badge": "HEALTHCARE INNOVATION",
+      "titleBefore": "Empower Your Clinic with Precision ",
+      "titleAccent": "Diagnostics Management.",
+      "description": "Join the network that connects leading laboratories and clinics with patients seeking reliable care. Streamline results, enhance trust, and grow your practice.",
+      "signUpFree": "Sign up for Free",
+      "viewDemo": "View Demo",
+      "heroImgAlt": "Modern medical professional in a clean laboratory reviewing a high-tech digital diagnostic interface",
+      "floatTitle": "HIPAA SECURE",
+      "floatSubtitle": "Validated clinical excellence",
+      "thumbAlt": "Digital dashboard showing medical diagnostic results and data visualization"
+    },
+    "services": {
+      "sectionTitle": "Comprehensive Solutions",
+      "sectionSubtitle": "Digitizing diagnostics to bridge the gap between laboratories and patients.",
+      "portalTitle": "Patient Results Portal",
+      "portalBody": "Digitally deliver secure test results to patients instantly via PIN or QR code. Eliminate manual handling and ensure instant access.",
+      "learnMore": "Learn more",
+      "labTitle": "Laboratory Management",
+      "labBody": "Streamline your lab operations with a centralized dashboard for tracking patient history and logs.",
+      "labsActive": "+150 active labs",
+      "visibilityTitle": "Digital Visibility & Reach",
+      "visibilityBody": "Increase your reach by listing your clinic in our high-traffic directory. Connect with patients in your local area through verified clinical profiles.",
+      "visibilityCta": "Boost My Visibility"
+    },
+    "benefits": {
+      "label": "ADVANTAGES",
+      "title": "Why Join ClinicDirect?",
+      "secureTitle": "Secure & HIPAA Compliant",
+      "secureBody": "Highest standards of patient data protection. We utilize industry-leading encryption and security protocols to keep clinical data safe.",
+      "efficientTitle": "Efficient Workflow",
+      "efficientBody": "Reduce administrative overhead with our intuitive result entry tools. Designed to save clinicians hours every single week.",
+      "trustTitle": "Patient Trust",
+      "trustBody": "Improve patient satisfaction with faster result delivery and transparent communication. Keep your patients informed at every step."
+    },
+    "cta": {
+      "title": "Get Started Today.",
+      "subtitle": "It's 100% Free for Labs and Clinics.",
+      "signUp": "Sign up for Free",
+      "contactSales": "Contact Sales",
+      "disclaimer": "NO CREDIT CARD REQUIRED • INSTANT ACTIVATION"
+    },
+    "footer": {
+      "brand": "MedCare Systems",
+      "tagline": "Dedicated to transforming diagnostics through digital excellence and clinical precision. Helping healthcare providers deliver better patient outcomes.",
+      "productTitle": "Product",
+      "productLabs": "For Laboratories",
+      "productClinics": "For Clinics",
+      "productSecurity": "Security Features",
+      "companyTitle": "Company",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "hipaa": "HIPAA Compliance",
+      "supportTitle": "Support",
+      "contactSupport": "Contact Support",
+      "providerPortal": "Provider Portal",
+      "systemStatus": "System Status",
+      "copyright": "© {year} MedCare Systems. All rights reserved. Clinical Excellence Guaranteed.",
+      "socialAriaWeb": "Website",
+      "socialAriaMail": "Email",
+      "socialAriaShare": "Share"
+    }
+  },
   "searchResults": {
     "headerTitle": "Clinics near you",
     "filter": "Filter",
@@ -246,6 +320,81 @@
       "weekdayTime": "8:00 AM - 8:00 PM",
       "sunday": "Sunday",
       "closed": "Closed"
+    }
+  },
+  "controlPanel": {
+    "seoTitle": "Partner dashboard",
+    "nav": {
+      "findCare": "Find Care",
+      "specialists": "Specialists",
+      "insurance": "Insurance",
+      "myDashboard": "My Dashboard"
+    },
+    "notificationsAria": "Notifications",
+    "settingsAria": "Settings",
+    "profileAlt": "Healthcare professional profile photo",
+    "profileStrength": {
+      "title": "Profile Strength",
+      "percent": "75%",
+      "hint": "Almost there! Complete your profile to boost visibility.",
+      "hoursTitle": "Add operating hours",
+      "hoursCta": "Complete now",
+      "photosTitle": "Upload clinic photos",
+      "photosCta": "Upload"
+    },
+    "sidebar": {
+      "clinicManagement": "Clinic management",
+      "staffMembers": "Staff members",
+      "medicalSupplies": "Medical supplies",
+      "billing": "Billing"
+    },
+    "overview": {
+      "title": "Clinic overview",
+      "welcome": "Welcome back, {name}. Here's what's happening today."
+    },
+    "demoName": "Dr. Julian",
+    "newPatient": "New patient",
+    "stats": {
+      "searchAppearances": "Total search appearances",
+      "searchValue": "1,284",
+      "searchDelta": "12%",
+      "contacted": "Total contacted",
+      "contactValue": "4.8",
+      "contactDelta": "4.9",
+      "patientsEnrolled": "Total patients enrolled",
+      "patientsValue": "28",
+      "urgent": "Urgent"
+    },
+    "patientLogs": {
+      "title": "Patient logs",
+      "viewAll": "View all",
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "entry1": {
+        "name": "Sarah Jenkins",
+        "body": "Consultation completed. Prescription sent to primary pharmacy. Patient scheduled for follow-up in 2 weeks.",
+        "meta": "2 hours ago • Cardiology dept."
+      },
+      "entry2": {
+        "name": "Michael Chen",
+        "body": "Lab results received. Reviewing treatment plan with clinical staff. Patient notified of pending update.",
+        "meta": "Yesterday • General wellness"
+      }
+    },
+    "upcomingFeatures": {
+      "title": "Upcoming features",
+      "appointmentScheduling": "Appointment scheduling",
+      "contactPatients": "Contact patients",
+      "crm": "CRM",
+      "telemedicine": "Telemedicine",
+      "aiDiagnostics": "AI diagnostics"
+    },
+    "bottomNav": {
+      "ariaLabel": "Main mobile navigation",
+      "home": "Home",
+      "search": "Search",
+      "appointments": "Appointments",
+      "profile": "Profile"
     }
   }
 }

@@ -126,8 +126,8 @@
           </div>
 
           <div class="pt-sm">
-            <button
-              type="button"
+            <NuxtLink
+              to="/business"
               class="w-full bg-tertiary-container text-on-tertiary-container border border-tertiary/30 font-button text-button py-md rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-sm group active:scale-[0.98]"
             >
               <FontAwesomeIcon icon="hospital" class="text-tertiary" aria-hidden="true" />
@@ -137,7 +137,7 @@
                 class="text-tertiary opacity-0 group-hover:opacity-100 transition-opacity"
                 aria-hidden="true"
               />
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

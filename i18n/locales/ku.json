@@ -207,6 +207,80 @@
       }
     }
   },
+  "businessLanding": {
+    "seoTitle": "بۆ کلینیک و تاقیگە",
+    "nav": {
+      "brand": "MedCare Business",
+      "services": "خزمەتگوزارییەکان",
+      "benefits": "سوودەکان",
+      "caseStudies": "توێژینەوەکان",
+      "pricing": "نرخەکان",
+      "partnerLogin": "چوونەژوورەوەی هاوبەش",
+      "getStarted": "دەستپێ بکە"
+    },
+    "hero": {
+      "badge": "نوێکاری تەندروستی",
+      "titleBefore": "کلینیکەکەت بەڕێوەبەرێ بە ",
+      "titleAccent": "بەڕێوەبردنی دۆزینەوەی ورد.",
+      "description": "بەشداربە لە تۆڕەکە کە تاقیگە و کلینیکە پێشەنگەکان بە نەخۆشەکان دەگەیەنێت. ئەنجامەکان ئاسان بکە، متمانە زیاد بکە.",
+      "signUpFree": "تۆمارکردنی بەخۆڕایی",
+      "viewDemo": "بینینی دیمۆ",
+      "heroImgAlt": "پسپۆڕی پزیشکی لە تاقیگەیەکی نوێدا",
+      "floatTitle": "HIPAA پارێزراو",
+      "floatSubtitle": "جێگەی شایستەی نەخۆشی پشتڕاستکراوە",
+      "thumbAlt": "داشبۆردی دیجیتاڵی ئەنجامەکانی تاقیکردنەوە"
+    },
+    "services": {
+      "sectionTitle": "چارەسەرە گشتگیرەکان",
+      "sectionSubtitle": "دیجیتاڵکردنی تاقیکردنەوە بۆ بەستنی تاقیگە بە نەخۆش.",
+      "portalTitle": "دەرگای ئەنجامەکانی نەخۆش",
+      "portalBody": "ئەنجامەکان بە پاراستن بدە بە PIN یان QR بە خێرایی. بەبێ دەستکاری دەستی.",
+      "learnMore": "زیاتر بزانە",
+      "labTitle": "بەڕێوەبردنی تاقیگە",
+      "labBody": "کردەوەکانی تاقیگە لە یەک داشبۆرددا کۆبکەوە.",
+      "labsActive": "+١٥٠ تاقیگەی چالاک",
+      "visibilityTitle": "دیجیتاڵی دەرکەوتن و گەیشتن",
+      "visibilityBody": "بینەرانی زیاد بکە بە تۆمارکردنی کلینیک لە ڕێژەکەماندا.",
+      "visibilityCta": "دەرکەوتنم بەهێز بکە"
+    },
+    "benefits": {
+      "label": "سوودەکان",
+      "title": "بۆچی ClinicDirect؟",
+      "secureTitle": "پارێزراو و HIPAA",
+      "secureBody": "بەرزترین ستاندارد بۆ پاراستنی زانیاری نەخۆش.",
+      "efficientTitle": "کاری بەڕێوە",
+      "efficientBody": "کەمکردنەوەی کارەکانی بەڕێوەبردن بە ئامرازێکی ئاسان.",
+      "trustTitle": "متمانەی نەخۆش",
+      "trustBody": "ڕازیبوونی نەخۆش زیاد بکە بە گەیاندنی خێرا و ڕوون."
+    },
+    "cta": {
+      "title": "ئەمڕۆ دەستپێ بکە.",
+      "subtitle": "١٠٠٪ بەخۆڕایی بۆ تاقیگە و کلینیک.",
+      "signUp": "تۆمارکردنی بەخۆڕایی",
+      "contactSales": "پەیوەندی فرۆشتن",
+      "disclaimer": "کارتی ناوەراست پێویست نییە • چالاککردنی خێرا"
+    },
+    "footer": {
+      "brand": "MedCare Systems",
+      "tagline": "تەرخەم بە گۆڕینی تاقیکردنەوە لە ڕێگەی دیجیتاڵ و وردبینی نەخۆشی.",
+      "productTitle": "بەرهەم",
+      "productLabs": "بۆ تاقیگەکان",
+      "productClinics": "بۆ کلینیکەکان",
+      "productSecurity": "تایبەتمەندی ئاسایش",
+      "companyTitle": "کۆمپانیا",
+      "privacy": "سیاسەتی تایبەتمەندی",
+      "terms": "مەرجەکان",
+      "hipaa": "هاوکاری HIPAA",
+      "supportTitle": "پشتگیری",
+      "contactSupport": "پەیوەندی پشتگیری",
+      "providerPortal": "دەرگای دابینکەر",
+      "systemStatus": "دۆخی سیستەم",
+      "copyright": "© {year} MedCare Systems. هەموو مافەکان پارێزراون.",
+      "socialAriaWeb": "ماڵپەڕ",
+      "socialAriaMail": "ئیمەیڵ",
+      "socialAriaShare": "هاوبەشکردن"
+    }
+  },
   "searchResults": {
     "headerTitle": "کلینیکەکانی نزیک تۆ",
     "filter": "پاڵاوتن",
@@ -246,6 +320,81 @@
       "weekdayTime": "٨:٠٠ بەیانی - ٨:٠٠ ئێوارە",
       "sunday": "شەممە",
       "closed": "داخراوە"
+    }
+  },
+  "controlPanel": {
+    "seoTitle": "داشبۆردی هاوبەش",
+    "nav": {
+      "findCare": "چاودێری بدۆزەوە",
+      "specialists": "پسپۆڕان",
+      "insurance": "دڵنیایی",
+      "myDashboard": "داشبۆردەکەم"
+    },
+    "notificationsAria": "ئاگادارکردنەوەکان",
+    "settingsAria": "ڕێکخستنەکان",
+    "profileAlt": "وێنەی پڕۆفایلی پسپۆڕی تەندروستی",
+    "profileStrength": {
+      "title": "بەهێزی پڕۆفایل",
+      "percent": "٧٥٪",
+      "hint": "نزیک بوویت! پڕۆفایلەکەت تەواو بکە بۆ دیاریکردنی زیاتر.",
+      "hoursTitle": "کاتەکانی کار زیاد بکە",
+      "hoursCta": "ئێستا تەواو بکە",
+      "photosTitle": "وێنەی کلینیک بار بکە",
+      "photosCta": "بارکردن"
+    },
+    "sidebar": {
+      "clinicManagement": "بەڕێوەبردنی کلینیک",
+      "staffMembers": "کارمەندان",
+      "medicalSupplies": "کەرەستەی پزیشکی",
+      "billing": "پسوڵەکردن"
+    },
+    "overview": {
+      "title": "پێداچوونەوە بە کلینیک",
+      "welcome": "بەخێربێیت، {name}. ئەمە ئەوەیە کە ئەمڕۆ ڕوودەدات."
+    },
+    "demoName": "د. جولیان",
+    "newPatient": "نەخۆشی نوێ",
+    "stats": {
+      "searchAppearances": "کۆی دەرکەوتنی گەڕان",
+      "searchValue": "١٬٢٨٤",
+      "searchDelta": "١٢٪",
+      "contacted": "کۆی پەیوەندییەکان",
+      "contactValue": "٤٫٨",
+      "contactDelta": "٤٫٩",
+      "patientsEnrolled": "کۆی نەخۆشە تۆمارکراوەکان",
+      "patientsValue": "٢٨",
+      "urgent": "فرەگرنگ"
+    },
+    "patientLogs": {
+      "title": "تۆمارەکانی نەخۆش",
+      "viewAll": "هەموو ببینە",
+      "completed": "تەواو",
+      "inProgress": "لە پڕۆسەدایە",
+      "entry1": {
+        "name": "سارا جێنکینز",
+        "body": "ڕاوێژکاری تەواو بوو. دەرمان بۆ دەرمانخانەی سەرەکی نێردرا. نەخۆش بۆ دووبارەکردنەوە لە ٢ هەفتەدا خەمڵێنرا.",
+        "meta": "٢ کاتژمێر لەمەوبەر • بەشی دڵ"
+      },
+      "entry2": {
+        "name": "مایکل چێن",
+        "body": "ئەنجامی تاقیگە هات. پلانی چارەسەر لەگەڵ ستافەکە پێداچوونەوە دەکرێت. نەخۆش ئاگادارکرایەوە لە نوێکردنەوەی چاوەڕوانکراو.",
+        "meta": "دوێنێ • تەندروستی گشتی"
+      }
+    },
+    "upcomingFeatures": {
+      "title": "تایبەتمەندییەکانی داهاتوو",
+      "appointmentScheduling": "خەمڵاندنی کات",
+      "contactPatients": "پەیوەندی بە نەخۆشانەوە",
+      "crm": "CRM",
+      "telemedicine": "پزیشکی دوور",
+      "aiDiagnostics": "دۆزینەوەی AI"
+    },
+    "bottomNav": {
+      "ariaLabel": "گەشتن لەسەر مۆبایل",
+      "home": "سەرەکی",
+      "search": "گەڕان",
+      "appointments": "کاتەکان",
+      "profile": "پڕۆفایل"
     }
   }
 }

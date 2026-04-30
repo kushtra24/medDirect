@@ -44,6 +44,20 @@ import {
   faChevronDown,
   faHeartPulse,
   faWind,
+  faCirclePlay,
+  faQrcode,
+  faGaugeHigh,
+  faBolt,
+  faFaceSmile,
+  faClock,
+  faCamera,
+  faUsers,
+  faBoxesStacked,
+  faCreditCard,
+  faArrowTrendUp,
+  faUserPlus,
+  faTriangleExclamation,
+  faArrowsRotate,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -90,6 +104,20 @@ library.add(
   faChevronDown,
   faHeartPulse,
   faWind,
+  faCirclePlay,
+  faQrcode,
+  faGaugeHigh,
+  faBolt,
+  faFaceSmile,
+  faClock,
+  faCamera,
+  faUsers,
+  faBoxesStacked,
+  faCreditCard,
+  faArrowTrendUp,
+  faUserPlus,
+  faTriangleExclamation,
+  faArrowsRotate,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

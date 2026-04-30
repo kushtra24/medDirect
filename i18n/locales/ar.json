@@ -207,6 +207,80 @@
       }
     }
   },
+  "businessLanding": {
+    "seoTitle": "للعيادات والمختبرات",
+    "nav": {
+      "brand": "MedCare Business",
+      "services": "الخدمات",
+      "benefits": "الفوائد",
+      "caseStudies": "دراسات الحالة",
+      "pricing": "الأسعار",
+      "partnerLogin": "دخول الشريك",
+      "getStarted": "ابدأ الآن"
+    },
+    "hero": {
+      "badge": "ابتكار في الرعاية الصحية",
+      "titleBefore": "مكّن عيادتك من إدارة ",
+      "titleAccent": "تشخيص دقيق.",
+      "description": "انضم إلى الشبكة التي تربط المختبرات والعيادات الرائدة بالمرضى الباحثين عن رعاية موثوقة. بسّط النتائج، عزّز الثقة، ونمِّ عملك.",
+      "signUpFree": "سجّل مجاناً",
+      "viewDemo": "شاهد العرض",
+      "heroImgAlt": "أخصائي طبي في مختبر حديث يطّلع على واجهة تشخيص رقمية",
+      "floatTitle": "متوافق مع HIPAA",
+      "floatSubtitle": "تميّز سريري مُتحقق منه",
+      "thumbAlt": "لوحة بيانات رقمية لنتائج تشخيصية"
+    },
+    "services": {
+      "sectionTitle": "حلول شاملة",
+      "sectionSubtitle": "رقمنة التشخيص لربط المختبرات بالمرضى.",
+      "portalTitle": "بوابة نتائج المرضى",
+      "portalBody": "تسليم نتائج الفحوصات بأمان عبر PIN أو رمز QR فوراً. بلا معالجة يدوية وبوصول فوري.",
+      "learnMore": "اعرف المزيد",
+      "labTitle": "إدارة المختبر",
+      "labBody": "بسّط عمليات مختبرك مع لوحة مركزية لتتبع السجل والسجلات.",
+      "labsActive": "+١٥٠ مختبراً نشطاً",
+      "visibilityTitle": "الظهور الرقمي والوصول",
+      "visibilityBody": "وسّع نطاقك بإدراج عيادتك في دليلنا المزدحم. تواصل مع المرضى محلياً عبر ملفات سريرية موثّقة.",
+      "visibilityCta": "عزّز ظهوري"
+    },
+    "benefits": {
+      "label": "مزايا",
+      "title": "لماذا تنضم إلى ClinicDirect؟",
+      "secureTitle": "آمن ومتوافق مع HIPAA",
+      "secureBody": "أعلى معايير حماية بيانات المرضى. تشفير وبروتوكولات أمان رائدة.",
+      "efficientTitle": "سير عمل فعّال",
+      "efficientBody": "قلّل العبء الإداري بأدوات إدخال بديهية توفر ساعات للأطباء كل أسبوع.",
+      "trustTitle": "ثقة المرضى",
+      "trustBody": "ارتفع رضا المرضى بتسليم أسرع للنتائج وتواصل شفاف."
+    },
+    "cta": {
+      "title": "ابدأ اليوم.",
+      "subtitle": "مجاني بالكامل للمختبرات والعيادات.",
+      "signUp": "سجّل مجاناً",
+      "contactSales": "تواصل مع المبيعات",
+      "disclaimer": "لا حاجة لبطاقة ائتمان • تفعيل فوري"
+    },
+    "footer": {
+      "brand": "MedCare Systems",
+      "tagline": "ملتزمون بتحويل التشخيص عبر التميز الرقمي والدقة السريرية.",
+      "productTitle": "المنتج",
+      "productLabs": "للمختبرات",
+      "productClinics": "للعيادات",
+      "productSecurity": "ميزات الأمان",
+      "companyTitle": "الشركة",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الخدمة",
+      "hipaa": "الامتثال لـ HIPAA",
+      "supportTitle": "الدعم",
+      "contactSupport": "اتصل بالدعم",
+      "providerPortal": "بوابة المزود",
+      "systemStatus": "حالة النظام",
+      "copyright": "© {year} MedCare Systems. جميع الحقوق محفوظة.",
+      "socialAriaWeb": "الموقع",
+      "socialAriaMail": "البريد",
+      "socialAriaShare": "مشاركة"
+    }
+  },
   "searchResults": {
     "headerTitle": "عيادات قريبة منك",
     "filter": "تصفية",
@@ -246,6 +320,81 @@
       "weekdayTime": "٨:٠٠ ص - ٨:٠٠ م",
       "sunday": "الأحد",
       "closed": "مغلق"
+    }
+  },
+  "controlPanel": {
+    "seoTitle": "لوحة شركاء",
+    "nav": {
+      "findCare": "ابحث عن رعاية",
+      "specialists": "التخصصات",
+      "insurance": "التأمين",
+      "myDashboard": "لوحتي"
+    },
+    "notificationsAria": "الإشعارات",
+    "settingsAria": "الإعدادات",
+    "profileAlt": "صورة الملف المهني للعاملين في الرعاية الصحية",
+    "profileStrength": {
+      "title": "قوة الملف",
+      "percent": "٧٥٪",
+      "hint": "قريباً! أكمل ملفك لزيادة الظهور.",
+      "hoursTitle": "أضف ساعات العمل",
+      "hoursCta": "أكمل الآن",
+      "photosTitle": "ارفع صور العيادة",
+      "photosCta": "رفع"
+    },
+    "sidebar": {
+      "clinicManagement": "إدارة العيادة",
+      "staffMembers": "الموظفون",
+      "medicalSupplies": "المستلزمات الطبية",
+      "billing": "الفوترة"
+    },
+    "overview": {
+      "title": "نظرة على العيادة",
+      "welcome": "مرحباً بعودتك، {name}. إليك ما يحدث اليوم."
+    },
+    "demoName": "د. جوليان",
+    "newPatient": "مريض جديد",
+    "stats": {
+      "searchAppearances": "إجمالي ظهور البحث",
+      "searchValue": "١٬٢٨٤",
+      "searchDelta": "١٢٪",
+      "contacted": "إجمالي من تواصلوا",
+      "contactValue": "٤٫٨",
+      "contactDelta": "٤٫٩",
+      "patientsEnrolled": "إجمالي المرضى المسجلين",
+      "patientsValue": "٢٨",
+      "urgent": "عاجل"
+    },
+    "patientLogs": {
+      "title": "سجلات المرضى",
+      "viewAll": "عرض الكل",
+      "completed": "مكتمل",
+      "inProgress": "قيد التنفيذ",
+      "entry1": {
+        "name": "سارة جنكينز",
+        "body": "اكتملت الاستشارة. أُرسلت الوصفة إلى الصيدلية الأساسية. جُدولت متابعة خلال أسبوعين.",
+        "meta": "منذ ساعتين • قسم القلب"
+      },
+      "entry2": {
+        "name": "مايكل تشين",
+        "body": "وصلت نتائج المختبر. مراجعة خطة العلاج مع الطاقم. تم إبلاغ المريض بتحديث قيد الانتظار.",
+        "meta": "أمس • العافية العامة"
+      }
+    },
+    "upcomingFeatures": {
+      "title": "ميزات قادمة",
+      "appointmentScheduling": "جدولة المواعيد",
+      "contactPatients": "التواصل مع المرضى",
+      "crm": "إدارة علاقات العملاء",
+      "telemedicine": "الطب عن بُعد",
+      "aiDiagnostics": "تشخيص بالذكاء الاصطناعي"
+    },
+    "bottomNav": {
+      "ariaLabel": "التنقل الرئيسي للجوال",
+      "home": "الرئيسية",
+      "search": "بحث",
+      "appointments": "المواعيد",
+      "profile": "الملف"
     }
   }
 }
