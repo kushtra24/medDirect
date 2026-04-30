@@ -180,7 +180,7 @@ useSeoMeta({
   title: () => t('login.signInTitle'),
 })
 
-function onSubmit() {
-  /* Auth integration placeholder */
+async function onSubmit() {
+  await navigateTo('/profile')
 }
 </script>

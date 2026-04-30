@@ -130,6 +130,83 @@
       }
     }
   },
+  "patientProfile": {
+    "seoTitle": "پڕۆفایلەکەت",
+    "sidebar": {
+      "brandTitle": "ناوەندی پزیشکی",
+      "brandSubtitle": "پێشەنگی نەخۆشی",
+      "dashboard": "داشبۆرد",
+      "medicalHistory": "مێژووی پزیشکی",
+      "testResults": "ئەنجامەکانی تاقیکردنەوە",
+      "appointments": "کاتەکان",
+      "userProfile": "پڕۆفایلی بەکارهێنەر",
+      "settings": "ڕێکخستنەکان",
+      "signOut": "دەرچوون",
+      "emergencyContact": "پەیوەندی فریاکەوتن"
+    },
+    "topBar": {
+      "searchPlaceholder": "گەڕان لە تۆمارە پزیشکییەکان...",
+      "notificationsAria": "ئاگادارکردنەوەکان",
+      "helpAria": "یارمەتی",
+      "avatarAlt": "وێنەی بەکارهێنەر"
+    },
+    "personal": {
+      "photoAlt": "وێنەی نەخۆش",
+      "name": "ئەحمەد محەمەد",
+      "email": "a.mohammed{'@'}healthportal.com",
+      "patientId": "ناسنامەی نەخۆش: #8829-XP",
+      "activeStatus": "چالاک",
+      "editProfile": "دەستکاری پڕۆفایل",
+      "languageLabel": "زمان",
+      "birthdate": "١٢ی ئایاری ١٩٨٥",
+      "bloodType": "O ئەرێنی (O+)",
+      "phone": "+964 750 000 0000",
+      "location": "هەولێر، هەرێمی کوردستان",
+      "fieldBirthdate": "ڕۆژی لەدایکبوون",
+      "fieldBloodType": "جۆری خوێن",
+      "fieldPhone": "تەلەفۆن",
+      "fieldLocation": "شوێن"
+    },
+    "strength": {
+      "title": "بەهێزی پڕۆفایل",
+      "percent": "٨٥٪",
+      "hint": "پەیوەندی فریاکەوتن زیاد بکە بۆ ١٠٠٪ پاراستن.",
+      "cta": "ئێستا تەواو بکە"
+    },
+    "medical": {
+      "title": "ئەنجامە پزیشکییەکان",
+      "viewAll": "هەموو مێژووی پزیشکی ببینە",
+      "tableDate": "بەروار",
+      "tableResult": "ئەنجام / دۆزینەوە",
+      "tableStatus": "دۆخ",
+      "tableDetails": "وردەکاری",
+      "viewDetails": "وردەکاری ببینە",
+      "statusCompleted": "تەواو",
+      "statusDiagnosed": "دۆزراوەتەوە",
+      "rows": {
+        "glucose": {
+          "date": "٢٤ی تشرینی یەکەم ٢٠٢٣",
+          "title": "گلوکۆز (بە ڕێژە)",
+          "subtitle": "ئەنجامی تاقیگە • LabCorp Diagnostics"
+        },
+        "hypertension": {
+          "date": "١٥ی کانوونی دووەم ٢٠٢٣",
+          "title": "پەستانی خوێن بەرز",
+          "subtitle": "دۆزینەوەی کلینیکی • د. Sarah Wilson"
+        },
+        "lipid": {
+          "date": "١٢ی تشرینی یەکەم ٢٠٢٣",
+          "title": "پانێڵی چربی",
+          "subtitle": "ئەنجامی تاقیگە • پشکنینی گشتی تەندروستی"
+        },
+        "asthma": {
+          "date": "١٠ی حوزەیران ٢٠٢٢",
+          "title": "کۆکەی خۆرەکی سووک",
+          "subtitle": "دۆزینەوەی کلینیکی • بەشی سیەکان"
+        }
+      }
+    }
+  },
   "searchResults": {
     "headerTitle": "کلینیکەکانی نزیک تۆ",
     "filter": "پاڵاوتن",

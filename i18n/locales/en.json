@@ -130,6 +130,83 @@
       }
     }
   },
+  "patientProfile": {
+    "seoTitle": "Your profile",
+    "sidebar": {
+      "brandTitle": "Medical Center",
+      "brandSubtitle": "Clinical Excellence",
+      "dashboard": "Dashboard",
+      "medicalHistory": "Medical History",
+      "testResults": "Test Results",
+      "appointments": "Appointments",
+      "userProfile": "User Profile",
+      "settings": "Settings",
+      "signOut": "Sign Out",
+      "emergencyContact": "Emergency Contact"
+    },
+    "topBar": {
+      "searchPlaceholder": "Search medical records...",
+      "notificationsAria": "Notifications",
+      "helpAria": "Help",
+      "avatarAlt": "User avatar"
+    },
+    "personal": {
+      "photoAlt": "Patient photo",
+      "name": "John Doe",
+      "email": "j.doe{'@'}healthportal.com",
+      "patientId": "Patient ID: #8829-XP",
+      "activeStatus": "Active Status",
+      "editProfile": "Edit Profile",
+      "languageLabel": "Language",
+      "birthdate": "May 12, 1985",
+      "bloodType": "O Positive (O+)",
+      "phone": "+1 (555) 234-5678",
+      "location": "Seattle, WA",
+      "fieldBirthdate": "BIRTHDATE",
+      "fieldBloodType": "BLOOD TYPE",
+      "fieldPhone": "PHONE",
+      "fieldLocation": "LOCATION"
+    },
+    "strength": {
+      "title": "Profile Strength",
+      "percent": "85%",
+      "hint": "Add your emergency contact to reach 100% security coverage.",
+      "cta": "Complete now"
+    },
+    "medical": {
+      "title": "Medical Results",
+      "viewAll": "View all medical history",
+      "tableDate": "DATE",
+      "tableResult": "RESULT / DIAGNOSIS",
+      "tableStatus": "STATUS",
+      "tableDetails": "DETAILS",
+      "viewDetails": "View Details",
+      "statusCompleted": "Completed",
+      "statusDiagnosed": "Diagnosed",
+      "rows": {
+        "glucose": {
+          "date": "Oct 24, 2023",
+          "title": "Glucose (Fasting)",
+          "subtitle": "Lab Result • LabCorp Diagnostics"
+        },
+        "hypertension": {
+          "date": "Jan 15, 2023",
+          "title": "Hypertension",
+          "subtitle": "Clinical Diagnosis • Dr. Sarah Wilson"
+        },
+        "lipid": {
+          "date": "Oct 12, 2023",
+          "title": "Lipid Panel",
+          "subtitle": "Lab Result • General Health Screening"
+        },
+        "asthma": {
+          "date": "Jun 10, 2022",
+          "title": "Mild Seasonal Asthma",
+          "subtitle": "Clinical Diagnosis • Pulmonology Dept."
+        }
+      }
+    }
+  },
   "searchResults": {
     "headerTitle": "Clinics near you",
     "filter": "Filter",

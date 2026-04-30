@@ -27,7 +27,7 @@ const navItems = computed(() => {
   return [
     { label: t('nav.home'), icon: ['fas', 'house'], to: '/', active: path === '/' || path === '/home' },
     { label: t('nav.search'), icon: ['fas', 'magnifying-glass'], to: '/search-results', active: path.startsWith('/search-results') },
-    { label: t('nav.profile'), icon: ['fas', 'circle-user'], to: '/auth/login', active: path.startsWith('/auth') },
+    { label: t('nav.profile'), icon: ['fas', 'circle-user'], to: '/profile', active: path.startsWith('/profile') },
   ]
 })
 </script>

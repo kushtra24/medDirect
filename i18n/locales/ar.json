@@ -130,6 +130,83 @@
       }
     }
   },
+  "patientProfile": {
+    "seoTitle": "ملفك الشخصي",
+    "sidebar": {
+      "brandTitle": "المركز الطبي",
+      "brandSubtitle": "التميز السريري",
+      "dashboard": "لوحة التحكم",
+      "medicalHistory": "السجل الطبي",
+      "testResults": "نتائج الفحوصات",
+      "appointments": "المواعيد",
+      "userProfile": "الملف الشخصي",
+      "settings": "الإعدادات",
+      "signOut": "تسجيل الخروج",
+      "emergencyContact": "جهة اتصال للطوارئ"
+    },
+    "topBar": {
+      "searchPlaceholder": "البحث في السجلات الطبية...",
+      "notificationsAria": "الإشعارات",
+      "helpAria": "مساعدة",
+      "avatarAlt": "صورة المستخدم"
+    },
+    "personal": {
+      "photoAlt": "صورة المريض",
+      "name": "محمد علي",
+      "email": "m.ali{'@'}healthportal.com",
+      "patientId": "معرف المريض: #8829-XP",
+      "activeStatus": "نشط",
+      "editProfile": "تعديل الملف",
+      "languageLabel": "اللغة",
+      "birthdate": "١٢ مايو ١٩٨٥",
+      "bloodType": "O موجب (O+)",
+      "phone": "+964 750 000 0000",
+      "location": "أربيل، العراق",
+      "fieldBirthdate": "تاريخ الميلاد",
+      "fieldBloodType": "فصيلة الدم",
+      "fieldPhone": "الهاتف",
+      "fieldLocation": "الموقع"
+    },
+    "strength": {
+      "title": "اكتمال الملف",
+      "percent": "٨٥٪",
+      "hint": "أضف جهة اتصال للطوارئ للوصول إلى ١٠٠٪ من تغطية الأمان.",
+      "cta": "أكمل الآن"
+    },
+    "medical": {
+      "title": "النتائج الطبية",
+      "viewAll": "عرض كل السجل الطبي",
+      "tableDate": "التاريخ",
+      "tableResult": "النتيجة / التشخيص",
+      "tableStatus": "الحالة",
+      "tableDetails": "التفاصيل",
+      "viewDetails": "عرض التفاصيل",
+      "statusCompleted": "مكتمل",
+      "statusDiagnosed": "مشخّص",
+      "rows": {
+        "glucose": {
+          "date": "٢٤ أكتوبر ٢٠٢٣",
+          "title": "الجلوكوز (صائم)",
+          "subtitle": "نتيجة مخبرية • LabCorp Diagnostics"
+        },
+        "hypertension": {
+          "date": "١٥ يناير ٢٠٢٣",
+          "title": "ارتفاع ضغط الدم",
+          "subtitle": "تشخيص سريري • د. سارة ويلسون"
+        },
+        "lipid": {
+          "date": "١٢ أكتوبر ٢٠٢٣",
+          "title": "لوحة الدهون",
+          "subtitle": "نتيجة مخبرية • فحص الصحة العامة"
+        },
+        "asthma": {
+          "date": "١٠ يونيو ٢٠٢٢",
+          "title": "ربو موسمي خفيف",
+          "subtitle": "تشخيص سريري • قسم الأمراض الصدرية"
+        }
+      }
+    }
+  },
   "searchResults": {
     "headerTitle": "عيادات قريبة منك",
     "filter": "تصفية",
