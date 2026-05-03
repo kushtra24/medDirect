@@ -113,6 +113,7 @@ const props = defineProps({
 const emit = defineEmits(['update:open', 'print', 'downloadPdf'])
 
 const { t } = useI18n()
+const { openSlipNewTab } = useLabReportSlip()
 
 const titleId = useId()
 const descId = useId()
@@ -129,10 +130,12 @@ function close() {
 
 function onPrint() {
   emit('print')
+  openSlipNewTab({ autoprint: true })
 }
 
 function onDownloadPdf() {
   emit('downloadPdf')
+  openSlipNewTab({ autoprint: true })
 }
 
 watch(

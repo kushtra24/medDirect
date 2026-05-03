@@ -670,6 +670,72 @@
       "downloadPdf": "داگرتنی PDF"
     }
   },
+  "labReportSlip": {
+    "seoTitle": "ڕاپۆرتی تاقیگە",
+    "nonPrintHint": "ئەمتاب ڕاپۆرتەکەی پیشاندەدات بۆ چاپ. چاپ → پاشەکەوت وەک PDF بەکاربهێنە بۆ داگرتن.",
+    "institutionName": "دۆزینەوەی پێشکەوتنی کلینیکی",
+    "institutionTagline": "وردی دۆزینەوە. پاراستنی نەخۆش.",
+    "officialReportTitle": "ڕاپۆرتی فەرمی تاقیگە",
+    "refIdLabel": "ژ.ڕ:",
+    "refId": "CED-2024-98210",
+    "patientNameLabel": "ناوی نەخۆش",
+    "patientName": "جولیان ویلیامز",
+    "dobLabel": "ڕۆژی لەدایکبوون",
+    "dobDisplay": "١٤ی ئایاری ١٩٨٨ (٣٥ ساڵ)",
+    "genderLabel": "ڕەگەز",
+    "gender": "مێ",
+    "patientIdLabel": "ناسنامەی نەخۆش",
+    "patientId": "LAB-98210",
+    "collectionLabel": "بەرواری کۆکردنەوە",
+    "collectionDisplay": "٢٤ی تشرینی یەکەمی ٢٠٢٣، ٠٨:٤٥ بەرەنگەبوون",
+    "reportStatusLabel": "دۆخی ڕاپۆرت",
+    "reportStatusFinal": "کۆتایی",
+    "table": {
+      "testDescription": "پێناسەی تاقیکردنەوە",
+      "result": "ئەنجام",
+      "units": "یەکەکان",
+      "referenceRange": "مەودای ئاماژە",
+      "status": "دۆخ"
+    },
+    "rows": {
+      "glucose": {
+        "name": "گلوکۆزی بە ڕێژە (پاشماوە)",
+        "result": "112",
+        "units": "mg/dL",
+        "reference": "70 - 99"
+      },
+      "hba1c": {
+        "name": "هێموگلۆبینی A1c",
+        "result": "5.4",
+        "units": "%",
+        "reference": "4.0 - 5.6"
+      },
+      "creatinine": {
+        "name": "کرێاتینین (پاشماوە)",
+        "result": "0.95",
+        "units": "mg/dL",
+        "reference": "0.70 - 1.30"
+      }
+    },
+    "badge": {
+      "high": "بەرز",
+      "normal": "ئاسایی"
+    },
+    "onlineTitle": "دەستگەیشتن بە ئەنجامەکان لە ئینتەرنێت",
+    "onlineBodyStart": "QR سکێن بکە یان سەردانی ",
+    "onlineVerifyUrl": "ClinicDirect.com/verify",
+    "onlineBodyEnd": " بکە بۆ بینینی وەشانی دیجیتاڵی پشتڕاستکراو.",
+    "securePinLabel": "پینی دەستگەیشتنی ئاسایش",
+    "pinDisplay": "882931",
+    "disclaimerTitle": "ڕەتکردنەوەی کلینیکی",
+    "disclaimerBody": "ئەم ڕاپۆرتە بۆ پسپۆڕانی تەندروستییە و دەبێت لە چوارچێوەی مێژووی کلینیکی نەخۆش خوێندرێتەوە. ئەنجامەکان دەتوانن بگۆڕدرێت بەپێی شێوازی کۆکردنەوە و کات و هۆکارەکانی لەش.",
+    "signerName": "د. ئالیستێر تۆرن، PhD",
+    "signerRole": "بەرپرسی سەرەکی تاقیگە",
+    "signatureAlt": "واژووکردنی پیشەیی",
+    "footerAccreditation": "پەسەندکردن: CLIA-982-102-CED / ISO 15189:2022",
+    "footerLocation": "شوێنی تاقیگە: ٤٠٢ مێدیکاڵ پلازا، سوئیت ١٠",
+    "footerPage": "لاپەڕە ١ لە ١"
+  },
   "searchPatientPage": {
     "seoTitle": "گەڕان بە نەخۆش",
     "backAria": "گەڕانەوە بۆ داشبۆرد",

@@ -670,6 +670,72 @@
       "downloadPdf": "تنزيل نسخة PDF"
     }
   },
+  "labReportSlip": {
+    "seoTitle": "تقرير المختبر",
+    "nonPrintHint": "يعرض هذا التبويب التقرير للطباعة. استخدم طباعة → حفظ كـ PDF للتنزيل، أو للطباعة على الورق.",
+    "institutionName": "تشخيصات التميز السريري",
+    "institutionTagline": "دقة تشخيصية. سلامة المريض.",
+    "officialReportTitle": "تقرير مختبر رسمي",
+    "refIdLabel": "المرجع:",
+    "refId": "CED-2024-98210",
+    "patientNameLabel": "اسم المريض",
+    "patientName": "جوليان ويليامز",
+    "dobLabel": "تاريخ الميلاد",
+    "dobDisplay": "١٤ مايو ١٩٨٨ (٣٥ سنة)",
+    "genderLabel": "الجنس",
+    "gender": "أنثى",
+    "patientIdLabel": "معرف المريض",
+    "patientId": "LAB-98210",
+    "collectionLabel": "تاريخ الجمع",
+    "collectionDisplay": "٢٤ أكتوبر ٢٠٢٣، ٠٨:٤٥ ص",
+    "reportStatusLabel": "حالة التقرير",
+    "reportStatusFinal": "نهائي",
+    "table": {
+      "testDescription": "وصف الفحص",
+      "result": "النتيجة",
+      "units": "الوحدات",
+      "referenceRange": "المدى المرجعي",
+      "status": "الحالة"
+    },
+    "rows": {
+      "glucose": {
+        "name": "جلوكوز صائم (مصل)",
+        "result": "112",
+        "units": "mg/dL",
+        "reference": "70 - 99"
+      },
+      "hba1c": {
+        "name": "الهيموغلوبين السكري (HbA1c)",
+        "result": "5.4",
+        "units": "%",
+        "reference": "4.0 - 5.6"
+      },
+      "creatinine": {
+        "name": "الكرياتينين (مصل)",
+        "result": "0.95",
+        "units": "mg/dL",
+        "reference": "0.70 - 1.30"
+      }
+    },
+    "badge": {
+      "high": "مرتفع",
+      "normal": "طبيعي"
+    },
+    "onlineTitle": "الوصول إلى النتائج عبر الإنترنت",
+    "onlineBodyStart": "امسح الرمز أو زر ",
+    "onlineVerifyUrl": "ClinicDirect.com/verify",
+    "onlineBodyEnd": " لعرض النسخة الرقمية الموثقة.",
+    "securePinLabel": "رمز الوصول الآمن",
+    "pinDisplay": "882931",
+    "disclaimerTitle": "إخلاء مسؤولية سريرية",
+    "disclaimerBody": "هذا التقرير مخصص للمهنيين الصحيين ويجب تفسيره في سياق التاريخ السريري للمريض. قد تختلف نتائج المختبر وفقاً لطرق الجمع والتوقيت والعوامل الفسيولوجية. يُنصح بالربط السريري.",
+    "signerName": "د. أليستير ثورن، دكتوراه",
+    "signerRole": "مدير المختبر الرئيسي",
+    "signatureAlt": "توقيع احترافي بالحبر الكحلي",
+    "footerAccreditation": "الاعتماد: CLIA-982-102-CED / ISO 15189:2022",
+    "footerLocation": "موقع المختبر: 402 ميديكال بلازا، جناح 10، المنطقة الحيوية",
+    "footerPage": "صفحة ١ من ١"
+  },
   "searchPatientPage": {
     "seoTitle": "بحث عن مريض",
     "backAria": "العودة إلى لوحة التحكم",

@@ -670,6 +670,72 @@
       "downloadPdf": "Download PDF copy"
     }
   },
+  "labReportSlip": {
+    "seoTitle": "Laboratory report",
+    "nonPrintHint": "This tab shows your printable report. Use Print → Save as PDF to download, or print to paper.",
+    "institutionName": "Clinical Excellence Diagnostics",
+    "institutionTagline": "Diagnostic accuracy. Patient integrity.",
+    "officialReportTitle": "Official laboratory report",
+    "refIdLabel": "Ref ID:",
+    "refId": "CED-2024-98210",
+    "patientNameLabel": "Patient name",
+    "patientName": "Julianne Williams",
+    "dobLabel": "Date of birth",
+    "dobDisplay": "14 May 1988 (35Y)",
+    "genderLabel": "Gender",
+    "gender": "Female",
+    "patientIdLabel": "Patient ID",
+    "patientId": "LAB-98210",
+    "collectionLabel": "Collection date",
+    "collectionDisplay": "24 Oct 2023, 08:45 AM",
+    "reportStatusLabel": "Report status",
+    "reportStatusFinal": "Final",
+    "table": {
+      "testDescription": "Test description",
+      "result": "Result",
+      "units": "Units",
+      "referenceRange": "Reference range",
+      "status": "Status"
+    },
+    "rows": {
+      "glucose": {
+        "name": "Glucose, fasting (serum)",
+        "result": "112",
+        "units": "mg/dL",
+        "reference": "70 - 99"
+      },
+      "hba1c": {
+        "name": "Hemoglobin A1c (HbA1c)",
+        "result": "5.4",
+        "units": "%",
+        "reference": "4.0 - 5.6"
+      },
+      "creatinine": {
+        "name": "Creatinine (serum)",
+        "result": "0.95",
+        "units": "mg/dL",
+        "reference": "0.70 - 1.30"
+      }
+    },
+    "badge": {
+      "high": "High",
+      "normal": "Normal"
+    },
+    "onlineTitle": "Access results online",
+    "onlineBodyStart": "Scan the code or visit ",
+    "onlineVerifyUrl": "ClinicDirect.com/verify",
+    "onlineBodyEnd": " to view the authenticated digital version.",
+    "securePinLabel": "Secure access PIN",
+    "pinDisplay": "882931",
+    "disclaimerTitle": "Clinical disclaimer",
+    "disclaimerBody": "This report is intended for medical professionals and should be interpreted in the context of the patient's clinical history. Laboratory results may vary based on collection methods, timing, and physiological factors. Clinical correlation is recommended.",
+    "signerName": "Dr. Alistair Thorne, PhD",
+    "signerRole": "Chief laboratory director",
+    "signatureAlt": "Professional signature in navy ink",
+    "footerAccreditation": "Accreditation: CLIA-982-102-CED / ISO 15189:2022",
+    "footerLocation": "Lab location: 402 Medical Plaza, Suite 10, Bio-District",
+    "footerPage": "Page 1 of 1"
+  },
   "searchPatientPage": {
     "seoTitle": "Search patient",
     "backAria": "Back to dashboard",
