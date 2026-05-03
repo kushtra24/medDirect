@@ -75,6 +75,12 @@ import {
   faLanguage,
   faXmark,
   faUpload,
+  faFingerprint,
+  faFileLines,
+  faUpRightFromSquare,
+  faSave,
+  faIdCard,
+  faNotesMedical,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -152,6 +158,12 @@ library.add(
   faLanguage,
   faXmark,
   faUpload,
+  faFingerprint,
+  faFileLines,
+  faUpRightFromSquare,
+  faSave,
+  faIdCard,
+  faNotesMedical,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

@@ -2,62 +2,7 @@
   <div
     class="bg-surface font-body-md text-on-surface antialiased min-h-dvh flex flex-col pb-20 md:pb-0"
   >
-    <header
-      class="bg-white dark:bg-slate-900 full-width top-0 sticky z-50 border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none font-manrope antialiased text-sm"
-    >
-      <div
-        class="flex justify-between items-center w-full px-6 md:px-12 h-16 max-w-screen-2xl mx-auto"
-      >
-        <div class="flex items-center gap-8">
-          <span
-            class="text-xl font-extrabold tracking-tight text-blue-900 dark:text-blue-500 uppercase"
-          >{{ t('brand.name') }}</span>
-          <nav class="hidden md:flex items-center gap-6">
-            <!-- <a
-              class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-200 active:scale-[0.98] cursor-pointer"
-              href="#"
-            >{{ t('controlPanel.nav.findCare') }}</a>
-            <a
-              class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-200 active:scale-[0.98] cursor-pointer"
-              href="#"
-            >{{ t('controlPanel.nav.specialists') }}</a>
-            <a
-              class="text-slate-600 dark:text-slate-400 font-medium hover:text-teal-600 dark:hover:text-teal-300 transition-all duration-200 active:scale-[0.98] cursor-pointer"
-              href="#"
-            >{{ t('controlPanel.nav.insurance') }}</a> -->
-            <a
-              class="text-blue-900 dark:text-blue-400 font-bold border-b-2 border-blue-900 dark:border-blue-400 pb-1 active:scale-[0.98] cursor-pointer"
-              href="#"
-            >{{ t('controlPanel.nav.myDashboard') }}</a>
-          </nav>
-        </div>
-        <div class="flex items-center gap-4">
-          <button
-            type="button"
-            class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200"
-            :aria-label="t('controlPanel.notificationsAria')"
-          >
-            <FontAwesomeIcon icon="bell" class="text-lg" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200"
-            :aria-label="t('controlPanel.settingsAria')"
-          >
-            <FontAwesomeIcon icon="gear" class="text-lg" aria-hidden="true" />
-          </button>
-          <div
-            class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary-container shrink-0"
-          >
-            <img
-              :alt="t('controlPanel.profileAlt')"
-              class="w-full h-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVK97OtNxxSoN6rN6uT_FGP_fffGYWgMmPnYA8CnAoX7_Dx02aei6oT8WmE0T0-BrhQKA0P19vRJcZCZlhkrd9eRhCaLQVNg_7PmN-us6cFjCsDcxL8ssIqTglWb2Zo0v2PlQwBF3yF2okERjh8wuvwvbHxoq42MXoqKtDn6viyEEH2M0FB9uRRpAW7Gy5FmtBMubY_x0b40RQph1S2PrkDnMYBljFheHRFO0GHQo7ugfaw-plW5sOJx1aC_L5uEAlWUZOp48XuH8"
-            >
-          </div>
-        </div>
-      </div>
-    </header>
+    <ControlPanelHeader />
 
     <main
       class="max-w-screen-2xl mx-auto px-6 md:px-12 py-8 grid grid-cols-1 md:grid-cols-12 gap-8 flex-1 w-full"
@@ -98,12 +43,12 @@
                 <p class="font-body-sm font-semibold text-on-surface">
                   {{ t('controlPanel.profileStrength.hoursTitle') }}
                 </p>
-                <button
-                  type="button"
-                  class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide"
+                <NuxtLink
+                  to="/control-panel/edit-clinic"
+                  class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide inline-block"
                 >
                   {{ t('controlPanel.profileStrength.hoursCta') }}
-                </button>
+                </NuxtLink>
               </div>
             </div>
             <div class="flex items-start gap-3 p-3 bg-surface rounded-lg">
@@ -112,12 +57,12 @@
                 <p class="font-body-sm font-semibold text-on-surface">
                   {{ t('controlPanel.profileStrength.photosTitle') }}
                 </p>
-                <button
-                  type="button"
-                  class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide"
+                <NuxtLink
+                  to="/control-panel/edit-clinic"
+                  class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide inline-block"
                 >
                   {{ t('controlPanel.profileStrength.photosCta') }}
-                </button>
+                </NuxtLink>
               </div>
             </div>
           </div>
@@ -154,7 +99,7 @@
           </div>
           <div class="flex gap-3">
             <NuxtLink
-              to="/control-panel/new-patient"
+              to="/control-panel/add-new-patient"
               class="px-6 py-2.5 bg-tertiary text-on-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center"
             >
               {{ t('controlPanel.newPatient') }}
@@ -213,9 +158,12 @@
         <div class="bg-white dark:bg-slate-900 rounded-xl border border-outline-variant overflow-hidden">
           <div class="p-6 border-b border-outline-variant flex justify-between items-center">
             <h3 class="font-h3 text-secondary">{{ t('controlPanel.patientLogs.title') }}</h3>
-            <button type="button" class="text-tertiary font-button text-sm hover:underline">
+            <NuxtLink
+              to="/control-panel/search-patient"
+              class="text-tertiary font-button text-sm hover:underline"
+            >
               {{ t('controlPanel.patientLogs.viewAll') }}
-            </button>
+            </NuxtLink>
           </div>
           <div class="divide-y divide-outline-variant">
             <div class="p-6 flex gap-4">
@@ -292,38 +240,6 @@
         </div>
       </section>
     </main>
-
-    <nav
-      class="fixed bottom-0 left-0 right-0 w-full h-16 flex justify-around items-center px-4 pb-safe md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-50"
-      :aria-label="t('controlPanel.bottomNav.ariaLabel')"
-    >
-      <div
-        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 transition-transform duration-300 ease-in-out active:bg-slate-50 dark:active:bg-slate-800 rounded-lg px-2 py-1"
-      >
-        <FontAwesomeIcon icon="house" class="text-xl mb-0.5" aria-hidden="true" />
-        <span class="text-[10px] font-semibold font-manrope uppercase tracking-wider">{{ t('controlPanel.bottomNav.home') }}</span>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 transition-transform duration-300 ease-in-out active:bg-slate-50 dark:active:bg-slate-800 rounded-lg px-2 py-1"
-      >
-        <FontAwesomeIcon icon="magnifying-glass" class="text-xl mb-0.5" aria-hidden="true" />
-        <span class="text-[10px] font-semibold font-manrope uppercase tracking-wider">{{ t('controlPanel.bottomNav.search') }}</span>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center text-blue-900 dark:text-blue-400 scale-110 transition-transform duration-300 ease-in-out active:bg-slate-50 dark:active:bg-slate-800 rounded-lg px-2 py-1"
-      >
-        <FontAwesomeIcon icon="calendar-days" class="text-xl mb-0.5" aria-hidden="true" />
-        <span class="text-[10px] font-semibold font-manrope uppercase tracking-wider">{{
-          t('controlPanel.bottomNav.appointments')
-        }}</span>
-      </div>
-      <div
-        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 transition-transform duration-300 ease-in-out active:bg-slate-50 dark:active:bg-slate-800 rounded-lg px-2 py-1"
-      >
-        <FontAwesomeIcon icon="circle-user" class="text-xl mb-0.5" aria-hidden="true" />
-        <span class="text-[10px] font-semibold font-manrope uppercase tracking-wider">{{ t('controlPanel.bottomNav.profile') }}</span>
-      </div>
-    </nav>
   </div>
 </template>
 

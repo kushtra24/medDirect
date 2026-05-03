@@ -325,6 +325,7 @@
   },
   "controlPanel": {
     "seoTitle": "داشبۆردی هاوبەش",
+    "navAria": "گەڕانی سەرەکی هاوبەش",
     "nav": {
       "findCare": "چاودێری بدۆزەوە",
       "specialists": "پسپۆڕان",
@@ -398,8 +399,8 @@
       "profile": "پڕۆفایل"
     }
   },
-  "newPatientPage": {
-    "seoTitle": "زیادکردنی زانیاری",
+  "editClinicPage": {
+    "seoTitle": "دەستکاری کلینیک",
     "backAria": "گەڕانەوە بۆ داشبۆرد",
     "searchPlaceholder": "گەڕان بە کلینیک…",
     "notificationsAria": "ئاگادارکردنەوەکان",
@@ -407,8 +408,8 @@
     "profileAlt": "وێنەی پڕۆفایلی پسپۆڕی پزیشکی",
     "profileName": "د. سارا چێن",
     "profileRole": "بەرپرسی تاقیگە",
-    "title": "زیادکردنی زانیاری",
-    "subtitle": "پارامێتەرە نوێکان بۆ تۆڕی تاقیگە دیاری بکە.",
+    "title": "دەستکاری کلینیک",
+    "subtitle": "پڕۆفایلی کلینیک، خزمەتگوزارییەکان، کاتەکان، زانیاری پەیوەندی و براند نوێ بکەوە.",
     "requestPublish": "داوای بڵاوکردنەوە",
     "basicInfo": {
       "sectionTitle": "زانیاری بنەڕەت",
@@ -493,5 +494,140 @@
       "german": "ئاڵمانی",
       "hindi": "هیندی"
     }
+  },
+  "addNewPatientPage": {
+    "seoTitle": "نەخۆشی نوێ زیاد بکە",
+    "notificationsAria": "ئاگادارکردنەوەکان",
+    "helpAria": "یارمەتی",
+    "profileName": "د. سارا جێنکینز",
+    "profileRole": "بەڕێوەبەر",
+    "profileAlt": "وێنەی پڕۆفایلی بەڕێوەبەر",
+    "breadcrumbPatients": "نەخۆشەکان",
+    "breadcrumbCurrent": "نەخۆشی نوێ زیاد بکە",
+    "title": "نەخۆشی نوێ زیاد بکە",
+    "subtitle": "نەخۆشێکی نوێ تۆمار بکە لە سیستەمی {brand}.",
+    "personal": {
+      "sectionTitle": "زانیاری کەسی"
+    },
+    "identification": {
+      "sectionTitle": "ناسنامە"
+    },
+    "medical": {
+      "sectionTitle": "ئەنجامی پزیشکی"
+    },
+    "contact": {
+      "sectionTitle": "زانیاری پەیوەندی"
+    },
+    "form": {
+      "name": "ناو",
+      "namePlaceholder": "نموونە: جۆن",
+      "surname": "ناوی خێزان",
+      "surnamePlaceholder": "نموونە: دۆ",
+      "dob": "ڕۆژی لەدایکبوون",
+      "gender": "ڕەگەز",
+      "genderMale": "نێر",
+      "genderFemale": "مێ",
+      "genderOther": "هیتر",
+      "nationalId": "ناسنامەی نیشتمانی / پاسپۆرت",
+      "nationalIdPlaceholder": "نموونە: A12345678",
+      "insuranceProvider": "دەستەی ئینشۆڕانس",
+      "selectProvider": "دەستە هەڵبژێرە",
+      "policyNumber": "ژمارەی پۆلیسی",
+      "policyPlaceholder": "نموونە: POL-987-221",
+      "bloodGroup": "گروپی خوێن",
+      "selectBloodGroup": "گروپ هەڵبژێرە",
+      "allergies": "هەستیارییە ناسراوەکان",
+      "allergiesPlaceholder": "نموونە: پێنسیلین، بادەم…",
+      "chronic": "نەخۆشییە درێژخایەنەکان",
+      "chronicPlaceholder": "نموونە: فشاری خوێن، شەکرە…",
+      "phone": "ژمارەی تەلەفۆن",
+      "phonePlaceholder": "555-0123",
+      "email": "ئیمەیڵ",
+      "emailPlaceholder": "john.doe{'@'}example.com",
+      "countryCode": "+1"
+    },
+    "insurance": {
+      "medicarePlus": "MediCare Plus",
+      "globalHealth": "Global Health Shield",
+      "vitalityBlue": "Vitality Blue",
+      "other": "هیتر"
+    },
+    "privacyNoteBold": "تێبینی تایبەتمەندی:",
+    "privacyNoteBody": "زانیاری پەیوەندی نەخۆش بە ئارامی هەڵدەگیرێت بەپێی یاساکانی تەندروستی ناوخۆ. بیرخەرەوەکان بۆ ئەم پەیوەندیانە دەنێردرێن.",
+    "cancel": "هەڵوەشاندنەوە",
+    "savePatient": "نەخۆش پاشەکەوت بکە",
+    "footer": "© {year} دەرگای {brand}. هەموو مافەکان پارێزراون. پێشکەوتنی کلینیکی لە ڕێگەی تەکنەلۆژیا."
+  },
+  "searchPatientPage": {
+    "seoTitle": "گەڕان بە نەخۆش",
+    "backAria": "گەڕانەوە بۆ داشبۆرد",
+    "portalBrand": "دەرگای LabCore",
+    "notificationsAria": "ئاگادارکردنەوەکان",
+    "settingsAria": "ڕێکخستنەکان",
+    "profileAlt": "کارمەندی تاقیگە لە جلوبەرگی کلینیکی",
+    "title": "گەڕان بە نەخۆش",
+    "subtitle": "تۆمارە کلینیکییەکانی نەخۆشە تۆمارکراوەکان بگەڕێ و بەڕێوەیان ببە.",
+    "form": {
+      "patientName": "ناوی نەخۆش",
+      "patientNamePlaceholder": "نموونە: جۆن",
+      "surname": "ناوی خێزان",
+      "surnamePlaceholder": "نموونە: دۆ",
+      "birthdate": "ڕۆژی لەدایکبوون",
+      "gender": "ڕەگەز",
+      "selectGender": "ڕەگەز هەڵبژێرە",
+      "male": "نێر",
+      "female": "مێ",
+      "other": "هیتر",
+      "search": "گەڕان بە نەخۆش"
+    },
+    "patient": {
+      "initials": "JW",
+      "fullName": "جولیان ویلیامز",
+      "dobDisplay": "١٤ی ئایاری ١٩٨٨ (٣٥ ساڵ)",
+      "genderLabel": "مێ",
+      "idPrefix": "ناسنامە:",
+      "idValue": "LAB-98210"
+    },
+    "newLabOrder": "داواکاری تاقیگەی نوێ",
+    "historyTitle": "مێژووی کلینیکی نوێ",
+    "showingRecords": "پیشاندانی {count} تۆمار",
+    "table": {
+      "testDate": "بەرواری تاقیکردنەوە",
+      "testType": "جۆری تاقیکردنەوە",
+      "status": "دۆخ",
+      "physician": "پزیشک",
+      "actions": "کردارەکان",
+      "viewReport": "بینینی ڕاپۆرت"
+    },
+    "statusCompleted": "تەواو",
+    "statusArchived": "ئەرشیف",
+    "rows": {
+      "cmp": {
+        "date": "٢٤ی تشرینی یەکەم ٢٠٢٣",
+        "title": "پانێلی مێتابۆلیزمی گشتگیر",
+        "subtitle": "پشکنینی ڕۆتین",
+        "physician": "د. ئێلێنا ڕۆدریگێز"
+      },
+      "lipid": {
+        "date": "١٢ی تشرینی یەکەم ٢٠٢٣",
+        "title": "پرۆفایلی لیپید",
+        "subtitle": "ڕۆژوو پێویستە",
+        "physician": "د. ئێلێنا ڕۆدریگێز"
+      },
+      "tsh": {
+        "date": "٠٥ی ئەیلوول ٢٠٢٣",
+        "title": "ھۆرمۆنی هاندانی قۆڕاسیی قۆڵامان (TSH)",
+        "subtitle": "دووبارەکردنەوە",
+        "physician": "د. سارا چێن"
+      },
+      "cbc": {
+        "date": "١٨ی حوزەیران ٢٠٢٣",
+        "title": "ژمێریاری خوێنی تەواو (CBC)",
+        "subtitle": "تەندروستی ساڵانە",
+        "physician": "د. ئێلێنا ڕۆدریگێز"
+      }
+    },
+    "lastUpdated": "دوایین نوێکردنەوە: ٢٤ی تشرینی یەکەم ٢٠٢٣ کاتژمێر ٢:٤٢ ئێوارە",
+    "viewFullRecord": "بینینی تۆماری پزیشکی تەواو"
   }
 }

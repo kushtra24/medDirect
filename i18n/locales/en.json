@@ -325,6 +325,7 @@
   },
   "controlPanel": {
     "seoTitle": "Partner dashboard",
+    "navAria": "Partner main navigation",
     "nav": {
       "findCare": "Find Care",
       "specialists": "Specialists",
@@ -398,8 +399,8 @@
       "profile": "Profile"
     }
   },
-  "newPatientPage": {
-    "seoTitle": "Add information",
+  "editClinicPage": {
+    "seoTitle": "Edit clinic",
     "backAria": "Back to dashboard",
     "searchPlaceholder": "Search clinics…",
     "notificationsAria": "Notifications",
@@ -407,11 +408,11 @@
     "profileAlt": "Medical professional profile",
     "profileName": "Dr. Sarah Chen",
     "profileRole": "Lab Director",
-    "title": "Add Information",
-    "subtitle": "Define new parameters for the laboratory network.",
+    "title": "Edit clinic",
+    "subtitle": "Update your clinic profile, services, hours, contact details, and branding.",
     "requestPublish": "Request to Publish",
     "basicInfo": {
-      "sectionTitle": "Basic Information",
+      "sectionTitle": "Basic Information", 
       "name": "Name",
       "namePlaceholder": "e.g. Metro Health Diagnostics Center",
       "description": "Description",
@@ -493,5 +494,140 @@
       "german": "German",
       "hindi": "Hindi"
     }
+  },
+  "addNewPatientPage": {
+    "seoTitle": "Add new patient",
+    "notificationsAria": "Notifications",
+    "helpAria": "Help",
+    "profileName": "Dr. Sarah Jenkins",
+    "profileRole": "Administrator",
+    "profileAlt": "Administrator profile photo",
+    "breadcrumbPatients": "Patients",
+    "breadcrumbCurrent": "Add new patient",
+    "title": "Add new patient",
+    "subtitle": "Register a new patient into the {brand} ecosystem.",
+    "personal": {
+      "sectionTitle": "Personal details"
+    },
+    "identification": {
+      "sectionTitle": "Identification"
+    },
+    "medical": {
+      "sectionTitle": "Medical results"
+    },
+    "contact": {
+      "sectionTitle": "Contact information"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "e.g. John",
+      "surname": "Surname",
+      "surnamePlaceholder": "e.g. Doe",
+      "dob": "Date of birth",
+      "gender": "Gender",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "genderOther": "Other",
+      "nationalId": "National ID / passport",
+      "nationalIdPlaceholder": "e.g. A12345678",
+      "insuranceProvider": "Insurance provider",
+      "selectProvider": "Select provider",
+      "policyNumber": "Policy number",
+      "policyPlaceholder": "e.g. POL-987-221",
+      "bloodGroup": "Blood group",
+      "selectBloodGroup": "Select group",
+      "allergies": "Known allergies",
+      "allergiesPlaceholder": "e.g. Penicillin, peanuts…",
+      "chronic": "Chronic conditions",
+      "chronicPlaceholder": "e.g. Hypertension, diabetes…",
+      "phone": "Phone number",
+      "phonePlaceholder": "555-0123",
+      "email": "Email address",
+      "emailPlaceholder": "john.doe{'@'}example.com",
+      "countryCode": "+1"
+    },
+    "insurance": {
+      "medicarePlus": "MediCare Plus",
+      "globalHealth": "Global Health Shield",
+      "vitalityBlue": "Vitality Blue",
+      "other": "Other"
+    },
+    "privacyNoteBold": "Privacy note:",
+    "privacyNoteBody": "Patient contact data is stored securely in compliance with local healthcare regulations. Automated appointment reminders will be sent to these contacts.",
+    "cancel": "Cancel",
+    "savePatient": "Save patient",
+    "footer": "© {year} {brand} portal. All rights reserved. Clinical excellence through technology."
+  },
+  "searchPatientPage": {
+    "seoTitle": "Search patient",
+    "backAria": "Back to dashboard",
+    "portalBrand": "LabCore Portal",
+    "notificationsAria": "Notifications",
+    "settingsAria": "Settings",
+    "profileAlt": "Laboratory staff member in clinical coat",
+    "title": "Search patient",
+    "subtitle": "Search and manage clinical records for registered patients.",
+    "form": {
+      "patientName": "Patient name",
+      "patientNamePlaceholder": "e.g. John",
+      "surname": "Surname",
+      "surnamePlaceholder": "e.g. Doe",
+      "birthdate": "Birthdate",
+      "gender": "Gender",
+      "selectGender": "Select gender",
+      "male": "Male",
+      "female": "Female",
+      "other": "Other",
+      "search": "Search patient"
+    },
+    "patient": {
+      "initials": "JW",
+      "fullName": "Julianne Williams",
+      "dobDisplay": "14 May 1988 (35 yrs)",
+      "genderLabel": "Female",
+      "idPrefix": "ID:",
+      "idValue": "LAB-98210"
+    },
+    "newLabOrder": "New lab order",
+    "historyTitle": "Recent clinical history",
+    "showingRecords": "Showing {count} records",
+    "table": {
+      "testDate": "Test date",
+      "testType": "Test type",
+      "status": "Status",
+      "physician": "Physician",
+      "actions": "Actions",
+      "viewReport": "View report"
+    },
+    "statusCompleted": "Completed",
+    "statusArchived": "Archived",
+    "rows": {
+      "cmp": {
+        "date": "Oct 24, 2023",
+        "title": "Comprehensive Metabolic Panel",
+        "subtitle": "Routine checkup",
+        "physician": "Dr. Elena Rodriguez"
+      },
+      "lipid": {
+        "date": "Oct 12, 2023",
+        "title": "Lipid profile",
+        "subtitle": "Fasting required",
+        "physician": "Dr. Elena Rodriguez"
+      },
+      "tsh": {
+        "date": "Sep 05, 2023",
+        "title": "Thyroid Stimulating Hormone (TSH)",
+        "subtitle": "Follow-up",
+        "physician": "Dr. Sarah Chen"
+      },
+      "cbc": {
+        "date": "Jun 18, 2023",
+        "title": "Complete Blood Count (CBC)",
+        "subtitle": "Annual wellness",
+        "physician": "Dr. Elena Rodriguez"
+      }
+    },
+    "lastUpdated": "Last updated: Oct 24, 2023 at 2:42 PM",
+    "viewFullRecord": "View full medical record"
   }
 }

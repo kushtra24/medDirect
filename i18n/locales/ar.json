@@ -325,6 +325,7 @@
   },
   "controlPanel": {
     "seoTitle": "لوحة شركاء",
+    "navAria": "التنقل الرئيسي للشركاء",
     "nav": {
       "findCare": "ابحث عن رعاية",
       "specialists": "التخصصات",
@@ -398,8 +399,8 @@
       "profile": "الملف"
     }
   },
-  "newPatientPage": {
-    "seoTitle": "إضافة معلومات",
+  "editClinicPage": {
+    "seoTitle": "تعديل العيادة",
     "backAria": "العودة إلى لوحة التحكم",
     "searchPlaceholder": "ابحث عن عيادات…",
     "notificationsAria": "الإشعارات",
@@ -407,8 +408,8 @@
     "profileAlt": "صورة الملف للعاملين في المجال الطبي",
     "profileName": "د. سارة تشين",
     "profileRole": "مديرة المختبر",
-    "title": "إضافة معلومات",
-    "subtitle": "عرّف معايير جديدة لشبكة المختبرات.",
+    "title": "تعديل العيادة",
+    "subtitle": "حدّث ملف العيادة والخدمات وساعات العمل وبيانات الاتصال والعلامة التجارية.",
     "requestPublish": "طلب النشر",
     "basicInfo": {
       "sectionTitle": "معلومات أساسية",
@@ -493,5 +494,140 @@
       "german": "الألمانية",
       "hindi": "الهندية"
     }
+  },
+  "addNewPatientPage": {
+    "seoTitle": "إضافة مريض جديد",
+    "notificationsAria": "الإشعارات",
+    "helpAria": "المساعدة",
+    "profileName": "د. سارة جنكينز",
+    "profileRole": "مسؤولة النظام",
+    "profileAlt": "صورة مسؤولة النظام",
+    "breadcrumbPatients": "المرضى",
+    "breadcrumbCurrent": "إضافة مريض جديد",
+    "title": "إضافة مريض جديد",
+    "subtitle": "تسجيل مريض جديد في منظومة {brand}.",
+    "personal": {
+      "sectionTitle": "البيانات الشخصية"
+    },
+    "identification": {
+      "sectionTitle": "الهوية"
+    },
+    "medical": {
+      "sectionTitle": "النتائج الطبية"
+    },
+    "contact": {
+      "sectionTitle": "معلومات الاتصال"
+    },
+    "form": {
+      "name": "الاسم",
+      "namePlaceholder": "مثال: جون",
+      "surname": "اسم العائلة",
+      "surnamePlaceholder": "مثال: دو",
+      "dob": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "genderMale": "ذكر",
+      "genderFemale": "أنثى",
+      "genderOther": "آخر",
+      "nationalId": "الهوية الوطنية / جواز السفر",
+      "nationalIdPlaceholder": "مثال: A12345678",
+      "insuranceProvider": "جهة التأمين",
+      "selectProvider": "اختر جهة التأمين",
+      "policyNumber": "رقم الوثيقة",
+      "policyPlaceholder": "مثال: POL-987-221",
+      "bloodGroup": "فصيلة الدم",
+      "selectBloodGroup": "اختر الفصيلة",
+      "allergies": "الحساسيات المعروفة",
+      "allergiesPlaceholder": "مثال: بنسلين، فول السوداني…",
+      "chronic": "الأمراض المزمنة",
+      "chronicPlaceholder": "مثال: ضغط، سكري…",
+      "phone": "رقم الهاتف",
+      "phonePlaceholder": "555-0123",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "john.doe{'@'}example.com",
+      "countryCode": "+1"
+    },
+    "insurance": {
+      "medicarePlus": "MediCare Plus",
+      "globalHealth": "Global Health Shield",
+      "vitalityBlue": "Vitality Blue",
+      "other": "أخرى"
+    },
+    "privacyNoteBold": "ملاحظة الخصوصية:",
+    "privacyNoteBody": "تُخزَّن بيانات تواصل المريض بأمان وفقاً للأنظمة الصحية المحلية. ستُرسل تذكيرات المواعيد تلقائياً إلى هذه العناوين.",
+    "cancel": "إلغاء",
+    "savePatient": "حفظ المريض",
+    "footer": "© {year} بوابة {brand}. جميع الحقوق محفوظة. التميز السريري عبر التكنولوجيا."
+  },
+  "searchPatientPage": {
+    "seoTitle": "بحث عن مريض",
+    "backAria": "العودة إلى لوحة التحكم",
+    "portalBrand": "بوابة LabCore",
+    "notificationsAria": "الإشعارات",
+    "settingsAria": "الإعدادات",
+    "profileAlt": "موظفة مختبر بمعطف سريري",
+    "title": "بحث عن مريض",
+    "subtitle": "ابحث وأدر السجلات السريرية للمرضى المسجلين.",
+    "form": {
+      "patientName": "اسم المريض",
+      "patientNamePlaceholder": "مثال: جون",
+      "surname": "اسم العائلة",
+      "surnamePlaceholder": "مثال: دو",
+      "birthdate": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "selectGender": "اختر الجنس",
+      "male": "ذكر",
+      "female": "أنثى",
+      "other": "آخر",
+      "search": "بحث عن مريض"
+    },
+    "patient": {
+      "initials": "JW",
+      "fullName": "جوليان ويليامز",
+      "dobDisplay": "١٤ مايو ١٩٨٨ (٣٥ سنة)",
+      "genderLabel": "أنثى",
+      "idPrefix": "المعرف:",
+      "idValue": "LAB-98210"
+    },
+    "newLabOrder": "طلب مختبر جديد",
+    "historyTitle": "السجل السريري الأخير",
+    "showingRecords": "عرض {count} سجلات",
+    "table": {
+      "testDate": "تاريخ الفحص",
+      "testType": "نوع الفحص",
+      "status": "الحالة",
+      "physician": "الطبيب",
+      "actions": "إجراءات",
+      "viewReport": "عرض التقرير"
+    },
+    "statusCompleted": "مكتمل",
+    "statusArchived": "مؤرشف",
+    "rows": {
+      "cmp": {
+        "date": "٢٤ أكتوبر ٢٠٢٣",
+        "title": "لوحة الأيض الشاملة",
+        "subtitle": "فحص دوري",
+        "physician": "د. إيلينا رودريغيز"
+      },
+      "lipid": {
+        "date": "١٢ أكتوبر ٢٠٢٣",
+        "title": "ملف الدهون",
+        "subtitle": "يتطلب صياماً",
+        "physician": "د. إيلينا رودريغيز"
+      },
+      "tsh": {
+        "date": "٠٥ سبتمبر ٢٠٢٣",
+        "title": "هرمون تحفيز الغدة الدرقية (TSH)",
+        "subtitle": "متابعة",
+        "physician": "د. سارة تشين"
+      },
+      "cbc": {
+        "date": "١٨ يونيو ٢٠٢٣",
+        "title": "تعداد الدم الكامل (CBC)",
+        "subtitle": "فحص سنوي",
+        "physician": "د. إيلينا رودريغيز"
+      }
+    },
+    "lastUpdated": "آخر تحديث: ٢٤ أكتوبر ٢٠٢٣ الساعة ٢:٤٢ م",
+    "viewFullRecord": "عرض السجل الطبي الكامل"
   }
 }
