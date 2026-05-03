@@ -655,7 +655,20 @@
     },
     "deleteAria": "Remove entry",
     "saveDraft": "Save as draft",
-    "finishReport": "Finish & generate report"
+    "finishReport": "Finish & generate report",
+    "finalizedOverlay": {
+      "title": "Results finalized",
+      "subtitle": "Report has been successfully encrypted",
+      "closeAria": "Close dialog",
+      "demoPatientName": "Alexander Richardson",
+      "demoBirth": "Born: May 12, 1988",
+      "securePinLabel": "Secure access PIN",
+      "pinHint": "Valid for 30 days. Provide this code to the patient.",
+      "qrHint": "Patient can scan to access results via the mobile app.",
+      "qrAlt": "QR code for secure results access",
+      "printSlip": "Print slip",
+      "downloadPdf": "Download PDF copy"
+    }
   },
   "searchPatientPage": {
     "seoTitle": "Search patient",

@@ -246,7 +246,8 @@
             </button>
             <button
               type="button"
-              class="bg-blue-900 hover:bg-blue-950 dark:bg-blue-800 dark:hover:bg-blue-900 text-white font-button py-4 px-10 rounded-full shadow-lg flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+              class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98]"
+              @click="finalizedOverlayOpen = true"
             >
               {{ t('labResultsPage.finishReport') }}
               <FontAwesomeIcon icon="file-lines" aria-hidden="true" />
@@ -255,10 +256,13 @@
         </section>
       </div>
     </main>
+
+    <ResultsFinalizedOverlay v-model:open="finalizedOverlayOpen" />
   </div>
 </template>
 
 <script setup>
+import ResultsFinalizedOverlay from '~/components/ResultsFinalizedOverlay.vue'
 const { t } = useI18n()
 
 const TEST_CATALOG_KEYS = [
@@ -280,6 +284,7 @@ const TEST_CATALOG_KEYS = [
 ]
 
 const testName = ref('')
+const finalizedOverlayOpen = ref(false)
 
 const labTestOptions = computed(() =>
   TEST_CATALOG_KEYS.map((key) => t(`labResultsPage.testCatalog.${key}`)),
