@@ -172,24 +172,24 @@
               </label>
             </div>
 
-            <button
+            <AppButton
               class="mt-md w-full bg-secondary text-on-secondary py-md rounded-lg font-button text-button hover:opacity-90 transition-opacity flex items-center justify-center gap-sm active:scale-[0.98]"
               type="submit"
             >
               {{ t('signup.submit') }}
               <FontAwesomeIcon icon="arrow-right" class="text-[20px]" aria-hidden="true" />
-            </button>
+            </AppButton>
           </form>
 
           <footer class="mt-xl pt-lg border-t border-outline-variant text-center">
             <p class="font-body-sm text-body-sm text-on-surface-variant">
               {{ t('signup.footerPrompt') }}
-              <NuxtLink
+              <AppButton
                 to="/auth/login"
                 class="text-secondary font-semibold hover:underline decoration-2 underline-offset-4 transition-all"
               >
                 {{ t('signup.footerLogin') }}
-              </NuxtLink>
+              </AppButton>
             </p>
           </footer>
         </div>

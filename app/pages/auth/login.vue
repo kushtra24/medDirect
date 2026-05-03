@@ -67,12 +67,12 @@
                 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase" for="login-password">
                   {{ t('login.passwordLabel') }}
                 </label>
-                <NuxtLink
+                <AppButton
                   to="#"
                   class="font-body-sm text-tertiary hover:underline shrink-0"
                 >
                   {{ t('login.forgotPassword') }}
-                </NuxtLink>
+                </AppButton>
               </div>
               <div class="relative group">
                 <FontAwesomeIcon
@@ -92,13 +92,13 @@
               </div>
             </div>
 
-            <button
+            <AppButton
               class="w-full bg-secondary text-on-secondary font-button text-button py-md rounded-lg hover:bg-on-secondary-fixed-variant transition-colors shadow-sm active:scale-[0.98] flex items-center justify-center gap-sm"
               type="submit"
             >
               {{ t('login.submit') }}
               <FontAwesomeIcon icon="right-to-bracket" aria-hidden="true" />
-            </button>
+            </AppButton>
           </form>
 
           <div class="relative flex items-center py-sm">
@@ -109,15 +109,15 @@
             <div class="flex-grow border-t border-outline-variant" />
           </div>
 
-          <NuxtLink
+          <AppButton
             to="/auth/signup"
             class="w-full bg-surface-container-low text-secondary border border-secondary/20 font-button text-button py-md rounded-lg hover:bg-secondary-fixed transition-colors active:scale-[0.98] flex items-center justify-center text-center"
           >
             {{ t('login.createAccount') }}
-          </NuxtLink>
+          </AppButton>
 
           <div class="pt-sm">
-            <NuxtLink
+            <AppButton
               to="/test-findings/find-test-results"
               class="w-full bg-tertiary-container text-on-tertiary-container border border-tertiary/30 font-button text-button py-md rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-sm group active:scale-[0.98]"
             >
@@ -128,11 +128,11 @@
                 class="text-tertiary opacity-0 group-hover:opacity-100 transition-opacity"
                 aria-hidden="true"
               />
-            </NuxtLink>
+            </AppButton>
           </div>
 
           <div class="pt-sm">
-            <NuxtLink
+            <AppButton
               to="/business"
               class="w-full bg-tertiary-container text-on-tertiary-container border border-tertiary/30 font-button text-button py-md rounded-lg hover:bg-tertiary-fixed transition-colors flex items-center justify-center gap-sm group active:scale-[0.98]"
             >
@@ -143,7 +143,7 @@
                 class="text-tertiary opacity-0 group-hover:opacity-100 transition-opacity"
                 aria-hidden="true"
               />
-            </NuxtLink>
+            </AppButton>
           </div>
         </div>
       </div>

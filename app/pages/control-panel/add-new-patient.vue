@@ -269,19 +269,19 @@
         </div>
 
         <div class="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-4 pt-8 border-t border-slate-200 dark:border-slate-700">
-          <NuxtLink
+          <AppButton
             to="/control-panel"
             class="px-8 py-3 rounded-lg font-button text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-transparent text-center"
           >
             {{ t('addNewPatientPage.cancel') }}
-          </NuxtLink>
-          <button
+          </AppButton>
+          <AppButton
             type="submit"
             class="px-10 py-3 rounded-lg font-button bg-tertiary text-on-tertiary hover:opacity-90 shadow-md shadow-tertiary/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
           >
             <FontAwesomeIcon icon="save" class="text-lg" aria-hidden="true" />
             {{ t('addNewPatientPage.savePatient') }}
-          </button>
+          </AppButton>
         </div>
       </form>
     </main>

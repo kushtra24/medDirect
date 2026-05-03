@@ -73,13 +73,13 @@
             </div>
 
             <div class="pt-md space-y-md">
-              <button
+              <AppButton
                 class="w-full bg-secondary text-on-secondary py-md px-lg rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2"
                 type="submit"
               >
                 <span>{{ t('testFindings.submit') }}</span>
                 <FontAwesomeIcon icon="arrow-right" aria-hidden="true" />
-              </button>
+              </AppButton>
               <div class="text-center">
                 <a
                   class="text-body-sm font-medium text-tertiary hover:underline decoration-tertiary/30 transition-all inline-flex items-center justify-center gap-1"

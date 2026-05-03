@@ -15,14 +15,14 @@
         @click.stop
       >
         <div class="bg-tertiary p-6 text-on-tertiary relative isolate">
-          <button
+          <AppButton
             type="button"
             class="absolute end-4 top-4 z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white/70 transition-colors hover:bg-white/10 hover:text-white"
             :aria-label="t('labResultsPage.finalizedOverlay.closeAria')"
             @click="close"
           >
             <FontAwesomeIcon icon="xmark" class="text-xl" aria-hidden="true" />
-          </button>
+          </AppButton>
           <div class="mx-auto max-w-sm px-6 text-center">
             <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/20" aria-hidden="true">
               <FontAwesomeIcon icon="circle-check" class="text-4xl text-white" />
@@ -74,26 +74,26 @@
               <p class="text-body-sm text-slate-600 dark:text-slate-400 italic">
                 {{ t('labResultsPage.finalizedOverlay.qrHint') }}
               </p>
-              <button
+              <AppButton
                 type="button"
                 class="w-full bg-tertiary hover:opacity-90 text-on-tertiary dark:bg-blue-800 dark:hover:bg-blue-900 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2 transition-all"
                 @click="onPrint"
               >
                 <FontAwesomeIcon icon="print" aria-hidden="true" />
                 {{ t('labResultsPage.finalizedOverlay.printSlip') }}
-              </button>
+              </AppButton>
             </div>
           </div>
         </div>
 
         <div class="bg-slate-50 dark:bg-slate-800/60 p-4 text-center border-t border-slate-100 dark:border-slate-700">
-          <button
+          <AppButton
             type="button"
             class="text-tertiary font-button text-sm hover:underline"
             @click="onDownloadPdf"
           >
             {{ t('labResultsPage.finalizedOverlay.downloadPdf') }}
-          </button>
+          </AppButton>
         </div>
       </div>
     </div>

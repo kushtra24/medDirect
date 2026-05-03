@@ -38,7 +38,7 @@
         </div>
 
         <div class="w-full space-y-md shrink-0">
-          <button
+          <AppButton
             type="button"
             class="group w-full flex items-center justify-between p-lg border border-outline-variant rounded-lg bg-white dark:bg-slate-900 hover:bg-secondary-container/10 transition-all duration-200 active:scale-[0.98]"
             :class="selected === 'ar' ? 'border-2 border-secondary bg-secondary-container/5' : ''"
@@ -67,9 +67,9 @@
               icon="circle-check"
               class="text-secondary text-lg"
             />
-          </button>
+          </AppButton>
 
-          <button
+          <AppButton
             type="button"
             class="group w-full flex items-center justify-between p-lg rounded-lg transition-all duration-200 active:scale-[0.98]"
             :class="
@@ -102,9 +102,9 @@
               icon="chevron-right"
               class="text-outline group-hover:text-tertiary transition-colors text-lg"
             />
-          </button>
+          </AppButton>
 
-          <button
+          <AppButton
             type="button"
             class="group w-full flex items-center justify-between p-lg border border-outline-variant rounded-lg bg-white dark:bg-slate-900 hover:bg-secondary-container/10 transition-all duration-200 active:scale-[0.98]"
             :class="selected === 'ku' ? 'border-2 border-secondary bg-secondary-container/5' : ''"
@@ -133,7 +133,7 @@
               icon="circle-check"
               class="text-secondary text-lg"
             />
-          </button>
+          </AppButton>
         </div>
 
         <div class="mt-auto py-xl text-center shrink-0">

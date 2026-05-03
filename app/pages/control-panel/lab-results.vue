@@ -148,13 +148,13 @@
                 >
               </div>
               <div class="col-span-full flex justify-end mt-2">
-                <button
+                <AppButton
                   type="button"
                   class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98]"
                 >
                   <FontAwesomeIcon icon="plus" class="text-lg" aria-hidden="true" />
                   {{ t('labResultsPage.testEntry.addResult') }}
-                </button>
+                </AppButton>
               </div>
             </div>
           </div>
@@ -191,9 +191,9 @@
                     </td>
                     <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.glucose.reference') }}</td>
                     <td class="px-6 py-4 text-end">
-                      <button type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
+                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
                         <FontAwesomeIcon icon="trash" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                     </td>
                   </tr>
                   <tr class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors">
@@ -209,9 +209,9 @@
                     </td>
                     <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.a1c.reference') }}</td>
                     <td class="px-6 py-4 text-end">
-                      <button type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
+                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
                         <FontAwesomeIcon icon="trash" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                     </td>
                   </tr>
                   <tr class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors">
@@ -227,9 +227,9 @@
                     </td>
                     <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.creatinine.reference') }}</td>
                     <td class="px-6 py-4 text-end">
-                      <button type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
+                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
                         <FontAwesomeIcon icon="trash" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                     </td>
                   </tr>
                 </tbody>
@@ -238,20 +238,20 @@
           </div>
 
           <div class="flex flex-col-reverse sm:flex-row justify-end items-stretch sm:items-center gap-4 mt-2">
-            <button
+            <AppButton
               type="button"
               class="text-slate-500 dark:text-slate-400 font-button hover:bg-slate-100 dark:hover:bg-slate-800 py-3 px-6 rounded-full transition-colors border border-transparent"
             >
               {{ t('labResultsPage.saveDraft') }}
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98]"
               @click="finalizedOverlayOpen = true"
             >
               {{ t('labResultsPage.finishReport') }}
               <FontAwesomeIcon icon="file-lines" aria-hidden="true" />
-            </button>
+            </AppButton>
           </div>
         </section>
       </div>
@@ -262,7 +262,6 @@
 </template>
 
 <script setup>
-import ResultsFinalizedOverlay from '~/components/ResultsFinalizedOverlay.vue'
 const { t } = useI18n()
 
 const TEST_CATALOG_KEYS = [

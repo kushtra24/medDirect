@@ -26,15 +26,15 @@
 
       <!-- Map Zoom/Location Controls -->
       <div class="absolute top-md right-md flex flex-col gap-2">
-        <button class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors">
+        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors">
           <FontAwesomeIcon icon="plus" />
-        </button>
-        <button class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors border-t border-outline-variant">
+        </AppButton>
+        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors border-t border-outline-variant">
           <FontAwesomeIcon icon="minus" />
-        </button>
-        <button class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors mt-2">
+        </AppButton>
+        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors mt-2">
           <FontAwesomeIcon icon="location-crosshairs" />
-        </button>
+        </AppButton>
       </div>
 
       <!-- Map Pins -->

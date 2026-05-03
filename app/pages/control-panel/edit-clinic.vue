@@ -10,13 +10,13 @@
             <p class="font-body-md text-body-md text-on-surface-variant">{{ t('editClinicPage.subtitle') }}</p>
           </div>
           <div class="flex gap-md shrink-0">
-            <button
+            <AppButton
               type="button"
               class="px-lg py-sm bg-tertiary text-on-tertiary font-button text-button rounded-xl shadow-md hover:opacity-90 transition-all flex items-center gap-2"
             >
               <FontAwesomeIcon icon="upload" class="text-xl" aria-hidden="true" />
               {{ t('editClinicPage.requestPublish') }}
-            </button>
+            </AppButton>
           </div>
         </div>
 
@@ -46,29 +46,29 @@
                     class="w-full rounded-lg border border-outline-variant focus-within:border-tertiary focus-within:ring-1 focus-within:ring-tertiary transition-all overflow-hidden bg-white dark:bg-slate-950 dark:border-slate-700"
                   >
                     <div class="flex items-center gap-1 p-2 border-b border-outline-variant bg-surface-container-low dark:bg-slate-800 flex-wrap">
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bold')">
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bold')">
                         <FontAwesomeIcon icon="bold" class="text-[18px]" aria-hidden="true" />
-                      </button>
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.italic')">
+                      </AppButton>
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.italic')">
                         <FontAwesomeIcon icon="italic" class="text-[18px]" aria-hidden="true" />
-                      </button>
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.underline')">
+                      </AppButton>
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.underline')">
                         <FontAwesomeIcon icon="underline" class="text-[18px]" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                       <div class="w-px h-4 bg-outline-variant mx-1" aria-hidden="true" />
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bulletList')">
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bulletList')">
                         <FontAwesomeIcon icon="list-ul" class="text-[18px]" aria-hidden="true" />
-                      </button>
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.numberedList')">
+                      </AppButton>
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.numberedList')">
                         <FontAwesomeIcon icon="list-ol" class="text-[18px]" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                       <div class="w-px h-4 bg-outline-variant mx-1" aria-hidden="true" />
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.link')">
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.link')">
                         <FontAwesomeIcon icon="link" class="text-[18px]" aria-hidden="true" />
-                      </button>
-                      <button type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.image')">
+                      </AppButton>
+                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.image')">
                         <FontAwesomeIcon icon="image" class="text-[18px]" aria-hidden="true" />
-                      </button>
+                      </AppButton>
                     </div>
                     <textarea
                       class="w-full px-md py-sm border-none focus:ring-0 outline-none resize-none min-h-[160px] bg-transparent text-on-surface"
@@ -160,16 +160,16 @@
                       <span
                         class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-xs font-bold flex items-center gap-1"
                       >{{ t('editClinicPage.operations.certIso') }}
-                        <button type="button" class="inline-flex" :aria-label="t('editClinicPage.operations.removeCertAria')">
+                        <AppButton type="button" class="inline-flex" :aria-label="t('editClinicPage.operations.removeCertAria')">
                           <FontAwesomeIcon icon="xmark" class="text-[14px] cursor-pointer" aria-hidden="true" />
-                        </button>
+                        </AppButton>
                       </span>
                       <span
                         class="bg-secondary-container text-on-secondary-container px-sm py-1 rounded-full text-xs font-bold flex items-center gap-1"
                       >{{ t('editClinicPage.operations.certCap') }}
-                        <button type="button" class="inline-flex" :aria-label="t('editClinicPage.operations.removeCertAria')">
+                        <AppButton type="button" class="inline-flex" :aria-label="t('editClinicPage.operations.removeCertAria')">
                           <FontAwesomeIcon icon="xmark" class="text-[14px] cursor-pointer" aria-hidden="true" />
-                        </button>
+                        </AppButton>
                       </span>
                       <input
                         class="flex-1 border-none focus:ring-0 p-0 text-xs min-w-[60px] bg-transparent"
@@ -274,13 +274,13 @@
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwUYmmEeqCYq1fa-Ul0CFeUy0Oo-kj0lrbp2rEi5w0VlmMp64d9cAPg4ddhDt9ekXhOCgPCYpYx-_BuGRCovzJl_JOEWBX1YahDdYQfPtjBz5DurXpZ6aLbeMkgD-W4mxLFuTUlt0mlJUtOu-yS7umOV8WjLzrqJJHd6xlpxfuyUVMhUZu3OoWK06XB95wNQws6eS-wT7Wcwn36lzaDnT9I6_3mWSTtKmLZAmm6G-5rkpLZiPQFlB5OrW3SFj2PWo7YfYokOrONrc"
                   >
                   <div class="absolute inset-0 flex items-center justify-center">
-                    <button
+                    <AppButton
                       type="button"
                       class="bg-white/90 dark:bg-slate-900/90 backdrop-blur px-md py-xs rounded-full shadow-sm text-xs font-bold text-blue-900 dark:text-blue-300 flex items-center gap-1"
                     >
                       <FontAwesomeIcon icon="map" class="text-sm" aria-hidden="true" />
                       {{ t('editClinicPage.contact.setCoordinates') }}
-                    </button>
+                    </AppButton>
                   </div>
                 </div>
                 <div>
@@ -317,19 +317,19 @@
                 }}</label>
                 <div class="flex flex-wrap gap-xs p-xs border border-outline-variant rounded-lg min-h-[42px] items-center bg-white dark:bg-slate-950 dark:border-slate-700">
                   <span class="bg-tertiary/10 text-tertiary px-sm py-1 rounded-full text-xs font-bold flex items-center gap-1">{{ t('editClinicPage.languages.chipEnglish') }}
-                    <button type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
+                    <AppButton type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
                       <FontAwesomeIcon icon="xmark" class="text-[14px] cursor-pointer" aria-hidden="true" />
-                    </button>
+                    </AppButton>
                   </span>
                   <span class="bg-tertiary/10 text-tertiary px-sm py-1 rounded-full text-xs font-bold flex items-center gap-1">{{ t('editClinicPage.languages.chipSpanish') }}
-                    <button type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
+                    <AppButton type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
                       <FontAwesomeIcon icon="xmark" class="text-[14px] cursor-pointer" aria-hidden="true" />
-                    </button>
+                    </AppButton>
                   </span>
                   <span class="bg-tertiary/10 text-tertiary px-sm py-1 rounded-full text-xs font-bold flex items-center gap-1">{{ t('editClinicPage.languages.chipMandarin') }}
-                    <button type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
+                    <AppButton type="button" class="inline-flex" :aria-label="t('editClinicPage.languages.removeLangAria')">
                       <FontAwesomeIcon icon="xmark" class="text-[14px] cursor-pointer" aria-hidden="true" />
-                    </button>
+                    </AppButton>
                   </span>
                   <input
                     class="flex-1 border-none focus:ring-0 p-0 text-xs min-w-[60px] bg-transparent"

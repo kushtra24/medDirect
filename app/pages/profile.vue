@@ -15,64 +15,64 @@
         </div>
 
         <nav class="flex-1 space-y-1" aria-label="Primary">
-          <NuxtLink
+          <AppButton
             to="/"
             class="flex items-center gap-3 px-3 py-3 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-transform duration-200 active:scale-95"
           >
             <FontAwesomeIcon :icon="['fas', 'table-cells']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.dashboard') }}
-          </NuxtLink>
-          <button
+          </AppButton>
+          <AppButton
             type="button"
             class="flex w-full items-center gap-3 px-3 py-3 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-transform duration-200 active:scale-95 text-left"
           >
             <FontAwesomeIcon :icon="['fas', 'clock-rotate-left']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.medicalHistory') }}
-          </button>
-          <NuxtLink
+          </AppButton>
+          <AppButton
             to="/test-findings/find-test-results"
             class="flex items-center gap-3 px-3 py-3 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-transform duration-200 active:scale-95"
           >
             <FontAwesomeIcon :icon="['fas', 'microscope']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.testResults') }}
-          </NuxtLink>
-          <button
+          </AppButton>
+          <AppButton
             type="button"
             class="flex w-full items-center gap-3 px-3 py-3 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-transform duration-200 active:scale-95 text-left"
           >
             <FontAwesomeIcon :icon="['fas', 'calendar-days']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.appointments') }}
-          </button>
-          <NuxtLink
+          </AppButton>
+          <AppButton
             to="/profile"
             class="flex items-center gap-3 px-3 py-3 rounded-lg font-manrope text-[14px] font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-900 dark:text-blue-300 border-r-4 border-blue-900 dark:border-blue-400 transition-transform duration-200 active:scale-95"
           >
             <FontAwesomeIcon :icon="['fas', 'user']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.userProfile') }}
-          </NuxtLink>
+          </AppButton>
         </nav>
 
         <div class="mt-auto space-y-1 border-t border-slate-200 dark:border-slate-800 pt-4">
-          <button
+          <AppButton
             type="button"
             class="flex w-full items-center gap-3 px-3 py-2 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-transform text-left"
           >
             <FontAwesomeIcon :icon="['fas', 'gear']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.settings') }}
-          </button>
-          <NuxtLink
+          </AppButton>
+          <AppButton
             to="/auth/login"
             class="flex items-center gap-3 px-3 py-2 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
           >
             <FontAwesomeIcon :icon="['fas', 'right-from-bracket']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.signOut') }}
-          </NuxtLink>
-          <button
+          </AppButton>
+          <AppButton
             type="button"
             class="w-full mt-4 bg-tertiary text-white py-2 rounded-lg font-button text-sm hover:opacity-90 transition-opacity"
           >
             {{ t('patientProfile.sidebar.emergencyContact') }}
-          </button>
+          </AppButton>
         </div>
       </aside>
 
@@ -96,20 +96,20 @@
             </div>
           </div>
           <div class="flex items-center gap-2 md:gap-4 shrink-0">
-            <button
+            <AppButton
               type="button"
               class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
               :aria-label="t('patientProfile.topBar.notificationsAria')"
             >
               <FontAwesomeIcon icon="bell" aria-hidden="true" />
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
               :aria-label="t('patientProfile.topBar.helpAria')"
             >
               <FontAwesomeIcon icon="circle-question" aria-hidden="true" />
-            </button>
+            </AppButton>
             <div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0">
               <img
                 :src="IMG_AVATAR_HEADER"
@@ -158,30 +158,30 @@
                     </div>
                   </div>
                 </div>
-                <button
+                <AppButton
                   type="button"
                   class="flex items-center gap-xs px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-secondary font-button text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shrink-0 self-start"
                 >
                   <FontAwesomeIcon icon="pen-to-square" class="text-sm" aria-hidden="true" />
                   {{ t('patientProfile.personal.editProfile') }}
-                </button>
+                </AppButton>
               </div>
 
               <div class="flex items-center gap-2 mb-xl flex-wrap">
                 <div class="relative group">
-                  <button
+                  <AppButton
                     type="button"
                     class="flex items-center gap-2 px-3 py-1.5 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-600 dark:text-slate-300 hover:border-tertiary/50 hover:bg-white dark:hover:bg-slate-700 transition-all text-sm font-medium"
                   >
                     <FontAwesomeIcon icon="earth-americas" class="text-lg" aria-hidden="true" />
                     <span>{{ t('patientProfile.personal.languageLabel') }}: {{ currentLocaleLabel }}</span>
                     <FontAwesomeIcon icon="chevron-down" class="text-base" aria-hidden="true" />
-                  </button>
+                  </AppButton>
                   <div
                     class="absolute left-0 mt-1 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50"
                   >
                     <div class="py-1">
-                      <button
+                      <AppButton
                         v-for="code in localeCodes"
                         :key="code"
                         type="button"
@@ -192,7 +192,7 @@
                         @click="selectLocale(code)"
                       >
                         {{ localeLabel(code) }}
-                      </button>
+                      </AppButton>
                     </div>
                   </div>
                 </div>
@@ -250,13 +250,13 @@
               <p class="text-body-sm font-body-sm text-slate-500 dark:text-slate-400">
                 {{ t('patientProfile.strength.hint') }}
               </p>
-              <button
+              <AppButton
                 type="button"
                 class="mt-md text-tertiary font-button text-sm flex items-center gap-1 hover:underline text-left"
               >
                 {{ t('patientProfile.strength.cta') }}
                 <FontAwesomeIcon icon="arrow-right" class="text-sm" aria-hidden="true" />
-              </button>
+              </AppButton>
             </section>
 
             <!-- Medical table -->
@@ -326,13 +326,13 @@
                 </table>
               </div>
               <div class="p-lg bg-slate-50/50 dark:bg-slate-800/30 flex justify-center border-t border-slate-100 dark:border-slate-800">
-                <button
+                <AppButton
                   type="button"
                   class="text-sm font-semibold text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 flex items-center gap-1 transition-colors"
                 >
                   {{ t('patientProfile.medical.viewAll') }}
                   <FontAwesomeIcon icon="chevron-down" class="text-sm" aria-hidden="true" />
-                </button>
+                </AppButton>
               </div>
             </section>
           </div>

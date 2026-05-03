@@ -4,30 +4,30 @@
       class="fixed top-0 w-full z-40 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex items-center justify-between px-6 h-16 w-full font-manrope antialiased tracking-tight"
     >
       <div class="flex items-center gap-xl min-w-0">
-        <NuxtLink
+        <AppButton
           to="/control-panel"
           class="p-2 -ml-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full shrink-0"
           :aria-label="t('searchPatientPage.backAria')"
         >
           <FontAwesomeIcon icon="arrow-left" class="text-lg" aria-hidden="true" />
-        </NuxtLink>
+        </AppButton>
         <span class="text-lg font-bold text-blue-900 dark:text-blue-400 truncate">{{ t('searchPatientPage.portalBrand') }}</span>
       </div>
       <div class="flex items-center gap-md shrink-0">
-        <button
+        <AppButton
           type="button"
           class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
           :aria-label="t('searchPatientPage.notificationsAria')"
         >
           <FontAwesomeIcon icon="bell" class="text-lg" aria-hidden="true" />
-        </button>
-        <button
+        </AppButton>
+        <AppButton
           type="button"
           class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
           :aria-label="t('searchPatientPage.settingsAria')"
         >
           <FontAwesomeIcon icon="gear" class="text-lg" aria-hidden="true" />
-        </button>
+        </AppButton>
         <div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0">
           <img
             class="w-full h-full object-cover"
@@ -90,13 +90,13 @@
               </select>
             </div>
             <div>
-              <button
+              <AppButton
                 type="button"
                 class="w-full bg-secondary hover:bg-on-secondary-fixed-variant text-white font-button text-button py-[10px] rounded-lg transition-colors flex items-center justify-center gap-xs shadow-sm"
               >
                 <FontAwesomeIcon icon="magnifying-glass" aria-hidden="true" />
                 {{ t('searchPatientPage.form.search') }}
-              </button>
+              </AppButton>
             </div>
           </div>
         </section>
@@ -134,13 +134,13 @@
                 </div>
               </div>
               <div class="flex gap-sm shrink-0">
-                <NuxtLink
+                <AppButton
                   to="/control-panel/lab-results"
                   class="flex items-center gap-xs px-md py-sm bg-tertiary text-on-tertiary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
                 >
                   <FontAwesomeIcon icon="plus" aria-hidden="true" />
                   {{ t('searchPatientPage.newLabOrder') }}
-                </NuxtLink>
+                </AppButton>
               </div>
             </div>
 
@@ -204,13 +204,13 @@
                         t(`searchPatientPage.rows.${row.key}.physician`)
                       }}</td>
                       <td class="p-md text-end">
-                        <button
+                        <AppButton
                           type="button"
                           class="text-tertiary font-button text-body-sm hover:underline inline-flex items-center gap-xs ms-auto"
                         >
                           <FontAwesomeIcon icon="file-lines" class="text-[18px]" aria-hidden="true" />
                           {{ t('searchPatientPage.table.viewReport') }}
-                        </button>
+                        </AppButton>
                       </td>
                     </tr>
                   </tbody>
@@ -222,13 +222,13 @@
               class="bg-surface-container-low dark:bg-slate-800/80 px-lg py-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
             >
               <div class="text-xs text-on-primary-container">{{ t('searchPatientPage.lastUpdated') }}</div>
-              <button
+              <AppButton
                 type="button"
                 class="text-secondary font-button text-xs flex items-center gap-xs hover:bg-white dark:hover:bg-slate-900 px-md py-1 rounded transition-colors"
               >
                 {{ t('searchPatientPage.viewFullRecord') }}
                 <FontAwesomeIcon icon="up-right-from-square" class="text-sm" aria-hidden="true" />
-              </button>
+              </AppButton>
             </div>
           </div>
         </div>

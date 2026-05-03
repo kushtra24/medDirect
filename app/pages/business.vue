@@ -26,18 +26,18 @@
           >{{ t('businessLanding.nav.pricing') }}</a>
         </div>
         <div class="flex items-center gap-2 sm:gap-4 shrink-0">
-          <NuxtLink
+          <AppButton
             to="/auth/login"
             class="px-4 sm:px-5 py-2.5 font-button text-button rounded-lg text-secondary border border-secondary hover:bg-secondary/5 transition-all text-center whitespace-nowrap"
           >
             {{ t('businessLanding.nav.partnerLogin') }}
-          </NuxtLink>
-          <NuxtLink
+          </AppButton>
+          <AppButton
             to="/auth/signup"
             class="inline-flex px-4 sm:px-5 py-2.5 font-button text-button rounded-lg bg-secondary text-white hover:bg-on-secondary-fixed-variant transition-all shadow-sm text-center whitespace-nowrap items-center justify-center"
           >
             {{ t('businessLanding.nav.getStarted') }}
-          </NuxtLink>
+          </AppButton>
         </div>
       </div>
     </nav>
@@ -60,19 +60,19 @@
               {{ t('businessLanding.hero.description') }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <NuxtLink
+              <AppButton
                 to="/auth/signup"
                 class="px-8 py-4 bg-secondary text-white font-button text-button rounded-xl hover:shadow-lg transition-all text-center"
               >
                 {{ t('businessLanding.hero.signUpFree') }}
-              </NuxtLink>
-              <button
+              </AppButton>
+              <AppButton
                 type="button"
                 class="px-8 py-4 bg-surface-container text-on-surface font-button text-button rounded-xl border border-outline-variant hover:bg-surface-container-high transition-all flex items-center justify-center gap-2"
               >
                 <FontAwesomeIcon icon="circle-play" class="text-xl" aria-hidden="true" />
                 {{ t('businessLanding.hero.viewDemo') }}
-              </button>
+              </AppButton>
             </div>
           </div>
           <div class="relative">
@@ -170,12 +170,12 @@
                 <p class="font-body-md text-body-md text-secondary-container mb-6 opacity-90">
                   {{ t('businessLanding.services.visibilityBody') }}
                 </p>
-                <button
+                <AppButton
                   type="button"
                   class="px-6 py-3 bg-white text-secondary font-button text-button rounded-lg hover:bg-secondary-container transition-colors"
                 >
                   {{ t('businessLanding.services.visibilityCta') }}
-                </button>
+                </AppButton>
               </div>
               <div class="z-10 w-full md:w-auto">
                 <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
@@ -264,18 +264,18 @@
               <h2 class="font-h1 text-h1 text-on-background mb-6">{{ t('businessLanding.cta.title') }}</h2>
               <p class="font-h3 text-h3 text-tertiary mb-10">{{ t('businessLanding.cta.subtitle') }}</p>
               <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <NuxtLink
+                <AppButton
                   to="/auth/signup"
                   class="px-10 py-5 bg-secondary text-white font-button text-button rounded-xl hover:scale-105 transition-all shadow-xl text-center"
                 >
                   {{ t('businessLanding.cta.signUp') }}
-                </NuxtLink>
-                <button
+                </AppButton>
+                <AppButton
                   type="button"
                   class="px-10 py-5 bg-white dark:bg-slate-900 text-on-surface font-button text-button rounded-xl border border-outline-variant hover:bg-surface-container transition-all"
                 >
                   {{ t('businessLanding.cta.contactSales') }}
-                </button>
+                </AppButton>
               </div>
               <p class="mt-8 text-xs font-medium text-on-surface-variant uppercase tracking-widest">
                 {{ t('businessLanding.cta.disclaimer') }}

@@ -6,12 +6,12 @@
       class="flex justify-between items-center w-full px-6 md:px-12 h-16 max-w-screen-2xl mx-auto"
     >
       <div class="flex items-center gap-8">
-        <NuxtLink
+        <AppButton
           to="/control-panel"
           class="text-xl font-extrabold tracking-tight text-blue-900 dark:text-blue-500 uppercase focus:outline-none focus-visible:ring-2 focus-visible:ring-tertiary rounded"
         >
           {{ t('brand.name') }}
-        </NuxtLink>
+        </AppButton>
         <nav class="hidden md:flex items-center gap-6" :aria-label="t('controlPanel.navAria')">
           <a
             class="text-blue-900 dark:text-blue-400 font-bold border-b-2 border-blue-900 dark:border-blue-400 pb-1 active:scale-[0.98] cursor-pointer"
@@ -20,20 +20,20 @@
         </nav>
       </div>
       <div class="flex items-center gap-4">
-        <button
+        <AppButton
           type="button"
           class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200"
           :aria-label="t('controlPanel.notificationsAria')"
         >
           <FontAwesomeIcon icon="bell" class="text-lg" aria-hidden="true" />
-        </button>
-        <NuxtLink
+        </AppButton>
+        <AppButton
           to="/control-panel/edit-clinic"
           class="p-2 text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-all duration-200 inline-flex"
           :aria-label="t('controlPanel.editClinic')"
         >
           <FontAwesomeIcon icon="gear" class="text-lg" aria-hidden="true" />
-        </NuxtLink>
+        </AppButton>
         <div
           class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary-container shrink-0"
         >

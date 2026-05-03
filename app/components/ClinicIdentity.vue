@@ -16,9 +16,9 @@
             <span class="font-label-caps text-label-caps">{{ t('clinicPage.certifiedBadge') }}</span>
           </div>
         </div>
-        <button class="bg-secondary-container text-on-secondary-container p-sm rounded-xl">
+        <AppButton class="bg-secondary-container text-on-secondary-container p-sm rounded-xl">
           <FontAwesomeIcon icon="share-nodes" />
-        </button>
+        </AppButton>
       </div>
     </div>
   </section>

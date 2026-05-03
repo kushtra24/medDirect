@@ -29,14 +29,14 @@
               {{ t('testResults.reportDate') }}
             </p>
           </div>
-          <button
+          <AppButton
             type="button"
             class="bg-secondary text-on-secondary p-sm rounded-xl flex items-center justify-center shadow-sm active:scale-95 transition-transform shrink-0 print:hidden"
             :aria-label="t('testResults.printAria')"
             @click="printReport"
           >
             <FontAwesomeIcon icon="print" aria-hidden="true" />
-          </button>
+          </AppButton>
         </div>
 
         <div

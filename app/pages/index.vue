@@ -30,12 +30,12 @@
                 />
               </div>
 
-              <button class="flex items-center gap-2 px-3 py-1 self-start group transition-colors hover:bg-tertiary/5 rounded-md">
+              <AppButton class="flex items-center gap-2 px-3 py-1 self-start group transition-colors hover:bg-tertiary/5 rounded-md">
                 <FontAwesomeIcon icon="location-crosshairs" class="text-tertiary text-base" />
                 <span class="text-[11px] font-semibold text-tertiary uppercase tracking-wider group-hover:underline">
                   {{ t('home.myLocation') }}
                 </span>
-              </button>
+              </AppButton>
             </div>
 
             <!-- Search Button -->

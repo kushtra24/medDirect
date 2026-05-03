@@ -43,12 +43,12 @@
                 <p class="font-body-sm font-semibold text-on-surface">
                   {{ t('controlPanel.profileStrength.hoursTitle') }}
                 </p>
-                <NuxtLink
+                <AppButton
                   to="/control-panel/edit-clinic"
                   class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide inline-block"
                 >
                   {{ t('controlPanel.profileStrength.hoursCta') }}
-                </NuxtLink>
+                </AppButton>
               </div>
             </div>
             <div class="flex items-start gap-3 p-3 bg-surface rounded-lg">
@@ -57,12 +57,12 @@
                 <p class="font-body-sm font-semibold text-on-surface">
                   {{ t('controlPanel.profileStrength.photosTitle') }}
                 </p>
-                <NuxtLink
+                <AppButton
                   to="/control-panel/edit-clinic"
                   class="text-tertiary font-label-caps text-xs hover:underline mt-1 uppercase tracking-wide inline-block"
                 >
                   {{ t('controlPanel.profileStrength.photosCta') }}
-                </NuxtLink>
+                </AppButton>
               </div>
             </div>
           </div>
@@ -98,12 +98,12 @@
             </p>
           </div>
           <div class="flex gap-3">
-            <NuxtLink
+            <AppButton
               to="/control-panel/add-new-patient"
               class="px-6 py-2.5 bg-tertiary text-on-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center"
             >
               {{ t('controlPanel.newPatient') }}
-            </NuxtLink>
+            </AppButton>
           </div>
         </header>
 
@@ -158,12 +158,12 @@
         <div class="bg-white dark:bg-slate-900 rounded-xl border border-outline-variant overflow-hidden">
           <div class="p-6 border-b border-outline-variant flex justify-between items-center">
             <h3 class="font-h3 text-secondary">{{ t('controlPanel.patientLogs.title') }}</h3>
-            <NuxtLink
+            <AppButton
               to="/control-panel/search-patient"
               class="text-tertiary font-button text-sm hover:underline"
             >
               {{ t('controlPanel.patientLogs.viewAll') }}
-            </NuxtLink>
+            </AppButton>
           </div>
           <div class="divide-y divide-outline-variant">
             <div class="p-6 flex gap-4">
@@ -206,36 +206,36 @@
         <div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-outline-variant shadow-sm">
           <h3 class="font-h3 text-secondary mb-4">{{ t('controlPanel.upcomingFeatures.title') }}</h3>
           <div class="flex flex-wrap gap-3">
-            <button
+            <AppButton
               type="button"
               class="px-4 py-2 bg-surface-container border border-outline-variant rounded-full text-sm font-medium text-on-surface hover:bg-secondary hover:text-white transition-colors cursor-pointer"
             >
               {{ t('controlPanel.upcomingFeatures.appointmentScheduling') }}
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="px-4 py-2 bg-surface-container border border-outline-variant rounded-full text-sm font-medium text-on-surface hover:bg-secondary hover:text-white transition-colors cursor-pointer"
             >
               {{ t('controlPanel.upcomingFeatures.contactPatients') }}
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="px-4 py-2 bg-surface-container border border-outline-variant rounded-full text-sm font-medium text-on-surface hover:bg-secondary hover:text-white transition-colors cursor-pointer"
             >
               {{ t('controlPanel.upcomingFeatures.crm') }}
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="px-4 py-2 bg-surface-container border border-outline-variant rounded-full text-sm font-medium text-on-surface hover:bg-secondary hover:text-white transition-colors cursor-pointer"
             >
               {{ t('controlPanel.upcomingFeatures.telemedicine') }}
-            </button>
-            <button
+            </AppButton>
+            <AppButton
               type="button"
               class="px-4 py-2 bg-surface-container border border-outline-variant rounded-full text-sm font-medium text-on-surface hover:bg-secondary hover:text-white transition-colors cursor-pointer"
             >
               {{ t('controlPanel.upcomingFeatures.aiDiagnostics') }}
-            </button>
+            </AppButton>
           </div>
         </div>
       </section>
