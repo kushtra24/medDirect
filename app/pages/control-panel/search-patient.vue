@@ -134,13 +134,13 @@
                 </div>
               </div>
               <div class="flex gap-sm shrink-0">
-                <button
-                  type="button"
-                  class="flex items-center gap-xs px-md py-sm bg-tertiary text-white rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
+                <NuxtLink
+                  to="/control-panel/lab-results"
+                  class="flex items-center gap-xs px-md py-sm bg-tertiary text-on-tertiary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
                 >
                   <FontAwesomeIcon icon="plus" aria-hidden="true" />
                   {{ t('searchPatientPage.newLabOrder') }}
-                </button>
+                </NuxtLink>
               </div>
             </div>
 

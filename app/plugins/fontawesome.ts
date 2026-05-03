@@ -81,6 +81,8 @@ import {
   faSave,
   faIdCard,
   faNotesMedical,
+  faTrash,
+  faArrowTrendDown,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -164,6 +166,8 @@ library.add(
   faSave,
   faIdCard,
   faNotesMedical,
+  faTrash,
+  faArrowTrendDown,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

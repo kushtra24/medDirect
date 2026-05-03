@@ -558,6 +558,105 @@
     "savePatient": "حفظ المريض",
     "footer": "© {year} بوابة {brand}. جميع الحقوق محفوظة. التميز السريري عبر التكنولوجيا."
   },
+  "labResultsPage": {
+    "seoTitle": "إضافة نتائج المريض",
+    "title": "إضافة نتائج المريض",
+    "subtitle": "إدخال نتائج سريرية وبيانات مخبرية جديدة للمعالجة.",
+    "patientInfo": {
+      "title": "معلومات المريض"
+    },
+    "form": {
+      "patientName": "اسم المريض",
+      "patientNamePlaceholder": "مثال: جون",
+      "patientSurname": "اسم العائلة",
+      "patientSurnamePlaceholder": "مثال: دو",
+      "birthDate": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "selectGender": "اختر الجنس",
+      "genderMale": "ذكر",
+      "genderFemale": "أنثى",
+      "genderOther": "آخر",
+      "genderPreferNotSay": "أفضل عدم الذكر"
+    },
+    "compliance": {
+      "title": "التحقق من الامتثال",
+      "body": "تأكد من تطابق جميع الحقول مع سجل تعريف المريض الأساسي للامتثال للخصوصية الصحية (HIPAA)."
+    },
+    "doctorNote": {
+      "title": "ملاحظة الطبيب",
+      "clinicalObservation": "ملاحظة سريرية",
+      "placeholder": "أدخل الملاحظات السريرية أو الملاحظات الإضافية هنا…"
+    },
+    "testEntry": {
+      "title": "إدخال الفحص",
+      "testName": "اسم الفحص",
+      "testNamePlaceholder": "ابحث عن فحص (مثال: الجلوكوز)",
+      "valueInput": "قيمة القياس",
+      "valuePlaceholder": "أدخل قيمة رقمية",
+      "status": "الحالة",
+      "referencePoint": "نطاق المرجع",
+      "referencePlaceholder": "مثال: < 200 mg/dL",
+      "statusNormal": "طبيعي",
+      "statusHigh": "مرتفع",
+      "statusLow": "منخفض",
+      "addResult": "إضافة نتيجة"
+    },
+    "combobox": {
+      "noResults": "لا توجد فحوص مطابقة"
+    },
+    "testCatalog": {
+      "glucoseFasting": "جلوكوز صائم",
+      "glucoseRandom": "جلوكوز عشوائي",
+      "hba1c": "الهيموغلوبين السكري",
+      "creatinine": "الكرياتينين",
+      "bun": "يوريا الدم (BUN)",
+      "sodium": "الصوديوم",
+      "potassium": "البوتاسيوم",
+      "tsh": "الهرمون المحفز للدرقية (TSH)",
+      "cbc": "تعداد الدم الشامل (CBC)",
+      "lipidPanel": "لوحة الدهون",
+      "alt": "إنزيم ALT",
+      "ast": "إنزيم AST",
+      "crp": "بروتين سي التفاعلي (CRP)",
+      "ferritin": "الفيريتين",
+      "vitaminD": "فيتامين د (25-هيدروكسي)"
+    },
+    "entryList": {
+      "title": "قائمة الإدخال الحالية",
+      "entriesBadge": "{count} إدخالات"
+    },
+    "table": {
+      "testName": "اسم الفحص",
+      "value": "القيمة",
+      "status": "الحالة",
+      "reference": "المرجع",
+      "action": "إجراء"
+    },
+    "rows": {
+      "glucose": {
+        "name": "جلوكوز صائم",
+        "value": "112 mg/dL",
+        "reference": "70 – 99 mg/dL"
+      },
+      "a1c": {
+        "name": "الهيموغلوبين السكري",
+        "value": "5.4 %",
+        "reference": "< 5.7 %"
+      },
+      "creatinine": {
+        "name": "الكرياتينين",
+        "value": "0.95 mg/dL",
+        "reference": "0.70 – 1.30 mg/dL"
+      }
+    },
+    "badge": {
+      "high": "مرتفع",
+      "normal": "طبيعي"
+    },
+    "deleteAria": "إزالة السجل",
+    "saveDraft": "حفظ كمسودة",
+    "finishReport": "إنهاء وإنشاء التقرير"
+  },
   "searchPatientPage": {
     "seoTitle": "بحث عن مريض",
     "backAria": "العودة إلى لوحة التحكم",

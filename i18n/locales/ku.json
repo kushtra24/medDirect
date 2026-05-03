@@ -558,6 +558,105 @@
     "savePatient": "نەخۆش پاشەکەوت بکە",
     "footer": "© {year} دەرگای {brand}. هەموو مافەکان پارێزراون. پێشکەوتنی کلینیکی لە ڕێگەی تەکنەلۆژیا."
   },
+  "labResultsPage": {
+    "seoTitle": "ئەنجامی نەخۆش زیاد بکە",
+    "title": "ئەنجامی نەخۆش زیاد بکە",
+    "subtitle": "دۆزینەوەی نوێی کلینیکی و زانیاری تاقیگە بنووسە بۆ پرۆسەکردن.",
+    "patientInfo": {
+      "title": "زانیاری نەخۆش"
+    },
+    "form": {
+      "patientName": "ناوی نەخۆش",
+      "patientNamePlaceholder": "نموونە: جۆن",
+      "patientSurname": "ناوی خێزان",
+      "patientSurnamePlaceholder": "نموونە: دۆ",
+      "birthDate": "ڕۆژی لەدایکبوون",
+      "gender": "ڕەگەز",
+      "selectGender": "ڕەگەز هەڵبژێرە",
+      "genderMale": "نێر",
+      "genderFemale": "مێ",
+      "genderOther": "هیتر",
+      "genderPreferNotSay": "نیاز ناکەم بڵێم"
+    },
+    "compliance": {
+      "title": "پشکنینی یاسایی",
+      "body": "دڵنیابە لە هاوتابوونی هەموو خانەکان لەگەڵ تۆماری ناسنامەی سەرەکی نەخۆش بۆ ڕێکخستنی HIPAA."
+    },
+    "doctorNote": {
+      "title": "تێبینی پزیشک",
+      "clinicalObservation": "چاوپێکەوتنی کلینیکی",
+      "placeholder": "تێبینی کلینیکی یان زیادەکان لێرە بنووسە…"
+    },
+    "testEntry": {
+      "title": "تۆمارکردنی تاقیکردنەوە",
+      "testName": "ناوی تاقیکردنەوە",
+      "testNamePlaceholder": "گەڕان بە تاقیکردنەوە (نموونە: گلوکۆز)",
+      "valueInput": "بەرزەنجام",
+      "valuePlaceholder": "ژمارە بنووسە",
+      "status": "دۆخ",
+      "referencePoint": "خاڵی ئاماژە",
+      "referencePlaceholder": "نموونە: < 200 mg/dL",
+      "statusNormal": "ئاسایی",
+      "statusHigh": "بەرز",
+      "statusLow": "نزم",
+      "addResult": "ئەنجام زیاد بکە"
+    },
+    "combobox": {
+      "noResults": "هیچ تاقیکردنەوەی هاوتا نییە"
+    },
+    "testCatalog": {
+      "glucoseFasting": "گلوکۆزی بە ڕێژە",
+      "glucoseRandom": "گلوکۆزی هەڕەمەکی",
+      "hba1c": "هێموگلۆبینی A1c",
+      "creatinine": "کرێاتینین",
+      "bun": "BUN خوێن",
+      "sodium": "سۆدیۆم",
+      "potassium": "پۆتاسیۆم",
+      "tsh": "TSH",
+      "cbc": "CBC",
+      "lipidPanel": "پانێلی لیپید",
+      "alt": "ALT",
+      "ast": "AST",
+      "crp": "CRP",
+      "ferritin": "فێریتین",
+      "vitaminD": "ڤیتامینی D (25-هیدڕۆکسی)"
+    },
+    "entryList": {
+      "title": "لیستی ئێستا",
+      "entriesBadge": "{count} تۆمار"
+    },
+    "table": {
+      "testName": "ناوی تاقیکردنەوە",
+      "value": "بەرزەنجام",
+      "status": "دۆخ",
+      "reference": "ئاماژە",
+      "action": "کردار"
+    },
+    "rows": {
+      "glucose": {
+        "name": "گلوکۆزی بە ڕێژە",
+        "value": "112 mg/dL",
+        "reference": "70 – 99 mg/dL"
+      },
+      "a1c": {
+        "name": "هێموگلۆبینی A1c",
+        "value": "5.4 %",
+        "reference": "< 5.7 %"
+      },
+      "creatinine": {
+        "name": "کرێاتینین",
+        "value": "0.95 mg/dL",
+        "reference": "0.70 – 1.30 mg/dL"
+      }
+    },
+    "badge": {
+      "high": "بەرز",
+      "normal": "ئاسایی"
+    },
+    "deleteAria": "تۆمار لاببە",
+    "saveDraft": "پاشەکەوت وەک ڕەشنووس",
+    "finishReport": "تەواوکردن و دروستکردنی ڕاپۆرت"
+  },
   "searchPatientPage": {
     "seoTitle": "گەڕان بە نەخۆش",
     "backAria": "گەڕانەوە بۆ داشبۆرد",

@@ -558,6 +558,105 @@
     "savePatient": "Save patient",
     "footer": "© {year} {brand} portal. All rights reserved. Clinical excellence through technology."
   },
+  "labResultsPage": {
+    "seoTitle": "Add patient results",
+    "title": "Add patient results",
+    "subtitle": "Input new clinical findings and laboratory data for processing.",
+    "patientInfo": {
+      "title": "Patient info"
+    },
+    "form": {
+      "patientName": "Patient name",
+      "patientNamePlaceholder": "e.g. John",
+      "patientSurname": "Patient surname",
+      "patientSurnamePlaceholder": "e.g. Doe",
+      "birthDate": "Birth date",
+      "gender": "Gender",
+      "selectGender": "Select gender",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "genderOther": "Other",
+      "genderPreferNotSay": "Prefer not to say"
+    },
+    "compliance": {
+      "title": "Compliance check",
+      "body": "Ensure all fields match the primary patient identification record for HIPAA compliance."
+    },
+    "doctorNote": {
+      "title": "Doctor's note",
+      "clinicalObservation": "Clinical observation",
+      "placeholder": "Enter clinical notes or additional observations here…"
+    },
+    "testEntry": {
+      "title": "Test entry",
+      "testName": "Test name",
+      "testNamePlaceholder": "Search test (e.g. glucose)",
+      "valueInput": "Value input",
+      "valuePlaceholder": "Enter numeric value",
+      "status": "Status",
+      "referencePoint": "Reference point",
+      "referencePlaceholder": "e.g. < 200 mg/dL",
+      "statusNormal": "Normal",
+      "statusHigh": "High",
+      "statusLow": "Low",
+      "addResult": "Add result"
+    },
+    "combobox": {
+      "noResults": "No matching tests"
+    },
+    "testCatalog": {
+      "glucoseFasting": "Glucose, fasting",
+      "glucoseRandom": "Glucose, random",
+      "hba1c": "Hemoglobin A1c",
+      "creatinine": "Creatinine",
+      "bun": "Blood urea nitrogen (BUN)",
+      "sodium": "Sodium",
+      "potassium": "Potassium",
+      "tsh": "Thyroid stimulating hormone (TSH)",
+      "cbc": "Complete blood count (CBC)",
+      "lipidPanel": "Lipid panel",
+      "alt": "Alanine aminotransferase (ALT)",
+      "ast": "Aspartate aminotransferase (AST)",
+      "crp": "C-reactive protein (CRP)",
+      "ferritin": "Ferritin",
+      "vitaminD": "Vitamin D, 25-hydroxy"
+    },
+    "entryList": {
+      "title": "Current entry list",
+      "entriesBadge": "{count} entries"
+    },
+    "table": {
+      "testName": "Test name",
+      "value": "Value",
+      "status": "Status",
+      "reference": "Reference",
+      "action": "Action"
+    },
+    "rows": {
+      "glucose": {
+        "name": "Glucose, fasting",
+        "value": "112 mg/dL",
+        "reference": "70 – 99 mg/dL"
+      },
+      "a1c": {
+        "name": "Hemoglobin A1c",
+        "value": "5.4 %",
+        "reference": "< 5.7 %"
+      },
+      "creatinine": {
+        "name": "Creatinine",
+        "value": "0.95 mg/dL",
+        "reference": "0.70 – 1.30 mg/dL"
+      }
+    },
+    "badge": {
+      "high": "High",
+      "normal": "Normal"
+    },
+    "deleteAria": "Remove entry",
+    "saveDraft": "Save as draft",
+    "finishReport": "Finish & generate report"
+  },
   "searchPatientPage": {
     "seoTitle": "Search patient",
     "backAria": "Back to dashboard",
