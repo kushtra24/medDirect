@@ -365,6 +365,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'staff',
+})
+
 const { t } = useI18n()
 
 useSeoMeta({

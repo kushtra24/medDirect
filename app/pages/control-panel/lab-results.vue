@@ -262,6 +262,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'staff',
+})
+
 const { t } = useI18n()
 
 const TEST_CATALOG_KEYS = [

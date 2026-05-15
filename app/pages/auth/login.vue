@@ -92,9 +92,18 @@
               </div>
             </div>
 
+            <p
+              v-if="submitError"
+              class="rounded-lg border border-error/40 bg-error/10 px-md py-sm font-body-sm text-error"
+              role="alert"
+            >
+              {{ submitError }}
+            </p>
+
             <AppButton
               class="w-full bg-secondary text-on-secondary font-button text-button py-md rounded-lg hover:bg-on-secondary-fixed-variant transition-colors shadow-sm active:scale-[0.98] flex items-center justify-center gap-sm"
               type="submit"
+              :disabled="submitting"
             >
               {{ t('login.submit') }}
               <FontAwesomeIcon icon="right-to-bracket" aria-hidden="true" />
@@ -175,6 +184,12 @@
 </template>
 
 <script setup>
+import { isControlPanelRole } from '~/composables/useMedDirectApi'
+
+definePageMeta({
+  middleware: 'guest',
+})
+
 const { t } = useI18n()
 
 /** Dev-only: sign in with this email (password ignored) to open the partner control panel. Stripped in production builds. */
@@ -182,6 +197,10 @@ const DEV_PARTNER_LOGIN_EMAIL = 'business@email.com'
 
 const email = ref('')
 const password = ref('')
+const submitError = ref('')
+const submitting = ref(false)
+
+const { api, setSession } = useMedDirectApi()
 
 const showDevPartnerHint = import.meta.dev
 
@@ -192,11 +211,32 @@ useSeoMeta({
 })
 
 async function onSubmit() {
+  submitError.value = ''
   const normalized = email.value.trim().toLowerCase()
   if (import.meta.dev && normalized === DEV_PARTNER_LOGIN_EMAIL.toLowerCase()) {
+    setSession('__dev_partner__', { email: DEV_PARTNER_LOGIN_EMAIL, role: 'staff' })
     await navigateTo('/control-panel')
     return
   }
-  await navigateTo('/profile')
+  submitting.value = true
+  try {
+    const res = await api('/api/login', {
+      method: 'POST',
+      body: {
+        email: email.value.trim(),
+        password: password.value,
+      },
+    })
+    setSession(res.token, res.user)
+    await navigateTo(isControlPanelRole(res.user?.role) ? '/control-panel' : '/profile')
+  }
+  catch (e) {
+    const msg = e?.data?.message
+    const first = e?.data?.errors && Object.values(e.data.errors).flat()[0]
+    submitError.value = first || msg || e?.message || 'Sign in failed.'
+  }
+  finally {
+    submitting.value = false
+  }
 }
 </script>

@@ -1,8 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const apiProxyTarget = process.env.NUXT_API_PROXY_TARGET || 'http://127.0.0.1:8000'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
+  runtimeConfig: {
+    public: {
+      /**
+       * Laravel API origin. Leave empty in dev to call `/api/*` via the Vite proxy (no CORS).
+       * Set e.g. `http://localhost:8000` only when not using the proxy.
+       */
+      apiBase: process.env.NUXT_PUBLIC_API_BASE ?? '',
+    },
+  },
   i18n: {
     defaultLocale: 'en',
     strategy: 'no_prefix',
@@ -16,6 +27,14 @@ export default defineNuxtConfig({
     ],
   },
   vite: {
+    server: {
+      proxy: {
+        '/api': {
+          target: apiProxyTarget,
+          changeOrigin: true,
+        },
+      },
+    },
     optimizeDeps: {
       include: [
         '@fortawesome/fontawesome-svg-core',

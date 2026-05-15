@@ -156,6 +156,14 @@
               </div>
             </div>
 
+            <p
+              v-if="submitError"
+              class="rounded-lg border border-error/40 bg-error/10 px-md py-sm font-body-sm text-error"
+              role="alert"
+            >
+              {{ submitError }}
+            </p>
+
             <div class="flex items-start gap-sm mt-xs">
               <input
                 id="signup-terms"
@@ -175,6 +183,7 @@
             <AppButton
               class="mt-md w-full bg-secondary text-on-secondary py-md rounded-lg font-button text-button hover:opacity-90 transition-opacity flex items-center justify-center gap-sm active:scale-[0.98]"
               type="submit"
+              :disabled="submitting"
             >
               {{ t('signup.submit') }}
               <FontAwesomeIcon icon="arrow-right" class="text-[20px]" aria-hidden="true" />
@@ -230,12 +239,46 @@ const repeatPassword = ref('')
 const city = ref('')
 const birthday = ref('')
 const acceptedTerms = ref(false)
+const submitError = ref('')
+const submitting = ref(false)
+
+const { api, setSession } = useMedDirectApi()
 
 useSeoMeta({
   title: () => t('signup.title'),
 })
 
-function onSubmit() {
-  /* Signup integration placeholder */
+async function onSubmit() {
+  submitError.value = ''
+  if (password.value !== repeatPassword.value) {
+    submitError.value = t('signup.errorPasswordMismatch')
+    return
+  }
+  if (!acceptedTerms.value) {
+    submitError.value = t('signup.errorTermsRequired')
+    return
+  }
+  submitting.value = true
+  try {
+    const res = await api('/api/register', {
+      method: 'POST',
+      body: {
+        name: name.value.trim(),
+        surname: surname.value.trim(),
+        email: email.value.trim(),
+        password: password.value,
+      },
+    })
+    setSession(res.token, res.user)
+    await navigateTo('/profile')
+  }
+  catch (e) {
+    const first = e?.data?.errors && Object.values(e.data.errors).flat()[0]
+    const msg = e?.data?.message
+    submitError.value = first || msg || e?.message || 'Registration failed.'
+  }
+  finally {
+    submitting.value = false
+  }
 }
 </script>

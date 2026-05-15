@@ -61,8 +61,10 @@
             {{ t('patientProfile.sidebar.settings') }}
           </AppButton>
           <AppButton
-            to="/auth/login"
-            class="flex items-center gap-3 px-3 py-2 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+            type="button"
+            class="flex items-center gap-3 px-3 py-2 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50 disabled:pointer-events-none"
+            :disabled="signingOut"
+            @click="signOut"
           >
             <FontAwesomeIcon :icon="['fas', 'right-from-bracket']" class="w-5 text-center" aria-hidden="true" />
             {{ t('patientProfile.sidebar.signOut') }}
@@ -112,7 +114,7 @@
             </AppButton>
             <div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0">
               <img
-                :src="IMG_AVATAR_HEADER"
+                :src="displayAvatar"
                 alt=""
                 class="h-full w-full object-cover"
                 width="32"
@@ -133,7 +135,7 @@
                 <div class="flex gap-md min-w-0">
                   <div class="w-24 h-24 rounded-2xl overflow-hidden shadow-md shrink-0">
                     <img
-                      :src="IMG_PHOTO_PATIENT"
+                      :src="displayAvatar"
                       :alt="t('patientProfile.personal.photoAlt')"
                       class="h-full w-full object-cover"
                       width="96"
@@ -142,15 +144,15 @@
                   </div>
                   <div class="min-w-0">
                     <h2 class="font-h1 text-h2 text-blue-900 dark:text-blue-300 mb-xs break-words">
-                      {{ t('patientProfile.personal.name') }}
+                      {{ displayName }}
                     </h2>
                     <div class="flex items-center gap-sm text-slate-500 dark:text-slate-400">
                       <FontAwesomeIcon icon="envelope" class="text-sm shrink-0" aria-hidden="true" />
-                      <span class="text-body-sm font-body-sm break-all">{{ t('patientProfile.personal.email') }}</span>
+                      <span class="text-body-sm font-body-sm break-all">{{ displayEmail }}</span>
                     </div>
                     <div class="mt-md flex flex-wrap gap-sm">
                       <span class="px-3 py-1 bg-blue-50 dark:bg-blue-950/50 text-blue-900 dark:text-blue-200 text-label-caps font-label-caps rounded-full">
-                        {{ t('patientProfile.personal.patientId') }}
+                        {{ displayPatientId }}
                       </span>
                       <span class="px-3 py-1 bg-tertiary/10 text-tertiary text-label-caps font-label-caps rounded-full">
                         {{ t('patientProfile.personal.activeStatus') }}
@@ -159,7 +161,7 @@
                   </div>
                 </div>
                 <AppButton
-                  type="button"
+                  to="/profile/edit"
                   class="flex items-center gap-xs px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-secondary font-button text-sm hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors shrink-0 self-start"
                 >
                   <FontAwesomeIcon icon="pen-to-square" class="text-sm" aria-hidden="true" />
@@ -204,7 +206,7 @@
                     {{ t('patientProfile.personal.fieldBirthdate') }}
                   </p>
                   <p class="font-body-md font-semibold text-blue-900 dark:text-blue-200">
-                    {{ t('patientProfile.personal.birthdate') }}
+                    {{ displayBirthdate }}
                   </p>
                 </div>
                 <div>
@@ -212,7 +214,7 @@
                     {{ t('patientProfile.personal.fieldBloodType') }}
                   </p>
                   <p class="font-body-md font-semibold text-error">
-                    {{ t('patientProfile.personal.bloodType') }}
+                    {{ displayBlood }}
                   </p>
                 </div>
                 <div>
@@ -220,15 +222,15 @@
                     {{ t('patientProfile.personal.fieldPhone') }}
                   </p>
                   <p class="font-body-md font-semibold text-blue-900 dark:text-blue-200 break-all">
-                    {{ t('patientProfile.personal.phone') }}
+                    {{ displayPhone }}
                   </p>
                 </div>
                 <div>
                   <p class="text-label-caps font-label-caps text-slate-400 mb-xs">
                     {{ t('patientProfile.personal.fieldLocation') }}
                   </p>
-                  <p class="font-body-md font-semibold text-blue-900 dark:text-blue-200">
-                    {{ t('patientProfile.personal.location') }}
+                  <p class="font-body-md font-semibold text-blue-900 dark:text-blue-200 whitespace-pre-line break-words">
+                    {{ displayAddress }}
                   </p>
                 </div>
               </div>
@@ -335,6 +337,21 @@
                 </AppButton>
               </div>
             </section>
+
+            <section
+              class="col-span-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-xl shadow-[0_10px_20px_-15px_rgba(0,0,0,0.04)]"
+              aria-label="Account"
+            >
+              <AppButton
+                type="button"
+                class="flex w-full items-center justify-center gap-2 px-4 py-3 rounded-lg font-manrope text-[14px] font-medium text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:pointer-events-none"
+                :disabled="signingOut"
+                @click="signOut"
+              >
+                <FontAwesomeIcon :icon="['fas', 'right-from-bracket']" class="w-5 text-center shrink-0" aria-hidden="true" />
+                {{ t('patientProfile.sidebar.signOut') }}
+              </AppButton>
+            </section>
           </div>
         </main>
       </div>
@@ -346,14 +363,69 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'auth',
+})
+
 const { t, locale, setLocale } = useI18n()
 const { persistLocale } = useLocalePreference()
+const { api, clearSession, token, user, ensureUserLoaded } = useMedDirectApi()
 
-const IMG_AVATAR_HEADER =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCUT4QfwN7lPnK1JQYjbi9_aJPoR5jzP6sixBi3G-54vYs1zmOqmPIZk0AM_dSLhBFEUB4E7uuS84K9LRmtWXtRUn4bmj_OAOGv_qzY-SYu0yMEcGqC0qQwjtq3mCiXlpCUgQQiToaG72sFpiN18OUh7QQzQZvGX1-xaMgSJMwC8XuKpz61-p4PaJK31Yfx93DOqrdMAMXJYRH3f44SNQYZ5X2ID2XuXFFN6Via6RVFBmhOgwOTgRWqFhPSHSu5VFWuGIfZ2aahjlA'
+onMounted(() => {
+  ensureUserLoaded()
+})
+
+const signingOut = ref(false)
+
+async function signOut() {
+  if (signingOut.value) return
+  signingOut.value = true
+  try {
+    if (token.value) {
+      try {
+        await api('/api/logout', { method: 'POST' })
+      }
+      catch {
+        /* still clear local session */
+      }
+    }
+    clearSession()
+    await navigateTo('/auth/login')
+  }
+  finally {
+    signingOut.value = false
+  }
+}
 
 const IMG_PHOTO_PATIENT =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuDQIp2SeFA0BiY7NcwrfY-ovT4swpQNvKfYl4B2IYVPYmksVrkHEzJKCM992CZ25h99dpDHf-2rL3M2u9iiwF_FZW3qPUelnSGLskfBByrF4eZeiR4LNdVN5M0PoFTXXCQoN4CncOEaB0CJQoUD4IXQ23aar5y4tcRDWtWR5zU4RFxDh9JjT28yu9pRePagaTuF7TAgACP5Nr4svs_uZQ-F6AsEQTb3VxZJnCBEGO2zt-r_Ggz9OFyhGkJJtyDUY6M391m3AqFgXQ0'
+
+function formatUserDate(iso) {
+  if (!iso) return ''
+  try {
+    const loc = locale.value === 'ar' ? 'ar' : locale.value === 'ku' ? 'ku' : 'en'
+    const d = new Date(`${iso}T12:00:00`)
+    return new Intl.DateTimeFormat(loc, { dateStyle: 'long' }).format(d)
+  }
+  catch {
+    return iso
+  }
+}
+
+const displayName = computed(() => user.value?.name || t('patientProfile.personal.name'))
+const displayEmail = computed(() => user.value?.email || t('patientProfile.personal.email'))
+const displayPatientId = computed(() =>
+  user.value?.id
+    ? `${t('patientProfile.personal.fieldPatientId')}: #${user.value.id}`
+    : t('patientProfile.personal.patientId'),
+)
+const displayBirthdate = computed(() =>
+  user.value?.date_of_birth ? formatUserDate(user.value.date_of_birth) : t('patientProfile.personal.birthdate'),
+)
+const displayBlood = computed(() => user.value?.blood_type || t('patientProfile.personal.bloodType'))
+const displayPhone = computed(() => user.value?.phone || t('patientProfile.personal.phone'))
+const displayAddress = computed(() => user.value?.address || t('patientProfile.personal.location'))
+const displayAvatar = computed(() => user.value?.avatar_url || IMG_PHOTO_PATIENT)
 
 const medicalRows = [
   { id: 'glucose', rowStatus: 'completed', tone: 'green', icon: ['fas', 'microscope'] },

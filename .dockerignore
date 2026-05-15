@@ -1,0 +1,16 @@
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+node_modules
+.nuxt
+.output
+.nitro
+.cache
+dist
+data
+*.log
+README.md
+Dockerfile
+.dockerignore

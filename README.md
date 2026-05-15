@@ -1,75 +1,32 @@
-# Nuxt Minimal Starter
+# Med Direct — Frontend
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt 4 patient portal (i18n: English, Arabic, Kurdish).
 
-## Setup
+## Docker (recommended)
 
-Make sure to install dependencies:
+From the **repository root** (`medical/`):
 
 ```bash
-# npm
+cp .env.docker.example .env.docker
+docker compose up --build
+```
+
+Open http://localhost:3000. See the [root README](../README.md) for full setup, API URLs, and troubleshooting.
+
+## Local development
+
+```bash
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+cp .env.example .env
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+`NUXT_PUBLIC_API_BASE` in `.env` must point at the Laravel API (default `http://localhost:8000`).
 
-Build the application for production:
+## Scripts
 
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Dev server on port 3000 |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |

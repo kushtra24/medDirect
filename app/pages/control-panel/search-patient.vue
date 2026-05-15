@@ -238,6 +238,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: 'staff',
+})
+
 const { t } = useI18n()
 
 /** Demo row order and status chips (completed vs archived). */
