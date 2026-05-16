@@ -2,6 +2,9 @@
 const apiProxyTarget = process.env.NUXT_API_PROXY_TARGET || 'http://127.0.0.1:8000'
 
 export default defineNuxtConfig({
+  routeRules: {
+    '/home': { redirect: '/' },
+  },
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],

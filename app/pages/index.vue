@@ -8,14 +8,16 @@
             <AppLogo />
           </div>
 
-          <div class="flex flex-col gap-6">
+          <form class="flex flex-col gap-6" @submit.prevent="onSearch">
             <!-- Search Input -->
             <div class="flex items-center bg-white border border-outline-variant rounded-xl p-2 shadow-sm focus-within:border-tertiary focus-within:ring-1 focus-within:ring-tertiary transition-all">
               <FontAwesomeIcon icon="magnifying-glass" class="text-outline px-3 text-lg" />
               <input
+                v-model="query"
                 class="flex-grow bg-transparent border-none focus:ring-0 text-body-md placeholder:text-outline py-3 outline-none"
                 :placeholder="t('home.searchPlaceholder')"
-                type="text"
+                type="search"
+                autocomplete="off"
               />
             </div>
 
@@ -24,13 +26,18 @@
               <div class="flex items-center bg-white border border-outline-variant rounded-xl p-2 shadow-sm focus-within:border-tertiary focus-within:ring-1 focus-within:ring-tertiary transition-all">
                 <FontAwesomeIcon icon="location-dot" class="text-outline px-3 text-lg" />
                 <input
+                  v-model="city"
                   class="flex-grow bg-transparent border-none focus:ring-0 text-body-md placeholder:text-outline py-3 outline-none"
                   :placeholder="t('home.cityPlaceholder')"
-                  type="text"
+                  type="search"
+                  autocomplete="off"
                 />
               </div>
 
-              <AppButton class="flex items-center gap-2 px-3 py-1 self-start group transition-colors hover:bg-tertiary/5 rounded-md">
+              <AppButton
+                type="button"
+                class="flex items-center gap-2 px-3 py-1 self-start group transition-colors hover:bg-tertiary/5 rounded-md"
+              >
                 <FontAwesomeIcon icon="location-crosshairs" class="text-tertiary text-base" />
                 <span class="text-[11px] font-semibold text-tertiary uppercase tracking-wider group-hover:underline">
                   {{ t('home.myLocation') }}
@@ -39,10 +46,10 @@
             </div>
 
             <!-- Search Button -->
-            <AppButton class="mt-2">
+            <AppButton type="submit" class="flex bg-tertiary text-on-secondary w-full items-center justify-center gap-2 px-4 py-3 rounded-lg font-manrope text-[14px] font-medium text-white-600 dark:text-white-400 border border-white-200 dark:border-white-700 hover:bg-white-50 dark:hover:bg-white-800 transition-colors disabled:opacity-50 disabled:pointer-events-none">
               {{ t('home.searchClinics') }}
             </AppButton>
-          </div>
+          </form>
         </section>
       </div>
     </main>
@@ -57,4 +64,20 @@
 
 <script setup>
 const { t } = useI18n()
+
+const query = ref('')
+const city = ref('')
+
+function onSearch() {
+  const q = query.value.trim()
+  const cityValue = city.value.trim()
+
+  navigateTo({
+    path: '/search-results',
+    query: {
+      ...(q && { q }),
+      ...(cityValue && { city: cityValue }),
+    },
+  })
+}
 </script>

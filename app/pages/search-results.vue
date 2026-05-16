@@ -97,7 +97,28 @@ const pinPositions = [
   'top-1/3 right-1/4',
 ]
 
-const { data, pending, error } = await useAsyncData('med-search', () => api('/api/med'))
+const route = useRoute()
+
+const searchQuery = computed(() => ({
+  q: String(route.query.q ?? '').trim(),
+  city: String(route.query.city ?? '').trim(),
+}))
+
+const { data, pending, error } = await useAsyncData(
+  () => `med-search-${searchQuery.value.q}-${searchQuery.value.city}`,
+  () => {
+    const params = new URLSearchParams()
+    if (searchQuery.value.q) {
+      params.set('q', searchQuery.value.q)
+    }
+    if (searchQuery.value.city) {
+      params.set('city', searchQuery.value.city)
+    }
+    const qs = params.toString()
+    return api(qs ? `/api/med?${qs}` : '/api/med')
+  },
+  { watch: [searchQuery] },
+)
 
 const institutes = computed(() => data.value?.institutes ?? [])
 
@@ -106,7 +127,11 @@ const mapPins = computed(() => institutes.value.slice(0, 4))
 watch(
   institutes,
   (list) => {
-    if (list.length && selectedSlug.value == null) {
+    if (!list.length) {
+      selectedSlug.value = null
+      return
+    }
+    if (selectedSlug.value == null || !list.some((item) => item.slug === selectedSlug.value)) {
       selectedSlug.value = list[0].slug
     }
   },

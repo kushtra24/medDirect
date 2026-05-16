@@ -25,7 +25,7 @@ const route = useRoute()
 const navItems = computed(() => {
   const path = route.path
   return [
-    { label: t('nav.home'), icon: ['fas', 'house'], to: '/', active: path === '/' || path === '/home' },
+    { label: t('nav.home'), icon: ['fas', 'house'], to: '/', active: path === '/' },
     { label: t('nav.search'), icon: ['fas', 'magnifying-glass'], to: '/search-results', active: path.startsWith('/search-results') },
     { label: t('nav.profile'), icon: ['fas', 'circle-user'], to: '/profile', active: path.startsWith('/profile') },
   ]
