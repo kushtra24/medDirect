@@ -1,7 +1,9 @@
 <template>
-  <div
-    class=" my-4 bg-white border border-outline-variant rounded-xl p-md flex gap-md hover:shadow-[0_4px_10px_rgba(0,0,0,0.04)] transition-all cursor-pointer group"
+  <NuxtLink
+    :to="`/med/${slug}`"
+    class="block my-4 bg-white border border-outline-variant rounded-xl p-md flex gap-md hover:shadow-[0_4px_10px_rgba(0,0,0,0.04)] transition-all cursor-pointer group"
     :class="selected ? 'border-secondary ring-1 ring-secondary' : ''"
+    @mouseenter="$emit('mouseenter')"
   >
     <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
       <img
@@ -30,11 +32,14 @@
         </span>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script setup>
+defineEmits(['mouseenter'])
+
 defineProps({
+  slug: { type: String, required: true },
   name: { type: String, required: true },
   distance: { type: Number, required: true },
   neighborhood: { type: String, required: true },

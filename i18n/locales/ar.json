@@ -334,10 +334,21 @@
     "description": "الوصف",
     "services": "الخدمات",
     "address": "العنوان",
+    "addresses": "العناوين",
     "mobileNumber": "رقم الجوال",
+    "phoneNumbers": "أرقام الهاتف",
     "openingHours": "ساعات العمل",
+    "healthInsurances": "التأمين الصحي",
+    "languagesSpoken": "اللغات",
+    "specialties": "التخصصات",
+    "diplomas": "الشهادات",
+    "appointments": "المواعيد",
+    "appointmentsAllowed": "الحجز عبر الإنترنت متاح",
+    "appointmentsNotAllowed": "بدون حجز عبر الإنترنت",
     "mapLocationAlt": "موقع على الخريطة",
-    "certifiedBadge": "عيادة معتمدة ISO"
+    "certifiedBadge": "عيادة معتمدة ISO",
+    "loadError": "تعذر تحميل ملف العيادة.",
+    "notFound": "العيادة غير موجودة."
   },
   "clinicDemo": {
     "name": "أدفانسد دياجنوستيكس أربيل",

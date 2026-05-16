@@ -323,7 +323,9 @@
     "chipPrimaryCare": "Primary Care",
     "mapAlt": "Map background",
     "availableAt": "Available at {time}",
-    "quickAppointment": "Quick appointment available"
+    "quickAppointment": "Quick appointment available",
+    "loadError": "Could not load clinics.",
+    "empty": "No clinics found nearby."
   },
   "clinicCard": {
     "milesLine": "{n} miles away • {area}",
@@ -334,10 +336,21 @@
     "description": "DESCRIPTION",
     "services": "SERVICES",
     "address": "Address",
+    "addresses": "ADDRESSES",
     "mobileNumber": "Mobile Number",
+    "phoneNumbers": "PHONE NUMBERS",
     "openingHours": "OPENING HOURS",
+    "healthInsurances": "HEALTH INSURANCES",
+    "languagesSpoken": "LANGUAGES SPOKEN",
+    "specialties": "SPECIALTIES",
+    "diplomas": "DIPLOMAS",
+    "appointments": "APPOINTMENTS",
+    "appointmentsAllowed": "Online appointments available",
+    "appointmentsNotAllowed": "Walk-in only — no online booking",
     "mapLocationAlt": "Map location",
-    "certifiedBadge": "ISO CERTIFIED CLINIC"
+    "certifiedBadge": "ISO CERTIFIED CLINIC",
+    "loadError": "Could not load clinic profile.",
+    "notFound": "Clinic not found."
   },
   "clinicDemo": {
     "name": "Advanced Diagnostics Erbil",

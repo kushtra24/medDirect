@@ -334,10 +334,21 @@
     "description": "پێناسە",
     "services": "خزمەتگوزارییەکان",
     "address": "ناونیشان",
+    "addresses": "ناونیشانەکان",
     "mobileNumber": "ژمارەی مۆبایل",
+    "phoneNumbers": "ژمارە تەلەفۆنەکان",
     "openingHours": "کاتەکانی کراوەیی",
+    "healthInsurances": "بیمەی تەندروستی",
+    "languagesSpoken": "زمانەکان",
+    "specialties": "تایبەتمەندییەکان",
+    "diplomas": "بڕوانامەکان",
+    "appointments": "چاوپێکەوتن",
+    "appointmentsAllowed": "چاوپێکەوتنی ئۆنلاین بەردەستە",
+    "appointmentsNotAllowed": "تەنها بە شێوەی ڕاستەوخۆ",
     "mapLocationAlt": "شوێن لەسەر نەخشە",
-    "certifiedBadge": "کلینیکی ISO پەسەندکراو"
+    "certifiedBadge": "کلینیکی ISO پەسەندکراو",
+    "loadError": "بارکردنی پرۆفایلی کلینیک سەرکەوتوو نەبوو.",
+    "notFound": "کلینیک نەدۆزرایەوە."
   },
   "clinicDemo": {
     "name": "Advanced Diagnostics هەولێر",
