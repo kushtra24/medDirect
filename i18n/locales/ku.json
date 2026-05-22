@@ -608,7 +608,13 @@
     "title": "ئەنجامی نەخۆش زیاد بکە",
     "subtitle": "دۆزینەوەی نوێی کلینیکی و زانیاری تاقیگە بنووسە بۆ پرۆسەکردن.",
     "patientInfo": {
-      "title": "زانیاری نەخۆش"
+      "title": "زانیاری نەخۆش",
+      "subtitle": "زانیاری سەرچاوە لە تۆماری نەخۆش.",
+      "loading": "بارکردنی زانیاری نەخۆش…",
+      "notAvailable": "—",
+      "patientId": "ناسنامەی نەخۆش",
+      "errorNoPatient": "پێش پاشەکەوتکردنی ئەنجامەکانی تاقیگە نەخۆشێک هەڵبژێرە.",
+      "errorLoadFailed": "بارکردنی زانیاری نەخۆش سەرکەوتوو نەبوو."
     },
     "form": {
       "patientName": "ناوی نەخۆش",
@@ -803,14 +809,24 @@
       "other": "هیتر",
       "search": "گەڕان بە نەخۆش"
     },
+    "searchPrompt": "مەرجەکان لە سەرەوە بنووسە و بگەڕێ بۆ دۆزینەوەی نەخۆش.",
+    "searching": "گەڕان…",
+    "noResults": "هیچ نەخۆشێک لەگەڵ گەڕانەکەت ناگونجێت.",
+    "noHistory": "هێشتا هیچ ئەنجامی تاقیگە نییە.",
+    "notAvailable": "—",
+    "unknownPatient": "نەخۆشی نەناسراو",
+    "reportPanel": "پانێڵی تاقیگە ({count} تاقیکردنەوە)",
+    "reportUntitled": "ڕاپۆرتی تاقیگە",
+    "reportDraft": "ڕاپۆرتی ڕەشنووس",
+    "reportFinalized": "ڕاپۆرتی کۆتایی",
+    "errorNoOrganization": "هیچ ڕێکخراوێک هەڵنەبژێردراوە. وەک کارمەندی تاقیگە/کلینیک بچۆرە ژوورەوە.",
+    "errorSearchFailed": "گەڕان سەرکەوتوو نەبوو. دووبارە هەوڵ بدەرەوە.",
+    "statusDraft": "ڕەشنووس",
     "patient": {
-      "initials": "JW",
-      "fullName": "جولیان ویلیامز",
-      "dobDisplay": "١٤ی ئایاری ١٩٨٨ (٣٥ ساڵ)",
-      "genderLabel": "مێ",
-      "idPrefix": "ناسنامە:",
-      "idValue": "LAB-98210"
+      "dobWithAge": "{date} ({age} ساڵ)",
+      "idPrefix": "ناسنامە:"
     },
+    "lastUpdatedAt": "دوایین نوێکردنەوە: {datetime}",
     "newLabOrder": "داواکاری تاقیگەی نوێ",
     "historyTitle": "مێژووی کلینیکی نوێ",
     "showingRecords": "پیشاندانی {count} تۆمار",

@@ -281,25 +281,40 @@
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
-                    <tr
-                      v-for="row in medicalRows"
-                      :key="row.id"
-                      class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer"
-                    >
+                    <template v-if="recordsLoading">
+                      <tr>
+                        <td colspan="4" class="px-xl py-lg text-center text-slate-500">
+                          {{ t('patientProfile.medical.loading') }}
+                        </td>
+                      </tr>
+                    </template>
+                    <template v-else-if="!medicalRows.length">
+                      <tr>
+                        <td colspan="4" class="px-xl py-lg text-center text-slate-500">
+                          {{ t('patientProfile.medical.empty') }}
+                        </td>
+                      </tr>
+                    </template>
+                    <template v-else>
+                      <tr
+                        v-for="row in medicalRows"
+                        :key="row.id"
+                        class="group hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                      >
                       <td class="px-xl py-md text-body-sm font-body-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">
-                        {{ t(`patientProfile.medical.rows.${row.id}.date`) }}
+                        {{ row.dateLabel }}
                       </td>
                       <td class="px-xl py-md">
                         <div class="flex items-center gap-3">
                           <span class="text-tertiary bg-tertiary/10 p-1.5 rounded shrink-0">
-                            <FontAwesomeIcon :icon="row.icon" class="text-lg" aria-hidden="true" />
+                            <FontAwesomeIcon :icon="['fas', 'microscope']" class="text-lg" aria-hidden="true" />
                           </span>
                           <div class="min-w-0">
                             <p class="font-body-md font-semibold text-blue-900 dark:text-blue-200">
-                              {{ t(`patientProfile.medical.rows.${row.id}.title`) }}
+                              {{ row.title }}
                             </p>
                             <p class="text-xs text-slate-400 dark:text-slate-500">
-                              {{ t(`patientProfile.medical.rows.${row.id}.subtitle`) }}
+                              {{ row.subtitle }}
                             </p>
                           </div>
                         </div>
@@ -310,20 +325,21 @@
                           :class="statusBadgeClasses(row.tone)"
                         >
                           <span class="w-1.5 h-1.5 rounded-full shrink-0" :class="statusDotClasses(row.tone)" />
-                          {{ rowStatusLabel(row.rowStatus) }}
+                          {{ row.statusLabel }}
                         </span>
                       </td>
                       <td class="px-xl py-md text-right">
-                        <a
+                        <AppButton
+                          type="button"
                           class="text-tertiary font-medium text-sm inline-flex items-center gap-1 hover:underline justify-end"
-                          href="#"
-                          @click.prevent
+                          @click="navigateTo('/test-findings/find-test-results')"
                         >
                           {{ t('patientProfile.medical.viewDetails') }}
                           <FontAwesomeIcon icon="chevron-right" class="text-base" aria-hidden="true" />
-                        </a>
+                        </AppButton>
                       </td>
-                    </tr>
+                      </tr>
+                    </template>
                   </tbody>
                 </table>
               </div>
@@ -371,9 +387,28 @@ const { t, locale, setLocale } = useI18n()
 const { persistLocale } = useLocalePreference()
 const { api, clearSession, token, user, ensureUserLoaded } = useMedDirectApi()
 
-onMounted(() => {
-  ensureUserLoaded()
+const recordsLoading = ref(true)
+const medicalReports = ref([])
+
+onMounted(async () => {
+  await ensureUserLoaded()
+  await loadMedicalRecords()
 })
+
+async function loadMedicalRecords() {
+  recordsLoading.value = true
+  try {
+    await api('/api/user/claim-records', { method: 'POST' })
+    const res = await api('/api/user/medical-records')
+    medicalReports.value = res.reports ?? []
+  }
+  catch {
+    medicalReports.value = []
+  }
+  finally {
+    recordsLoading.value = false
+  }
+}
 
 const signingOut = ref(false)
 
@@ -427,12 +462,45 @@ const displayPhone = computed(() => user.value?.phone || t('patientProfile.perso
 const displayAddress = computed(() => user.value?.address || t('patientProfile.personal.location'))
 const displayAvatar = computed(() => user.value?.avatar_url || IMG_PHOTO_PATIENT)
 
-const medicalRows = [
-  { id: 'glucose', rowStatus: 'completed', tone: 'green', icon: ['fas', 'microscope'] },
-  { id: 'hypertension', rowStatus: 'diagnosed', tone: 'blue', icon: ['fas', 'heart-pulse'] },
-  { id: 'lipid', rowStatus: 'completed', tone: 'amber', icon: ['fas', 'microscope'] },
-  { id: 'asthma', rowStatus: 'diagnosed', tone: 'blue', icon: ['fas', 'wind'] },
-]
+const medicalRows = computed(() =>
+  medicalReports.value.map((report) => {
+    const firstItem = report.items?.[0]
+    const status = firstItem?.status ?? 'normal'
+    return {
+      id: report.id,
+      dateLabel: formatReportDate(report.reported_at),
+      title: firstItem?.test_name ?? t('patientProfile.medical.labResult'),
+      subtitle: report.organization?.name
+        ? `${t('patientProfile.medical.labResult')} • ${report.organization.name}`
+        : t('patientProfile.medical.labResult'),
+      statusLabel: labStatusLabel(status),
+      tone: labStatusTone(status),
+    }
+  }),
+)
+
+function formatReportDate(iso) {
+  if (!iso) return '—'
+  try {
+    const loc = locale.value === 'ar' ? 'ar' : locale.value === 'ku' ? 'ku' : 'en'
+    return new Intl.DateTimeFormat(loc, { dateStyle: 'medium' }).format(new Date(iso))
+  }
+  catch {
+    return iso
+  }
+}
+
+function labStatusLabel(status) {
+  if (status === 'high') return t('patientProfile.medical.statusHigh')
+  if (status === 'low') return t('patientProfile.medical.statusLow')
+  return t('patientProfile.medical.statusNormal')
+}
+
+function labStatusTone(status) {
+  if (status === 'high') return 'amber'
+  if (status === 'low') return 'blue'
+  return 'green'
+}
 
 const localeCodes = /** @type {const} */ (['ar', 'en', 'ku'])
 
@@ -448,12 +516,6 @@ async function selectLocale(code) {
   if (!localeCodes.includes(code)) return
   persistLocale(code)
   await setLocale(code)
-}
-
-function rowStatusLabel(rowStatus) {
-  return rowStatus === 'completed'
-    ? t('patientProfile.medical.statusCompleted')
-    : t('patientProfile.medical.statusDiagnosed')
 }
 
 function statusBadgeClasses(tone) {

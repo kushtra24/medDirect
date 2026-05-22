@@ -19,51 +19,57 @@
               <FontAwesomeIcon icon="user" class="text-tertiary text-xl shrink-0" aria-hidden="true" />
               {{ t('labResultsPage.patientInfo.title') }}
             </h2>
-            <div class="space-y-4">
-              <div>
-                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">{{
-                  t('labResultsPage.form.patientName')
-                }}</label>
-                <input
-                  class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
-                  type="text"
-                  :placeholder="t('labResultsPage.form.patientNamePlaceholder')"
-                >
+            <p class="text-body-sm text-on-surface-variant mb-4">
+              {{ t('labResultsPage.patientInfo.subtitle') }}
+            </p>
+            <p v-if="patientLoading" class="text-on-surface-variant font-body-md">
+              {{ t('labResultsPage.patientInfo.loading') }}
+            </p>
+            <p v-else-if="patientLoadError" class="text-error text-body-sm" role="alert">
+              {{ patientLoadError }}
+            </p>
+            <dl v-else class="space-y-4">
+              <div v-if="patientId">
+                <dt class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                  {{ t('labResultsPage.patientInfo.patientId') }}
+                </dt>
+                <dd class="font-body-md font-semibold text-blue-900 dark:text-blue-100 tabular-nums">
+                  #{{ patientId }}
+                </dd>
               </div>
               <div>
-                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">{{
-                  t('labResultsPage.form.patientSurname')
-                }}</label>
-                <input
-                  class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
-                  type="text"
-                  :placeholder="t('labResultsPage.form.patientSurnamePlaceholder')"
-                >
+                <dt class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                  {{ t('labResultsPage.form.patientName') }}
+                </dt>
+                <dd class="font-body-md font-semibold text-blue-900 dark:text-blue-100">
+                  {{ displayFirstName }}
+                </dd>
               </div>
               <div>
-                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">{{
-                  t('labResultsPage.form.birthDate')
-                }}</label>
-                <input
-                  class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
-                  type="date"
-                >
+                <dt class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                  {{ t('labResultsPage.form.patientSurname') }}
+                </dt>
+                <dd class="font-body-md font-semibold text-blue-900 dark:text-blue-100">
+                  {{ displaySurname }}
+                </dd>
               </div>
               <div>
-                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-1">{{
-                  t('labResultsPage.form.gender')
-                }}</label>
-                <select
-                  class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 appearance-none bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
-                >
-                  <option value="" disabled selected>{{ t('labResultsPage.form.selectGender') }}</option>
-                  <option value="male">{{ t('labResultsPage.form.genderMale') }}</option>
-                  <option value="female">{{ t('labResultsPage.form.genderFemale') }}</option>
-                  <option value="other">{{ t('labResultsPage.form.genderOther') }}</option>
-                  <option value="prefer-not-say">{{ t('labResultsPage.form.genderPreferNotSay') }}</option>
-                </select>
+                <dt class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                  {{ t('labResultsPage.form.birthDate') }}
+                </dt>
+                <dd class="font-body-md font-semibold text-blue-900 dark:text-blue-100">
+                  {{ displayBirthDate }}
+                </dd>
               </div>
-            </div>
+              <div>
+                <dt class="font-label-caps text-label-caps text-on-surface-variant mb-1">
+                  {{ t('labResultsPage.form.gender') }}
+                </dt>
+                <dd class="font-body-md font-semibold text-blue-900 dark:text-blue-100">
+                  {{ displayGender }}
+                </dd>
+              </div>
+            </dl>
           </div>
 
           <div class="bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900 p-4 rounded-xl">
@@ -88,6 +94,7 @@
                 t('labResultsPage.doctorNote.clinicalObservation')
               }}</label>
               <textarea
+                v-model="doctorNote"
                 class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 min-h-[120px] resize-none bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
                 rows="5"
                 :placeholder="t('labResultsPage.doctorNote.placeholder')"
@@ -120,6 +127,7 @@
                   t('labResultsPage.testEntry.valueInput')
                 }}</label>
                 <input
+                  v-model="entryValue"
                   class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
                   type="text"
                   :placeholder="t('labResultsPage.testEntry.valuePlaceholder')"
@@ -130,11 +138,12 @@
                   t('labResultsPage.testEntry.status')
                 }}</label>
                 <select
+                  v-model="entryStatus"
                   class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 appearance-none bg-white dark:bg-slate-950 dark:text-slate-100 outline-none"
                 >
-                  <option>{{ t('labResultsPage.testEntry.statusNormal') }}</option>
-                  <option class="text-error">{{ t('labResultsPage.testEntry.statusHigh') }}</option>
-                  <option class="text-blue-600 dark:text-blue-400">{{ t('labResultsPage.testEntry.statusLow') }}</option>
+                  <option value="normal">{{ t('labResultsPage.testEntry.statusNormal') }}</option>
+                  <option value="high" class="text-error">{{ t('labResultsPage.testEntry.statusHigh') }}</option>
+                  <option value="low" class="text-blue-600 dark:text-blue-400">{{ t('labResultsPage.testEntry.statusLow') }}</option>
                 </select>
               </div>
               <div>
@@ -142,6 +151,7 @@
                   t('labResultsPage.testEntry.referencePoint')
                 }}</label>
                 <input
+                  v-model="entryReference"
                   class="w-full border border-outline-variant dark:border-slate-600 focus:border-tertiary focus:ring-1 focus:ring-tertiary rounded-lg font-body-md p-3 bg-surface-container-low dark:bg-slate-800 dark:text-slate-100 outline-none"
                   type="text"
                   :placeholder="t('labResultsPage.testEntry.referencePlaceholder')"
@@ -151,6 +161,7 @@
                 <AppButton
                   type="button"
                   class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98]"
+                  @click="addEntry"
                 >
                   <FontAwesomeIcon icon="plus" class="text-lg" aria-hidden="true" />
                   {{ t('labResultsPage.testEntry.addResult') }}
@@ -163,7 +174,7 @@
             <div class="p-4 border-b border-outline-variant dark:border-slate-700 bg-surface-container-lowest dark:bg-slate-800/50 flex justify-between items-center flex-wrap gap-2">
               <span class="font-h3 text-[16px] text-blue-900 dark:text-blue-100">{{ t('labResultsPage.entryList.title') }}</span>
               <span class="bg-surface-container dark:bg-slate-700 px-2 py-1 rounded text-[10px] font-bold text-on-surface-variant uppercase tracking-wide">{{
-                t('labResultsPage.entryList.entriesBadge', { count: 3 })
+                t('labResultsPage.entryList.entriesBadge', { count: pendingItems.length })
               }}</span>
             </div>
             <div class="overflow-x-auto">
@@ -178,56 +189,36 @@
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-outline-variant dark:divide-slate-700">
-                  <tr class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors">
+                  <tr
+                    v-for="(item, index) in pendingItems"
+                    :key="item.id"
+                    class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors"
+                  >
                     <td class="px-6 py-4 font-body-md text-blue-900 dark:text-blue-100 font-semibold">
-                      {{ t('labResultsPage.rows.glucose.name') }}
+                      {{ item.test_name }}
                     </td>
-                    <td class="px-6 py-4 font-body-md">{{ t('labResultsPage.rows.glucose.value') }}</td>
+                    <td class="px-6 py-4 font-body-md">{{ item.value }}</td>
                     <td class="px-6 py-4">
-                      <span class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 dark:bg-red-950/50 text-error text-[12px] font-bold rounded-md">
-                        <FontAwesomeIcon icon="arrow-trend-up" class="text-[14px]" aria-hidden="true" />
-                        {{ t('labResultsPage.badge.high') }}
+                      <span
+                        class="inline-flex items-center gap-1 px-2 py-1 text-[12px] font-bold rounded-md"
+                        :class="item.status === 'high'
+                          ? 'bg-red-50 dark:bg-red-950/50 text-error'
+                          : item.status === 'low'
+                            ? 'bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400'
+                            : 'bg-tertiary/10 text-tertiary'"
+                      >
+                        {{ statusLabel(item.status) }}
                       </span>
                     </td>
-                    <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.glucose.reference') }}</td>
+                    <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ item.reference_point }}</td>
                     <td class="px-6 py-4 text-end">
-                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
-                        <FontAwesomeIcon icon="trash" aria-hidden="true" />
-                      </AppButton>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors">
-                    <td class="px-6 py-4 font-body-md text-blue-900 dark:text-blue-100 font-semibold">
-                      {{ t('labResultsPage.rows.a1c.name') }}
-                    </td>
-                    <td class="px-6 py-4 font-body-md">{{ t('labResultsPage.rows.a1c.value') }}</td>
-                    <td class="px-6 py-4">
-                      <span class="inline-flex items-center gap-1 px-2 py-1 bg-tertiary/10 text-tertiary text-[12px] font-bold rounded-md">
-                        <FontAwesomeIcon icon="circle-check" class="text-[14px]" aria-hidden="true" />
-                        {{ t('labResultsPage.badge.normal') }}
-                      </span>
-                    </td>
-                    <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.a1c.reference') }}</td>
-                    <td class="px-6 py-4 text-end">
-                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
-                        <FontAwesomeIcon icon="trash" aria-hidden="true" />
-                      </AppButton>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-surface dark:hover:bg-slate-800/40 transition-colors">
-                    <td class="px-6 py-4 font-body-md text-blue-900 dark:text-blue-100 font-semibold">
-                      {{ t('labResultsPage.rows.creatinine.name') }}
-                    </td>
-                    <td class="px-6 py-4 font-body-md">{{ t('labResultsPage.rows.creatinine.value') }}</td>
-                    <td class="px-6 py-4">
-                      <span class="inline-flex items-center gap-1 px-2 py-1 bg-tertiary/10 text-tertiary text-[12px] font-bold rounded-md">
-                        <FontAwesomeIcon icon="circle-check" class="text-[14px]" aria-hidden="true" />
-                        {{ t('labResultsPage.badge.normal') }}
-                      </span>
-                    </td>
-                    <td class="px-6 py-4 font-body-sm text-on-surface-variant">{{ t('labResultsPage.rows.creatinine.reference') }}</td>
-                    <td class="px-6 py-4 text-end">
-                      <AppButton type="button" class="text-outline hover:text-error transition-colors p-1 rounded" :title="t('labResultsPage.deleteAria')" :aria-label="t('labResultsPage.deleteAria')">
+                      <AppButton
+                        type="button"
+                        class="text-outline hover:text-error transition-colors p-1 rounded"
+                        :title="t('labResultsPage.deleteAria')"
+                        :aria-label="t('labResultsPage.deleteAria')"
+                        @click="removeEntry(index)"
+                      >
                         <FontAwesomeIcon icon="trash" aria-hidden="true" />
                       </AppButton>
                     </td>
@@ -244,10 +235,14 @@
             >
               {{ t('labResultsPage.saveDraft') }}
             </AppButton>
+            <p v-if="submitError" class="text-error text-sm col-span-full text-end" role="alert">
+              {{ submitError }}
+            </p>
             <AppButton
               type="button"
-              class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98]"
-              @click="finalizedOverlayOpen = true"
+              class="bg-tertiary hover:opacity-90 text-on-tertiary font-button py-3 px-8 rounded-full flex items-center gap-2 transition-transform active:scale-[0.98] disabled:opacity-60"
+              :disabled="submitting || !pendingItems.length"
+              @click="finishReport"
             >
               {{ t('labResultsPage.finishReport') }}
               <FontAwesomeIcon icon="file-lines" aria-hidden="true" />
@@ -266,7 +261,40 @@ definePageMeta({
   middleware: 'staff',
 })
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+const { api, ensureUserLoaded } = useMedDirectApi()
+const { requireOrganization } = useActiveOrganization()
+const route = useRoute()
+
+const patientId = computed(() => {
+  const raw = route.query.patient_id
+  if (raw == null || raw === '') return null
+  const id = Number(raw)
+  return Number.isFinite(id) ? id : null
+})
+
+const patient = ref(null)
+const patientLoading = ref(false)
+const patientLoadError = ref('')
+
+const notAvailable = computed(() => t('labResultsPage.patientInfo.notAvailable'))
+
+const displayFirstName = computed(() => patient.value?.first_name || notAvailable.value)
+const displaySurname = computed(() => patient.value?.surname || notAvailable.value)
+const displayBirthDate = computed(() => {
+  const iso = patient.value?.date_of_birth
+  if (!iso) return notAvailable.value
+  return formatPatientDate(iso)
+})
+const displayGender = computed(() => genderLabel(patient.value?.gender))
+
+const doctorNote = ref('')
+const entryValue = ref('')
+const entryStatus = ref('normal')
+const entryReference = ref('')
+const pendingItems = ref([])
+const submitting = ref(false)
+const submitError = ref('')
 
 const TEST_CATALOG_KEYS = [
   'glucoseFasting',
@@ -296,4 +324,116 @@ const labTestOptions = computed(() =>
 useSeoMeta({
   title: () => t('labResultsPage.seoTitle'),
 })
+
+function formatPatientDate(iso) {
+  try {
+    const loc = locale.value === 'ar' ? 'ar' : locale.value === 'ku' ? 'ku' : 'en'
+    const d = new Date(`${iso}T12:00:00`)
+    return new Intl.DateTimeFormat(loc, { dateStyle: 'long' }).format(d)
+  }
+  catch {
+    return iso
+  }
+}
+
+function genderLabel(value) {
+  if (!value) return notAvailable.value
+  const key = {
+    male: 'genderMale',
+    female: 'genderFemale',
+    other: 'genderOther',
+    'prefer-not-say': 'genderPreferNotSay',
+  }[value]
+  return key ? t(`labResultsPage.form.${key}`) : value
+}
+
+async function loadPatient() {
+  if (!patientId.value) return
+  patientLoadError.value = ''
+  patientLoading.value = true
+  try {
+    const org = await requireOrganization()
+    const res = await api(`/api/organizations/${org.id}/patients/${patientId.value}`)
+    patient.value = res.patient ?? null
+  }
+  catch (e) {
+    patient.value = null
+    patientLoadError.value = e?.data?.message || e?.message || t('labResultsPage.patientInfo.errorLoadFailed')
+  }
+  finally {
+    patientLoading.value = false
+  }
+}
+
+onMounted(async () => {
+  await ensureUserLoaded()
+  await loadPatient()
+})
+
+watch(patientId, async () => {
+  await loadPatient()
+})
+
+let entryId = 0
+
+function addEntry() {
+  if (!testName.value.trim()) return
+  pendingItems.value.push({
+    id: ++entryId,
+    test_name: testName.value.trim(),
+    value: entryValue.value.trim(),
+    status: entryStatus.value,
+    reference_point: entryReference.value.trim(),
+  })
+  testName.value = ''
+  entryValue.value = ''
+  entryReference.value = ''
+  entryStatus.value = 'normal'
+}
+
+function removeEntry(index) {
+  pendingItems.value.splice(index, 1)
+}
+
+function statusLabel(status) {
+  if (status === 'high') return t('labResultsPage.badge.high')
+  if (status === 'low') return t('labResultsPage.badge.low')
+  return t('labResultsPage.badge.normal')
+}
+
+async function finishReport() {
+  submitError.value = ''
+  if (!patientId.value) {
+    submitError.value = t('labResultsPage.patientInfo.errorNoPatient')
+    return
+  }
+  submitting.value = true
+  try {
+    const org = await requireOrganization()
+    const body = {
+      patient_id: patientId.value,
+      doctor_note: doctorNote.value || null,
+      status: 'finalized',
+      items: pendingItems.value.map(({ test_name, value, status, reference_point }) => ({
+        test_name,
+        value,
+        status,
+        reference_point,
+      })),
+    }
+    await api(`/api/organizations/${org.id}/lab-results`, {
+      method: 'POST',
+      body,
+    })
+    pendingItems.value = []
+    finalizedOverlayOpen.value = true
+  }
+  catch (e) {
+    const first = e?.data?.errors && Object.values(e.data.errors).flat()[0]
+    submitError.value = first || e?.data?.message || e?.message || 'Could not save report.'
+  }
+  finally {
+    submitting.value = false
+  }
+}
 </script>

@@ -72,10 +72,19 @@
               </div>
             </div>
 
+            <p
+              v-if="submitError"
+              class="rounded-lg border border-error/40 bg-error/10 px-md py-sm font-body-sm text-error"
+              role="alert"
+            >
+              {{ submitError }}
+            </p>
+
             <div class="pt-md space-y-md">
               <AppButton
                 class="w-full bg-secondary text-on-secondary py-md px-lg rounded-lg font-button text-button hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2"
                 type="submit"
+                :disabled="submitting"
               >
                 <span>{{ t('testFindings.submit') }}</span>
                 <FontAwesomeIcon icon="arrow-right" aria-hidden="true" />
@@ -107,21 +116,41 @@
 
 <script setup>
 const { t } = useI18n()
+const { api } = useMedDirectApi()
 
 const fullName = ref('')
 const accessPin = ref('')
+const submitError = ref('')
+const submitting = ref(false)
 
 useSeoMeta({
   title: () => t('testFindings.title'),
 })
 
-function onSubmit() {
-  navigateTo({
-    path: '/test-findings/results',
-    query: {
-      patient: fullName.value.trim(),
-      pin: accessPin.value.trim(),
-    },
-  })
+async function onSubmit() {
+  submitError.value = ''
+  submitting.value = true
+  try {
+    const res = await api('/api/patient-records/lookup', {
+      method: 'POST',
+      body: {
+        full_name: fullName.value.trim(),
+        access_pin: accessPin.value.trim(),
+      },
+    })
+    await navigateTo({
+      path: '/test-findings/results',
+      query: {
+        patient: res.patient?.full_name ?? fullName.value.trim(),
+      },
+      state: { reports: res.reports },
+    })
+  }
+  catch (e) {
+    submitError.value = e?.data?.message || e?.message || 'Lookup failed.'
+  }
+  finally {
+    submitting.value = false
+  }
 }
 </script>

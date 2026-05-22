@@ -19,6 +19,21 @@
         </div>
       </div>
 
+      <p
+        v-if="submitError"
+        class="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+        role="alert"
+      >
+        {{ submitError }}
+      </p>
+      <p
+        v-if="successMessage"
+        class="rounded-lg border border-tertiary/30 bg-tertiary/10 px-4 py-3 text-sm text-teal-900 dark:text-teal-100"
+        role="status"
+      >
+        {{ successMessage }}
+      </p>
+
       <form class="space-y-6" @submit.prevent="onSubmit">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <section
@@ -39,9 +54,11 @@
                     t('addNewPatientPage.form.name')
                   }}</label>
                   <input
+                    v-model="form.first_name"
                     class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                     type="text"
                     autocomplete="given-name"
+                    required
                     :placeholder="t('addNewPatientPage.form.namePlaceholder')"
                   >
                 </div>
@@ -50,9 +67,11 @@
                     t('addNewPatientPage.form.surname')
                   }}</label>
                   <input
+                    v-model="form.surname"
                     class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                     type="text"
                     autocomplete="family-name"
+                    required
                     :placeholder="t('addNewPatientPage.form.surnamePlaceholder')"
                   >
                 </div>
@@ -62,6 +81,7 @@
                   t('addNewPatientPage.form.dob')
                 }}</label>
                 <input
+                  v-model="form.date_of_birth"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                   type="date"
                   autocomplete="bday"
@@ -74,6 +94,7 @@
                 <div class="flex flex-wrap gap-4">
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
+                      v-model="form.gender"
                       class="text-tertiary focus:ring-tertiary border-slate-300 dark:border-slate-600 dark:bg-slate-950"
                       name="gender"
                       type="radio"
@@ -85,6 +106,7 @@
                   </label>
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
+                      v-model="form.gender"
                       class="text-tertiary focus:ring-tertiary border-slate-300 dark:border-slate-600 dark:bg-slate-950"
                       name="gender"
                       type="radio"
@@ -96,6 +118,7 @@
                   </label>
                   <label class="flex items-center gap-2 cursor-pointer group">
                     <input
+                      v-model="form.gender"
                       class="text-tertiary focus:ring-tertiary border-slate-300 dark:border-slate-600 dark:bg-slate-950"
                       name="gender"
                       type="radio"
@@ -127,6 +150,7 @@
                   t('addNewPatientPage.form.nationalId')
                 }}</label>
                 <input
+                  v-model="form.national_id"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                   type="text"
                   :placeholder="t('addNewPatientPage.form.nationalIdPlaceholder')"
@@ -137,6 +161,7 @@
                   t('addNewPatientPage.form.insuranceProvider')
                 }}</label>
                 <select
+                  v-model="form.insurance_provider"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none appearance-none"
                 >
                   <option value="">{{ t('addNewPatientPage.form.selectProvider') }}</option>
@@ -151,6 +176,7 @@
                   t('addNewPatientPage.form.policyNumber')
                 }}</label>
                 <input
+                  v-model="form.policy_number"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                   type="text"
                   :placeholder="t('addNewPatientPage.form.policyPlaceholder')"
@@ -178,6 +204,7 @@
                   t('addNewPatientPage.form.bloodGroup')
                 }}</label>
                 <select
+                  v-model="form.blood_group"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none appearance-none"
                 >
                   <option value="">{{ t('addNewPatientPage.form.selectBloodGroup') }}</option>
@@ -196,6 +223,7 @@
                   t('addNewPatientPage.form.allergies')
                 }}</label>
                 <textarea
+                  v-model="form.allergies"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary p-3 outline-none min-h-[4.5rem]"
                   rows="2"
                   :placeholder="t('addNewPatientPage.form.allergiesPlaceholder')"
@@ -206,6 +234,7 @@
                   t('addNewPatientPage.form.chronic')
                 }}</label>
                 <textarea
+                  v-model="form.chronic_conditions"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary p-3 outline-none min-h-[4.5rem]"
                   rows="2"
                   :placeholder="t('addNewPatientPage.form.chronicPlaceholder')"
@@ -235,6 +264,7 @@
                     class="inline-flex items-center px-3 rounded-s-lg border border-e-0 border-slate-200 dark:border-slate-600 bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-sm shrink-0"
                   >{{ t('addNewPatientPage.form.countryCode') }}</span>
                   <input
+                    v-model="form.phone"
                     class="flex-1 min-w-0 border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-e-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                     type="tel"
                     autocomplete="tel-national"
@@ -251,6 +281,7 @@
                     <FontAwesomeIcon icon="envelope" class="text-lg" />
                   </span>
                   <input
+                    v-model="form.email"
                     class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 ps-10 pe-3 outline-none"
                     type="email"
                     autocomplete="email"
@@ -277,10 +308,11 @@
           </AppButton>
           <AppButton
             type="submit"
-            class="px-10 py-3 rounded-lg font-button bg-tertiary text-on-tertiary hover:opacity-90 shadow-md shadow-tertiary/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+            class="px-10 py-3 rounded-lg font-button bg-tertiary text-on-tertiary hover:opacity-90 shadow-md shadow-tertiary/25 active:scale-[0.98] transition-all flex items-center justify-center gap-2 disabled:opacity-60"
+            :disabled="submitting"
           >
             <FontAwesomeIcon icon="save" class="text-lg" aria-hidden="true" />
-            {{ t('addNewPatientPage.savePatient') }}
+            {{ submitting ? t('addNewPatientPage.saving') : t('addNewPatientPage.savePatient') }}
           </AppButton>
         </div>
       </form>
@@ -298,14 +330,74 @@ definePageMeta({
 })
 
 const { t } = useI18n()
+const { api, ensureUserLoaded } = useMedDirectApi()
+const { requireOrganization } = useActiveOrganization()
 
 const year = new Date().getFullYear()
+
+const form = reactive({
+  first_name: '',
+  surname: '',
+  date_of_birth: '',
+  gender: '',
+  national_id: '',
+  insurance_provider: '',
+  policy_number: '',
+  blood_group: '',
+  allergies: '',
+  chronic_conditions: '',
+  phone: '',
+  email: '',
+})
+
+const submitting = ref(false)
+const submitError = ref('')
+const successMessage = ref('')
 
 useSeoMeta({
   title: () => t('addNewPatientPage.seoTitle'),
 })
 
-function onSubmit() {
-  // Form submission can be wired to an API when available.
+onMounted(() => {
+  ensureUserLoaded()
+})
+
+async function onSubmit() {
+  submitError.value = ''
+  successMessage.value = ''
+  submitting.value = true
+  try {
+    const org = await requireOrganization()
+    const body = {
+      ...form,
+      date_of_birth: form.date_of_birth || null,
+      gender: form.gender || null,
+      insurance_provider: form.insurance_provider || null,
+      policy_number: form.policy_number || null,
+      blood_group: form.blood_group || null,
+      allergies: form.allergies || null,
+      chronic_conditions: form.chronic_conditions || null,
+      phone: form.phone || null,
+      email: form.email || null,
+      national_id: form.national_id || null,
+    }
+    const res = await api(`/api/organizations/${org.id}/patients`, {
+      method: 'POST',
+      body,
+    })
+    successMessage.value = t('addNewPatientPage.successMessage', { pin: res.access_pin })
+  }
+  catch (e) {
+    if (e?.message === 'NO_ORGANIZATION') {
+      submitError.value = t('addNewPatientPage.errorNoOrganization')
+    }
+    else {
+      const first = e?.data?.errors && Object.values(e.data.errors).flat()[0]
+      submitError.value = first || e?.data?.message || t('addNewPatientPage.errorSaveFailed')
+    }
+  }
+  finally {
+    submitting.value = false
+  }
 }
 </script>

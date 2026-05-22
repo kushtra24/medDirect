@@ -267,6 +267,8 @@ async function onSubmit() {
         surname: surname.value.trim(),
         email: email.value.trim(),
         password: password.value,
+        date_of_birth: birthday.value || null,
+        address: city.value.trim() || null,
       },
     })
     setSession(res.token, res.user)

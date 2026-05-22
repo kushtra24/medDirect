@@ -22,7 +22,8 @@
   "nav": {
     "home": "Home",
     "search": "Search",
-    "profile": "Profile"
+    "profile": "Profile",
+    "ControlPanel": "Control Panel"
   },
   "login": {
     "portalSubtitle": "Secure Patient Portal Access",
@@ -211,6 +212,12 @@
     "medical": {
       "title": "Medical Results",
       "viewAll": "View all medical history",
+      "loading": "Loading your records…",
+      "empty": "No lab results yet. Records from clinics and labs appear here after you register with the same email or birth date used on your chart.",
+      "labResult": "Lab report",
+      "statusNormal": "Normal",
+      "statusHigh": "High",
+      "statusLow": "Low",
       "tableDate": "DATE",
       "tableResult": "RESULT / DIAGNOSIS",
       "tableStatus": "STATUS",
@@ -603,6 +610,10 @@
     "privacyNoteBody": "Patient contact data is stored securely in compliance with local healthcare regulations. Automated appointment reminders will be sent to these contacts.",
     "cancel": "Cancel",
     "savePatient": "Save patient",
+    "saving": "Saving…",
+    "successMessage": "Patient saved. Access PIN for guest lookup: {pin}",
+    "errorNoOrganization": "You are not assigned to a clinic or lab. Contact your administrator.",
+    "errorSaveFailed": "Could not save patient. Check the form and try again.",
     "footer": "© {year} {brand} portal. All rights reserved. Clinical excellence through technology."
   },
   "labResultsPage": {
@@ -610,7 +621,13 @@
     "title": "Add patient results",
     "subtitle": "Input new clinical findings and laboratory data for processing.",
     "patientInfo": {
-      "title": "Patient info"
+      "title": "Patient info",
+      "subtitle": "Reference information from the patient record.",
+      "loading": "Loading patient details…",
+      "notAvailable": "—",
+      "patientId": "Patient ID",
+      "errorNoPatient": "Select a patient before saving lab results.",
+      "errorLoadFailed": "Could not load patient details."
     },
     "form": {
       "patientName": "Patient name",
@@ -698,6 +715,7 @@
     },
     "badge": {
       "high": "High",
+      "low": "Low",
       "normal": "Normal"
     },
     "deleteAria": "Remove entry",
@@ -805,14 +823,24 @@
       "other": "Other",
       "search": "Search patient"
     },
+    "searchPrompt": "Enter criteria above and search to find patients.",
+    "searching": "Searching…",
+    "noResults": "No patients match your search.",
+    "noHistory": "No lab results on file yet.",
+    "notAvailable": "—",
+    "unknownPatient": "Unknown patient",
+    "reportPanel": "Lab panel ({count} tests)",
+    "reportUntitled": "Lab report",
+    "reportDraft": "Draft report",
+    "reportFinalized": "Finalized report",
+    "errorNoOrganization": "No organization selected. Sign in as staff with an assigned lab or clinic.",
+    "errorSearchFailed": "Patient search failed. Try again.",
+    "statusDraft": "Draft",
     "patient": {
-      "initials": "JW",
-      "fullName": "Julianne Williams",
-      "dobDisplay": "14 May 1988 (35 yrs)",
-      "genderLabel": "Female",
-      "idPrefix": "ID:",
-      "idValue": "LAB-98210"
+      "dobWithAge": "{date} ({age} yrs)",
+      "idPrefix": "ID:"
     },
+    "lastUpdatedAt": "Last updated: {datetime}",
     "newLabOrder": "New lab order",
     "historyTitle": "Recent clinical history",
     "showingRecords": "Showing {count} records",

@@ -19,15 +19,28 @@
 </template>
 
 <script setup>
+import { isControlPanelRole } from '~/composables/useMedDirectApi'
+
 const { t } = useI18n()
 const route = useRoute()
+const { user } = useMedDirectApi()
+
+const profileTo = computed(() =>
+  isControlPanelRole(user.value?.role) ? '/control-panel' : '/profile',
+)
 
 const navItems = computed(() => {
   const path = route.path
+  const isStaff = isControlPanelRole(user.value?.role)
   return [
     { label: t('nav.home'), icon: ['fas', 'house'], to: '/', active: path === '/' },
     { label: t('nav.search'), icon: ['fas', 'magnifying-glass'], to: '/search-results', active: path.startsWith('/search-results') },
-    { label: t('nav.profile'), icon: ['fas', 'circle-user'], to: '/profile', active: path.startsWith('/profile') },
+    {
+      label: isStaff ? t('nav.ControlPanel') : t('nav.profile'),
+      icon: ['fas', 'circle-user'],
+      to: profileTo.value,
+      active: isStaff ? path.startsWith('/control-panel') : path.startsWith('/profile'),
+    },
   ]
 })
 </script>

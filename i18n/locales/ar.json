@@ -608,7 +608,13 @@
     "title": "إضافة نتائج المريض",
     "subtitle": "إدخال نتائج سريرية وبيانات مخبرية جديدة للمعالجة.",
     "patientInfo": {
-      "title": "معلومات المريض"
+      "title": "معلومات المريض",
+      "subtitle": "معلومات مرجعية من سجل المريض.",
+      "loading": "جاري تحميل بيانات المريض…",
+      "notAvailable": "—",
+      "patientId": "معرّف المريض",
+      "errorNoPatient": "اختر مريضًا قبل حفظ نتائج المختبر.",
+      "errorLoadFailed": "تعذّر تحميل بيانات المريض."
     },
     "form": {
       "patientName": "اسم المريض",
@@ -803,14 +809,24 @@
       "other": "آخر",
       "search": "بحث عن مريض"
     },
+    "searchPrompt": "أدخل المعايير أعلاه وابحث للعثور على المرضى.",
+    "searching": "جاري البحث…",
+    "noResults": "لا يوجد مرضى يطابقون بحثك.",
+    "noHistory": "لا توجد نتائج مختبر مسجلة بعد.",
+    "notAvailable": "—",
+    "unknownPatient": "مريض غير معروف",
+    "reportPanel": "لوحة مختبر ({count} فحوصات)",
+    "reportUntitled": "تقرير مختبر",
+    "reportDraft": "تقرير مسودة",
+    "reportFinalized": "تقرير نهائي",
+    "errorNoOrganization": "لم يتم اختيار منظمة. سجّل الدخول كموظف مع مختبر أو عيادة.",
+    "errorSearchFailed": "فشل البحث. حاول مرة أخرى.",
+    "statusDraft": "مسودة",
     "patient": {
-      "initials": "JW",
-      "fullName": "جوليان ويليامز",
-      "dobDisplay": "١٤ مايو ١٩٨٨ (٣٥ سنة)",
-      "genderLabel": "أنثى",
-      "idPrefix": "المعرف:",
-      "idValue": "LAB-98210"
+      "dobWithAge": "{date} ({age} سنة)",
+      "idPrefix": "المعرف:"
     },
+    "lastUpdatedAt": "آخر تحديث: {datetime}",
     "newLabOrder": "طلب مختبر جديد",
     "historyTitle": "السجل السريري الأخير",
     "showingRecords": "عرض {count} سجلات",
