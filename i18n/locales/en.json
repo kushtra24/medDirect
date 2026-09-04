@@ -384,58 +384,43 @@
       "findCare": "Find Care",
       "specialists": "Specialists",
       "insurance": "Insurance",
-      "myDashboard": "My Dashboard"
+      "myDashboard": "My Dashboard",
+      "patient": "Patient",
+      "newPatient": "New patient",
+      "searchPatient": "Search patient"
     },
-    "notificationsAria": "Notifications",
     "settingsAria": "Settings",
+    "manageStaffAria": "Manage staff",
     "profileAlt": "Healthcare professional profile photo",
+    "accountMenu": {
+      "ariaLabel": "Account menu",
+      "signOut": "Sign out"
+    },
     "profileStrength": {
       "title": "Profile Strength",
-      "percent": "75%",
       "hint": "Almost there! Complete your profile to boost visibility.",
-      "hoursTitle": "Add operating hours",
-      "hoursCta": "Complete now",
-      "photosTitle": "Upload clinic photos",
-      "photosCta": "Upload"
-    },
-    "sidebar": {
-      "clinicManagement": "Clinic management",
-      "staffMembers": "Staff members",
-      "medicalSupplies": "Medical supplies",
-      "billing": "Billing"
+      "updateProfileCta": "Update profile"
     },
     "overview": {
       "title": "Clinic overview",
-      "welcome": "Welcome back, {name}. Here's what's happening today."
+      "welcome": "Welcome, {name}"
     },
-    "demoName": "Dr. Julian",
     "newPatient": "New patient",
     "stats": {
+      "examinationsToday": "Total patient examinations today",
+      "newPatientsThisMonth": "New patients this month",
       "searchAppearances": "Total search appearances",
-      "searchValue": "1,284",
-      "searchDelta": "12%",
-      "contacted": "Total contacted",
-      "contactValue": "4.8",
-      "contactDelta": "4.9",
-      "patientsEnrolled": "Total patients enrolled",
-      "patientsValue": "28",
-      "urgent": "Urgent"
+      "comingSoon": "Coming soon",
+      "errorLoadFailed": "Could not load dashboard statistics."
     },
     "patientLogs": {
       "title": "Patient logs",
       "viewAll": "View all",
       "completed": "Completed",
       "inProgress": "In progress",
-      "entry1": {
-        "name": "Sarah Jenkins",
-        "body": "Consultation completed. Prescription sent to primary pharmacy. Patient scheduled for follow-up in 2 weeks.",
-        "meta": "2 hours ago • Cardiology dept."
-      },
-      "entry2": {
-        "name": "Michael Chen",
-        "body": "Lab results received. Reviewing treatment plan with clinical staff. Patient notified of pending update.",
-        "meta": "Yesterday • General wellness"
-      }
+      "empty": "No recent patient activity yet.",
+      "examinationBody": "Examination results updated.",
+      "labBody": "Lab results updated."
     },
     "upcomingFeatures": {
       "title": "Upcoming features",
@@ -453,6 +438,65 @@
       "profile": "Profile"
     }
   },
+  "staffPage": {
+    "seoTitle": "Manage staff",
+    "title": "Staff",
+    "subtitle": "Add, edit, and manage the staff members in this clinic.",
+    "loading": "Loading staff…",
+    "empty": "No staff members found.",
+    "ownerBadge": "Owner",
+    "titlePlaceholder": "e.g. Cardiovascular doctor",
+    "saveAria": "Save changes",
+    "detailsAria": "View or edit permissions",
+    "removeAria": "Remove staff member",
+    "abilitiesTitle": "Permissions",
+    "addStaffCta": "Add staff member",
+    "confirmRemove": "Remove {name} from this clinic's staff?",
+    "errorLoadFailed": "Could not load staff members.",
+    "errorSaveFailed": "Could not save changes.",
+    "errorRemoveFailed": "Could not remove staff member.",
+    "errorForbidden": "You don't have permission to manage staff for this clinic.",
+    "abilities": {
+      "canCreatePatient": "Register new patients",
+      "canEditPatient": "Edit patient details",
+      "canViewPatients": "View patients",
+      "canEditLabResults": "Edit lab results",
+      "canCreateAddResults": "Add examination & lab results",
+      "canCreateDoctorsNote": "Add doctor's notes",
+      "canManageStaff": "Manage staff",
+      "canEditOrganizationProfile": "Edit clinic profile"
+    },
+    "addForm": {
+      "title": "Add a staff member",
+      "hint": "If this email already has an account, we'll add them as staff — name and password are ignored in that case.",
+      "name": "Full name",
+      "namePlaceholder": "Jane Doe",
+      "email": "Email",
+      "emailPlaceholder": "jane{'@'}clinic.com",
+      "password": "Temporary password",
+      "passwordPlaceholder": "Only needed for a new account",
+      "jobTitle": "Job title",
+      "makeOwner": "Make this person an owner of this clinic",
+      "cancel": "Cancel",
+      "submit": "Add staff member",
+      "adding": "Adding…",
+      "errorFailed": "Could not add staff member."
+    }
+  },
+  "changePasswordPage": {
+    "seoTitle": "Change password",
+    "title": "Change your password",
+    "subtitle": "Update your account password.",
+    "requiredSubtitle": "For security, set a new password before continuing.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "submit": "Update password",
+    "saving": "Saving…",
+    "success": "Password updated.",
+    "errorMismatch": "New passwords do not match.",
+    "errorFailed": "Could not update password."
+  },
   "editClinicPage": {
     "seoTitle": "Edit clinic",
     "backAria": "Back to dashboard",
@@ -465,8 +509,16 @@
     "title": "Edit clinic",
     "subtitle": "Update your clinic profile, services, hours, contact details, and branding.",
     "requestPublish": "Request to Publish",
+    "saveChanges": "Save changes",
+    "saving": "Saving…",
+    "saved": "Changes saved.",
+    "loading": "Loading clinic profile…",
+    "errorNoOrganization": "No organization selected. Sign in as staff with an assigned clinic or lab.",
+    "errorLoadFailed": "Could not load clinic profile.",
+    "errorSaveFailed": "Could not save changes. Check the form and try again.",
+    "errorNameRequired": "Clinic name is required.",
     "basicInfo": {
-      "sectionTitle": "Basic Information", 
+      "sectionTitle": "Basic Information",
       "name": "Name",
       "namePlaceholder": "e.g. Metro Health Diagnostics Center",
       "description": "Description",
@@ -490,20 +542,25 @@
       "logoFormats": "PNG, SVG up to 5MB",
       "coverDrop": "Upload cover photo or",
       "select": "select",
-      "coverFormats": "JPG, JPEG high resolution"
+      "coverFormats": "JPG, JPEG high resolution",
+      "replace": "Replace",
+      "remove": "Remove",
+      "gallery": "Gallery photos",
+      "gallerySubtitle": "Add extra photos of your facility, equipment, or waiting area.",
+      "addPhoto": "Add photo",
+      "galleryPhotoAlt": "Clinic gallery photo",
+      "removePhotoAria": "Remove photo",
+      "uploadError": "Could not upload image. Try a smaller file.",
+      "deleteError": "Could not remove image."
     },
     "operations": {
       "sectionTitle": "Operations",
       "coreServices": "Core services",
-      "selectPrimary": "Select primary service…",
-      "serviceMolecular": "Molecular diagnostics",
-      "serviceChemistry": "Clinical chemistry",
-      "serviceHematology": "Hematology",
-      "serviceImmunology": "Immunology",
+      "selectServices": "Select care services…",
       "certifications": "Certifications",
-      "addCertPlaceholder": "Add…",
-      "certIso": "ISO 15189",
-      "certCap": "CAP Accredited",
+      "addCertPlaceholder": "Add a certification…",
+      "addCertButton": "Add",
+      "noCertifications": "No certifications added yet.",
       "removeCertAria": "Remove certification",
       "openingHours": "Opening hours",
       "days": {
@@ -515,13 +572,30 @@
         "sat": "Sat",
         "sun": "Sun"
       },
-      "closed": "Closed"
+      "closed": "Closed",
+      "hoursModal": {
+        "closeAria": "Close dialog",
+        "closedAllDay": "Closed all day",
+        "opens": "Opens",
+        "closes": "Closes",
+        "cancel": "Cancel",
+        "save": "Save hours"
+      },
+      "servicesModal": {
+        "title": "Care services",
+        "subtitle": "Choose every service your clinic offers. Patients can filter search results by these.",
+        "closeAria": "Close dialog",
+        "empty": "No services available yet.",
+        "cancel": "Cancel",
+        "apply": "Apply"
+      }
     },
     "status": {
       "sectionTitle": "Publishing status",
       "verifiedTitle": "Verified clinic",
       "verifiedBody": "This clinic exists with registration business number: {regNumber}. Verified via National Health Registry.",
       "regNumber": "RE-9928-HBX",
+      "unverifiedTitle": "Not yet verified",
       "reviewNote": "Information is ready for review. Click \"Request to Publish\" to submit for verification."
     },
     "contact": {
@@ -530,23 +604,53 @@
       "addressPlaceholder": "Street name, Building No, City, Zip Code…",
       "mapAlt": "Map view",
       "setCoordinates": "Set coordinates",
+      "coordinatesSet": "{lat}, {lng} · Edit",
       "mobile": "Mobile number",
       "mobilePlaceholder": "+1 (555) 000-0000",
       "email": "Email address",
-      "emailPlaceholder": "contact{'@'}metroclinic.com"
+      "emailPlaceholder": "contact{'@'}metroclinic.com",
+      "coordinatesModal": {
+        "title": "Set map coordinates",
+        "subtitle": "Used to place your clinic on the map for patients searching nearby.",
+        "closeAria": "Close dialog",
+        "latitude": "Latitude",
+        "longitude": "Longitude",
+        "cancel": "Cancel",
+        "save": "Save coordinates"
+      }
     },
     "languages": {
       "sectionTitle": "Languages",
       "spoken": "Languages spoken",
-      "addLanguagePlaceholder": "Add language…",
-      "chipEnglish": "English",
-      "chipSpanish": "Spanish",
-      "chipMandarin": "Mandarin",
+      "placeholder": "Select languages…",
       "removeLangAria": "Remove language",
-      "french": "French",
-      "arabic": "Arabic",
-      "german": "German",
-      "hindi": "Hindi"
+      "options": {
+        "english": "English",
+        "arabic": "Arabic",
+        "kurdish": "Kurdish",
+        "german": "German",
+        "french": "French",
+        "spanish": "Spanish",
+        "turkish": "Turkish",
+        "persian": "Persian",
+        "russian": "Russian",
+        "mandarin": "Mandarin",
+        "hindi": "Hindi",
+        "urdu": "Urdu"
+      }
+    },
+    "team": {
+      "sectionTitle": "Team",
+      "subtitle": "Introduce the people patients will meet — add a photo, name, and role.",
+      "noTitle": "Team member",
+      "removeAria": "Remove team member",
+      "removeError": "Could not remove team member.",
+      "addTitle": "Add a team member",
+      "namePlaceholder": "Full name",
+      "titlePlaceholder": "Role (e.g. Head Nurse)",
+      "photoAria": "Add photo",
+      "add": "Add",
+      "addError": "Could not add team member. Check the form and try again."
     }
   },
   "addNewPatientPage": {
@@ -735,6 +839,94 @@
       "downloadPdf": "Download PDF copy"
     }
   },
+  "examinationResultsPage": {
+    "seoTitle": "Add examination result",
+    "title": "Add examination result",
+    "subtitle": "Record new clinical examination findings for the patient.",
+    "patientInfo": {
+      "title": "Patient info",
+      "subtitle": "Reference information from the patient record.",
+      "loading": "Loading patient details…",
+      "notAvailable": "—",
+      "patientId": "Patient ID",
+      "errorNoPatient": "Select a patient before saving examination results.",
+      "errorLoadFailed": "Could not load patient details."
+    },
+    "form": {
+      "patientName": "Patient name",
+      "patientSurname": "Patient surname",
+      "birthDate": "Birth date",
+      "gender": "Gender",
+      "genderMale": "Male",
+      "genderFemale": "Female",
+      "genderOther": "Other",
+      "genderPreferNotSay": "Prefer not to say"
+    },
+    "compliance": {
+      "title": "Compliance check",
+      "body": "Ensure all fields match the primary patient identification record for HIPAA compliance."
+    },
+    "doctorNote": {
+      "title": "Doctor's note",
+      "clinicalObservation": "Clinical observation",
+      "placeholder": "Enter clinical notes or additional observations here…"
+    },
+    "findingEntry": {
+      "title": "Finding entry",
+      "findingName": "Finding name",
+      "findingNamePlaceholder": "Search finding (e.g. blood pressure)",
+      "valueInput": "Value input",
+      "valuePlaceholder": "Enter observed value",
+      "status": "Status",
+      "referencePoint": "Reference point",
+      "referencePlaceholder": "e.g. 90/60 – 120/80 mmHg",
+      "statusNormal": "Normal",
+      "statusHigh": "High",
+      "statusLow": "Low",
+      "addResult": "Add finding"
+    },
+    "combobox": {
+      "noResults": "No matching findings"
+    },
+    "findingCatalog": {
+      "bloodPressure": "Blood pressure",
+      "heartRate": "Heart rate",
+      "respiratoryRate": "Respiratory rate",
+      "temperature": "Temperature",
+      "oxygenSaturation": "Oxygen saturation (SpO₂)",
+      "weight": "Weight",
+      "height": "Height",
+      "bmi": "Body mass index (BMI)",
+      "generalAppearance": "General appearance",
+      "cardiovascularExam": "Cardiovascular exam",
+      "respiratoryExam": "Respiratory exam",
+      "abdominalExam": "Abdominal exam",
+      "neurologicalExam": "Neurological exam",
+      "skinExam": "Skin exam"
+    },
+    "entryList": {
+      "title": "Current entry list",
+      "entriesBadge": "{count} entries",
+      "empty": "No findings added yet."
+    },
+    "table": {
+      "findingName": "Finding",
+      "value": "Value",
+      "status": "Status",
+      "reference": "Reference",
+      "action": "Action"
+    },
+    "badge": {
+      "high": "High",
+      "low": "Low",
+      "normal": "Normal"
+    },
+    "deleteAria": "Remove entry",
+    "saveDraft": "Save as draft",
+    "finishReport": "Finish & generate report",
+    "submitSuccess": "Examination result saved successfully.",
+    "draftSuccess": "Draft saved successfully."
+  },
   "labReportSlip": {
     "seoTitle": "Laboratory report",
     "nonPrintHint": "This tab shows your printable report. Use Print → Save as PDF to download, or print to paper.",
@@ -801,6 +993,49 @@
     "footerLocation": "Lab location: 402 Medical Plaza, Suite 10, Bio-District",
     "footerPage": "Page 1 of 1"
   },
+  "examinationResultSlip": {
+    "seoTitle": "Examination report",
+    "nonPrintHint": "This tab shows your printable report. Use Print → Save as PDF to download, or print to paper.",
+    "loading": "Loading report…",
+    "noReports": "No examination reports to print.",
+    "notAvailable": "—",
+    "defaultInstitutionName": "Medical Clinic",
+    "officialReportTitle": "Examination report",
+    "patientNameLabel": "Patient name",
+    "dobLabel": "Date of birth",
+    "genderLabel": "Gender",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderOther": "Other",
+    "patientIdLabel": "Patient ID",
+    "examDateLabel": "Examination date",
+    "reportStatusLabel": "Report status",
+    "reportStatusFinal": "Final",
+    "reportStatusDraft": "Draft",
+    "table": {
+      "finding": "Finding",
+      "result": "Result",
+      "referenceRange": "Reference range",
+      "status": "Status"
+    },
+    "badge": {
+      "high": "High",
+      "low": "Low",
+      "normal": "Normal"
+    },
+    "doctorNoteTitle": "Doctor's note",
+    "noFindingsRecorded": "No findings or notes recorded for this report.",
+    "securePinLabel": "Secure access PIN",
+    "pinNotIssued": "Not issued",
+    "pinHint": "Patients can view this report anytime online by entering their full name and the secure PIN on the patient portal.",
+    "disclaimerTitle": "Clinical disclaimer",
+    "disclaimerBody": "This report is intended for medical professionals and should be interpreted in the context of the patient's clinical history. Clinical correlation is recommended.",
+    "signerRoleFallback": "Examining physician",
+    "footerPage": "Page {current} of {total}",
+    "errorNoPatient": "No patient selected.",
+    "errorLoadFailed": "Could not load examination report.",
+    "printButton": "Print"
+  },
   "searchPatientPage": {
     "seoTitle": "Search patient",
     "backAria": "Back to dashboard",
@@ -842,6 +1077,7 @@
     },
     "lastUpdatedAt": "Last updated: {datetime}",
     "newLabOrder": "New lab order",
+    "newExaminationResult": "New examination result",
     "historyTitle": "Recent clinical history",
     "showingRecords": "Showing {count} records",
     "table": {
@@ -882,5 +1118,61 @@
     },
     "lastUpdated": "Last updated: Oct 24, 2023 at 2:42 PM",
     "viewFullRecord": "View full medical record"
+  },
+  "patientRecordPage": {
+    "seoTitle": "Patient medical record",
+    "backToSearch": "Back to search",
+    "loading": "Loading patient record…",
+    "notAvailable": "—",
+    "unknownPatient": "Unknown patient",
+    "idPrefix": "ID:",
+    "dobWithAge": "{date} ({age} yrs)",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderOther": "Other",
+    "claimed": "Claimed by patient",
+    "unclaimed": "Not yet claimed",
+    "errorNoPatient": "No patient selected.",
+    "errorLoadFailed": "Could not load patient record.",
+    "showingRecords": "{count} records",
+    "statusDraft": "Draft",
+    "statusCompleted": "Completed",
+    "details": {
+      "title": "Contact & identification",
+      "phone": "Phone",
+      "email": "Email",
+      "nationalId": "National ID",
+      "insurance": "Insurance provider",
+      "policyNumber": "Policy number",
+      "registeredOn": "Registered on"
+    },
+    "clinical": {
+      "title": "Clinical background",
+      "bloodGroup": "Blood group",
+      "allergies": "Allergies",
+      "chronicConditions": "Chronic conditions",
+      "noneRecorded": "None recorded"
+    },
+    "labSection": {
+      "title": "Lab results",
+      "empty": "No lab results on file yet."
+    },
+    "examSection": {
+      "title": "Examination results",
+      "empty": "No examination results on file yet.",
+      "printAll": "Print all",
+      "printAllAria": "Print all examination results"
+    },
+    "printReportAria": "Print this report",
+    "itemsTable": {
+      "name": "Name",
+      "value": "Value",
+      "status": "Status",
+      "reference": "Reference",
+      "empty": "No entries recorded for this report.",
+      "high": "High",
+      "low": "Low",
+      "normal": "Normal"
+    }
   }
 }

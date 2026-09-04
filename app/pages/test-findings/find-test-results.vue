@@ -139,11 +139,8 @@ async function onSubmit() {
       },
     })
     await navigateTo({
-      path: '/test-findings/results',
-      query: {
-        patient: res.patient?.full_name ?? fullName.value.trim(),
-      },
-      state: { reports: res.reports },
+      path: '/print/examination-result-slip',
+      state: { patient: res.patient, examinationReports: res.examination_reports },
     })
   }
   catch (e) {

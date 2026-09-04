@@ -375,58 +375,43 @@
       "findCare": "ابحث عن رعاية",
       "specialists": "التخصصات",
       "insurance": "التأمين",
-      "myDashboard": "لوحتي"
+      "myDashboard": "لوحتي",
+      "patient": "المريض",
+      "newPatient": "مريض جديد",
+      "searchPatient": "بحث عن مريض"
     },
-    "notificationsAria": "الإشعارات",
     "settingsAria": "الإعدادات",
+    "manageStaffAria": "إدارة الموظفين",
     "profileAlt": "صورة الملف المهني للعاملين في الرعاية الصحية",
+    "accountMenu": {
+      "ariaLabel": "قائمة الحساب",
+      "signOut": "تسجيل الخروج"
+    },
     "profileStrength": {
       "title": "قوة الملف",
-      "percent": "٧٥٪",
       "hint": "قريباً! أكمل ملفك لزيادة الظهور.",
-      "hoursTitle": "أضف ساعات العمل",
-      "hoursCta": "أكمل الآن",
-      "photosTitle": "ارفع صور العيادة",
-      "photosCta": "رفع"
-    },
-    "sidebar": {
-      "clinicManagement": "إدارة العيادة",
-      "staffMembers": "الموظفون",
-      "medicalSupplies": "المستلزمات الطبية",
-      "billing": "الفوترة"
+      "updateProfileCta": "تحديث الملف الشخصي"
     },
     "overview": {
       "title": "نظرة على العيادة",
-      "welcome": "مرحباً بعودتك، {name}. إليك ما يحدث اليوم."
+      "welcome": "مرحباً، {name}"
     },
-    "demoName": "د. جوليان",
     "newPatient": "مريض جديد",
     "stats": {
+      "examinationsToday": "إجمالي فحوصات المرضى اليوم",
+      "newPatientsThisMonth": "المرضى الجدد هذا الشهر",
       "searchAppearances": "إجمالي ظهور البحث",
-      "searchValue": "١٬٢٨٤",
-      "searchDelta": "١٢٪",
-      "contacted": "إجمالي من تواصلوا",
-      "contactValue": "٤٫٨",
-      "contactDelta": "٤٫٩",
-      "patientsEnrolled": "إجمالي المرضى المسجلين",
-      "patientsValue": "٢٨",
-      "urgent": "عاجل"
+      "comingSoon": "قريباً",
+      "errorLoadFailed": "تعذر تحميل إحصائيات لوحة التحكم."
     },
     "patientLogs": {
       "title": "سجلات المرضى",
       "viewAll": "عرض الكل",
       "completed": "مكتمل",
       "inProgress": "قيد التنفيذ",
-      "entry1": {
-        "name": "سارة جنكينز",
-        "body": "اكتملت الاستشارة. أُرسلت الوصفة إلى الصيدلية الأساسية. جُدولت متابعة خلال أسبوعين.",
-        "meta": "منذ ساعتين • قسم القلب"
-      },
-      "entry2": {
-        "name": "مايكل تشين",
-        "body": "وصلت نتائج المختبر. مراجعة خطة العلاج مع الطاقم. تم إبلاغ المريض بتحديث قيد الانتظار.",
-        "meta": "أمس • العافية العامة"
-      }
+      "empty": "لا يوجد نشاط حديث للمرضى بعد.",
+      "examinationBody": "تم تحديث نتائج الفحص السريري.",
+      "labBody": "تم تحديث نتائج المختبر."
     },
     "upcomingFeatures": {
       "title": "ميزات قادمة",
@@ -444,6 +429,65 @@
       "profile": "الملف"
     }
   },
+  "staffPage": {
+    "seoTitle": "إدارة الموظفين",
+    "title": "الموظفون",
+    "subtitle": "أضف موظفين وعدّلهم وأدرهم في هذه العيادة.",
+    "loading": "جارٍ تحميل الموظفين…",
+    "empty": "لا يوجد موظفون.",
+    "ownerBadge": "المالك",
+    "titlePlaceholder": "مثال: طبيب قلب وأوعية دموية",
+    "saveAria": "حفظ التغييرات",
+    "detailsAria": "عرض أو تعديل الصلاحيات",
+    "removeAria": "إزالة الموظف",
+    "abilitiesTitle": "الصلاحيات",
+    "addStaffCta": "إضافة موظف",
+    "confirmRemove": "هل تريد إزالة {name} من موظفي هذه العيادة؟",
+    "errorLoadFailed": "تعذر تحميل الموظفين.",
+    "errorSaveFailed": "تعذر حفظ التغييرات.",
+    "errorRemoveFailed": "تعذر إزالة الموظف.",
+    "errorForbidden": "ليس لديك صلاحية لإدارة موظفي هذه العيادة.",
+    "abilities": {
+      "canCreatePatient": "تسجيل مرضى جدد",
+      "canEditPatient": "تعديل بيانات المرضى",
+      "canViewPatients": "عرض المرضى",
+      "canEditLabResults": "تعديل نتائج المختبر",
+      "canCreateAddResults": "إضافة نتائج الفحص والمختبر",
+      "canCreateDoctorsNote": "إضافة ملاحظات الطبيب",
+      "canManageStaff": "إدارة الموظفين",
+      "canEditOrganizationProfile": "تعديل ملف العيادة"
+    },
+    "addForm": {
+      "title": "إضافة موظف",
+      "hint": "إذا كان هذا البريد الإلكتروني مرتبطًا بحساب موجود، سنضيفه كموظف مباشرة — وسيتم تجاهل الاسم وكلمة المرور في هذه الحالة.",
+      "name": "الاسم الكامل",
+      "namePlaceholder": "جين دو",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "jane{'@'}clinic.com",
+      "password": "كلمة مرور مؤقتة",
+      "passwordPlaceholder": "مطلوبة فقط لحساب جديد",
+      "jobTitle": "المسمى الوظيفي",
+      "makeOwner": "اجعل هذا الشخص مالكًا لهذه العيادة",
+      "cancel": "إلغاء",
+      "submit": "إضافة موظف",
+      "adding": "جارٍ الإضافة…",
+      "errorFailed": "تعذر إضافة الموظف."
+    }
+  },
+  "changePasswordPage": {
+    "seoTitle": "تغيير كلمة المرور",
+    "title": "تغيير كلمة المرور",
+    "subtitle": "حدّث كلمة مرور حسابك.",
+    "requiredSubtitle": "لأسباب أمنية، عيّن كلمة مرور جديدة قبل المتابعة.",
+    "currentPassword": "كلمة المرور الحالية",
+    "newPassword": "كلمة المرور الجديدة",
+    "confirmPassword": "تأكيد كلمة المرور الجديدة",
+    "submit": "تحديث كلمة المرور",
+    "saving": "جارٍ الحفظ…",
+    "success": "تم تحديث كلمة المرور.",
+    "errorMismatch": "كلمتا المرور الجديدتان غير متطابقتين.",
+    "errorFailed": "تعذر تحديث كلمة المرور."
+  },
   "editClinicPage": {
     "seoTitle": "تعديل العيادة",
     "backAria": "العودة إلى لوحة التحكم",
@@ -456,6 +500,14 @@
     "title": "تعديل العيادة",
     "subtitle": "حدّث ملف العيادة والخدمات وساعات العمل وبيانات الاتصال والعلامة التجارية.",
     "requestPublish": "طلب النشر",
+    "saveChanges": "حفظ التغييرات",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم حفظ التغييرات.",
+    "loading": "جاري تحميل ملف العيادة…",
+    "errorNoOrganization": "لم يتم اختيار منظمة. سجّل الدخول كموظف مرتبط بعيادة أو مختبر.",
+    "errorLoadFailed": "تعذّر تحميل ملف العيادة.",
+    "errorSaveFailed": "تعذّر حفظ التغييرات. تحقق من النموذج وحاول مرة أخرى.",
+    "errorNameRequired": "اسم العيادة مطلوب.",
     "basicInfo": {
       "sectionTitle": "معلومات أساسية",
       "name": "الاسم",
@@ -481,20 +533,25 @@
       "logoFormats": "PNG أو SVG حتى 5 ميجابايت",
       "coverDrop": "ارفع صورة الغلاف أو",
       "select": "اختر",
-      "coverFormats": "JPG أو JPEG عالية الدقة"
+      "coverFormats": "JPG أو JPEG عالية الدقة",
+      "replace": "استبدال",
+      "remove": "إزالة",
+      "gallery": "معرض الصور",
+      "gallerySubtitle": "أضف صورًا إضافية للمرفق أو الأجهزة أو منطقة الانتظار.",
+      "addPhoto": "إضافة صورة",
+      "galleryPhotoAlt": "صورة من معرض العيادة",
+      "removePhotoAria": "إزالة الصورة",
+      "uploadError": "تعذّر رفع الصورة. جرّب ملفًا أصغر حجمًا.",
+      "deleteError": "تعذّر إزالة الصورة."
     },
     "operations": {
       "sectionTitle": "العمليات",
       "coreServices": "الخدمات الأساسية",
-      "selectPrimary": "اختر الخدمة الأساسية…",
-      "serviceMolecular": "التشخيص الجزيئي",
-      "serviceChemistry": "الكيمياء السريرية",
-      "serviceHematology": "أمراض الدم",
-      "serviceImmunology": "المناعة",
+      "selectServices": "اختر الخدمات الصحية…",
       "certifications": "الاعتمادات",
-      "addCertPlaceholder": "إضافة…",
-      "certIso": "ISO 15189",
-      "certCap": "معتمد CAP",
+      "addCertPlaceholder": "أضف اعتمادًا…",
+      "addCertButton": "إضافة",
+      "noCertifications": "لم تتم إضافة أي اعتمادات بعد.",
       "removeCertAria": "إزالة الاعتماد",
       "openingHours": "ساعات العمل",
       "days": {
@@ -506,13 +563,30 @@
         "sat": "السبت",
         "sun": "الأحد"
       },
-      "closed": "مغلق"
+      "closed": "مغلق",
+      "hoursModal": {
+        "closeAria": "إغلاق النافذة",
+        "closedAllDay": "مغلق طوال اليوم",
+        "opens": "يفتح",
+        "closes": "يغلق",
+        "cancel": "إلغاء",
+        "save": "حفظ الساعات"
+      },
+      "servicesModal": {
+        "title": "الخدمات الصحية",
+        "subtitle": "اختر كل الخدمات التي تقدّمها عيادتك. يمكن للمرضى تصفية نتائج البحث حسب هذه الخدمات.",
+        "closeAria": "إغلاق النافذة",
+        "empty": "لا توجد خدمات متاحة بعد.",
+        "cancel": "إلغاء",
+        "apply": "تطبيق"
+      }
     },
     "status": {
       "sectionTitle": "حالة النشر",
       "verifiedTitle": "عيادة موثّقة",
       "verifiedBody": "هذه العيادة مسجلة برقم تجاري: {regNumber}. تم التحقق عبر السجل الصحي الوطني.",
       "regNumber": "RE-9928-HBX",
+      "unverifiedTitle": "لم يتم التحقق بعد",
       "reviewNote": "المعلومات جاهزة للمراجعة. اضغط «طلب النشر» لإرسالها للتحقق."
     },
     "contact": {
@@ -521,23 +595,53 @@
       "addressPlaceholder": "الشارع، المبنى، المدينة، الرمز البريدي…",
       "mapAlt": "عرض الخريطة",
       "setCoordinates": "تعيين الإحداثيات",
+      "coordinatesSet": "{lat}, {lng} · تعديل",
       "mobile": "رقم الجوال",
       "mobilePlaceholder": "+1 (555) 000-0000",
       "email": "البريد الإلكتروني",
-      "emailPlaceholder": "contact{'@'}metroclinic.com"
+      "emailPlaceholder": "contact{'@'}metroclinic.com",
+      "coordinatesModal": {
+        "title": "تعيين إحداثيات الخريطة",
+        "subtitle": "تُستخدم لتحديد موقع عيادتك على الخريطة للمرضى الباحثين عن عيادات قريبة.",
+        "closeAria": "إغلاق النافذة",
+        "latitude": "خط العرض",
+        "longitude": "خط الطول",
+        "cancel": "إلغاء",
+        "save": "حفظ الإحداثيات"
+      }
     },
     "languages": {
       "sectionTitle": "اللغات",
       "spoken": "اللغات المحكية",
-      "addLanguagePlaceholder": "أضف لغة…",
-      "chipEnglish": "الإنجليزية",
-      "chipSpanish": "الإسبانية",
-      "chipMandarin": "الماندرين",
+      "placeholder": "اختر اللغات…",
       "removeLangAria": "إزالة اللغة",
-      "french": "الفرنسية",
-      "arabic": "العربية",
-      "german": "الألمانية",
-      "hindi": "الهندية"
+      "options": {
+        "english": "الإنجليزية",
+        "arabic": "العربية",
+        "kurdish": "الكردية",
+        "german": "الألمانية",
+        "french": "الفرنسية",
+        "spanish": "الإسبانية",
+        "turkish": "التركية",
+        "persian": "الفارسية",
+        "russian": "الروسية",
+        "mandarin": "الماندرين",
+        "hindi": "الهندية",
+        "urdu": "الأردية"
+      }
+    },
+    "team": {
+      "sectionTitle": "الفريق",
+      "subtitle": "قدّم الأشخاص الذين سيقابلهم المرضى — أضف صورة واسمًا ومنصبًا.",
+      "noTitle": "عضو الفريق",
+      "removeAria": "إزالة عضو الفريق",
+      "removeError": "تعذّر إزالة عضو الفريق.",
+      "addTitle": "إضافة عضو فريق",
+      "namePlaceholder": "الاسم الكامل",
+      "titlePlaceholder": "المنصب (مثال: رئيسة التمريض)",
+      "photoAria": "إضافة صورة",
+      "add": "إضافة",
+      "addError": "تعذّر إضافة عضو الفريق. تحقق من النموذج وحاول مرة أخرى."
     }
   },
   "addNewPatientPage": {
@@ -721,6 +825,94 @@
       "downloadPdf": "تنزيل نسخة PDF"
     }
   },
+  "examinationResultsPage": {
+    "seoTitle": "إضافة نتيجة فحص سريري",
+    "title": "إضافة نتيجة فحص سريري",
+    "subtitle": "سجّل نتائج الفحص السريري الجديدة للمريض.",
+    "patientInfo": {
+      "title": "معلومات المريض",
+      "subtitle": "معلومات مرجعية من سجل المريض.",
+      "loading": "جاري تحميل بيانات المريض…",
+      "notAvailable": "—",
+      "patientId": "معرّف المريض",
+      "errorNoPatient": "اختر مريضًا قبل حفظ نتيجة الفحص السريري.",
+      "errorLoadFailed": "تعذّر تحميل بيانات المريض."
+    },
+    "form": {
+      "patientName": "اسم المريض",
+      "patientSurname": "اسم العائلة",
+      "birthDate": "تاريخ الميلاد",
+      "gender": "الجنس",
+      "genderMale": "ذكر",
+      "genderFemale": "أنثى",
+      "genderOther": "آخر",
+      "genderPreferNotSay": "أفضل عدم الذكر"
+    },
+    "compliance": {
+      "title": "التحقق من الامتثال",
+      "body": "تأكد من تطابق جميع الحقول مع سجل تعريف المريض الأساسي للامتثال للخصوصية الصحية (HIPAA)."
+    },
+    "doctorNote": {
+      "title": "ملاحظة الطبيب",
+      "clinicalObservation": "ملاحظة سريرية",
+      "placeholder": "أدخل الملاحظات السريرية أو الملاحظات الإضافية هنا…"
+    },
+    "findingEntry": {
+      "title": "إدخال ملاحظة الفحص",
+      "findingName": "اسم الملاحظة",
+      "findingNamePlaceholder": "ابحث عن ملاحظة (مثال: ضغط الدم)",
+      "valueInput": "القيمة المُلاحَظة",
+      "valuePlaceholder": "أدخل القيمة المُلاحَظة",
+      "status": "الحالة",
+      "referencePoint": "نطاق المرجع",
+      "referencePlaceholder": "مثال: 90/60 – 120/80 mmHg",
+      "statusNormal": "طبيعي",
+      "statusHigh": "مرتفع",
+      "statusLow": "منخفض",
+      "addResult": "إضافة ملاحظة"
+    },
+    "combobox": {
+      "noResults": "لا توجد ملاحظات مطابقة"
+    },
+    "findingCatalog": {
+      "bloodPressure": "ضغط الدم",
+      "heartRate": "معدل ضربات القلب",
+      "respiratoryRate": "معدل التنفس",
+      "temperature": "درجة الحرارة",
+      "oxygenSaturation": "تشبع الأكسجين (SpO₂)",
+      "weight": "الوزن",
+      "height": "الطول",
+      "bmi": "مؤشر كتلة الجسم (BMI)",
+      "generalAppearance": "المظهر العام",
+      "cardiovascularExam": "فحص القلب والأوعية الدموية",
+      "respiratoryExam": "فحص الجهاز التنفسي",
+      "abdominalExam": "فحص البطن",
+      "neurologicalExam": "الفحص العصبي",
+      "skinExam": "فحص الجلد"
+    },
+    "entryList": {
+      "title": "قائمة الإدخال الحالية",
+      "entriesBadge": "{count} إدخالات",
+      "empty": "لم تتم إضافة أي ملاحظات بعد."
+    },
+    "table": {
+      "findingName": "الملاحظة",
+      "value": "القيمة",
+      "status": "الحالة",
+      "reference": "المرجع",
+      "action": "إجراء"
+    },
+    "badge": {
+      "high": "مرتفع",
+      "low": "منخفض",
+      "normal": "طبيعي"
+    },
+    "deleteAria": "إزالة السجل",
+    "saveDraft": "حفظ كمسودة",
+    "finishReport": "إنهاء وإنشاء التقرير",
+    "submitSuccess": "تم حفظ نتيجة الفحص السريري بنجاح.",
+    "draftSuccess": "تم حفظ المسودة بنجاح."
+  },
   "labReportSlip": {
     "seoTitle": "تقرير المختبر",
     "nonPrintHint": "يعرض هذا التبويب التقرير للطباعة. استخدم طباعة → حفظ كـ PDF للتنزيل، أو للطباعة على الورق.",
@@ -787,6 +979,49 @@
     "footerLocation": "موقع المختبر: 402 ميديكال بلازا، جناح 10، المنطقة الحيوية",
     "footerPage": "صفحة ١ من ١"
   },
+  "examinationResultSlip": {
+    "seoTitle": "تقرير الفحص السريري",
+    "nonPrintHint": "تعرض هذه النافذة تقريرك القابل للطباعة. استخدم طباعة ← حفظ كملف PDF للتنزيل، أو اطبعه على ورق.",
+    "loading": "جارٍ تحميل التقرير…",
+    "noReports": "لا توجد تقارير فحص سريري للطباعة.",
+    "notAvailable": "—",
+    "defaultInstitutionName": "العيادة الطبية",
+    "officialReportTitle": "تقرير الفحص السريري",
+    "patientNameLabel": "اسم المريض",
+    "dobLabel": "تاريخ الميلاد",
+    "genderLabel": "الجنس",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى",
+    "genderOther": "آخر",
+    "patientIdLabel": "رقم المريض",
+    "examDateLabel": "تاريخ الفحص",
+    "reportStatusLabel": "حالة التقرير",
+    "reportStatusFinal": "نهائي",
+    "reportStatusDraft": "مسودة",
+    "table": {
+      "finding": "النتيجة السريرية",
+      "result": "القيمة",
+      "referenceRange": "المعدل المرجعي",
+      "status": "الحالة"
+    },
+    "badge": {
+      "high": "مرتفع",
+      "low": "منخفض",
+      "normal": "طبيعي"
+    },
+    "doctorNoteTitle": "ملاحظة الطبيب",
+    "noFindingsRecorded": "لا توجد نتائج أو ملاحظات مسجلة لهذا التقرير.",
+    "securePinLabel": "رمز الوصول الآمن",
+    "pinNotIssued": "لم يُصدر بعد",
+    "pinHint": "يمكن للمرضى الاطلاع على هذا التقرير في أي وقت عبر الإنترنت بإدخال الاسم الكامل ورمز الوصول الآمن في بوابة المريض.",
+    "disclaimerTitle": "إخلاء مسؤولية سريرية",
+    "disclaimerBody": "هذا التقرير مخصص للمهنيين الصحيين ويجب تفسيره في سياق التاريخ السريري للمريض. يُنصح بالربط السريري.",
+    "signerRoleFallback": "الطبيب الفاحص",
+    "footerPage": "صفحة {current} من {total}",
+    "errorNoPatient": "لم يتم تحديد مريض.",
+    "errorLoadFailed": "تعذر تحميل تقرير الفحص السريري.",
+    "printButton": "طباعة"
+  },
   "searchPatientPage": {
     "seoTitle": "بحث عن مريض",
     "backAria": "العودة إلى لوحة التحكم",
@@ -828,6 +1063,7 @@
     },
     "lastUpdatedAt": "آخر تحديث: {datetime}",
     "newLabOrder": "طلب مختبر جديد",
+    "newExaminationResult": "نتيجة فحص سريري جديدة",
     "historyTitle": "السجل السريري الأخير",
     "showingRecords": "عرض {count} سجلات",
     "table": {
@@ -868,5 +1104,61 @@
     },
     "lastUpdated": "آخر تحديث: ٢٤ أكتوبر ٢٠٢٣ الساعة ٢:٤٢ م",
     "viewFullRecord": "عرض السجل الطبي الكامل"
+  },
+  "patientRecordPage": {
+    "seoTitle": "السجل الطبي للمريض",
+    "backToSearch": "العودة إلى البحث",
+    "loading": "جاري تحميل سجل المريض…",
+    "notAvailable": "—",
+    "unknownPatient": "مريض غير معروف",
+    "idPrefix": "المعرّف:",
+    "dobWithAge": "{date} ({age} سنة)",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى",
+    "genderOther": "آخر",
+    "claimed": "تم ربطه من قبل المريض",
+    "unclaimed": "لم يُربط بعد",
+    "errorNoPatient": "لم يتم اختيار مريض.",
+    "errorLoadFailed": "تعذّر تحميل سجل المريض.",
+    "showingRecords": "{count} سجلات",
+    "statusDraft": "مسودة",
+    "statusCompleted": "مكتمل",
+    "details": {
+      "title": "التواصل والتعريف",
+      "phone": "الهاتف",
+      "email": "البريد الإلكتروني",
+      "nationalId": "الرقم الوطني",
+      "insurance": "شركة التأمين",
+      "policyNumber": "رقم البوليصة",
+      "registeredOn": "تاريخ التسجيل"
+    },
+    "clinical": {
+      "title": "الخلفية السريرية",
+      "bloodGroup": "فصيلة الدم",
+      "allergies": "الحساسية",
+      "chronicConditions": "الأمراض المزمنة",
+      "noneRecorded": "لا يوجد شيء مسجل"
+    },
+    "labSection": {
+      "title": "نتائج المختبر",
+      "empty": "لا توجد نتائج مختبر مسجلة حتى الآن."
+    },
+    "examSection": {
+      "title": "نتائج الفحص السريري",
+      "empty": "لا توجد نتائج فحص سريري مسجلة حتى الآن.",
+      "printAll": "طباعة الكل",
+      "printAllAria": "طباعة جميع نتائج الفحص السريري"
+    },
+    "printReportAria": "طباعة هذا التقرير",
+    "itemsTable": {
+      "name": "الاسم",
+      "value": "القيمة",
+      "status": "الحالة",
+      "reference": "المرجع",
+      "empty": "لا توجد إدخالات مسجلة لهذا التقرير.",
+      "high": "مرتفع",
+      "low": "منخفض",
+      "normal": "طبيعي"
+    }
   }
 }

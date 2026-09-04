@@ -4,7 +4,7 @@ Nuxt 4 patient portal (i18n: English, Arabic, Kurdish).
 
 ## Docker (recommended)
 
-From the **repository root** (`medical/`):
+From the **repository root** (`med-direct/`):
 
 ```bash
 cp .env.docker.example .env.docker

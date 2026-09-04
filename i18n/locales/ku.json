@@ -375,58 +375,43 @@
       "findCare": "چاودێری بدۆزەوە",
       "specialists": "پسپۆڕان",
       "insurance": "دڵنیایی",
-      "myDashboard": "داشبۆردەکەم"
+      "myDashboard": "داشبۆردەکەم",
+      "patient": "نەخۆش",
+      "newPatient": "نەخۆشی نوێ",
+      "searchPatient": "گەڕان بۆ نەخۆش"
     },
-    "notificationsAria": "ئاگادارکردنەوەکان",
     "settingsAria": "ڕێکخستنەکان",
+    "manageStaffAria": "بەڕێوەبردنی کارمەندان",
     "profileAlt": "وێنەی پڕۆفایلی پسپۆڕی تەندروستی",
+    "accountMenu": {
+      "ariaLabel": "مینیوی هەژمار",
+      "signOut": "چوونەدەرەوە"
+    },
     "profileStrength": {
       "title": "بەهێزی پڕۆفایل",
-      "percent": "٧٥٪",
       "hint": "نزیک بوویت! پڕۆفایلەکەت تەواو بکە بۆ دیاریکردنی زیاتر.",
-      "hoursTitle": "کاتەکانی کار زیاد بکە",
-      "hoursCta": "ئێستا تەواو بکە",
-      "photosTitle": "وێنەی کلینیک بار بکە",
-      "photosCta": "بارکردن"
-    },
-    "sidebar": {
-      "clinicManagement": "بەڕێوەبردنی کلینیک",
-      "staffMembers": "کارمەندان",
-      "medicalSupplies": "کەرەستەی پزیشکی",
-      "billing": "پسوڵەکردن"
+      "updateProfileCta": "نوێکردنەوەی پڕۆفایل"
     },
     "overview": {
       "title": "پێداچوونەوە بە کلینیک",
-      "welcome": "بەخێربێیت، {name}. ئەمە ئەوەیە کە ئەمڕۆ ڕوودەدات."
+      "welcome": "بەخێربێیت، {name}"
     },
-    "demoName": "د. جولیان",
     "newPatient": "نەخۆشی نوێ",
     "stats": {
+      "examinationsToday": "کۆی پشکنینی نەخۆشەکان ئەمڕۆ",
+      "newPatientsThisMonth": "نەخۆشی نوێ ئەم مانگە",
       "searchAppearances": "کۆی دەرکەوتنی گەڕان",
-      "searchValue": "١٬٢٨٤",
-      "searchDelta": "١٢٪",
-      "contacted": "کۆی پەیوەندییەکان",
-      "contactValue": "٤٫٨",
-      "contactDelta": "٤٫٩",
-      "patientsEnrolled": "کۆی نەخۆشە تۆمارکراوەکان",
-      "patientsValue": "٢٨",
-      "urgent": "فرەگرنگ"
+      "comingSoon": "بەم زووانە",
+      "errorLoadFailed": "نەتوانرا ئامارەکانی داشبۆرد بار بکرێن."
     },
     "patientLogs": {
       "title": "تۆمارەکانی نەخۆش",
       "viewAll": "هەموو ببینە",
       "completed": "تەواو",
       "inProgress": "لە پڕۆسەدایە",
-      "entry1": {
-        "name": "سارا جێنکینز",
-        "body": "ڕاوێژکاری تەواو بوو. دەرمان بۆ دەرمانخانەی سەرەکی نێردرا. نەخۆش بۆ دووبارەکردنەوە لە ٢ هەفتەدا خەمڵێنرا.",
-        "meta": "٢ کاتژمێر لەمەوبەر • بەشی دڵ"
-      },
-      "entry2": {
-        "name": "مایکل چێن",
-        "body": "ئەنجامی تاقیگە هات. پلانی چارەسەر لەگەڵ ستافەکە پێداچوونەوە دەکرێت. نەخۆش ئاگادارکرایەوە لە نوێکردنەوەی چاوەڕوانکراو.",
-        "meta": "دوێنێ • تەندروستی گشتی"
-      }
+      "empty": "هێشتا هیچ چالاکییەکی نوێی نەخۆش نییە.",
+      "examinationBody": "ئەنجامی پشکنین نوێکرایەوە.",
+      "labBody": "ئەنجامی تاقیگە نوێکرایەوە."
     },
     "upcomingFeatures": {
       "title": "تایبەتمەندییەکانی داهاتوو",
@@ -444,6 +429,65 @@
       "profile": "پڕۆفایل"
     }
   },
+  "staffPage": {
+    "seoTitle": "بەڕێوەبردنی کارمەندان",
+    "title": "کارمەندان",
+    "subtitle": "کارمەند زیاد بکە، دەستکاری بکە و بەڕێوەیان ببە لەم کلینیکە.",
+    "loading": "کارمەندان بار دەکرێن…",
+    "empty": "هیچ کارمەندێک نەدۆزرایەوە.",
+    "ownerBadge": "خاوەن",
+    "titlePlaceholder": "بۆ نموونە: پزیشکی دڵ و خوێنبەر",
+    "saveAria": "گۆڕانکارییەکان پاشەکەوت بکە",
+    "detailsAria": "ڕێگاکان ببینە یان دەستکاریان بکە",
+    "removeAria": "کارمەند لاببە",
+    "abilitiesTitle": "ڕێگاکان",
+    "addStaffCta": "کارمەند زیاد بکە",
+    "confirmRemove": "{name} لە کارمەندانی ئەم کلینیکە لاببرێت؟",
+    "errorLoadFailed": "نەتوانرا کارمەندان بار بکرێن.",
+    "errorSaveFailed": "نەتوانرا گۆڕانکارییەکان پاشەکەوت بکرێن.",
+    "errorRemoveFailed": "نەتوانرا کارمەند لابردرێت.",
+    "errorForbidden": "ڕێگەت پێنەدراوە بەڕێوەبردنی کارمەندانی ئەم کلینیکە.",
+    "abilities": {
+      "canCreatePatient": "تۆمارکردنی نەخۆشی نوێ",
+      "canEditPatient": "دەستکاریکردنی زانیاری نەخۆش",
+      "canViewPatients": "بینینی نەخۆشەکان",
+      "canEditLabResults": "دەستکاریکردنی ئەنجامی تاقیگە",
+      "canCreateAddResults": "زیادکردنی ئەنجامی پشکنین و تاقیگە",
+      "canCreateDoctorsNote": "زیادکردنی تێبینی پزیشک",
+      "canManageStaff": "بەڕێوەبردنی کارمەندان",
+      "canEditOrganizationProfile": "دەستکاریکردنی پڕۆفایلی کلینیک"
+    },
+    "addForm": {
+      "title": "زیادکردنی کارمەند",
+      "hint": "ئەگەر ئەم ئیمەیلە پێشتر هەژمارێکی هەیە، وەک کارمەند زیادی دەکەین — ناو و وشەی نهێنی پشتگوێ دەخرێن لەو حاڵەتەدا.",
+      "name": "ناوی تەواو",
+      "namePlaceholder": "ژینا دۆ",
+      "email": "ئیمەیل",
+      "emailPlaceholder": "jane{'@'}clinic.com",
+      "password": "وشەی نهێنی کاتی",
+      "passwordPlaceholder": "تەنها بۆ هەژمارێکی نوێ پێویستە",
+      "jobTitle": "ناونیشانی پیشەیی",
+      "makeOwner": "ئەم کەسە بکە بە خاوەنی ئەم کلینیکە",
+      "cancel": "پاشگەزبوونەوە",
+      "submit": "کارمەند زیاد بکە",
+      "adding": "زیادکردن…",
+      "errorFailed": "نەتوانرا کارمەند زیاد بکرێت."
+    }
+  },
+  "changePasswordPage": {
+    "seoTitle": "گۆڕینی تێپەڕەوشە",
+    "title": "تێپەڕەوشەت بگۆڕە",
+    "subtitle": "تێپەڕەوشەی هەژمارەکەت نوێ بکەرەوە.",
+    "requiredSubtitle": "لەبەر ئاسایش، تێپەڕەوشەیەکی نوێ دابنێ پێش بەردەوامبوون.",
+    "currentPassword": "تێپەڕەوشەی ئێستا",
+    "newPassword": "تێپەڕەوشەی نوێ",
+    "confirmPassword": "دووبارەکردنەوەی تێپەڕەوشەی نوێ",
+    "submit": "تێپەڕەوشە نوێ بکەرەوە",
+    "saving": "پاشەکەوت دەکرێت…",
+    "success": "تێپەڕەوشە نوێکرایەوە.",
+    "errorMismatch": "تێپەڕەوشە نوێیەکان یەکناگرنەوە.",
+    "errorFailed": "نەتوانرا تێپەڕەوشە نوێ بکرێتەوە."
+  },
   "editClinicPage": {
     "seoTitle": "دەستکاری کلینیک",
     "backAria": "گەڕانەوە بۆ داشبۆرد",
@@ -456,6 +500,14 @@
     "title": "دەستکاری کلینیک",
     "subtitle": "پڕۆفایلی کلینیک، خزمەتگوزارییەکان، کاتەکان، زانیاری پەیوەندی و براند نوێ بکەوە.",
     "requestPublish": "داوای بڵاوکردنەوە",
+    "saveChanges": "گۆڕانکارییەکان پاشەکەوت بکە",
+    "saving": "پاشەکەوت دەکرێت…",
+    "saved": "گۆڕانکارییەکان پاشەکەوت کران.",
+    "loading": "بارکردنی پڕۆفایلی کلینیک…",
+    "errorNoOrganization": "هیچ ڕێکخراوێک هەڵنەبژێردراوە. وەک ستافی پەیوەست بە کلینیک یان تاقیگە بچۆرە ژوورەوە.",
+    "errorLoadFailed": "بارکردنی پڕۆفایلی کلینیک سەرکەوتوو نەبوو.",
+    "errorSaveFailed": "پاشەکەوتکردنی گۆڕانکارییەکان سەرکەوتوو نەبوو. فۆرمەکە پشکنین بکە و دووبارە هەوڵ بدەوە.",
+    "errorNameRequired": "ناوی کلینیک پێویستە.",
     "basicInfo": {
       "sectionTitle": "زانیاری بنەڕەت",
       "name": "ناو",
@@ -481,20 +533,25 @@
       "logoFormats": "PNG، SVG تا ٥ مێگابایت",
       "coverDrop": "وێنەی داپۆشین بار بکە یان",
       "select": "هەڵبژێرە",
-      "coverFormats": "JPG، JPEG بە کوالیتی بەرز"
+      "coverFormats": "JPG، JPEG بە کوالیتی بەرز",
+      "replace": "جێگۆڕکێ",
+      "remove": "لابردن",
+      "gallery": "وێنەکانی گەلەری",
+      "gallerySubtitle": "وێنەی زیاتر بۆ شوێنەکە، ئامێرەکان، یان ژووری چاوەڕوانی زیاد بکە.",
+      "addPhoto": "وێنە زیاد بکە",
+      "galleryPhotoAlt": "وێنەی گەلەری کلینیک",
+      "removePhotoAria": "لابردنی وێنە",
+      "uploadError": "بارکردنی وێنە سەرکەوتوو نەبوو. فایلێکی بچووکتر تاقی بکەوە.",
+      "deleteError": "لابردنی وێنە سەرکەوتوو نەبوو."
     },
     "operations": {
       "sectionTitle": "کردارەکان",
       "coreServices": "خزمەتگوزارییە سەرەکییەکان",
-      "selectPrimary": "خزمەتگوزاری سەرەکی هەڵبژێرە…",
-      "serviceMolecular": "دۆزینەوەی مۆلیکیولی",
-      "serviceChemistry": "کیمیایی کلینیکی",
-      "serviceHematology": "خوێنناسی",
-      "serviceImmunology": "بەرگری",
+      "selectServices": "خزمەتگوزاری تەندروستی هەڵبژێرە…",
       "certifications": "پەسەندنامەکان",
-      "addCertPlaceholder": "زیاد بکە…",
-      "certIso": "ISO 15189",
-      "certCap": "پەسەندکراوی CAP",
+      "addCertPlaceholder": "پەسەندنامەیەک زیاد بکە…",
+      "addCertButton": "زیادکردن",
+      "noCertifications": "هیچ پەسەندنامەیەک زیاد نەکراوە.",
       "removeCertAria": "لابردنی پەسەندنامە",
       "openingHours": "کاتەکانی کراوەیی",
       "days": {
@@ -506,13 +563,30 @@
         "sat": "شەممە",
         "sun": "یەکشەم"
       },
-      "closed": "داخراوە"
+      "closed": "داخراوە",
+      "hoursModal": {
+        "closeAria": "داخستنی پەنجەرە",
+        "closedAllDay": "بە درێژایی ڕۆژ داخراوە",
+        "opens": "کراوەیی",
+        "closes": "داخستن",
+        "cancel": "پاشگەزبوونەوە",
+        "save": "کاتەکان پاشەکەوت بکە"
+      },
+      "servicesModal": {
+        "title": "خزمەتگوزارییە تەندروستییەکان",
+        "subtitle": "هەموو ئەو خزمەتگوزارییانە هەڵبژێرە کە کلینیکەکەت پێشکەشیان دەکات. نەخۆشەکان دەتوانن ئەنجامەکانی گەڕان بەم خزمەتگوزارییانە فلتەر بکەن.",
+        "closeAria": "داخستنی پەنجەرە",
+        "empty": "هێشتا هیچ خزمەتگوزارییەک بەردەست نییە.",
+        "cancel": "پاشگەزبوونەوە",
+        "apply": "جێبەجێکردن"
+      }
     },
     "status": {
       "sectionTitle": "دۆخی بڵاوکردنەوە",
       "verifiedTitle": "کلینیکی پشتڕاستکراوە",
       "verifiedBody": "ئەم کلینیکە بە ژمارەی تۆمارکردنی بازرگانی: {regNumber} هەیە. لە ڕێگەی تۆماری نیشتمانی تەندروستی پشتڕاستکراوە.",
       "regNumber": "RE-9928-HBX",
+      "unverifiedTitle": "هێشتا پشتڕاست نەکراوەتەوە",
       "reviewNote": "زانیارییەکان ئامادەن بۆ پێداچوونەوە. «داوای بڵاوکردنەوە» دابگرە بۆ ناردن بۆ پشتڕاستکردنەوە."
     },
     "contact": {
@@ -521,23 +595,53 @@
       "addressPlaceholder": "شەقام، باڵەخانە، شار، کۆدی پۆست…",
       "mapAlt": "نەخشە",
       "setCoordinates": "کۆئۆردینەت دیاری بکە",
+      "coordinatesSet": "{lat}, {lng} · دەستکاری",
       "mobile": "ژمارەی مۆبایل",
       "mobilePlaceholder": "+1 (555) 000-0000",
       "email": "ئیمەیڵ",
-      "emailPlaceholder": "contact{'@'}metroclinic.com"
+      "emailPlaceholder": "contact{'@'}metroclinic.com",
+      "coordinatesModal": {
+        "title": "کۆئۆردینەتی نەخشە دیاری بکە",
+        "subtitle": "بۆ دیاریکردنی شوێنی کلینیکەکەت لەسەر نەخشە بۆ نەخۆشانی گەڕان بەدوای شوێنی نزیک بەکاردێت.",
+        "closeAria": "داخستنی پەنجەرە",
+        "latitude": "پانی جوگرافی",
+        "longitude": "درێژی جوگرافی",
+        "cancel": "پاشگەزبوونەوە",
+        "save": "کۆئۆردینەتەکان پاشەکەوت بکە"
+      }
     },
     "languages": {
       "sectionTitle": "زمانەکان",
       "spoken": "زمانە قسەکراوەکان",
-      "addLanguagePlaceholder": "زمان زیاد بکە…",
-      "chipEnglish": "ئینگلیزی",
-      "chipSpanish": "ئیسپانی",
-      "chipMandarin": "ماندارین",
+      "placeholder": "زمانەکان هەڵبژێرە…",
       "removeLangAria": "لابردنی زمان",
-      "french": "فەڕەنسی",
-      "arabic": "عەرەبی",
-      "german": "ئاڵمانی",
-      "hindi": "هیندی"
+      "options": {
+        "english": "ئینگلیزی",
+        "arabic": "عەرەبی",
+        "kurdish": "کوردی",
+        "german": "ئاڵمانی",
+        "french": "فەڕەنسی",
+        "spanish": "ئیسپانی",
+        "turkish": "تورکی",
+        "persian": "فارسی",
+        "russian": "ڕووسی",
+        "mandarin": "ماندارین",
+        "hindi": "هیندی",
+        "urdu": "ئوردوو"
+      }
+    },
+    "team": {
+      "sectionTitle": "تیم",
+      "subtitle": "ئەو کەسانە بناسێنە کە نەخۆشەکان بەرتیلیان دەبن — وێنە، ناو و پلە زیاد بکە.",
+      "noTitle": "ئەندامی تیم",
+      "removeAria": "لابردنی ئەندامی تیم",
+      "removeError": "لابردنی ئەندامی تیم سەرکەوتوو نەبوو.",
+      "addTitle": "ئەندامێکی تیم زیاد بکە",
+      "namePlaceholder": "ناوی تەواو",
+      "titlePlaceholder": "پلە (نموونە: سەرۆک پەرستار)",
+      "photoAria": "وێنە زیاد بکە",
+      "add": "زیادکردن",
+      "addError": "زیادکردنی ئەندامی تیم سەرکەوتوو نەبوو. فۆرمەکە پشکنین بکە و دووبارە هەوڵ بدەوە."
     }
   },
   "addNewPatientPage": {
@@ -721,6 +825,94 @@
       "downloadPdf": "داگرتنی PDF"
     }
   },
+  "examinationResultsPage": {
+    "seoTitle": "ئەنجامی پشکنینی کلینیکی زیاد بکە",
+    "title": "ئەنجامی پشکنینی کلینیکی زیاد بکە",
+    "subtitle": "دۆزینەوەی نوێی پشکنینی کلینیکی بۆ نەخۆش تۆمار بکە.",
+    "patientInfo": {
+      "title": "زانیاری نەخۆش",
+      "subtitle": "زانیاری سەرچاوە لە تۆماری نەخۆش.",
+      "loading": "بارکردنی زانیاری نەخۆش…",
+      "notAvailable": "—",
+      "patientId": "ناسنامەی نەخۆش",
+      "errorNoPatient": "پێش پاشەکەوتکردنی ئەنجامی پشکنینی کلینیکی نەخۆشێک هەڵبژێرە.",
+      "errorLoadFailed": "بارکردنی زانیاری نەخۆش سەرکەوتوو نەبوو."
+    },
+    "form": {
+      "patientName": "ناوی نەخۆش",
+      "patientSurname": "ناوی خێزان",
+      "birthDate": "ڕۆژی لەدایکبوون",
+      "gender": "ڕەگەز",
+      "genderMale": "نێر",
+      "genderFemale": "مێ",
+      "genderOther": "هیتر",
+      "genderPreferNotSay": "نیاز ناکەم بڵێم"
+    },
+    "compliance": {
+      "title": "پشکنینی یاسایی",
+      "body": "دڵنیابە لە هاوتابوونی هەموو خانەکان لەگەڵ تۆماری ناسنامەی سەرەکی نەخۆش بۆ ڕێکخستنی HIPAA."
+    },
+    "doctorNote": {
+      "title": "تێبینی پزیشک",
+      "clinicalObservation": "چاوپێکەوتنی کلینیکی",
+      "placeholder": "تێبینی کلینیکی یان زیادەکان لێرە بنووسە…"
+    },
+    "findingEntry": {
+      "title": "تۆمارکردنی دۆزینەوە",
+      "findingName": "ناوی دۆزینەوە",
+      "findingNamePlaceholder": "گەڕان بە دۆزینەوە (نموونە: پەستانی خوێن)",
+      "valueInput": "بەرزی بینراو",
+      "valuePlaceholder": "بەرزی بینراو بنووسە",
+      "status": "دۆخ",
+      "referencePoint": "خاڵی ئاماژە",
+      "referencePlaceholder": "نموونە: 90/60 – 120/80 mmHg",
+      "statusNormal": "ئاسایی",
+      "statusHigh": "بەرز",
+      "statusLow": "نزم",
+      "addResult": "دۆزینەوە زیاد بکە"
+    },
+    "combobox": {
+      "noResults": "هیچ دۆزینەوەیەکی هاوتا نییە"
+    },
+    "findingCatalog": {
+      "bloodPressure": "پەستانی خوێن",
+      "heartRate": "خێرایی لێدانی دڵ",
+      "respiratoryRate": "خێرایی هەناسەدان",
+      "temperature": "پلەی گەرمی",
+      "oxygenSaturation": "تێری ئۆکسجین (SpO₂)",
+      "weight": "کێش",
+      "height": "بەرزی",
+      "bmi": "پێوەری تودەی جەستە (BMI)",
+      "generalAppearance": "دیمەنی گشتی",
+      "cardiovascularExam": "پشکنینی دڵ و ڕگەکان",
+      "respiratoryExam": "پشکنینی سیستەمی هەناسەدان",
+      "abdominalExam": "پشکنینی سک",
+      "neurologicalExam": "پشکنینی سیستەمی دەماری",
+      "skinExam": "پشکنینی پێست"
+    },
+    "entryList": {
+      "title": "لیستی ئێستا",
+      "entriesBadge": "{count} تۆمار",
+      "empty": "هیچ دۆزینەوەیەک زیاد نەکراوە."
+    },
+    "table": {
+      "findingName": "دۆزینەوە",
+      "value": "بەرزەنجام",
+      "status": "دۆخ",
+      "reference": "ئاماژە",
+      "action": "کردار"
+    },
+    "badge": {
+      "high": "بەرز",
+      "low": "نزم",
+      "normal": "ئاسایی"
+    },
+    "deleteAria": "تۆمار لاببە",
+    "saveDraft": "پاشەکەوت وەک ڕەشنووس",
+    "finishReport": "تەواوکردن و دروستکردنی ڕاپۆرت",
+    "submitSuccess": "ئەنجامی پشکنینی کلینیکی بە سەرکەوتووی پاشەکەوت کرا.",
+    "draftSuccess": "ڕەشنووسەکە بە سەرکەوتووی پاشەکەوت کرا."
+  },
   "labReportSlip": {
     "seoTitle": "ڕاپۆرتی تاقیگە",
     "nonPrintHint": "ئەمتاب ڕاپۆرتەکەی پیشاندەدات بۆ چاپ. چاپ → پاشەکەوت وەک PDF بەکاربهێنە بۆ داگرتن.",
@@ -787,6 +979,49 @@
     "footerLocation": "شوێنی تاقیگە: ٤٠٢ مێدیکاڵ پلازا، سوئیت ١٠",
     "footerPage": "لاپەڕە ١ لە ١"
   },
+  "examinationResultSlip": {
+    "seoTitle": "ڕاپۆرتی پشکنین",
+    "nonPrintHint": "ئەم پەڕەیە ڕاپۆرتی چاپکراوت پیشان دەدات. چاپ ← هەڵگرتن وەک PDF بەکاربهێنە بۆ داگرتن، یان لەسەر کاغەز چاپی بکە.",
+    "loading": "بارکردنی ڕاپۆرت…",
+    "noReports": "هیچ ڕاپۆرتێکی پشکنین نییە بۆ چاپکردن.",
+    "notAvailable": "—",
+    "defaultInstitutionName": "کلینیکی پزیشکی",
+    "officialReportTitle": "ڕاپۆرتی پشکنین",
+    "patientNameLabel": "ناوی نەخۆش",
+    "dobLabel": "بەرواری لەدایکبوون",
+    "genderLabel": "ڕەگەز",
+    "genderMale": "نێر",
+    "genderFemale": "مێ",
+    "genderOther": "تر",
+    "patientIdLabel": "ژمارەی نەخۆش",
+    "examDateLabel": "بەرواری پشکنین",
+    "reportStatusLabel": "دۆخی ڕاپۆرت",
+    "reportStatusFinal": "کۆتایی",
+    "reportStatusDraft": "ڕەشنووس",
+    "table": {
+      "finding": "دۆزینەوە",
+      "result": "ئەنجام",
+      "referenceRange": "مەودای ستانداردی",
+      "status": "دۆخ"
+    },
+    "badge": {
+      "high": "بەرز",
+      "low": "نزم",
+      "normal": "ئاسایی"
+    },
+    "doctorNoteTitle": "تێبینی پزیشک",
+    "noFindingsRecorded": "هیچ دۆزینەوە یان تێبینیەک بۆ ئەم ڕاپۆرتە تۆمار نەکراوە.",
+    "securePinLabel": "پینی دەستگەیشتنی ئاسایش",
+    "pinNotIssued": "هێشتا نەدراوە",
+    "pinHint": "نەخۆشەکان دەتوانن هەر کاتێک ئەم ڕاپۆرتە لە ئینتەرنێت ببینن بە نووسینی ناوی تەواو و پینی ئاسایش لە پۆرتاڵی نەخۆش.",
+    "disclaimerTitle": "ڕەتکردنەوەی کلینیکی",
+    "disclaimerBody": "ئەم ڕاپۆرتە بۆ پسپۆڕانی تەندروستییە و دەبێت لە چوارچێوەی مێژووی کلینیکی نەخۆش خوێندرێتەوە.",
+    "signerRoleFallback": "پزیشکی پشکنەر",
+    "footerPage": "لاپەڕە {current} لە {total}",
+    "errorNoPatient": "هیچ نەخۆشێک هەڵنەبژێردراوە.",
+    "errorLoadFailed": "نەتوانرا ڕاپۆرتی پشکنین باربکرێت.",
+    "printButton": "چاپکردن"
+  },
   "searchPatientPage": {
     "seoTitle": "گەڕان بە نەخۆش",
     "backAria": "گەڕانەوە بۆ داشبۆرد",
@@ -828,6 +1063,7 @@
     },
     "lastUpdatedAt": "دوایین نوێکردنەوە: {datetime}",
     "newLabOrder": "داواکاری تاقیگەی نوێ",
+    "newExaminationResult": "ئەنجامی پشکنینی کلینیکی نوێ",
     "historyTitle": "مێژووی کلینیکی نوێ",
     "showingRecords": "پیشاندانی {count} تۆمار",
     "table": {
@@ -868,5 +1104,61 @@
     },
     "lastUpdated": "دوایین نوێکردنەوە: ٢٤ی تشرینی یەکەم ٢٠٢٣ کاتژمێر ٢:٤٢ ئێوارە",
     "viewFullRecord": "بینینی تۆماری پزیشکی تەواو"
+  },
+  "patientRecordPage": {
+    "seoTitle": "تۆماری پزیشکی نەخۆش",
+    "backToSearch": "گەڕانەوە بۆ گەڕان",
+    "loading": "بارکردنی تۆماری نەخۆش…",
+    "notAvailable": "—",
+    "unknownPatient": "نەخۆشی نەناسراو",
+    "idPrefix": "ناسنامە:",
+    "dobWithAge": "{date} ({age} ساڵ)",
+    "genderMale": "نێر",
+    "genderFemale": "مێ",
+    "genderOther": "هیتر",
+    "claimed": "لەلایەن نەخۆشەوە پەیوەست کراوە",
+    "unclaimed": "هێشتا پەیوەست نەکراوە",
+    "errorNoPatient": "هیچ نەخۆشێک هەڵنەبژێردراوە.",
+    "errorLoadFailed": "بارکردنی تۆماری نەخۆش سەرکەوتوو نەبوو.",
+    "showingRecords": "{count} تۆمار",
+    "statusDraft": "ڕەشنووس",
+    "statusCompleted": "تەواوبوو",
+    "details": {
+      "title": "پەیوەندی و ناسنامە",
+      "phone": "ژمارەی تەلەفۆن",
+      "email": "ئیمەیل",
+      "nationalId": "ژمارەی نیشتمانی",
+      "insurance": "کۆمپانیای بیمە",
+      "policyNumber": "ژمارەی بۆلیسە",
+      "registeredOn": "بەرواری تۆمارکردن"
+    },
+    "clinical": {
+      "title": "پاشخانی کلینیکی",
+      "bloodGroup": "جۆری خوێن",
+      "allergies": "هەستیاری",
+      "chronicConditions": "نەخۆشی درێژخایەن",
+      "noneRecorded": "هیچ شتێک تۆمار نەکراوە"
+    },
+    "labSection": {
+      "title": "ئەنجامەکانی تاقیگە",
+      "empty": "هیچ ئەنجامێکی تاقیگە تۆمار نەکراوە."
+    },
+    "examSection": {
+      "title": "ئەنجامەکانی پشکنینی کلینیکی",
+      "empty": "هیچ ئەنجامێکی پشکنینی کلینیکی تۆمار نەکراوە.",
+      "printAll": "چاپکردنی هەموو",
+      "printAllAria": "چاپکردنی هەموو ئەنجامەکانی پشکنینی کلینیکی"
+    },
+    "printReportAria": "چاپکردنی ئەم ڕاپۆرتە",
+    "itemsTable": {
+      "name": "ناو",
+      "value": "بەرزەنجام",
+      "status": "دۆخ",
+      "reference": "ئاماژە",
+      "empty": "هیچ تۆمارێک بۆ ئەم ڕاپۆرتە نییە.",
+      "high": "بەرز",
+      "low": "نزم",
+      "normal": "ئاسایی"
+    }
   }
 }

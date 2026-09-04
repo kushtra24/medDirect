@@ -144,7 +144,14 @@
                   {{ patientInitials(patient) }}
                 </div>
                 <div class="min-w-0">
-                  <h3 class="font-h3 text-h3 text-secondary">{{ patientFullName(patient) }}</h3>
+                  <h3 class="font-h3 text-h3">
+                    <AppButton
+                      :to="patientRecordPath(patient.id)"
+                      class="text-secondary hover:underline"
+                    >
+                      {{ patientFullName(patient) }}
+                    </AppButton>
+                  </h3>
                   <div class="flex flex-wrap gap-md mt-xs">
                     <span class="flex items-center gap-xs text-body-sm text-on-primary-container">
                       <FontAwesomeIcon icon="calendar-days" class="text-[18px] shrink-0" aria-hidden="true" />
@@ -167,6 +174,13 @@
                 </div>
               </div>
               <div class="flex gap-sm shrink-0">
+                <AppButton
+                  :to="examinationResultsPath(patient.id)"
+                  class="flex items-center gap-xs px-md py-sm bg-secondary text-on-secondary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
+                >
+                  <FontAwesomeIcon icon="stethoscope" aria-hidden="true" />
+                  {{ t('searchPatientPage.newExaminationResult') }}
+                </AppButton>
                 <AppButton
                   :to="labResultsPath(patient.id)"
                   class="flex items-center gap-xs px-md py-sm bg-tertiary text-on-tertiary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
@@ -257,7 +271,7 @@
             >
               <div class="text-xs text-on-primary-container">{{ patientLastUpdated(patient) }}</div>
               <AppButton
-                type="button"
+                :to="patientRecordPath(patient.id)"
                 class="text-secondary font-button text-xs flex items-center gap-xs hover:bg-white dark:hover:bg-slate-900 px-md py-1 rounded transition-colors"
               >
                 {{ t('searchPatientPage.viewFullRecord') }}
@@ -294,6 +308,14 @@ const hasSearched = ref(false)
 
 function labResultsPath(patientId) {
   return { path: '/control-panel/lab-results', query: { patient_id: String(patientId) } }
+}
+
+function examinationResultsPath(patientId) {
+  return { path: '/control-panel/examination-results', query: { patient_id: String(patientId) } }
+}
+
+function patientRecordPath(patientId) {
+  return { path: '/control-panel/patient-record', query: { patient_id: String(patientId) } }
 }
 
 function patientReports(patient) {
