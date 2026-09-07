@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "CLINICDIRECT"
+    "name": "IRAQ LABOR"
   },
   "languageGate": {
     "title": "اختر اللغة",
@@ -200,7 +200,9 @@
       "deleteModalConfirm": "حذف حسابي",
       "deleting": "جاري الحذف…",
       "deleteError": "تعذر حذف الحساب.",
-      "deleteForbidden": "لا يمكن حذف هذا النوع من الحساب هنا."
+      "deleteForbidden": "لا يمكن حذف هذا النوع من الحساب هنا.",
+      "fieldNationalId": "الهوية الوطنية",
+      "nationalIdHint": "تستخدمه العيادات لمطابقة حسابك على البوابة مع السجلات التي تضيفها لك."
     },
     "strength": {
       "title": "اكتمال الملف",
@@ -378,7 +380,8 @@
       "myDashboard": "لوحتي",
       "patient": "المريض",
       "newPatient": "مريض جديد",
-      "searchPatient": "بحث عن مريض"
+      "searchPatient": "بحث عن مريض",
+      "importPatients": "استيراد المرضى"
     },
     "settingsAria": "الإعدادات",
     "manageStaffAria": "إدارة الموظفين",
@@ -397,6 +400,7 @@
       "welcome": "مرحباً، {name}"
     },
     "newPatient": "مريض جديد",
+    "importPatients": "استيراد المرضى",
     "stats": {
       "examinationsToday": "إجمالي فحوصات المرضى اليوم",
       "newPatientsThisMonth": "المرضى الجدد هذا الشهر",
@@ -427,6 +431,20 @@
       "search": "بحث",
       "appointments": "المواعيد",
       "profile": "الملف"
+    },
+    "notifications": {
+      "ariaLabel": "الإشعارات",
+      "title": "تحديثات المرضى",
+      "markAllRead": "تعليم الكل كمقروء",
+      "loading": "جارٍ التحميل…",
+      "empty": "لا توجد تحديثات بعد.",
+      "changedFields": "تم تحديث: {fields}",
+      "field": {
+        "dateOfBirth": "تاريخ الميلاد",
+        "bloodGroup": "فصيلة الدم",
+        "phone": "الهاتف",
+        "nationalId": "الهوية الوطنية"
+      }
     }
   },
   "staffPage": {
@@ -705,6 +723,43 @@
     "privacyNoteBody": "تُخزَّن بيانات تواصل المريض بأمان وفقاً للأنظمة الصحية المحلية. ستُرسل تذكيرات المواعيد تلقائياً إلى هذه العناوين.",
     "cancel": "إلغاء",
     "savePatient": "حفظ المريض",
+    "footer": "© {year} بوابة {brand}. جميع الحقوق محفوظة. التميز السريري عبر التكنولوجيا.",
+    "match": {
+      "hint": "سنتحقق تلقائيًا من وجود حساب مريض مطابق.",
+      "found": "هذا يطابق حساب مريض موجود على البوابة. يمكنك تعبئة بيانات التواصل تلقائيًا أدناه — سيتم ربط السجل تلقائيًا عند الحفظ.",
+      "alreadyRegistered": "هذا المريض لديه بالفعل سجل في عيادتك مرتبط بحساب على البوابة.",
+      "autofill": "تعبئة تلقائية",
+      "dismiss": "تجاهل"
+    },
+    "successMessageLinked": "تم حفظ المريض وربطه بحساب البوابة الخاص به. رمز الوصول للاستعلام: {pin}"
+  },
+  "importPatientsPage": {
+    "seoTitle": "استيراد المرضى",
+    "breadcrumbPatients": "المرضى",
+    "breadcrumbCurrent": "استيراد المرضى",
+    "title": "استيراد المرضى",
+    "subtitle": "تسجيل مجموعة من المرضى دفعة واحدة في منظومة {brand} من ملف CSV.",
+    "template": {
+      "sectionTitle": "١. تحميل القالب",
+      "description": "حمّل قالب CSV، واملأ صفاً واحداً لكل مريض، ثم احفظ الملف. حقلا \"الاسم\" و\"اسم العائلة\" فقط مطلوبان — اترك بقية الخانات فارغة إذا لم تتوفر المعلومة.",
+      "downloadCta": "تحميل قالب CSV"
+    },
+    "upload": {
+      "sectionTitle": "٢. رفع الملف المكتمل",
+      "description": "ارفع ملف CSV ببيانات مرضاك. سيتم تسجيل كل صف صالح وإصدار رمز دخول (PIN) خاص به.",
+      "chooseFileCta": "اضغط لاختيار ملف CSV، أو اسحبه هنا",
+      "fileHint": "ملفات CSV فقط، بحد أقصى 2 ميجابايت",
+      "importCta": "استيراد المرضى",
+      "importing": "جارٍ الاستيراد…"
+    },
+    "result": {
+      "summary": "تم استيراد {imported} من أصل {total} مريض بنجاح.",
+      "skipped": "تم تخطي {skipped} صف بسبب أخطاء.",
+      "errorsTitle": "صفوف تحتاج إلى مراجعة:",
+      "rowLabel": "الصف {row}"
+    },
+    "errorNoOrganization": "لست مسجلاً في عيادة أو مختبر. تواصل مع المسؤول لديك.",
+    "errorImportFailed": "تعذر استيراد الملف. تحقق من ملف CSV وحاول مرة أخرى.",
     "footer": "© {year} بوابة {brand}. جميع الحقوق محفوظة. التميز السريري عبر التكنولوجيا."
   },
   "labResultsPage": {

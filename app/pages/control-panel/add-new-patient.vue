@@ -34,6 +34,38 @@
         {{ successMessage }}
       </p>
 
+      <div
+        v-if="matchResult"
+        class="rounded-lg border border-blue-300 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 px-4 py-3 text-sm text-blue-900 dark:text-blue-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+        role="status"
+      >
+        <div class="flex items-start gap-2">
+          <FontAwesomeIcon icon="circle-info" class="text-base mt-0.5 shrink-0" aria-hidden="true" />
+          <span>
+            {{ matchResult.already_registered_patient_id
+              ? t('addNewPatientPage.match.alreadyRegistered')
+              : t('addNewPatientPage.match.found') }}
+          </span>
+        </div>
+        <div class="flex gap-2 shrink-0">
+          <AppButton
+            v-if="!matchResult.already_registered_patient_id"
+            type="button"
+            class="px-3 py-1.5 rounded-md bg-blue-900 dark:bg-blue-700 text-white text-xs font-semibold hover:opacity-90"
+            @click="applyAutofill"
+          >
+            {{ t('addNewPatientPage.match.autofill') }}
+          </AppButton>
+          <AppButton
+            type="button"
+            class="px-3 py-1.5 rounded-md border border-blue-300 dark:border-blue-700 text-xs font-semibold text-blue-900 dark:text-blue-100"
+            @click="dismissMatch"
+          >
+            {{ t('addNewPatientPage.match.dismiss') }}
+          </AppButton>
+        </div>
+      </div>
+
       <form class="space-y-6" @submit.prevent="onSubmit">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <section
@@ -60,6 +92,7 @@
                     autocomplete="given-name"
                     required
                     :placeholder="t('addNewPatientPage.form.namePlaceholder')"
+                    @blur="scheduleMatchCheck"
                   >
                 </div>
                 <div>
@@ -73,6 +106,7 @@
                     autocomplete="family-name"
                     required
                     :placeholder="t('addNewPatientPage.form.surnamePlaceholder')"
+                    @blur="scheduleMatchCheck"
                   >
                 </div>
               </div>
@@ -85,6 +119,7 @@
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                   type="date"
                   autocomplete="bday"
+                  @blur="scheduleMatchCheck"
                 >
               </div>
               <fieldset>
@@ -154,7 +189,11 @@
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary py-2.5 px-3 outline-none"
                   type="text"
                   :placeholder="t('addNewPatientPage.form.nationalIdPlaceholder')"
+                  @blur="scheduleMatchCheck"
                 >
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">
+                  {{ t('addNewPatientPage.match.hint') }}
+                </p>
               </div>
               <div>
                 <label class="block font-label-caps text-label-caps text-slate-500 dark:text-slate-400 mb-1">{{
@@ -354,6 +393,10 @@ const submitting = ref(false)
 const submitError = ref('')
 const successMessage = ref('')
 
+const matching = ref(false)
+const matchResult = ref(null)
+let matchTimer = null
+
 useSeoMeta({
   title: () => t('addNewPatientPage.seoTitle'),
 })
@@ -361,6 +404,61 @@ useSeoMeta({
 onMounted(() => {
   ensureUserLoaded()
 })
+
+onUnmounted(() => {
+  if (matchTimer) clearTimeout(matchTimer)
+})
+
+/**
+ * Checks whether the identity being typed already belongs to a patient-portal account,
+ * so staff can preview an autofill before saving. The clinic's own record still links
+ * automatically on save even if this check is skipped or fails.
+ */
+function scheduleMatchCheck() {
+  matchResult.value = null
+  if (matchTimer) clearTimeout(matchTimer)
+  matchTimer = setTimeout(runMatchCheck, 400)
+}
+
+async function runMatchCheck() {
+  if (!form.first_name.trim() || !form.surname.trim() || !form.date_of_birth || !form.national_id.trim()) {
+    return
+  }
+  matching.value = true
+  try {
+    const org = await requireOrganization()
+    const res = await api(`/api/organizations/${org.id}/patients/match`, {
+      method: 'POST',
+      body: {
+        first_name: form.first_name,
+        surname: form.surname,
+        date_of_birth: form.date_of_birth,
+        national_id: form.national_id,
+      },
+    })
+    matchResult.value = res.matched ? res : null
+  }
+  catch {
+    // Autofill is a convenience only — silently skip on failure.
+  }
+  finally {
+    matching.value = false
+  }
+}
+
+function applyAutofill() {
+  const suggested = matchResult.value?.suggested
+  if (!suggested) return
+  if (suggested.phone) form.phone = suggested.phone
+  if (suggested.email) form.email = suggested.email
+  if (suggested.blood_group) form.blood_group = suggested.blood_group
+  if (suggested.national_id) form.national_id = suggested.national_id
+  matchResult.value = null
+}
+
+function dismissMatch() {
+  matchResult.value = null
+}
 
 async function onSubmit() {
   submitError.value = ''
@@ -385,7 +483,10 @@ async function onSubmit() {
       method: 'POST',
       body,
     })
-    successMessage.value = t('addNewPatientPage.successMessage', { pin: res.access_pin })
+    successMessage.value = res.patient?.is_claimed
+      ? t('addNewPatientPage.successMessageLinked', { pin: res.access_pin })
+      : t('addNewPatientPage.successMessage', { pin: res.access_pin })
+    matchResult.value = null
   }
   catch (e) {
     if (e?.message === 'NO_ORGANIZATION') {

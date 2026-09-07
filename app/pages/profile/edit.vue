@@ -92,6 +92,21 @@
         </div>
 
         <div class="space-y-1">
+          <label class="text-label-caps font-label-caps text-slate-400" for="edit-national-id">
+            {{ t('patientProfile.editPage.fieldNationalId') }}
+          </label>
+          <input
+            id="edit-national-id"
+            v-model="form.national_id"
+            type="text"
+            class="w-full px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-tertiary/30"
+          >
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            {{ t('patientProfile.editPage.nationalIdHint') }}
+          </p>
+        </div>
+
+        <div class="space-y-1">
           <label class="text-label-caps font-label-caps text-slate-400" for="edit-birthdate">
             {{ t('patientProfile.editPage.fieldBirthdate') }}
           </label>
@@ -269,6 +284,7 @@ const form = reactive({
   blood_type: '',
   phone: '',
   address: '',
+  national_id: '',
 })
 
 const DEFAULT_AVATAR =
@@ -301,6 +317,7 @@ function syncFormFromUser() {
   form.blood_type = u.blood_type || ''
   form.phone = u.phone || ''
   form.address = u.address || ''
+  form.national_id = u.national_id || ''
 }
 
 onMounted(async () => {
@@ -351,6 +368,7 @@ async function saveProfile() {
       blood_type: form.blood_type || null,
       phone: form.phone?.trim() || null,
       address: form.address?.trim() || null,
+      national_id: form.national_id?.trim() || null,
     }
     const res = await api('/api/user/profile', { method: 'PATCH', body })
     setSession(token.value, res.user)

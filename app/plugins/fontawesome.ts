@@ -90,6 +90,9 @@ import {
   faSquareCheck,
   faIdBadge,
   faUserGear,
+  faFileCsv,
+  faFileArrowUp,
+  faFileArrowDown,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -182,6 +185,9 @@ library.add(
   faSquareCheck,
   faIdBadge,
   faUserGear,
+  faFileCsv,
+  faFileArrowUp,
+  faFileArrowDown,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "CLINICDIRECT"
+    "name": "IRAQ LABOR"
   },
   "languageGate": {
     "title": "Select Language",
@@ -201,7 +201,9 @@
       "deleteModalConfirm": "Delete my account",
       "deleting": "Deleting…",
       "deleteError": "Unable to delete account.",
-      "deleteForbidden": "This account cannot be deleted here. Use your organization administrator or sign out."
+      "deleteForbidden": "This account cannot be deleted here. Use your organization administrator or sign out.",
+      "fieldNationalId": "National ID",
+      "nationalIdHint": "Clinics use this to match your portal account to records they add for you."
     },
     "strength": {
       "title": "Profile Strength",
@@ -387,7 +389,8 @@
       "myDashboard": "My Dashboard",
       "patient": "Patient",
       "newPatient": "New patient",
-      "searchPatient": "Search patient"
+      "searchPatient": "Search patient",
+      "importPatients": "Import patients"
     },
     "settingsAria": "Settings",
     "manageStaffAria": "Manage staff",
@@ -406,6 +409,7 @@
       "welcome": "Welcome, {name}"
     },
     "newPatient": "New patient",
+    "importPatients": "Import patients",
     "stats": {
       "examinationsToday": "Total patient examinations today",
       "newPatientsThisMonth": "New patients this month",
@@ -436,6 +440,20 @@
       "search": "Search",
       "appointments": "Appointments",
       "profile": "Profile"
+    },
+    "notifications": {
+      "ariaLabel": "Notifications",
+      "title": "Patient updates",
+      "markAllRead": "Mark all as read",
+      "loading": "Loading…",
+      "empty": "No patient updates yet.",
+      "changedFields": "Updated: {fields}",
+      "field": {
+        "dateOfBirth": "Date of birth",
+        "bloodGroup": "Blood group",
+        "phone": "Phone",
+        "nationalId": "National ID"
+      }
     }
   },
   "staffPage": {
@@ -718,6 +736,43 @@
     "successMessage": "Patient saved. Access PIN for guest lookup: {pin}",
     "errorNoOrganization": "You are not assigned to a clinic or lab. Contact your administrator.",
     "errorSaveFailed": "Could not save patient. Check the form and try again.",
+    "footer": "© {year} {brand} portal. All rights reserved. Clinical excellence through technology.",
+    "match": {
+      "hint": "We'll check automatically for a matching patient portal account.",
+      "found": "This matches an existing patient portal account. You can autofill their contact details below — their record will link automatically when you save.",
+      "alreadyRegistered": "This patient already has a record at your clinic linked to a portal account.",
+      "autofill": "Autofill",
+      "dismiss": "Dismiss"
+    },
+    "successMessageLinked": "Patient saved and linked to their portal account. Access PIN for guest lookup: {pin}"
+  },
+  "importPatientsPage": {
+    "seoTitle": "Import patients",
+    "breadcrumbPatients": "Patients",
+    "breadcrumbCurrent": "Import patients",
+    "title": "Import patients",
+    "subtitle": "Bulk-register patients into the {brand} ecosystem from a CSV file.",
+    "template": {
+      "sectionTitle": "1. Download the template",
+      "description": "Download the CSV template, fill in one row per patient, and save the file. Only \"First name\" and \"Surname\" are required — leave other cells blank if you don't have that information.",
+      "downloadCta": "Download CSV template"
+    },
+    "upload": {
+      "sectionTitle": "2. Upload the completed file",
+      "description": "Upload the CSV file with your patients' data. Each valid row will be registered and issued its own access PIN.",
+      "chooseFileCta": "Click to choose a CSV file, or drag it here",
+      "fileHint": "CSV files only, up to 2 MB",
+      "importCta": "Import patients",
+      "importing": "Importing…"
+    },
+    "result": {
+      "summary": "{imported} of {total} patients imported successfully.",
+      "skipped": "{skipped} row(s) were skipped due to errors.",
+      "errorsTitle": "Rows that need attention:",
+      "rowLabel": "Row {row}"
+    },
+    "errorNoOrganization": "You are not assigned to a clinic or lab. Contact your administrator.",
+    "errorImportFailed": "Could not import the file. Check the CSV and try again.",
     "footer": "© {year} {brand} portal. All rights reserved. Clinical excellence through technology."
   },
   "labResultsPage": {

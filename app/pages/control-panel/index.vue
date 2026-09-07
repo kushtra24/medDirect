@@ -56,6 +56,13 @@
           </div>
           <div class="flex gap-3">
             <AppButton
+              to="/control-panel/import-patients"
+              class="px-6 py-2.5 bg-white dark:bg-slate-900 border border-tertiary text-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center gap-2"
+            >
+              <FontAwesomeIcon icon="file-arrow-up" aria-hidden="true" />
+              {{ t('controlPanel.importPatients') }}
+            </AppButton>
+            <AppButton
               to="/control-panel/add-new-patient"
               class="px-6 py-2.5 bg-tertiary text-on-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center"
             >

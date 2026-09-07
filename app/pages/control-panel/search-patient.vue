@@ -97,7 +97,6 @@
                 <option value="">{{ t('searchPatientPage.form.selectGender') }}</option>
                 <option value="male">{{ t('searchPatientPage.form.male') }}</option>
                 <option value="female">{{ t('searchPatientPage.form.female') }}</option>
-                <option value="other">{{ t('searchPatientPage.form.other') }}</option>
               </select>
             </div>
             <div>
