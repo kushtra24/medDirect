@@ -93,6 +93,8 @@ import {
   faFileCsv,
   faFileArrowUp,
   faFileArrowDown,
+  faClipboardList,
+  faUserDoctor,
 } from '@fortawesome/free-solid-svg-icons'
 
 library.add(
@@ -188,6 +190,8 @@ library.add(
   faFileCsv,
   faFileArrowUp,
   faFileArrowDown,
+  faClipboardList,
+  faUserDoctor,
 )
 
 export default defineNuxtPlugin((nuxtApp) => {

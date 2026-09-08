@@ -11,13 +11,13 @@
           </div>
           <div class="flex flex-col items-end gap-xs shrink-0">
             <div class="flex gap-md">
-              <AppButton
-                type="button"
-                class="px-lg py-sm bg-white dark:bg-slate-900 border border-outline-variant text-on-surface font-button text-button rounded-xl hover:bg-surface-container dark:hover:bg-slate-800 transition-all flex items-center gap-2"
-              >
-                <FontAwesomeIcon icon="upload" class="text-xl" aria-hidden="true" />
-                {{ t('editClinicPage.requestPublish') }}
-              </AppButton>
+<!--              <AppButton-->
+<!--                type="button"-->
+<!--                class="px-lg py-sm bg-white dark:bg-slate-900 border border-outline-variant text-on-surface font-button text-button rounded-xl hover:bg-surface-container dark:hover:bg-slate-800 transition-all flex items-center gap-2"-->
+<!--              >-->
+<!--                <FontAwesomeIcon icon="upload" class="text-xl" aria-hidden="true" />-->
+<!--                {{ t('editClinicPage.requestPublish') }}-->
+<!--              </AppButton>-->
               <AppButton
                 type="button"
                 class="px-lg py-sm bg-tertiary text-on-tertiary font-button text-button rounded-xl shadow-md hover:opacity-90 transition-all flex items-center gap-2 disabled:opacity-60"
@@ -64,35 +64,11 @@
                   <label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs" for="clinic-description">{{
                     t('editClinicPage.basicInfo.description')
                   }}</label>
-                  <div
-                    class="w-full rounded-lg border border-outline-variant focus-within:border-tertiary focus-within:ring-1 focus-within:ring-tertiary transition-all overflow-hidden bg-white dark:bg-slate-950 dark:border-slate-700"
-                  >
-                    <div class="flex items-center gap-1 p-2 border-b border-outline-variant bg-surface-container-low dark:bg-slate-800 flex-wrap">
-                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bold')">
-                        <FontAwesomeIcon icon="bold" class="text-[18px]" aria-hidden="true" />
-                      </AppButton>
-                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.italic')">
-                        <FontAwesomeIcon icon="italic" class="text-[18px]" aria-hidden="true" />
-                      </AppButton>
-                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.underline')">
-                        <FontAwesomeIcon icon="underline" class="text-[18px]" aria-hidden="true" />
-                      </AppButton>
-                      <div class="w-px h-4 bg-outline-variant mx-1" aria-hidden="true" />
-                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.bulletList')">
-                        <FontAwesomeIcon icon="list-ul" class="text-[18px]" aria-hidden="true" />
-                      </AppButton>
-                      <AppButton type="button" class="p-1 hover:bg-surface-variant dark:hover:bg-slate-700 rounded text-on-surface-variant transition-colors" :title="t('editClinicPage.editor.numberedList')">
-                        <FontAwesomeIcon icon="list-ol" class="text-[18px]" aria-hidden="true" />
-                      </AppButton>
-                    </div>
-                    <textarea
-                      id="clinic-description"
-                      v-model="form.description"
-                      class="w-full px-md py-sm border-none focus:ring-0 outline-none resize-none min-h-[160px] bg-transparent text-on-surface"
-                      :placeholder="t('editClinicPage.basicInfo.descriptionPlaceholder')"
-                      rows="6"
-                    />
-                  </div>
+                  <RichTextEditor
+                    id="clinic-description"
+                    v-model="form.description"
+                    :placeholder="t('editClinicPage.basicInfo.descriptionPlaceholder')"
+                  />
                 </div>
               </div>
             </section>
@@ -178,9 +154,14 @@
               </div>
 
               <div>
-                <label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">{{
-                  t('editClinicPage.branding.gallery')
-                }}</label>
+                <div class="flex items-baseline justify-between gap-sm mb-xs">
+                  <label class="block font-label-caps text-label-caps text-on-surface-variant">{{
+                    t('editClinicPage.branding.gallery')
+                  }}</label>
+                  <span class="text-[11px] font-bold text-on-surface-variant shrink-0">
+                    {{ t('editClinicPage.branding.galleryCount', { count: gallery.length, max: GALLERY_MAX }) }}
+                  </span>
+                </div>
                 <p class="text-body-sm text-on-surface-variant mb-sm">{{ t('editClinicPage.branding.gallerySubtitle') }}</p>
                 <input ref="galleryInputRef" type="file" accept="image/jpeg,image/png,image/webp" class="sr-only" @change="onGallerySelected">
                 <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-sm">
@@ -200,6 +181,15 @@
                     </AppButton>
                   </div>
                   <div
+                    v-if="galleryLimitReached"
+                    class="aspect-square rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-1 text-outline"
+                    :title="t('editClinicPage.branding.galleryMaxReached', { max: GALLERY_MAX })"
+                  >
+                    <FontAwesomeIcon icon="lock" aria-hidden="true" />
+                    <span class="text-[10px] font-bold uppercase text-center px-1">{{ t('editClinicPage.branding.galleryMaxReached', { max: GALLERY_MAX }) }}</span>
+                  </div>
+                  <div
+                    v-else
                     class="aspect-square rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-slate-800 cursor-pointer transition-all"
                     role="button"
                     tabindex="0"
@@ -368,31 +358,31 @@
           </div>
 
           <div class="col-span-12 lg:col-span-4 flex flex-col gap-lg">
-            <section class="bg-white dark:bg-slate-900 border border-outline-variant shadow-sm p-xl rounded-xl">
-              <div class="flex items-center gap-md mb-lg">
-                <FontAwesomeIcon icon="user-shield" class="text-tertiary text-xl" aria-hidden="true" />
-                <h3 class="font-h3 text-h3 text-blue-900 dark:text-blue-300">{{ t('editClinicPage.status.sectionTitle') }}</h3>
-              </div>
-              <div class="space-y-lg">
-                <div
-                  v-if="certified"
-                  class="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-md flex items-start gap-md"
-                >
-                  <FontAwesomeIcon icon="circle-check" class="text-green-600 text-xl shrink-0 mt-0.5" aria-hidden="true" />
-                  <div>
-                    <p class="text-sm font-bold text-green-800 dark:text-green-300">{{ t('editClinicPage.status.verifiedTitle') }}</p>
-                    <p class="text-[11px] text-green-700 dark:text-green-400 leading-tight mt-1">
-                      {{ t('editClinicPage.status.verifiedBody', { regNumber: t('editClinicPage.status.regNumber') }) }}
-                    </p>
-                  </div>
-                </div>
-                <div v-else class="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-md flex items-start gap-md">
-                  <FontAwesomeIcon icon="circle-info" class="text-yellow-600 text-xl shrink-0 mt-0.5" aria-hidden="true" />
-                  <p class="text-sm font-bold text-yellow-800 dark:text-yellow-300">{{ t('editClinicPage.status.unverifiedTitle') }}</p>
-                </div>
-                <p class="text-body-sm text-on-surface-variant italic">{{ t('editClinicPage.status.reviewNote') }}</p>
-              </div>
-            </section>
+<!--            <section class="bg-white dark:bg-slate-900 border border-outline-variant shadow-sm p-xl rounded-xl">-->
+<!--              <div class="flex items-center gap-md mb-lg">-->
+<!--                <FontAwesomeIcon icon="user-shield" class="text-tertiary text-xl" aria-hidden="true" />-->
+<!--                <h3 class="font-h3 text-h3 text-blue-900 dark:text-blue-300">{{ t('editClinicPage.status.sectionTitle') }}</h3>-->
+<!--              </div>-->
+<!--              <div class="space-y-lg">-->
+<!--                <div-->
+<!--                  v-if="certified"-->
+<!--                  class="bg-green-50 dark:bg-green-950/40 border border-green-200 dark:border-green-800 rounded-lg p-md flex items-start gap-md"-->
+<!--                >-->
+<!--                  <FontAwesomeIcon icon="circle-check" class="text-green-600 text-xl shrink-0 mt-0.5" aria-hidden="true" />-->
+<!--                  <div>-->
+<!--                    <p class="text-sm font-bold text-green-800 dark:text-green-300">{{ t('editClinicPage.status.verifiedTitle') }}</p>-->
+<!--                    <p class="text-[11px] text-green-700 dark:text-green-400 leading-tight mt-1">-->
+<!--                      {{ t('editClinicPage.status.verifiedBody', { regNumber: t('editClinicPage.status.regNumber') }) }}-->
+<!--                    </p>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div v-else class="bg-yellow-50 dark:bg-yellow-950/40 border border-yellow-200 dark:border-yellow-800 rounded-lg p-md flex items-start gap-md">-->
+<!--                  <FontAwesomeIcon icon="circle-info" class="text-yellow-600 text-xl shrink-0 mt-0.5" aria-hidden="true" />-->
+<!--                  <p class="text-sm font-bold text-yellow-800 dark:text-yellow-300">{{ t('editClinicPage.status.unverifiedTitle') }}</p>-->
+<!--                </div>-->
+<!--                <p class="text-body-sm text-on-surface-variant italic">{{ t('editClinicPage.status.reviewNote') }}</p>-->
+<!--              </div>-->
+<!--            </section>-->
 
             <section class="bg-white dark:bg-slate-900 border border-outline-variant shadow-sm p-xl rounded-xl">
               <div class="flex items-center gap-md mb-lg">
@@ -569,6 +559,7 @@ const { requireOrganization } = useActiveOrganization()
 
 const WEEK_DAYS = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
 const LANGUAGE_OPTIONS = ['english', 'arabic', 'kurdish', 'german', 'french', 'spanish', 'turkish', 'persian', 'russian', 'mandarin', 'hindi', 'urdu']
+const GALLERY_MAX = 3
 
 const languageOptions = computed(() =>
   LANGUAGE_OPTIONS.map((key) => ({
@@ -637,6 +628,8 @@ const hoursModalDayData = computed(() =>
 )
 
 const hasCoordinates = computed(() => form.latitude != null && form.longitude != null)
+
+const galleryLimitReached = computed(() => gallery.value.length >= GALLERY_MAX)
 
 function defaultDayEntry(day) {
   return { day, open: '09:00', close: '17:00', closed: false }
@@ -734,14 +727,18 @@ async function onGallerySelected(e) {
   const file = e.target.files?.[0]
   e.target.value = ''
   if (!file) return
+  if (galleryLimitReached.value) {
+    brandingError.value = t('editClinicPage.branding.galleryMaxReached', { max: GALLERY_MAX })
+    return
+  }
   brandingError.value = ''
   galleryUploading.value = true
   try {
     const res = await uploadClinicImage(file, 'gallery')
     gallery.value.push(res.image)
   }
-  catch {
-    brandingError.value = t('editClinicPage.branding.uploadError')
+  catch (err) {
+    brandingError.value = err?.data?.message || t('editClinicPage.branding.uploadError')
   }
   finally {
     galleryUploading.value = false

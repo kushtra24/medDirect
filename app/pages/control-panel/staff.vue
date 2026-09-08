@@ -224,6 +224,7 @@ const abilityKeys = [
   'canEditLabResults',
   'canCreateAddResults',
   'canCreateDoctorsNote',
+  'canCreateOrder',
   'canManageStaff',
   'canEditOrganizationProfile',
 ]

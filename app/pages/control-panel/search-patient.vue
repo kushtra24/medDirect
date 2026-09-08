@@ -1,42 +1,6 @@
 <template>
   <div class="font-body-md text-on-surface bg-surface min-h-dvh">
-    <header
-      class="fixed top-0 w-full z-40 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex items-center justify-between px-6 h-16 w-full font-manrope antialiased tracking-tight"
-    >
-      <div class="flex items-center gap-xl min-w-0">
-        <AppButton
-          to="/control-panel"
-          class="p-2 -ml-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full shrink-0"
-          :aria-label="t('searchPatientPage.backAria')"
-        >
-          <FontAwesomeIcon icon="arrow-left" class="text-lg" aria-hidden="true" />
-        </AppButton>
-        <span class="text-lg font-bold text-blue-900 dark:text-blue-400 truncate">{{ t('searchPatientPage.portalBrand') }}</span>
-      </div>
-      <div class="flex items-center gap-md shrink-0">
-        <AppButton
-          type="button"
-          class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
-          :aria-label="t('searchPatientPage.notificationsAria')"
-        >
-          <FontAwesomeIcon icon="bell" class="text-lg" aria-hidden="true" />
-        </AppButton>
-        <AppButton
-          type="button"
-          class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors"
-          :aria-label="t('searchPatientPage.settingsAria')"
-        >
-          <FontAwesomeIcon icon="gear" class="text-lg" aria-hidden="true" />
-        </AppButton>
-        <div class="h-8 w-8 rounded-full overflow-hidden border border-slate-200 dark:border-slate-700 shrink-0">
-          <img
-            class="w-full h-full object-cover"
-            :alt="t('searchPatientPage.profileAlt')"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsKhCkA6WHLHBzGYOaqwD6E0BluqesYE3-L1wX9-oE5a1aigOAetalIkgmnmPUJbHj9Jy1O3WvrddIGTk8ciD2r3IU5AbNfs6pwdAr9iE_WiD21ob9hYE69vAfjD_SGYXBZK3CyOlZ8UQ4lXNhXk2mDrqWxHGvbMX3LpF3qekRp2AkmDTqFjL0J3t5TxDrexUvPPKOFV_wSLr1-5l3HohrQtK2XTojccGGxoMR3MnGTCcC8KmFXdRWhlLzSEmrvzfJ5_ZB1Vg75N8"
-          >
-        </div>
-      </div>
-    </header>
+    <ControlPanelHeader />
 
     <main class="pt-24 px-6 pb-xl min-h-dvh">
       <div class="max-w-container-max mx-auto">
@@ -129,21 +93,21 @@
           {{ t('searchPatientPage.searchPrompt') }}
         </p>
 
-        <div v-else class="space-y-lg search-result">
+        <div v-else class="space-y-md search-result">
           <div
             v-for="patient in searchResults"
             :key="patient.id"
             class="bg-white dark:bg-slate-900 border border-outline-variant rounded-xl overflow-hidden shadow-sm"
           >
-            <div class="p-lg border-b border-surface-container dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-lg">
-              <div class="flex items-center gap-lg min-w-0">
+            <div class="p-md border-b border-surface-container dark:border-slate-800 flex flex-col md:flex-row md:items-center justify-between gap-md">
+              <div class="flex items-center gap-md min-w-0">
                 <div
-                  class="h-16 w-16 rounded-full bg-secondary-fixed dark:bg-secondary/40 flex items-center justify-center text-secondary dark:text-secondary-fixed font-bold text-h3 shrink-0"
+                  class="h-11 w-11 rounded-full bg-secondary-fixed dark:bg-secondary/40 flex items-center justify-center text-secondary dark:text-secondary-fixed font-bold text-body-lg shrink-0"
                 >
                   {{ patientInitials(patient) }}
                 </div>
                 <div class="min-w-0">
-                  <h3 class="font-h3 text-h3">
+                  <h3 class="font-h3 text-body-lg leading-tight">
                     <AppButton
                       :to="patientRecordPath(patient.id)"
                       class="text-secondary hover:underline"
@@ -151,38 +115,38 @@
                       {{ patientFullName(patient) }}
                     </AppButton>
                   </h3>
-                  <div class="flex flex-wrap gap-md mt-xs">
-                    <span class="flex items-center gap-xs text-body-sm text-on-primary-container">
-                      <FontAwesomeIcon icon="calendar-days" class="text-[18px] shrink-0" aria-hidden="true" />
+                  <div class="flex flex-wrap gap-sm mt-0.5">
+                    <span class="flex items-center gap-xs text-xs text-on-primary-container">
+                      <FontAwesomeIcon icon="calendar-days" class="text-[14px] shrink-0" aria-hidden="true" />
                       {{ patientDobDisplay(patient) }}
                     </span>
                     <span
-                      class="flex items-center gap-xs text-body-sm text-on-primary-container border-l border-slate-200 dark:border-slate-700 ps-md"
+                      class="flex items-center gap-xs text-xs text-on-primary-container border-l border-slate-200 dark:border-slate-700 ps-sm"
                     >
-                      <FontAwesomeIcon icon="user" class="text-[18px] shrink-0" aria-hidden="true" />
+                      <FontAwesomeIcon icon="user" class="text-[14px] shrink-0" aria-hidden="true" />
                       {{ patientGenderLabel(patient.gender) }}
                     </span>
                     <span
-                      class="flex items-center gap-xs text-body-sm text-on-primary-container border-l border-slate-200 dark:border-slate-700 ps-md"
+                      class="flex items-center gap-xs text-xs text-on-primary-container border-l border-slate-200 dark:border-slate-700 ps-sm"
                     >
-                      <FontAwesomeIcon icon="fingerprint" class="text-[18px] shrink-0" aria-hidden="true" />
+                      <FontAwesomeIcon icon="fingerprint" class="text-[14px] shrink-0" aria-hidden="true" />
                       {{ t('searchPatientPage.patient.idPrefix') }}
                       #{{ patient.id }}
                     </span>
                   </div>
                 </div>
               </div>
-              <div class="flex gap-sm shrink-0">
+              <div class="flex gap-xs shrink-0">
                 <AppButton
                   :to="examinationResultsPath(patient.id)"
-                  class="flex items-center gap-xs px-md py-sm bg-secondary text-on-secondary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
+                  class="flex items-center gap-xs px-sm py-1.5 bg-secondary text-on-secondary rounded-lg font-button text-xs hover:opacity-90 transition-opacity"
                 >
                   <FontAwesomeIcon icon="stethoscope" aria-hidden="true" />
                   {{ t('searchPatientPage.newExaminationResult') }}
                 </AppButton>
                 <AppButton
                   :to="labResultsPath(patient.id)"
-                  class="flex items-center gap-xs px-md py-sm bg-tertiary text-on-tertiary rounded-lg font-button text-body-sm hover:opacity-90 transition-opacity"
+                  class="flex items-center gap-xs px-sm py-1.5 bg-tertiary text-on-tertiary rounded-lg font-button text-xs hover:opacity-90 transition-opacity"
                 >
                   <FontAwesomeIcon icon="plus" aria-hidden="true" />
                   {{ t('searchPatientPage.newLabOrder') }}
@@ -190,72 +154,72 @@
               </div>
             </div>
 
-            <div class="p-lg">
-              <div class="flex items-center justify-between mb-lg flex-wrap gap-2">
-                <h4 class="font-h3 text-body-lg text-on-surface">{{ t('searchPatientPage.historyTitle') }}</h4>
-                <div class="flex gap-xs">
-                  <span
-                    class="px-3 py-1 bg-surface-container dark:bg-slate-800 rounded-full text-xs font-semibold text-on-primary-container"
-                  >{{ t('searchPatientPage.showingRecords', { count: patientReports(patient).length }) }}</span>
-                </div>
+            <div class="p-md">
+              <div class="flex items-center justify-between mb-sm flex-wrap gap-2">
+                <h4 class="font-h3 text-body-sm text-on-surface">{{ t('searchPatientPage.historyTitle') }}</h4>
+                <span
+                  class="px-2 py-0.5 bg-surface-container dark:bg-slate-800 rounded-full text-[11px] font-semibold text-on-primary-container"
+                >{{ t('searchPatientPage.showingRecords', { count: patientReports(patient).length }) }}</span>
               </div>
               <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse min-w-[640px]">
+                <table class="w-full text-left border-collapse min-w-[560px]">
                   <thead>
                     <tr class="bg-surface-container-low dark:bg-slate-800">
-                      <th class="p-md font-label-caps text-label-caps text-on-primary-container rounded-tl-lg">
+                      <th class="px-3 py-1.5 font-label-caps text-[10px] text-on-primary-container rounded-tl-lg">
                         {{ t('searchPatientPage.table.testDate') }}
                       </th>
-                      <th class="p-md font-label-caps text-label-caps text-on-primary-container">
+                      <th class="px-3 py-1.5 font-label-caps text-[10px] text-on-primary-container">
                         {{ t('searchPatientPage.table.testType') }}
                       </th>
-                      <th class="p-md font-label-caps text-label-caps text-on-primary-container">
+                      <th class="px-3 py-1.5 font-label-caps text-[10px] text-on-primary-container">
                         {{ t('searchPatientPage.table.status') }}
                       </th>
-                      <th class="p-md font-label-caps text-label-caps text-on-primary-container">
-                        {{ t('searchPatientPage.table.physician') }}
-                      </th>
-                      <th class="p-md font-label-caps text-label-caps text-on-primary-container rounded-tr-lg text-end">
+                      <th class="px-3 py-1.5 font-label-caps text-[10px] text-on-primary-container rounded-tr-lg text-end">
                         {{ t('searchPatientPage.table.actions') }}
                       </th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
                     <tr v-if="!patientReports(patient).length">
-                      <td colspan="5" class="p-md text-body-sm text-on-primary-container text-center">
+                      <td colspan="4" class="px-3 py-3 text-body-sm text-on-primary-container text-center">
                         {{ t('searchPatientPage.noHistory') }}
                       </td>
                     </tr>
                     <tr
                       v-for="report in patientReports(patient)"
-                      :key="report.id"
+                      :key="`${report.reportType}-${report.id}`"
                       class="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
                     >
-                      <td class="p-md font-body-sm text-on-surface">{{ formatReportDate(report) }}</td>
-                      <td class="p-md">
-                        <div class="flex flex-col">
-                          <span class="font-body-md font-semibold text-on-surface">{{ reportTitle(report) }}</span>
-                          <span class="text-xs text-on-primary-container">{{ reportSubtitle(report) }}</span>
+                      <td class="px-3 py-2 text-xs text-on-surface whitespace-nowrap">{{ formatReportDate(report) }}</td>
+                      <td class="px-3 py-2">
+                        <div class="flex items-center gap-2">
+                          <FontAwesomeIcon
+                            :icon="report.reportType === 'examination' ? 'stethoscope' : 'microscope'"
+                            class="text-[13px] text-on-primary-container shrink-0"
+                            aria-hidden="true"
+                          />
+                          <div class="flex flex-col min-w-0">
+                            <span class="font-body-sm font-semibold text-on-surface truncate">{{ reportTitle(report) }}</span>
+                            <span class="text-[11px] text-on-primary-container truncate">{{ reportSubtitle(report) }}</span>
+                          </div>
                         </div>
                       </td>
-                      <td class="p-md">
+                      <td class="px-3 py-2">
                         <span
-                          class="inline-flex items-center gap-xs px-2 py-1 rounded-full text-xs font-semibold"
+                          class="inline-flex items-center gap-xs px-2 py-0.5 rounded-full text-[11px] font-semibold"
                           :class="statusBadgeClass(report.status)"
                         >
                           <span class="h-1.5 w-1.5 rounded-full shrink-0" :class="statusDotClass(report.status)" />
                           {{ statusLabel(report.status) }}
                         </span>
                       </td>
-                      <td class="p-md font-body-sm text-on-primary-container">
-                        {{ reportPhysician(report) }}
-                      </td>
-                      <td class="p-md text-end">
+                      <td class="px-3 py-2 text-end">
                         <AppButton
                           type="button"
-                          class="text-tertiary font-button text-body-sm hover:underline inline-flex items-center gap-xs ms-auto"
+                          class="text-tertiary font-button text-xs hover:underline inline-flex items-center gap-xs ms-auto"
+                          @click="viewReport(patient, report)"
                         >
-                          <FontAwesomeIcon icon="file-lines" class="text-[18px]" aria-hidden="true" />
+                          <FontAwesomeIcon icon="file-lines" class="text-[14px]" aria-hidden="true" />
                           {{ t('searchPatientPage.table.viewReport') }}
                         </AppButton>
                       </td>
@@ -266,15 +230,15 @@
             </div>
 
             <div
-              class="bg-surface-container-low dark:bg-slate-800/80 px-lg py-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
+              class="bg-surface-container-low dark:bg-slate-800/80 px-md py-1.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2"
             >
-              <div class="text-xs text-on-primary-container">{{ patientLastUpdated(patient) }}</div>
+              <div class="text-[11px] text-on-primary-container">{{ patientLastUpdated(patient) }}</div>
               <AppButton
                 :to="patientRecordPath(patient.id)"
-                class="text-secondary font-button text-xs flex items-center gap-xs hover:bg-white dark:hover:bg-slate-900 px-md py-1 rounded transition-colors"
+                class="text-secondary font-button text-[11px] flex items-center gap-xs hover:bg-white dark:hover:bg-slate-900 px-sm py-0.5 rounded transition-colors"
               >
                 {{ t('searchPatientPage.viewFullRecord') }}
-                <FontAwesomeIcon icon="up-right-from-square" class="text-sm" aria-hidden="true" />
+                <FontAwesomeIcon icon="up-right-from-square" class="text-xs" aria-hidden="true" />
               </AppButton>
             </div>
           </div>
@@ -317,8 +281,18 @@ function patientRecordPath(patientId) {
   return { path: '/control-panel/patient-record', query: { patient_id: String(patientId) } }
 }
 
+const MAX_RECENT_REPORTS = 3
+
+/**
+ * Merges lab and examination reports into one recency-sorted list, tagged with
+ * `reportType` so the row can render the right icon/title and link to the right slip.
+ */
 function patientReports(patient) {
-  return patient.lab_result_reports ?? []
+  const lab = (patient.lab_result_reports ?? []).map((r) => ({ ...r, reportType: 'lab' }))
+  const exam = (patient.examination_result_reports ?? []).map((r) => ({ ...r, reportType: 'examination' }))
+  return [...lab, ...exam]
+    .sort((a, b) => new Date(b.reported_at || b.created_at) - new Date(a.reported_at || a.created_at))
+    .slice(0, MAX_RECENT_REPORTS)
 }
 
 function patientFullName(patient) {
@@ -369,11 +343,21 @@ function formatReportDate(report) {
   }
 }
 
+function reportItemName(item, report) {
+  return report.reportType === 'examination' ? item.finding_name : item.test_name
+}
+
 function reportTitle(report) {
   const items = report.items ?? []
-  if (items.length === 1) return items[0].test_name
-  if (items.length > 1) return t('searchPatientPage.reportPanel', { count: items.length })
-  return t('searchPatientPage.reportUntitled')
+  if (items.length === 1) return reportItemName(items[0], report)
+  if (items.length > 1) {
+    return report.reportType === 'examination'
+      ? t('searchPatientPage.examPanel', { count: items.length })
+      : t('searchPatientPage.reportPanel', { count: items.length })
+  }
+  return report.reportType === 'examination'
+    ? t('searchPatientPage.examUntitled')
+    : t('searchPatientPage.reportUntitled')
 }
 
 function reportSubtitle(report) {
@@ -382,12 +366,18 @@ function reportSubtitle(report) {
     return note.length > 80 ? `${note.slice(0, 80)}…` : note
   }
   const items = report.items ?? []
-  if (items.length > 1) return items.map((i) => i.test_name).slice(0, 3).join(', ')
+  if (items.length > 1) return items.map((i) => reportItemName(i, report)).slice(0, 3).join(', ')
   return report.status === 'draft' ? t('searchPatientPage.reportDraft') : t('searchPatientPage.reportFinalized')
 }
 
-function reportPhysician(report) {
-  return report.created_by?.name || t('searchPatientPage.notAvailable')
+function reportSlipPath(patient, report) {
+  const base = report.reportType === 'examination' ? '/print/examination-result-slip' : '/print/lab-report-slip'
+  return `${base}?patient_id=${patient.id}&report_id=${report.id}`
+}
+
+function viewReport(patient, report) {
+  if (!import.meta.client) return
+  window.open(`${window.location.origin}${reportSlipPath(patient, report)}`, '_blank', 'noopener,noreferrer')
 }
 
 function patientLastUpdated(patient) {

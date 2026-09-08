@@ -17,6 +17,12 @@
             class="text-blue-900 dark:text-blue-400 font-bold border-b-2 border-blue-900 dark:border-blue-400 pb-1 active:scale-[0.98] cursor-pointer"
             href="#"
           >{{ t('controlPanel.nav.myDashboard') }}</a>
+          <AppButton
+            to="/control-panel/orders"
+            class="text-blue-900 dark:text-blue-400 font-bold pb-1 active:scale-[0.98] cursor-pointer"
+          >
+            {{ t('controlPanel.nav.orders') }}
+          </AppButton>
           <div ref="patientMenuRef" class="relative">
             <AppButton
               type="button"
@@ -48,14 +54,6 @@
                 @click="patientMenuOpen = false"
               >
                 {{ t('controlPanel.nav.searchPatient') }}
-              </AppButton>
-              <AppButton
-                to="/control-panel/import-patients"
-                class="block w-full text-start px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-surface-container dark:hover:bg-slate-800"
-                role="menuitem"
-                @click="patientMenuOpen = false"
-              >
-                {{ t('controlPanel.nav.importPatients') }}
               </AppButton>
             </div>
           </div>
@@ -161,10 +159,20 @@
             class="absolute end-0 z-30 mt-2 w-56 rounded-lg border border-outline-variant dark:border-slate-700 bg-white dark:bg-slate-900 shadow-lg py-1"
             role="menu"
           >
-            <div v-if="user?.name || user?.email" class="px-4 py-2 border-b border-outline-variant dark:border-slate-700">
+            <AppButton
+              v-if="user?.name || user?.email"
+              to="/control-panel/my-profile"
+              class="block w-full text-start px-4 py-2 border-b border-outline-variant dark:border-slate-700 hover:bg-surface-container dark:hover:bg-slate-800"
+              role="menuitem"
+              @click="accountMenuOpen = false"
+            >
               <p v-if="user?.name" class="text-sm font-semibold text-slate-800 dark:text-slate-100 truncate">{{ user.name }}</p>
               <p v-if="user?.email" class="text-xs text-slate-500 dark:text-slate-400 truncate">{{ user.email }}</p>
-            </div>
+              <span class="mt-1 inline-flex items-center gap-1 text-xs text-tertiary font-medium">
+                <FontAwesomeIcon icon="pen-to-square" class="text-[10px]" aria-hidden="true" />
+                {{ t('controlPanel.accountMenu.editProfile') }}
+              </span>
+            </AppButton>
             <AppButton
               type="button"
               class="flex items-center gap-2 w-full text-start px-4 py-2 text-sm text-error hover:bg-surface-container dark:hover:bg-slate-800 disabled:opacity-60"

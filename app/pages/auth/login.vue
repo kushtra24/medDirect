@@ -32,6 +32,13 @@
               {{ t('login.signInDescription') }}
             </p>
             <p
+              v-if="sessionExpired"
+              class="mt-sm font-body-sm text-error border border-error/30 rounded-lg px-sm py-xs bg-error/5 text-start"
+              role="status"
+            >
+              {{ t('login.sessionExpired') }}
+            </p>
+            <p
               v-if="showDevPartnerHint"
               class="mt-sm font-body-sm text-tertiary border border-tertiary/30 rounded-lg px-sm py-xs bg-tertiary/5 text-start"
             >
@@ -191,6 +198,7 @@ definePageMeta({
 })
 
 const { t } = useI18n()
+const route = useRoute()
 
 /** Dev-only: sign in with this email (password ignored) to open the partner control panel. Stripped in production builds. */
 const DEV_PARTNER_LOGIN_EMAIL = 'business@email.com'
@@ -199,6 +207,7 @@ const email = ref('')
 const password = ref('')
 const submitError = ref('')
 const submitting = ref(false)
+const sessionExpired = ref(route.query.expired === '1')
 
 const { api, setSession } = useMedDirectApi()
 

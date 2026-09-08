@@ -282,6 +282,13 @@ const patientId = computed(() => {
   return Number.isFinite(id) ? id : null
 })
 
+const orderId = computed(() => {
+  const raw = route.query.order_id
+  if (raw == null || raw === '') return null
+  const id = Number(raw)
+  return Number.isFinite(id) ? id : null
+})
+
 const patient = ref(null)
 const patientLoading = ref(false)
 const patientLoadError = ref('')
@@ -430,6 +437,7 @@ async function submitReport(status) {
     const org = await requireOrganization()
     const body = {
       patient_id: patientId.value,
+      order_id: orderId.value,
       doctor_note: doctorNote.value || null,
       status,
       items: pendingItems.value.map(({ finding_name, value, status: itemStatus, reference_point }) => ({
