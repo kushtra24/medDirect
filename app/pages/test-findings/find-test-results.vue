@@ -140,7 +140,12 @@ async function onSubmit() {
     })
     await navigateTo({
       path: '/print/examination-result-slip',
-      state: { patient: res.patient, examinationReports: res.examination_reports },
+      state: {
+        patient: res.patient,
+        examinationReports: res.examination_reports,
+        lookupFullName: fullName.value.trim(),
+        lookupAccessPin: accessPin.value.trim(),
+      },
     })
   }
   catch (e) {

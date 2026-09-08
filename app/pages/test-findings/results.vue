@@ -18,104 +18,121 @@
         </div>
       </div>
 
-      <header class="mb-xl">
-        <div class="flex justify-between items-start mb-md gap-md">
-          <div class="min-w-0">
-            <h1 class="font-h2 text-h2 text-secondary mb-xs break-words">
-              {{ displayPatientName }}
-            </h1>
-            <p class="font-body-sm text-on-surface-variant flex items-center gap-xs flex-wrap">
-              <FontAwesomeIcon icon="calendar-days" class="text-[18px] shrink-0" aria-hidden="true" />
-              {{ t('testResults.reportDate') }}
-            </p>
-          </div>
-          <AppButton
-            type="button"
-            class="bg-secondary text-on-secondary p-sm rounded-xl flex items-center justify-center shadow-sm active:scale-95 transition-transform shrink-0 print:hidden"
-            :aria-label="t('testResults.printAria')"
-            @click="printReport"
-          >
-            <FontAwesomeIcon icon="print" aria-hidden="true" />
-          </AppButton>
-        </div>
-
-        <div
-          class="bg-white border border-outline-variant rounded-xl p-md flex items-center gap-md shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+      <div v-if="!report" class="text-center py-xxl">
+        <p class="font-body-md text-on-surface-variant mb-lg">
+          {{ t('testResults.noReport') }}
+        </p>
+        <AppButton
+          to="/profile"
+          class="inline-flex items-center gap-2 bg-secondary text-on-secondary py-sm px-lg rounded-lg font-button text-button hover:opacity-90 transition-all"
         >
-          <div class="h-12 w-12 bg-secondary-fixed rounded-full flex items-center justify-center shrink-0">
-            <FontAwesomeIcon :icon="['fas', 'microscope']" class="text-on-secondary-fixed text-xl" aria-hidden="true" />
+          {{ t('testResults.backToProfile') }}
+        </AppButton>
+      </div>
+
+      <template v-else>
+        <header class="mb-xl">
+          <div class="flex justify-between items-start mb-md gap-md">
+            <div class="min-w-0">
+              <h1 class="font-h2 text-h2 text-secondary mb-xs break-words">
+                {{ displayPatientName }}
+              </h1>
+              <p class="font-body-sm text-on-surface-variant flex items-center gap-xs flex-wrap">
+                <FontAwesomeIcon icon="calendar-days" class="text-[18px] shrink-0" aria-hidden="true" />
+                {{ displayReportDate }}
+              </p>
+            </div>
+            <AppButton
+              type="button"
+              class="bg-secondary text-on-secondary p-sm rounded-xl flex items-center justify-center shadow-sm active:scale-95 transition-transform shrink-0 print:hidden"
+              :aria-label="t('testResults.printAria')"
+              @click="printReport"
+            >
+              <FontAwesomeIcon icon="print" aria-hidden="true" />
+            </AppButton>
           </div>
-          <div class="min-w-0">
-            <h2 class="font-h3 text-h3 text-on-surface">
-              {{ t('testResults.panelTitle') }}
-            </h2>
-            <p class="font-body-sm text-on-surface-variant">
-              {{ t('testResults.panelSubtitle') }}
+
+          <div
+            class="bg-white border border-outline-variant rounded-xl p-md flex items-center gap-md shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+          >
+            <div class="h-12 w-12 bg-secondary-fixed rounded-full flex items-center justify-center shrink-0">
+              <FontAwesomeIcon :icon="['fas', 'microscope']" class="text-on-secondary-fixed text-xl" aria-hidden="true" />
+            </div>
+            <div class="min-w-0">
+              <h2 class="font-h3 text-h3 text-on-surface">
+                {{ t('testResults.panelTitle') }}
+              </h2>
+              <p class="font-body-sm text-on-surface-variant">
+                {{ displayOrganization }}
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <section class="space-y-md">
+          <div class="flex justify-between items-center px-xs gap-sm flex-wrap">
+            <h3 class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">
+              {{ t('testResults.parametersTitle') }}
+            </h3>
+            <span class="font-body-sm text-on-tertiary-container bg-tertiary-fixed/30 px-sm py-[2px] rounded-full">
+              {{ t('testResults.markersCount', { count: markerRows.length }) }}
+            </span>
+          </div>
+
+          <div v-if="!markerRows.length" class="bg-white border border-outline-variant rounded-xl p-md text-center text-on-surface-variant font-body-sm">
+            {{ t('testResults.noMarkers') }}
+          </div>
+
+          <div v-else class="space-y-sm">
+            <div
+              v-for="row in markerRows"
+              :key="row.key"
+              class="bg-white border border-outline-variant rounded-xl p-md shadow-sm break-inside-avoid"
+            >
+              <div class="flex justify-between items-start mb-sm gap-sm">
+                <div class="min-w-0">
+                  <p class="font-h3 text-[18px] text-on-surface">
+                    {{ row.name }}
+                  </p>
+                </div>
+                <div class="text-right shrink-0">
+                  <p
+                    class="font-h2 text-h2 tabular-nums"
+                    :class="row.flag === 'normal' ? 'text-secondary' : 'text-error'"
+                  >
+                    {{ row.value }}
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between pt-sm border-t border-surface-container gap-sm flex-wrap">
+                <p class="font-body-sm text-on-surface-variant">
+                  {{ row.ref }}
+                </p>
+                <span
+                  class="px-sm py-1 rounded-lg text-[12px] font-bold uppercase shrink-0"
+                  :class="statusBadgeClass(row.flag)"
+                >
+                  {{ row.statusLabel }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          v-if="report.doctor_note"
+          class="mt-xl p-md bg-secondary-container/20 rounded-xl border border-secondary-container/30 print:break-inside-avoid"
+        >
+          <div class="flex items-start gap-sm">
+            <FontAwesomeIcon icon="circle-info" class="text-secondary shrink-0 mt-0.5" aria-hidden="true" />
+            <p class="font-body-sm text-on-secondary-container">
+              <strong>{{ t('testResults.doctorNoteLead') }}</strong>
+              {{ ' ' }}
+              {{ report.doctor_note }}
             </p>
           </div>
-        </div>
-      </header>
-
-      <section class="space-y-md">
-        <div class="flex justify-between items-center px-xs gap-sm flex-wrap">
-          <h3 class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-widest">
-            {{ t('testResults.parametersTitle') }}
-          </h3>
-          <span class="font-body-sm text-on-tertiary-container bg-tertiary-fixed/30 px-sm py-[2px] rounded-full">
-            {{ t('testResults.markersCount', { count: markerRows.length }) }}
-          </span>
-        </div>
-
-        <div class="space-y-sm">
-          <div
-            v-for="row in markerRows"
-            :key="row.key"
-            class="bg-white border border-outline-variant rounded-xl p-md shadow-sm break-inside-avoid"
-          >
-            <div class="flex justify-between items-start mb-sm gap-sm">
-              <div class="min-w-0">
-                <p class="font-h3 text-[18px] text-on-surface">
-                  {{ row.name }}
-                </p>
-                <p class="font-body-sm text-on-surface-variant">
-                  {{ row.subtitle }}
-                </p>
-              </div>
-              <div class="text-right shrink-0">
-                <p
-                  class="font-h2 text-h2 tabular-nums"
-                  :class="row.flag === 'normal' ? 'text-secondary' : 'text-error'"
-                >
-                  {{ row.value }}
-                  <span class="text-body-sm font-normal text-on-surface-variant">{{ row.unitLabel }}</span>
-                </p>
-              </div>
-            </div>
-            <div class="flex items-center justify-between pt-sm border-t border-surface-container gap-sm flex-wrap">
-              <p class="font-body-sm text-on-surface-variant">
-                {{ row.ref }}
-              </p>
-              <span
-                class="px-sm py-1 rounded-lg text-[12px] font-bold uppercase shrink-0"
-                :class="statusBadgeClass(row.flag)"
-              >
-                {{ row.statusLabel }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mt-xl p-md bg-secondary-container/20 rounded-xl border border-secondary-container/30 print:break-inside-avoid">
-        <div class="flex items-start gap-sm">
-          <FontAwesomeIcon icon="circle-info" class="text-secondary shrink-0 mt-0.5" aria-hidden="true" />
-          <p class="font-body-sm text-on-secondary-container">
-            <strong>{{ t('testResults.doctorNoteLead') }}</strong>
-            {{ ' ' }}
-            {{ t('testResults.doctorNoteBody') }}
-          </p>
-        </div>
-      </section>
+        </section>
+      </template>
     </main>
 
     <BottomNavBar class="print:hidden" />
@@ -124,35 +141,52 @@
 </template>
 
 <script setup>
-const { t } = useI18n()
-const route = useRoute()
+definePageMeta({
+  middleware: 'auth',
+})
 
-/** Demo values; in production these would come from an API keyed by patient + PIN */
-const MARKER_DEFS = [
-  { key: 'glucose', value: '92', unitKey: 'mgDl', flag: 'normal' },
-  { key: 'cholesterol', value: '215', unitKey: 'mgDl', flag: 'high' },
-  { key: 'hemoglobin', value: '14.2', unitKey: 'gDl', flag: 'normal' },
-  { key: 'wbc', value: '3.8', unitKey: 'ten3uL', flag: 'low' },
-  { key: 'creatinine', value: '0.9', unitKey: 'mgDl', flag: 'normal' },
-]
+const { t, locale } = useI18n()
 
-const markerRows = computed(() =>
-  MARKER_DEFS.map((m) => ({
-    ...m,
-    name: t(`testResults.markers.${m.key}.name`),
-    subtitle: t(`testResults.markers.${m.key}.subtitle`),
-    ref: t(`testResults.markers.${m.key}.ref`),
-    unitLabel: t(`testResults.units.${m.unitKey}`),
-    statusLabel: t(`testResults.status.${m.flag}`),
-  })),
+const report = ref(null)
+
+onMounted(() => {
+  const state = window.history.state || {}
+  report.value = state.report ?? null
+})
+
+function localeCode() {
+  return locale.value === 'ar' ? 'ar' : locale.value === 'ku' ? 'ku' : 'en'
+}
+
+const markerRows = computed(() => {
+  const items = report.value?.items ?? []
+  return items.map((item) => ({
+    key: item.id,
+    name: item.test_name || t('testResults.unnamedMarker'),
+    value: item.value || t('examinationResultSlip.notAvailable'),
+    ref: item.reference_point || t('examinationResultSlip.notAvailable'),
+    flag: item.status || 'normal',
+    statusLabel: t(`testResults.status.${item.status === 'high' || item.status === 'low' ? item.status : 'normal'}`),
+  }))
+})
+
+const displayPatientName = computed(() =>
+  report.value?.patient?.full_name || t('testResults.demoPatientName'),
 )
 
-const displayPatientName = computed(() => {
-  const q = route.query.patient
-  if (typeof q === 'string' && q.trim().length) {
-    return q.trim()
+const displayOrganization = computed(() =>
+  report.value?.organization?.name || t('testResults.panelSubtitle'),
+)
+
+const displayReportDate = computed(() => {
+  const iso = report.value?.reported_at
+  if (!iso) return ''
+  try {
+    return new Intl.DateTimeFormat(localeCode(), { dateStyle: 'long' }).format(new Date(iso))
   }
-  return t('testResults.demoPatientName')
+  catch {
+    return ''
+  }
 })
 
 useSeoMeta({

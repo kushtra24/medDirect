@@ -88,52 +88,22 @@
   "testResults": {
     "seoTitle": "Your test results",
     "demoPatientName": "John Doe",
-    "reportDate": "October 24, 2023",
     "printAria": "Print report",
     "print": "Print",
-    "panelTitle": "Complete Blood Count",
-    "panelSubtitle": "General Health Screening",
+    "panelTitle": "Lab Result Report",
+    "panelSubtitle": "Independent Laboratory",
     "parametersTitle": "Test Parameters",
     "markersCount": "{count} Markers",
     "doctorNoteLead": "Doctor's Note:",
-    "doctorNoteBody": "Most values are within normal limits. Your cholesterol is slightly elevated. Please schedule a follow-up consultation to discuss dietary changes.",
-    "units": {
-      "mgDl": "mg/dL",
-      "gDl": "g/dL",
-      "ten3uL": "10³/µL"
-    },
     "status": {
       "normal": "NORMAL",
       "high": "HIGH",
       "low": "LOW"
     },
-    "markers": {
-      "glucose": {
-        "name": "Glucose",
-        "subtitle": "Fasting Blood Sugar",
-        "ref": "Ref: 70 - 99 mg/dL"
-      },
-      "cholesterol": {
-        "name": "Total Cholesterol",
-        "subtitle": "Lipid Panel",
-        "ref": "Ref: < 200 mg/dL"
-      },
-      "hemoglobin": {
-        "name": "Hemoglobin",
-        "subtitle": "CBC Panel",
-        "ref": "Ref: 13.5 - 17.5 g/dL"
-      },
-      "wbc": {
-        "name": "White Blood Cells",
-        "subtitle": "Immune Marker",
-        "ref": "Ref: 4.5 - 11.0 10³/µL"
-      },
-      "creatinine": {
-        "name": "Creatinine",
-        "subtitle": "Kidney Function",
-        "ref": "Ref: 0.7 - 1.3 mg/dL"
-      }
-    }
+    "noReport": "We couldn't find these results. Please open them from your profile.",
+    "backToProfile": "Back to profile",
+    "noMarkers": "No test parameters recorded for this report.",
+    "unnamedMarker": "Test"
   },
   "patientProfile": {
     "seoTitle": "Your profile",
@@ -150,7 +120,6 @@
       "emergencyContact": "Emergency Contact"
     },
     "topBar": {
-      "searchPlaceholder": "Search medical records...",
       "notificationsAria": "Notifications",
       "helpAria": "Help",
       "avatarAlt": "User avatar"
@@ -1088,7 +1057,16 @@
     "footerPage": "Page {current} of {total}",
     "errorNoPatient": "No patient selected.",
     "errorLoadFailed": "Could not load examination report.",
-    "printButton": "Print"
+    "printButton": "Print",
+    "claim": {
+      "prompt": "Claim these results to save them to your profile permanently.",
+      "cta": "Claim these results",
+      "claiming": "Claiming…",
+      "success": "Saved to your profile.",
+      "loginPrompt": "Log in to claim these results and save them to your profile.",
+      "loginLink": "Log in",
+      "error": "Could not claim these results."
+    }
   },
   "searchPatientPage": {
     "seoTitle": "Search patient",

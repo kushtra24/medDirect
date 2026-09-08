@@ -12,12 +12,52 @@
       {{ loadError }}
     </div>
 
-    <div v-else-if="!reports.length" class="no-print mx-auto max-w-[800px] px-4 py-12 text-center text-body-sm text-slate-500">
+    <div v-else-if="!reports.length && !isGuestLookup" class="no-print mx-auto max-w-[800px] px-4 py-12 text-center text-body-sm text-slate-500">
       {{ t('examinationResultSlip.noReports') }}
     </div>
 
-    <main v-else class="flex w-full flex-col items-center justify-center p-4 md:p-8 print:p-0">
-      <div class="no-print mb-6 flex w-full max-w-[800px] justify-end">
+    <main v-else class="flex w-full flex-col items-center p-4 md:p-8 print:p-0">
+      <div v-if="isGuestLookup" class="no-print mb-6 w-full max-w-[800px] rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+        <template v-if="!isPatientUser">
+          <p class="text-body-sm text-slate-600">
+            {{ t('examinationResultSlip.claim.loginPrompt') }}
+            <NuxtLink to="/auth/login" class="font-semibold text-blue-900 hover:underline">
+              {{ t('examinationResultSlip.claim.loginLink') }}
+            </NuxtLink>
+          </p>
+        </template>
+        <template v-else-if="claimed">
+          <p class="flex items-center gap-2 font-medium text-teal-700">
+            <FontAwesomeIcon icon="circle-check" aria-hidden="true" />
+            {{ t('examinationResultSlip.claim.success') }}
+          </p>
+        </template>
+        <template v-else>
+          <div class="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+            <p class="text-body-sm text-slate-600">
+              {{ t('examinationResultSlip.claim.prompt') }}
+            </p>
+            <AppButton
+              type="button"
+              class="flex shrink-0 items-center gap-2 rounded-lg bg-teal-600 px-4 py-2 font-button text-body-sm text-white hover:opacity-90 disabled:opacity-50"
+              :disabled="claiming"
+              @click="claimResults"
+            >
+              <FontAwesomeIcon icon="save" aria-hidden="true" />
+              {{ claiming ? t('examinationResultSlip.claim.claiming') : t('examinationResultSlip.claim.cta') }}
+            </AppButton>
+          </div>
+          <p v-if="claimError" class="mt-3 rounded-lg border border-error/40 bg-error/10 px-3 py-2 text-body-sm text-error" role="alert">
+            {{ claimError }}
+          </p>
+        </template>
+      </div>
+
+      <div v-if="!reports.length" class="no-print mx-auto max-w-[800px] px-4 pb-4 text-center text-body-sm text-slate-500">
+        {{ t('examinationResultSlip.noReports') }}
+      </div>
+
+      <div v-if="reports.length" class="no-print mb-6 flex w-full max-w-[800px] justify-end">
         <AppButton
           type="button"
           class="flex items-center gap-2 rounded-lg bg-blue-900 px-4 py-2 font-button text-body-sm text-white hover:opacity-90"
@@ -175,7 +215,7 @@ definePageMeta({
 
 const { t, locale } = useI18n()
 const route = useRoute()
-const { api, ensureUserLoaded } = useMedDirectApi()
+const { api, ensureUserLoaded, user } = useMedDirectApi()
 const { requireOrganization } = useActiveOrganization()
 
 const loading = ref(true)
@@ -183,6 +223,36 @@ const loadError = ref('')
 const patient = ref(null)
 const organization = ref(null)
 const allExamReports = ref([])
+
+const lookupFullName = ref('')
+const lookupAccessPin = ref('')
+const isGuestLookup = computed(() => Boolean(lookupFullName.value && lookupAccessPin.value))
+const isPatientUser = computed(() => user.value?.role === 'patient')
+const claimed = ref(false)
+const claiming = ref(false)
+const claimError = ref('')
+
+async function claimResults() {
+  if (claiming.value) return
+  claimError.value = ''
+  claiming.value = true
+  try {
+    await api('/api/patient-records/claim', {
+      method: 'POST',
+      body: {
+        full_name: lookupFullName.value,
+        access_pin: lookupAccessPin.value,
+      },
+    })
+    claimed.value = true
+  }
+  catch (e) {
+    claimError.value = e?.data?.message || e?.message || t('examinationResultSlip.claim.error')
+  }
+  finally {
+    claiming.value = false
+  }
+}
 
 const notAvailable = computed(() => t('examinationResultSlip.notAvailable'))
 
@@ -285,6 +355,8 @@ async function loadFromState() {
   patient.value = statePatient ?? null
   allExamReports.value = Array.isArray(stateExamReports) ? stateExamReports : []
   organization.value = allExamReports.value[0]?.organization ?? null
+  lookupFullName.value = typeof state.lookupFullName === 'string' ? state.lookupFullName : ''
+  lookupAccessPin.value = typeof state.lookupAccessPin === 'string' ? state.lookupAccessPin : ''
   return true
 }
 
@@ -310,7 +382,10 @@ onMounted(async () => {
   loadError.value = ''
   try {
     const usedState = await loadFromState()
-    if (!usedState) {
+    if (usedState) {
+      await ensureUserLoaded()
+    }
+    else {
       await loadFromStaffApi()
     }
   }

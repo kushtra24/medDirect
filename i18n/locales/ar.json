@@ -87,52 +87,22 @@
   "testResults": {
     "seoTitle": "نتائج فحوصاتك",
     "demoPatientName": "محمد علي",
-    "reportDate": "٢٤ أكتوبر ٢٠٢٣",
     "printAria": "طباعة التقرير",
     "print": "طباعة",
-    "panelTitle": "تعداد الدم الكامل",
-    "panelSubtitle": "فحص الصحة العامة",
+    "panelTitle": "تقرير نتائج المختبر",
+    "panelSubtitle": "مختبر مستقل",
     "parametersTitle": "معايير الفحص",
     "markersCount": "{count} مؤشرات",
     "doctorNoteLead": "ملاحظة الطبيب:",
-    "doctorNoteBody": "معظم القيم ضمن الحد الطبيعي. الكوليسترول لديك مرتفع قليلاً. يُرجى تحديد موعد متابعة لمناقشة التغييرات الغذائية.",
-    "units": {
-      "mgDl": "ملغ/دل",
-      "gDl": "غ/دل",
-      "ten3uL": "١٠³/µل"
-    },
     "status": {
       "normal": "طبيعي",
       "high": "مرتفع",
       "low": "منخفض"
     },
-    "markers": {
-      "glucose": {
-        "name": "الجلوكوز",
-        "subtitle": "سكر الدم الصائم",
-        "ref": "مرجع: ٧٠ - ٩٩ ملغ/دل"
-      },
-      "cholesterol": {
-        "name": "الكوليسترول الكلي",
-        "subtitle": "لوحة الدهون",
-        "ref": "مرجع: أقل من ٢٠٠ ملغ/دل"
-      },
-      "hemoglobin": {
-        "name": "الهيموغلوبين",
-        "subtitle": "لوحة تعداد الدم",
-        "ref": "مرجع: ١٣٫٥ - ١٧٫٥ غ/دل"
-      },
-      "wbc": {
-        "name": "كريات الدم البيضاء",
-        "subtitle": "مؤشر المناعة",
-        "ref": "مرجع: ٤٫٥ - ١١٫٠ ١٠³/µل"
-      },
-      "creatinine": {
-        "name": "الكرياتينين",
-        "subtitle": "وظائف الكلى",
-        "ref": "مرجع: ٠٫٧ - ١٫٣ ملغ/دل"
-      }
-    }
+    "noReport": "تعذر العثور على هذه النتائج. يرجى فتحها من ملفك الشخصي.",
+    "backToProfile": "العودة إلى الملف الشخصي",
+    "noMarkers": "لا توجد معايير فحص مسجلة لهذا التقرير.",
+    "unnamedMarker": "فحص"
   },
   "patientProfile": {
     "seoTitle": "ملفك الشخصي",
@@ -149,7 +119,6 @@
       "emergencyContact": "جهة اتصال للطوارئ"
     },
     "topBar": {
-      "searchPlaceholder": "البحث في السجلات الطبية...",
       "notificationsAria": "الإشعارات",
       "helpAria": "مساعدة",
       "avatarAlt": "صورة المستخدم"
@@ -1074,7 +1043,16 @@
     "footerPage": "صفحة {current} من {total}",
     "errorNoPatient": "لم يتم تحديد مريض.",
     "errorLoadFailed": "تعذر تحميل تقرير الفحص السريري.",
-    "printButton": "طباعة"
+    "printButton": "طباعة",
+    "claim": {
+      "prompt": "اطلب ملكية هذه النتائج لحفظها في ملفك الشخصي بشكل دائم.",
+      "cta": "طلب ملكية هذه النتائج",
+      "claiming": "جارٍ الطلب…",
+      "success": "تم الحفظ في ملفك الشخصي.",
+      "loginPrompt": "سجّل الدخول لطلب ملكية هذه النتائج وحفظها في ملفك الشخصي.",
+      "loginLink": "تسجيل الدخول",
+      "error": "تعذر طلب ملكية هذه النتائج."
+    }
   },
   "searchPatientPage": {
     "seoTitle": "بحث عن مريض",
