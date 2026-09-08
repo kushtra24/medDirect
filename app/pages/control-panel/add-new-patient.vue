@@ -8,17 +8,45 @@
           <nav class="flex flex-wrap items-center text-xs text-slate-400 dark:text-slate-500 mb-2 gap-2" aria-label="Breadcrumb">
             <span>{{ t('addNewPatientPage.breadcrumbPatients') }}</span>
             <span aria-hidden="true">/</span>
-            <span class="text-tertiary font-semibold">{{ t('addNewPatientPage.breadcrumbCurrent') }}</span>
+            <span class="text-tertiary font-semibold">{{ isEditMode ? t('addNewPatientPage.breadcrumbEditCurrent') : t('addNewPatientPage.breadcrumbCurrent') }}</span>
           </nav>
           <h1 class="font-h1 text-h1 text-blue-900 dark:text-blue-100">
-            {{ t('addNewPatientPage.title') }}
+            {{ isEditMode ? t('addNewPatientPage.editTitle') : t('addNewPatientPage.title') }}
           </h1>
           <p class="text-slate-500 dark:text-slate-400 font-body-md mt-1">
-            {{ t('addNewPatientPage.subtitle', { brand: t('brand.name') }) }}
+            {{ isEditMode ? t('addNewPatientPage.editSubtitle') : t('addNewPatientPage.subtitle', { brand: t('brand.name') }) }}
           </p>
         </div>
+        <AppButton
+            to="/control-panel/import-patients"
+            class="px-6 py-2.5 bg-white dark:bg-slate-900 border border-tertiary text-tertiary font-button rounded-lg shadow-sm active:scale-95 transition-all text-center inline-flex items-center justify-center gap-2"
+        >
+          <FontAwesomeIcon icon="file-arrow-up" aria-hidden="true" />
+          {{ t('controlPanel.importPatients') }}
+        </AppButton>
       </div>
 
+      <p v-if="isEditMode && loadingPatient" class="text-slate-500 dark:text-slate-400 font-body-md">
+        {{ t('addNewPatientPage.loadingPatient') }}
+      </p>
+
+      <p
+        v-else-if="isEditMode && loadError"
+        class="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+        role="alert"
+      >
+        {{ loadError }}
+      </p>
+
+      <p
+        v-else-if="isEditMode && !canEditPatient"
+        class="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
+        role="alert"
+      >
+        {{ t('addNewPatientPage.noPermission') }}
+      </p>
+
+      <template v-else>
       <p
         v-if="submitError"
         class="rounded-lg border border-error/40 bg-error/10 px-4 py-3 text-sm text-error"
@@ -35,7 +63,7 @@
       </p>
 
       <div
-        v-if="matchResult"
+        v-if="matchResult && !isEditMode"
         class="rounded-lg border border-blue-300 dark:border-blue-800 bg-blue-50 dark:bg-blue-950/30 px-4 py-3 text-sm text-blue-900 dark:text-blue-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
         role="status"
       >
@@ -151,18 +179,6 @@
                       t('addNewPatientPage.form.genderFemale')
                     }}</span>
                   </label>
-                  <label class="flex items-center gap-2 cursor-pointer group">
-                    <input
-                      v-model="form.gender"
-                      class="text-tertiary focus:ring-tertiary border-slate-300 dark:border-slate-600 dark:bg-slate-950"
-                      name="gender"
-                      type="radio"
-                      value="other"
-                    >
-                    <span class="text-sm text-slate-600 dark:text-slate-300 group-hover:text-tertiary">{{
-                      t('addNewPatientPage.form.genderOther')
-                    }}</span>
-                  </label>
                 </div>
               </fieldset>
             </div>
@@ -259,25 +275,17 @@
               </div>
               <div>
                 <label class="block font-label-caps text-label-caps text-slate-500 dark:text-slate-400 mb-1">{{
-                  t('addNewPatientPage.form.allergies')
-                }}</label>
-                <textarea
-                  v-model="form.allergies"
-                  class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary p-3 outline-none min-h-[4.5rem]"
-                  rows="2"
-                  :placeholder="t('addNewPatientPage.form.allergiesPlaceholder')"
-                />
-              </div>
-              <div>
-                <label class="block font-label-caps text-label-caps text-slate-500 dark:text-slate-400 mb-1">{{
-                  t('addNewPatientPage.form.chronic')
+                  t('addNewPatientPage.form.additionalNotes')
                 }}</label>
                 <textarea
                   v-model="form.chronic_conditions"
                   class="w-full border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-950 dark:text-slate-100 rounded-lg text-sm focus:border-tertiary focus:ring-1 focus:ring-tertiary p-3 outline-none min-h-[4.5rem]"
                   rows="2"
-                  :placeholder="t('addNewPatientPage.form.chronicPlaceholder')"
+                  :placeholder="t('addNewPatientPage.form.additionalNotesPlaceholder')"
                 />
+                <p class="text-xs text-slate-400 dark:text-slate-500 mt-1">
+                  {{ t('addNewPatientPage.form.additionalNotesHint') }}
+                </p>
               </div>
             </div>
           </section>
@@ -340,7 +348,7 @@
 
         <div class="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-end gap-4 pt-8 border-t border-slate-200 dark:border-slate-700">
           <AppButton
-            to="/control-panel"
+            :to="cancelPath"
             class="px-8 py-3 rounded-lg font-button text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-transparent text-center"
           >
             {{ t('addNewPatientPage.cancel') }}
@@ -351,10 +359,11 @@
             :disabled="submitting"
           >
             <FontAwesomeIcon icon="save" class="text-lg" aria-hidden="true" />
-            {{ submitting ? t('addNewPatientPage.saving') : t('addNewPatientPage.savePatient') }}
+            {{ submitting ? t('addNewPatientPage.saving') : (isEditMode ? t('addNewPatientPage.saveChanges') : t('addNewPatientPage.savePatient')) }}
           </AppButton>
         </div>
       </form>
+      </template>
     </main>
 
     <footer class="p-8 text-center text-slate-400 dark:text-slate-500 text-xs mt-auto">
@@ -370,9 +379,27 @@ definePageMeta({
 
 const { t } = useI18n()
 const { api, ensureUserLoaded } = useMedDirectApi()
-const { requireOrganization } = useActiveOrganization()
+const { requireOrganization, activeOrganization } = useActiveOrganization()
+const route = useRoute()
+const router = useRouter()
 
 const year = new Date().getFullYear()
+
+const patientId = computed(() => {
+  const raw = route.query.patient_id
+  if (raw == null || raw === '') return null
+  const id = Number(raw)
+  return Number.isFinite(id) ? id : null
+})
+const isEditMode = computed(() => patientId.value !== null)
+const cancelPath = computed(() => isEditMode.value
+  ? { path: '/control-panel/patient-record', query: { patient_id: String(patientId.value) } }
+  : '/control-panel')
+
+const canEditPatient = computed(() =>
+  !!activeOrganization.value?.is_owner
+  || !!activeOrganization.value?.abilities?.canEditPatient,
+)
 
 const form = reactive({
   first_name: '',
@@ -392,29 +419,64 @@ const form = reactive({
 const submitting = ref(false)
 const submitError = ref('')
 const successMessage = ref('')
+const loadingPatient = ref(false)
+const loadError = ref('')
 
 const matching = ref(false)
 const matchResult = ref(null)
 let matchTimer = null
 
 useSeoMeta({
-  title: () => t('addNewPatientPage.seoTitle'),
+  title: () => isEditMode.value ? t('addNewPatientPage.editSeoTitle') : t('addNewPatientPage.seoTitle'),
 })
 
-onMounted(() => {
-  ensureUserLoaded()
+onMounted(async () => {
+  await ensureUserLoaded()
+  if (isEditMode.value && canEditPatient.value) {
+    await loadPatient()
+  }
 })
 
 onUnmounted(() => {
   if (matchTimer) clearTimeout(matchTimer)
 })
 
+async function loadPatient() {
+  loadingPatient.value = true
+  loadError.value = ''
+  try {
+    const org = await requireOrganization()
+    const res = await api(`/api/organizations/${org.id}/patients/${patientId.value}`)
+    const p = res.patient ?? {}
+    form.first_name = p.first_name || ''
+    form.surname = p.surname || ''
+    form.date_of_birth = p.date_of_birth || ''
+    form.gender = p.gender || ''
+    form.national_id = p.national_id || ''
+    form.insurance_provider = p.insurance_provider || ''
+    form.policy_number = p.policy_number || ''
+    form.blood_group = p.blood_group || ''
+    form.allergies = p.allergies || ''
+    form.chronic_conditions = p.chronic_conditions || ''
+    form.phone = p.phone || ''
+    form.email = p.email || ''
+  }
+  catch (e) {
+    loadError.value = e?.data?.message || e?.message || t('addNewPatientPage.errorLoadFailed')
+  }
+  finally {
+    loadingPatient.value = false
+  }
+}
+
 /**
  * Checks whether the identity being typed already belongs to a patient-portal account,
  * so staff can preview an autofill before saving. The clinic's own record still links
- * automatically on save even if this check is skipped or fails.
+ * automatically on save even if this check is skipped or fails. Not relevant when
+ * editing an existing patient — linking only happens at creation time.
  */
 function scheduleMatchCheck() {
+  if (isEditMode.value) return
   matchResult.value = null
   if (matchTimer) clearTimeout(matchTimer)
   matchTimer = setTimeout(runMatchCheck, 400)
@@ -479,14 +541,26 @@ async function onSubmit() {
       email: form.email || null,
       national_id: form.national_id || null,
     }
-    const res = await api(`/api/organizations/${org.id}/patients`, {
-      method: 'POST',
-      body,
-    })
-    successMessage.value = res.patient?.is_claimed
-      ? t('addNewPatientPage.successMessageLinked', { pin: res.access_pin })
-      : t('addNewPatientPage.successMessage', { pin: res.access_pin })
-    matchResult.value = null
+    if (isEditMode.value) {
+      await api(`/api/organizations/${org.id}/patients/${patientId.value}`, {
+        method: 'PATCH',
+        body,
+      })
+      successMessage.value = t('addNewPatientPage.updateSuccessMessage')
+      setTimeout(() => {
+        router.push({ path: '/control-panel/patient-record', query: { patient_id: String(patientId.value) } })
+      }, 800)
+    }
+    else {
+      const res = await api(`/api/organizations/${org.id}/patients`, {
+        method: 'POST',
+        body,
+      })
+      successMessage.value = res.patient?.is_claimed
+        ? t('addNewPatientPage.successMessageLinked', { pin: res.access_pin })
+        : t('addNewPatientPage.successMessage', { pin: res.access_pin })
+      matchResult.value = null
+    }
   }
   catch (e) {
     if (e?.message === 'NO_ORGANIZATION') {

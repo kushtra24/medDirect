@@ -33,49 +33,39 @@
     </aside>
 
     <section class="hidden md:flex flex-1 relative bg-surface-container">
-      <div class="absolute inset-0 grayscale-[0.2] opacity-90 contrast-75">
-        <img
-          :alt="t('searchResults.mapAlt')"
-          class="w-full h-full object-cover"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFA9wgsaKSnMNhmzMclKx1ypFrAX3R79T7YtOQXYzV0ROybmOkysFzxyaIxAyxGkUotwCJtU9D0QE4FLwhL1-DccLw43q3_oTLwWYckPagqgSJc768StyNauE5ipB1xnJU3V59zMiTlqUB-D7CfFHtdtx9BA5_Pp8EORW50658TL1CHV06KCy9D-JopyJa6V1f9rsPuDLZxVLzVDDHBwKmlnjAWm-Oi6BVAHcKmxAysr7x52m1bp882oc7A5PlaDwDcb411ztgN70"
+      <ClientOnly>
+        <SearchResultsMap
+          ref="mapRef"
+          :institutes="institutes"
+          :selected-slug="selectedSlug"
+          @select="selectedSlug = $event"
         />
-      </div>
+        <template #fallback>
+          <div class="absolute inset-0 flex items-center justify-center text-on-surface-variant text-body-sm">
+            {{ t('searchResults.mapAlt') }}
+          </div>
+        </template>
+      </ClientOnly>
 
-      <div class="absolute top-md right-md flex flex-col gap-2">
-        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors">
+      <div class="absolute top-md right-md flex flex-col gap-2 z-[1000]">
+        <AppButton
+          class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors"
+          @click="mapRef?.zoomIn()"
+        >
           <FontAwesomeIcon icon="plus" />
         </AppButton>
-        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors border-t border-outline-variant">
+        <AppButton
+          class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors border-t border-outline-variant"
+          @click="mapRef?.zoomOut()"
+        >
           <FontAwesomeIcon icon="minus" />
         </AppButton>
-        <AppButton class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors mt-2">
+        <AppButton
+          class="w-10 h-10 bg-white shadow-md rounded-lg flex items-center justify-center text-secondary hover:bg-slate-50 transition-colors mt-2"
+          @click="mapRef?.locateMe()"
+        >
           <FontAwesomeIcon icon="location-crosshairs" />
         </AppButton>
-      </div>
-
-      <div
-        v-for="(item, index) in mapPins"
-        :key="item.slug"
-        class="absolute group cursor-pointer"
-        :class="pinPositions[index % pinPositions.length]"
-      >
-        <div class="relative">
-          <div
-            class="bg-secondary text-white p-2 rounded-full shadow-lg transform -translate-x-1/2 -translate-y-full hover:scale-110 transition-transform"
-            :class="selectedSlug === item.slug ? 'ring-4 ring-secondary/20' : ''"
-          >
-            <FontAwesomeIcon icon="briefcase-medical" class="text-xl" />
-          </div>
-          <div
-            v-if="selectedSlug === item.slug"
-            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-10 w-48 bg-white p-2 rounded-lg shadow-xl border border-secondary"
-          >
-            <p class="font-h3 text-[14px] text-secondary">{{ item.name }}</p>
-            <p class="text-body-sm text-[12px] text-on-surface-variant">
-              {{ item.allowsAppointments ? t('searchResults.quickAppointment') : t('clinicCard.closedOpens', { time: item.openTime ?? '—' }) }}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -89,13 +79,7 @@ const { t } = useI18n()
 const { api } = useMedDirectApi()
 
 const selectedSlug = ref(null)
-
-const pinPositions = [
-  'top-1/4 left-1/4',
-  'top-1/2 left-1/2',
-  'bottom-1/3 right-1/3',
-  'top-1/3 right-1/4',
-]
+const mapRef = ref(null)
 
 const route = useRoute()
 
@@ -121,8 +105,6 @@ const { data, pending, error } = await useAsyncData(
 )
 
 const institutes = computed(() => data.value?.institutes ?? [])
-
-const mapPins = computed(() => institutes.value.slice(0, 4))
 
 watch(
   institutes,

@@ -28,6 +28,7 @@
     "portalSubtitle": "وصول آمن إلى بوابة المريض",
     "signInTitle": "تسجيل الدخول",
     "signInDescription": "إدارة سجلاتك الصحية ومواعيدك",
+    "sessionExpired": "انتهت صلاحية جلستك. الرجاء تسجيل الدخول مرة أخرى.",
     "emailLabel": "البريد الإلكتروني",
     "emailPlaceholder": "name{'@'}example.com",
     "passwordLabel": "كلمة المرور",
@@ -350,7 +351,11 @@
     "mapLocationAlt": "موقع على الخريطة",
     "certifiedBadge": "عيادة معتمدة ISO",
     "loadError": "تعذر تحميل ملف العيادة.",
-    "notFound": "العيادة غير موجودة."
+    "notFound": "العيادة غير موجودة.",
+    "gallery": "معرض الصور",
+    "galleryPhotoAlt": "صورة العيادة",
+    "team": "الفريق",
+    "teamMemberNoTitle": "عضو الفريق"
   },
   "clinicDemo": {
     "name": "أدفانسد دياجنوستيكس أربيل",
@@ -381,14 +386,16 @@
       "patient": "المريض",
       "newPatient": "مريض جديد",
       "searchPatient": "بحث عن مريض",
-      "importPatients": "استيراد المرضى"
+      "importPatients": "استيراد المرضى",
+      "orders": "الطلبات"
     },
     "settingsAria": "الإعدادات",
     "manageStaffAria": "إدارة الموظفين",
     "profileAlt": "صورة الملف المهني للعاملين في الرعاية الصحية",
     "accountMenu": {
       "ariaLabel": "قائمة الحساب",
-      "signOut": "تسجيل الخروج"
+      "signOut": "تسجيل الخروج",
+      "editProfile": "تعديل الملف الشخصي"
     },
     "profileStrength": {
       "title": "قوة الملف",
@@ -473,7 +480,8 @@
       "canCreateAddResults": "إضافة نتائج الفحص والمختبر",
       "canCreateDoctorsNote": "إضافة ملاحظات الطبيب",
       "canManageStaff": "إدارة الموظفين",
-      "canEditOrganizationProfile": "تعديل ملف العيادة"
+      "canEditOrganizationProfile": "تعديل ملف العيادة",
+      "canCreateOrder": "تسجيل الزيارات والطلبات"
     },
     "addForm": {
       "title": "إضافة موظف",
@@ -556,6 +564,8 @@
       "remove": "إزالة",
       "gallery": "معرض الصور",
       "gallerySubtitle": "أضف صورًا إضافية للمرفق أو الأجهزة أو منطقة الانتظار.",
+      "galleryCount": "{count} / {max} صور",
+      "galleryMaxReached": "الحد الأقصى {max} صور",
       "addPhoto": "إضافة صورة",
       "galleryPhotoAlt": "صورة من معرض العيادة",
       "removePhotoAria": "إزالة الصورة",
@@ -711,7 +721,10 @@
       "phonePlaceholder": "555-0123",
       "email": "البريد الإلكتروني",
       "emailPlaceholder": "john.doe{'@'}example.com",
-      "countryCode": "+1"
+      "countryCode": "+1",
+      "additionalNotes": "ملاحظات إضافية",
+      "additionalNotesPlaceholder": "أي شيء آخر يستحق الذكر عن هذا المريض...",
+      "additionalNotesHint": "أصبحت الحساسية المعروفة والحالات المزمنة تُسجَّل الآن كقوائم منظمة في صفحة سجل المريض — استخدم هذا الحقل لأي شيء آخر."
     },
     "insurance": {
       "medicarePlus": "MediCare Plus",
@@ -731,7 +744,16 @@
       "autofill": "تعبئة تلقائية",
       "dismiss": "تجاهل"
     },
-    "successMessageLinked": "تم حفظ المريض وربطه بحساب البوابة الخاص به. رمز الوصول للاستعلام: {pin}"
+    "successMessageLinked": "تم حفظ المريض وربطه بحساب البوابة الخاص به. رمز الوصول للاستعلام: {pin}",
+    "editTitle": "تعديل بيانات المريض",
+    "editSubtitle": "تحديث سجل هذا المريض.",
+    "editSeoTitle": "تعديل بيانات المريض",
+    "breadcrumbEditCurrent": "تعديل المريض",
+    "loadingPatient": "جارٍ تحميل بيانات المريض…",
+    "noPermission": "ليس لديك صلاحية تعديل بيانات المرضى. اطلب من مالك العيادة أو المسؤول منحك هذه الصلاحية.",
+    "errorLoadFailed": "تعذر تحميل بيانات هذا المريض.",
+    "saveChanges": "حفظ التغييرات",
+    "updateSuccessMessage": "تم تحديث بيانات المريض. جارٍ التحويل إلى سجله…"
   },
   "importPatientsPage": {
     "seoTitle": "استيراد المرضى",
@@ -970,69 +992,46 @@
   },
   "labReportSlip": {
     "seoTitle": "تقرير المختبر",
-    "nonPrintHint": "يعرض هذا التبويب التقرير للطباعة. استخدم طباعة → حفظ كـ PDF للتنزيل، أو للطباعة على الورق.",
-    "institutionName": "تشخيصات التميز السريري",
-    "institutionTagline": "دقة تشخيصية. سلامة المريض.",
-    "officialReportTitle": "تقرير مختبر رسمي",
-    "refIdLabel": "المرجع:",
-    "refId": "CED-2024-98210",
+    "nonPrintHint": "تعرض هذه العلامة تقريرك القابل للطباعة. استخدم طباعة ← حفظ كملف PDF للتنزيل، أو اطبعه على الورق.",
+    "loading": "جارٍ تحميل التقرير…",
+    "noReports": "لا توجد تقارير مختبر للطباعة.",
+    "notAvailable": "—",
+    "defaultInstitutionName": "مختبر طبي",
+    "officialReportTitle": "تقرير المختبر الرسمي",
     "patientNameLabel": "اسم المريض",
-    "patientName": "جوليان ويليامز",
     "dobLabel": "تاريخ الميلاد",
-    "dobDisplay": "١٤ مايو ١٩٨٨ (٣٥ سنة)",
     "genderLabel": "الجنس",
-    "gender": "أنثى",
-    "patientIdLabel": "معرف المريض",
-    "patientId": "LAB-98210",
-    "collectionLabel": "تاريخ الجمع",
-    "collectionDisplay": "٢٤ أكتوبر ٢٠٢٣، ٠٨:٤٥ ص",
+    "genderMale": "ذكر",
+    "genderFemale": "أنثى",
+    "genderOther": "آخر",
+    "patientIdLabel": "رقم المريض",
+    "collectionLabel": "تاريخ سحب العينة",
     "reportStatusLabel": "حالة التقرير",
     "reportStatusFinal": "نهائي",
+    "reportStatusDraft": "مسودة",
     "table": {
       "testDescription": "وصف الفحص",
       "result": "النتيجة",
-      "units": "الوحدات",
-      "referenceRange": "المدى المرجعي",
+      "referenceRange": "المعدل الطبيعي",
       "status": "الحالة"
-    },
-    "rows": {
-      "glucose": {
-        "name": "جلوكوز صائم (مصل)",
-        "result": "112",
-        "units": "mg/dL",
-        "reference": "70 - 99"
-      },
-      "hba1c": {
-        "name": "الهيموغلوبين السكري (HbA1c)",
-        "result": "5.4",
-        "units": "%",
-        "reference": "4.0 - 5.6"
-      },
-      "creatinine": {
-        "name": "الكرياتينين (مصل)",
-        "result": "0.95",
-        "units": "mg/dL",
-        "reference": "0.70 - 1.30"
-      }
     },
     "badge": {
       "high": "مرتفع",
+      "low": "منخفض",
       "normal": "طبيعي"
     },
-    "onlineTitle": "الوصول إلى النتائج عبر الإنترنت",
-    "onlineBodyStart": "امسح الرمز أو زر ",
-    "onlineVerifyUrl": "ClinicDirect.com/verify",
-    "onlineBodyEnd": " لعرض النسخة الرقمية الموثقة.",
+    "doctorNoteTitle": "ملاحظة الطبيب",
+    "noFindingsRecorded": "لا توجد نتائج أو ملاحظات مسجلة لهذا التقرير.",
     "securePinLabel": "رمز الوصول الآمن",
-    "pinDisplay": "882931",
-    "disclaimerTitle": "إخلاء مسؤولية سريرية",
-    "disclaimerBody": "هذا التقرير مخصص للمهنيين الصحيين ويجب تفسيره في سياق التاريخ السريري للمريض. قد تختلف نتائج المختبر وفقاً لطرق الجمع والتوقيت والعوامل الفسيولوجية. يُنصح بالربط السريري.",
-    "signerName": "د. أليستير ثورن، دكتوراه",
-    "signerRole": "مدير المختبر الرئيسي",
-    "signatureAlt": "توقيع احترافي بالحبر الكحلي",
-    "footerAccreditation": "الاعتماد: CLIA-982-102-CED / ISO 15189:2022",
-    "footerLocation": "موقع المختبر: 402 ميديكال بلازا، جناح 10، المنطقة الحيوية",
-    "footerPage": "صفحة ١ من ١"
+    "pinNotIssued": "لم يصدر بعد",
+    "pinHint": "يمكن للمرضى الاطلاع على هذا التقرير في أي وقت عبر الإنترنت بإدخال اسمهم الكامل ورمز الوصول الآمن في بوابة المريض.",
+    "disclaimerTitle": "إخلاء مسؤولية سريري",
+    "disclaimerBody": "هذا التقرير مخصص للمختصين الطبيين ويجب تفسيره في سياق التاريخ السريري للمريض. قد تختلف نتائج المختبر بحسب طريقة السحب والتوقيت والعوامل الفسيولوجية. يُنصح بالتحقق السريري.",
+    "signerRoleFallback": "مدير المختبر",
+    "footerPage": "صفحة {current} من {total}",
+    "errorNoPatient": "لم يتم اختيار مريض.",
+    "errorLoadFailed": "تعذر تحميل تقرير المختبر.",
+    "printButton": "طباعة"
   },
   "examinationResultSlip": {
     "seoTitle": "تقرير الفحص السريري",
@@ -1102,7 +1101,7 @@
     "searchPrompt": "أدخل المعايير أعلاه وابحث للعثور على المرضى.",
     "searching": "جاري البحث…",
     "noResults": "لا يوجد مرضى يطابقون بحثك.",
-    "noHistory": "لا توجد نتائج مختبر مسجلة بعد.",
+    "noHistory": "لا توجد نتائج مسجلة بعد.",
     "notAvailable": "—",
     "unknownPatient": "مريض غير معروف",
     "reportPanel": "لوحة مختبر ({count} فحوصات)",
@@ -1158,7 +1157,9 @@
       }
     },
     "lastUpdated": "آخر تحديث: ٢٤ أكتوبر ٢٠٢٣ الساعة ٢:٤٢ م",
-    "viewFullRecord": "عرض السجل الطبي الكامل"
+    "viewFullRecord": "عرض السجل الطبي الكامل",
+    "examPanel": "لوحة فحص سريري ({count} نتائج)",
+    "examUntitled": "تقرير فحص سريري"
   },
   "patientRecordPage": {
     "seoTitle": "السجل الطبي للمريض",
@@ -1192,11 +1193,15 @@
       "bloodGroup": "فصيلة الدم",
       "allergies": "الحساسية",
       "chronicConditions": "الأمراض المزمنة",
-      "noneRecorded": "لا يوجد شيء مسجل"
+      "noneRecorded": "لا يوجد شيء مسجل",
+      "legacyAllergyNote": "ملاحظة حساسية قديمة (قبل التنظيم)",
+      "additionalNotes": "ملاحظات إضافية"
     },
     "labSection": {
       "title": "نتائج المختبر",
-      "empty": "لا توجد نتائج مختبر مسجلة حتى الآن."
+      "empty": "لا توجد نتائج مختبر مسجلة حتى الآن.",
+      "printAll": "طباعة الكل",
+      "printAllAria": "طباعة جميع نتائج المختبر"
     },
     "examSection": {
       "title": "نتائج الفحص السريري",
@@ -1214,6 +1219,171 @@
       "high": "مرتفع",
       "low": "منخفض",
       "normal": "طبيعي"
+    },
+    "edit": "تعديل",
+    "delete": "حذف",
+    "deleteModalTitle": "حذف هذا المريض؟",
+    "deleteModalBody": "سيؤدي هذا إلى إزالة {name} من قائمة مرضى عيادتك. يتم الاحتفاظ بسجل نتائج المختبر والفحوصات الخاصة به دون حذفها.",
+    "deleteModalCancel": "إلغاء",
+    "deleteModalConfirm": "حذف المريض",
+    "deleting": "جارٍ الحذف…",
+    "deleteError": "تعذر حذف هذا المريض. حاول مرة أخرى."
+  },
+  "myProfilePage": {
+    "seoTitle": "ملفي الشخصي",
+    "backToDashboard": "العودة إلى لوحة التحكم",
+    "title": "ملفي الشخصي",
+    "subtitle": "حدّث كيف تظهر لفريقك عبر لوحة التحكم.",
+    "fieldAvatar": "الصورة الشخصية",
+    "changePhoto": "اختيار صورة",
+    "uploadPhoto": "رفع الصورة",
+    "uploadingPhoto": "جارٍ الرفع…",
+    "uploadError": "تعذر رفع الصورة. حاول مرة أخرى.",
+    "fieldName": "الاسم",
+    "fieldEmail": "البريد الإلكتروني",
+    "readOnlyHint": "تواصل مع المسؤول لتغيير بريدك الإلكتروني.",
+    "fieldTitle": "المسمى الوظيفي",
+    "titlePlaceholder": "مثال: مدير العيادة، فني مختبر",
+    "titleHint": "يظهر مع دورك في {org}.",
+    "nameRequired": "لا يمكن ترك الاسم فارغًا.",
+    "save": "حفظ التغييرات",
+    "saving": "جارٍ الحفظ…",
+    "saved": "تم تحديث الملف الشخصي.",
+    "saveError": "تعذر حفظ ملفك الشخصي. حاول مرة أخرى."
+  },
+  "clinicalHistory": {
+    "selectOption": "اختر…",
+    "notes": "ملاحظات",
+    "status": "الحالة",
+    "actions": "إجراءات",
+    "cancel": "إلغاء",
+    "saving": "جارٍ الحفظ…",
+    "saveChanges": "حفظ التغييرات",
+    "add": "إضافة",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "confirmDelete": "حذف هذا العنصر؟",
+    "yes": "نعم",
+    "no": "لا",
+    "saveError": "تعذر الحفظ. حاول مرة أخرى.",
+    "notAvailable": "—",
+    "allergies": {
+      "title": "الحساسية",
+      "add": "إضافة حساسية",
+      "substance": "المادة",
+      "substancePlaceholder": "مثال: البنسلين",
+      "reaction": "رد الفعل",
+      "reactionPlaceholder": "مثال: شرى، تورم",
+      "severity": "الشدة",
+      "severityMild": "خفيفة",
+      "severityModerate": "متوسطة",
+      "severitySevere": "شديدة",
+      "notedAt": "تاريخ التسجيل",
+      "statusActive": "نشطة",
+      "statusInactive": "غير نشطة",
+      "empty": "لا توجد حساسية معروفة مسجلة."
+    },
+    "problems": {
+      "title": "قائمة المشاكل الصحية",
+      "add": "إضافة مشكلة",
+      "condition": "الحالة",
+      "conditionPlaceholder": "مثال: السكري من النوع الثاني",
+      "onsetDate": "تاريخ البدء",
+      "resolvedDate": "تاريخ الشفاء",
+      "statusActive": "نشطة",
+      "statusResolved": "تم الشفاء",
+      "onsetLabel": "البدء: {date}",
+      "resolvedLabel": "الشفاء: {date}",
+      "empty": "لا توجد حالات مزمنة مسجلة."
+    },
+    "medications": {
+      "title": "الأدوية",
+      "add": "إضافة دواء",
+      "name": "الدواء",
+      "namePlaceholder": "مثال: ميتفورمين",
+      "dosage": "الجرعة",
+      "dosagePlaceholder": "مثال: 500 ملغ",
+      "frequency": "التكرار",
+      "frequencyPlaceholder": "مثال: مرتين يوميًا",
+      "route": "طريقة الإعطاء",
+      "routePlaceholder": "مثال: عن طريق الفم",
+      "startDate": "تاريخ البدء",
+      "endDate": "تاريخ الإيقاف",
+      "prescriber": "الطبيب المعالج",
+      "prescribedBy": "بوصفة من {name}",
+      "statusActive": "نشط",
+      "statusDiscontinued": "متوقف",
+      "empty": "لا توجد أدوية مسجلة."
+    },
+    "immunizations": {
+      "title": "التطعيمات",
+      "add": "إضافة تطعيم",
+      "vaccine": "اللقاح",
+      "vaccinePlaceholder": "مثال: الإنفلونزا",
+      "doseNumber": "رقم الجرعة",
+      "doseLabel": "الجرعة {number}",
+      "administeredAt": "تاريخ الإعطاء",
+      "administeredBy": "أُعطي بواسطة",
+      "empty": "لا توجد تطعيمات مسجلة."
+    },
+    "vitals": {
+      "title": "العلامات الحيوية",
+      "add": "إضافة قراءة",
+      "recordedAt": "وقت التسجيل",
+      "heightCm": "الطول (سم)",
+      "weightKg": "الوزن (كغم)",
+      "bmi": "مؤشر كتلة الجسم",
+      "bloodPressure": "ضغط الدم",
+      "bloodPressureShort": "ض.د",
+      "heartRate": "معدل ضربات القلب",
+      "heartRateShort": "ن.ق",
+      "temperatureC": "درجة الحرارة (°م)",
+      "temperatureShort": "الحرارة",
+      "respiratoryRate": "معدل التنفس",
+      "oxygenSaturation": "تشبع الأكسجين (%)",
+      "oxygenShort": "الأكسجين",
+      "empty": "لا توجد علامات حيوية مسجلة بعد."
+    },
+    "orders": {
+      "title": "الزيارات والطلبات",
+      "add": "طلب جديد",
+      "type": "نوع الطلب",
+      "typeLab": "فحص مختبر",
+      "typeExamination": "فحص طبيب",
+      "reason": "سبب الزيارة",
+      "reasonPlaceholder": "لماذا يزور المريض العيادة اليوم؟",
+      "assignDoctor": "تعيين لطبيب",
+      "assignOptional": "تعيين إلى (اختياري)",
+      "unassigned": "غير معيّن",
+      "create": "إنشاء الطلب",
+      "empty": "لا توجد زيارات أو طلبات مسجلة بعد.",
+      "statusPending": "قيد الانتظار",
+      "statusInProgress": "قيد التنفيذ",
+      "statusCompleted": "تمت النتيجة",
+      "statusCancelled": "ملغى",
+      "assignedTo": "معيّن إلى {name}",
+      "cancelOrder": "إلغاء",
+      "pageSummary": "عرض {from}–{to} من {total}",
+      "previous": "السابق",
+      "next": "التالي",
+      "pageOf": "صفحة {page} من {pages}"
     }
+  },
+  "ordersPage": {
+    "seoTitle": "قائمة الطلبات",
+    "title": "قائمة الطلبات",
+    "subtitle": "الزيارات المسجلة من الاستقبال، بانتظار فحص مختبر أو فحص طبيب.",
+    "scopeMine": "المعيّنة لي",
+    "scopeUnassigned": "غير معيّنة",
+    "scopeAll": "الكل",
+    "statusOpen": "مفتوحة",
+    "statusCompleted": "تمت النتيجة",
+    "statusCancelled": "ملغاة",
+    "statusAll": "كل الحالات",
+    "loading": "جارٍ تحميل الطلبات…",
+    "errorLoadFailed": "تعذر تحميل قائمة الطلبات.",
+    "empty": "لا يوجد شيء هنا بعد.",
+    "claim": "استلام",
+    "enterResults": "إدخال النتائج"
   }
 }

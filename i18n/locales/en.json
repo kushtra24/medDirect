@@ -29,6 +29,7 @@
     "portalSubtitle": "Secure Patient Portal Access",
     "signInTitle": "Sign In",
     "signInDescription": "Manage your health records and appointments",
+    "sessionExpired": "Your session has expired. Please sign in again.",
     "emailLabel": "Email address",
     "emailPlaceholder": "name{'@'}example.com",
     "passwordLabel": "Password",
@@ -359,7 +360,11 @@
     "mapLocationAlt": "Map location",
     "certifiedBadge": "ISO CERTIFIED CLINIC",
     "loadError": "Could not load clinic profile.",
-    "notFound": "Clinic not found."
+    "notFound": "Clinic not found.",
+    "gallery": "GALLERY",
+    "galleryPhotoAlt": "Clinic photo",
+    "team": "TEAM",
+    "teamMemberNoTitle": "Staff member"
   },
   "clinicDemo": {
     "name": "Advanced Diagnostics Erbil",
@@ -390,14 +395,16 @@
       "patient": "Patient",
       "newPatient": "New patient",
       "searchPatient": "Search patient",
-      "importPatients": "Import patients"
+      "importPatients": "Import patients",
+      "orders": "Orders"
     },
     "settingsAria": "Settings",
     "manageStaffAria": "Manage staff",
     "profileAlt": "Healthcare professional profile photo",
     "accountMenu": {
       "ariaLabel": "Account menu",
-      "signOut": "Sign out"
+      "signOut": "Sign out",
+      "editProfile": "Edit profile"
     },
     "profileStrength": {
       "title": "Profile Strength",
@@ -482,7 +489,8 @@
       "canCreateAddResults": "Add examination & lab results",
       "canCreateDoctorsNote": "Add doctor's notes",
       "canManageStaff": "Manage staff",
-      "canEditOrganizationProfile": "Edit clinic profile"
+      "canEditOrganizationProfile": "Edit clinic profile",
+      "canCreateOrder": "Register visits & orders"
     },
     "addForm": {
       "title": "Add a staff member",
@@ -565,6 +573,8 @@
       "remove": "Remove",
       "gallery": "Gallery photos",
       "gallerySubtitle": "Add extra photos of your facility, equipment, or waiting area.",
+      "galleryCount": "{count} / {max} photos",
+      "galleryMaxReached": "Maximum {max} photos",
       "addPhoto": "Add photo",
       "galleryPhotoAlt": "Clinic gallery photo",
       "removePhotoAria": "Remove photo",
@@ -720,7 +730,10 @@
       "phonePlaceholder": "555-0123",
       "email": "Email address",
       "emailPlaceholder": "john.doe{'@'}example.com",
-      "countryCode": "+1"
+      "countryCode": "+1",
+      "additionalNotes": "Additional notes",
+      "additionalNotesPlaceholder": "Anything else worth noting for this patient...",
+      "additionalNotesHint": "Known allergies and ongoing conditions are now tracked as structured lists on the patient's record page — use this field for anything else."
     },
     "insurance": {
       "medicarePlus": "MediCare Plus",
@@ -744,7 +757,16 @@
       "autofill": "Autofill",
       "dismiss": "Dismiss"
     },
-    "successMessageLinked": "Patient saved and linked to their portal account. Access PIN for guest lookup: {pin}"
+    "successMessageLinked": "Patient saved and linked to their portal account. Access PIN for guest lookup: {pin}",
+    "editTitle": "Edit patient",
+    "editSubtitle": "Update this patient's record.",
+    "editSeoTitle": "Edit patient",
+    "breadcrumbEditCurrent": "Edit patient",
+    "loadingPatient": "Loading patient…",
+    "noPermission": "You don't have permission to edit patients. Ask your clinic owner or admin to grant you this permission.",
+    "errorLoadFailed": "Could not load this patient.",
+    "saveChanges": "Save changes",
+    "updateSuccessMessage": "Patient updated. Redirecting to their record…"
   },
   "importPatientsPage": {
     "seoTitle": "Import patients",
@@ -985,68 +1007,45 @@
   "labReportSlip": {
     "seoTitle": "Laboratory report",
     "nonPrintHint": "This tab shows your printable report. Use Print → Save as PDF to download, or print to paper.",
-    "institutionName": "Clinical Excellence Diagnostics",
-    "institutionTagline": "Diagnostic accuracy. Patient integrity.",
+    "loading": "Loading report…",
+    "noReports": "No lab reports to print.",
+    "notAvailable": "—",
+    "defaultInstitutionName": "Medical Laboratory",
     "officialReportTitle": "Official laboratory report",
-    "refIdLabel": "Ref ID:",
-    "refId": "CED-2024-98210",
     "patientNameLabel": "Patient name",
-    "patientName": "Julianne Williams",
     "dobLabel": "Date of birth",
-    "dobDisplay": "14 May 1988 (35Y)",
     "genderLabel": "Gender",
-    "gender": "Female",
+    "genderMale": "Male",
+    "genderFemale": "Female",
+    "genderOther": "Other",
     "patientIdLabel": "Patient ID",
-    "patientId": "LAB-98210",
     "collectionLabel": "Collection date",
-    "collectionDisplay": "24 Oct 2023, 08:45 AM",
     "reportStatusLabel": "Report status",
     "reportStatusFinal": "Final",
+    "reportStatusDraft": "Draft",
     "table": {
       "testDescription": "Test description",
       "result": "Result",
-      "units": "Units",
       "referenceRange": "Reference range",
       "status": "Status"
     },
-    "rows": {
-      "glucose": {
-        "name": "Glucose, fasting (serum)",
-        "result": "112",
-        "units": "mg/dL",
-        "reference": "70 - 99"
-      },
-      "hba1c": {
-        "name": "Hemoglobin A1c (HbA1c)",
-        "result": "5.4",
-        "units": "%",
-        "reference": "4.0 - 5.6"
-      },
-      "creatinine": {
-        "name": "Creatinine (serum)",
-        "result": "0.95",
-        "units": "mg/dL",
-        "reference": "0.70 - 1.30"
-      }
-    },
     "badge": {
       "high": "High",
+      "low": "Low",
       "normal": "Normal"
     },
-    "onlineTitle": "Access results online",
-    "onlineBodyStart": "Scan the code or visit ",
-    "onlineVerifyUrl": "ClinicDirect.com/verify",
-    "onlineBodyEnd": " to view the authenticated digital version.",
+    "doctorNoteTitle": "Doctor's note",
+    "noFindingsRecorded": "No findings or notes recorded for this report.",
     "securePinLabel": "Secure access PIN",
-    "pinDisplay": "882931",
+    "pinNotIssued": "Not issued",
+    "pinHint": "Patients can view this report anytime online by entering their full name and the secure PIN on the patient portal.",
     "disclaimerTitle": "Clinical disclaimer",
     "disclaimerBody": "This report is intended for medical professionals and should be interpreted in the context of the patient's clinical history. Laboratory results may vary based on collection methods, timing, and physiological factors. Clinical correlation is recommended.",
-    "signerName": "Dr. Alistair Thorne, PhD",
-    "signerRole": "Chief laboratory director",
-    "signatureAlt": "Professional signature in navy ink",
-    "footerAccreditation": "Accreditation: CLIA-982-102-CED / ISO 15189:2022",
-    "footerLocation": "Lab location: 402 Medical Plaza, Suite 10, Bio-District",
-    "footerPage": "Page 1 of 1"
+    "signerRoleFallback": "Laboratory director",
+    "footerPage": "Page {current} of {total}",
+    "errorNoPatient": "No patient selected.",
+    "errorLoadFailed": "Could not load lab report.",
+    "printButton": "Print"
   },
   "examinationResultSlip": {
     "seoTitle": "Examination report",
@@ -1116,7 +1115,7 @@
     "searchPrompt": "Enter criteria above and search to find patients.",
     "searching": "Searching…",
     "noResults": "No patients match your search.",
-    "noHistory": "No lab results on file yet.",
+    "noHistory": "No results on file yet.",
     "notAvailable": "—",
     "unknownPatient": "Unknown patient",
     "reportPanel": "Lab panel ({count} tests)",
@@ -1172,7 +1171,9 @@
       }
     },
     "lastUpdated": "Last updated: Oct 24, 2023 at 2:42 PM",
-    "viewFullRecord": "View full medical record"
+    "viewFullRecord": "View full medical record",
+    "examPanel": "Examination panel ({count} findings)",
+    "examUntitled": "Examination report"
   },
   "patientRecordPage": {
     "seoTitle": "Patient medical record",
@@ -1206,11 +1207,15 @@
       "bloodGroup": "Blood group",
       "allergies": "Allergies",
       "chronicConditions": "Chronic conditions",
-      "noneRecorded": "None recorded"
+      "noneRecorded": "None recorded",
+      "legacyAllergyNote": "Legacy allergy note (pre-structured)",
+      "additionalNotes": "Additional notes"
     },
     "labSection": {
       "title": "Lab results",
-      "empty": "No lab results on file yet."
+      "empty": "No lab results on file yet.",
+      "printAll": "Print all",
+      "printAllAria": "Print all lab results"
     },
     "examSection": {
       "title": "Examination results",
@@ -1228,6 +1233,171 @@
       "high": "High",
       "low": "Low",
       "normal": "Normal"
+    },
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteModalTitle": "Delete this patient?",
+    "deleteModalBody": "This removes {name} from your clinic's patient list. Their lab and examination history is kept for your records, not erased.",
+    "deleteModalCancel": "Cancel",
+    "deleteModalConfirm": "Delete patient",
+    "deleting": "Deleting…",
+    "deleteError": "Could not delete this patient. Please try again."
+  },
+  "myProfilePage": {
+    "seoTitle": "My profile",
+    "backToDashboard": "Back to dashboard",
+    "title": "My profile",
+    "subtitle": "Update how you appear to your team across the control panel.",
+    "fieldAvatar": "Profile photo",
+    "changePhoto": "Choose photo",
+    "uploadPhoto": "Upload photo",
+    "uploadingPhoto": "Uploading…",
+    "uploadError": "Could not upload photo. Please try again.",
+    "fieldName": "Name",
+    "fieldEmail": "Email",
+    "readOnlyHint": "Contact an administrator to change your email address.",
+    "fieldTitle": "Title",
+    "titlePlaceholder": "e.g. Clinic Director, Lab Technician",
+    "titleHint": "Shown for your role at {org}.",
+    "nameRequired": "Name cannot be empty.",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "saved": "Profile updated.",
+    "saveError": "Could not save your profile. Please try again."
+  },
+  "clinicalHistory": {
+    "selectOption": "Select…",
+    "notes": "Notes",
+    "status": "Status",
+    "actions": "Actions",
+    "cancel": "Cancel",
+    "saving": "Saving…",
+    "saveChanges": "Save changes",
+    "add": "Add",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDelete": "Delete this entry?",
+    "yes": "Yes",
+    "no": "No",
+    "saveError": "Could not save. Please try again.",
+    "notAvailable": "—",
+    "allergies": {
+      "title": "Allergies",
+      "add": "Add allergy",
+      "substance": "Substance",
+      "substancePlaceholder": "e.g. Penicillin",
+      "reaction": "Reaction",
+      "reactionPlaceholder": "e.g. Hives, swelling",
+      "severity": "Severity",
+      "severityMild": "Mild",
+      "severityModerate": "Moderate",
+      "severitySevere": "Severe",
+      "notedAt": "Noted on",
+      "statusActive": "Active",
+      "statusInactive": "Inactive",
+      "empty": "No known allergies on file."
+    },
+    "problems": {
+      "title": "Problem list",
+      "add": "Add problem",
+      "condition": "Condition",
+      "conditionPlaceholder": "e.g. Type 2 diabetes",
+      "onsetDate": "Onset date",
+      "resolvedDate": "Resolved date",
+      "statusActive": "Active",
+      "statusResolved": "Resolved",
+      "onsetLabel": "Onset: {date}",
+      "resolvedLabel": "Resolved: {date}",
+      "empty": "No chronic conditions on file."
+    },
+    "medications": {
+      "title": "Medications",
+      "add": "Add medication",
+      "name": "Medication",
+      "namePlaceholder": "e.g. Metformin",
+      "dosage": "Dosage",
+      "dosagePlaceholder": "e.g. 500mg",
+      "frequency": "Frequency",
+      "frequencyPlaceholder": "e.g. Twice daily",
+      "route": "Route",
+      "routePlaceholder": "e.g. Oral",
+      "startDate": "Start date",
+      "endDate": "End date",
+      "prescriber": "Prescriber",
+      "prescribedBy": "Prescribed by {name}",
+      "statusActive": "Active",
+      "statusDiscontinued": "Discontinued",
+      "empty": "No medications on file."
+    },
+    "immunizations": {
+      "title": "Immunizations",
+      "add": "Add immunization",
+      "vaccine": "Vaccine",
+      "vaccinePlaceholder": "e.g. Influenza",
+      "doseNumber": "Dose #",
+      "doseLabel": "Dose {number}",
+      "administeredAt": "Date given",
+      "administeredBy": "Administered by",
+      "empty": "No immunizations on file."
+    },
+    "vitals": {
+      "title": "Vitals",
+      "add": "Add reading",
+      "recordedAt": "Recorded at",
+      "heightCm": "Height (cm)",
+      "weightKg": "Weight (kg)",
+      "bmi": "BMI",
+      "bloodPressure": "Blood pressure",
+      "bloodPressureShort": "BP",
+      "heartRate": "Heart rate",
+      "heartRateShort": "HR",
+      "temperatureC": "Temperature (°C)",
+      "temperatureShort": "Temp",
+      "respiratoryRate": "Respiratory rate",
+      "oxygenSaturation": "O2 saturation (%)",
+      "oxygenShort": "O2 Sat",
+      "empty": "No vitals recorded yet."
+    },
+    "orders": {
+      "title": "Visits & orders",
+      "add": "New order",
+      "type": "Order type",
+      "typeLab": "Lab test",
+      "typeExamination": "Doctor examination",
+      "reason": "Reason for visit",
+      "reasonPlaceholder": "Why is the patient here today?",
+      "assignDoctor": "Assign to doctor",
+      "assignOptional": "Assign to (optional)",
+      "unassigned": "Unassigned",
+      "create": "Create order",
+      "empty": "No visits or orders logged yet.",
+      "statusPending": "Pending",
+      "statusInProgress": "In progress",
+      "statusCompleted": "Resulted",
+      "statusCancelled": "Cancelled",
+      "assignedTo": "Assigned to {name}",
+      "cancelOrder": "Cancel",
+      "pageSummary": "Showing {from}–{to} of {total}",
+      "previous": "Previous",
+      "next": "Next",
+      "pageOf": "Page {page} of {pages}"
     }
+  },
+  "ordersPage": {
+    "seoTitle": "Orders queue",
+    "title": "Orders queue",
+    "subtitle": "Visits logged by the front desk, waiting on a lab test or doctor examination.",
+    "scopeMine": "Assigned to me",
+    "scopeUnassigned": "Unassigned",
+    "scopeAll": "All",
+    "statusOpen": "Open",
+    "statusCompleted": "Resulted",
+    "statusCancelled": "Cancelled",
+    "statusAll": "All statuses",
+    "loading": "Loading orders…",
+    "errorLoadFailed": "Could not load the orders queue.",
+    "empty": "Nothing here yet.",
+    "claim": "Claim",
+    "enterResults": "Enter results"
   }
 }

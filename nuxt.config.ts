@@ -9,6 +9,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n'],
   runtimeConfig: {
+    /**
+     * Server-only fallback used for SSR API calls. The Vite dev proxy below only intercepts
+     * requests that hit the dev server's HTTP listener from the browser — SSR-side `$fetch`
+     * calls run in-process and never pass through it, so a relative `/api/*` URL would resolve
+     * against Nuxt's own router (404) instead of the Laravel backend. SSR falls back to this
+     * absolute origin whenever `public.apiBase` is left empty for the proxy setup.
+     */
+    apiBaseServer: apiProxyTarget,
     public: {
       /**
        * Laravel API origin. Leave empty in dev to call `/api/*` via the Vite proxy (no CORS).
